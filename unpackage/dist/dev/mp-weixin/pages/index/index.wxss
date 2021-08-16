@@ -1,5 +1,164 @@
-
-.content {
+@font-face {
+  font-family: "iconfont"; /* Project id 2698742 */
+  src: url('https://at.alicdn.com/t/font_2698742_yvdb8a39pg.woff2?t=1629091897688') format('woff2'),
+       url('https://at.alicdn.com/t/font_2698742_yvdb8a39pg.woff?t=1629091897688') format('woff'),
+       url('https://at.alicdn.com/t/font_2698742_yvdb8a39pg.ttf?t=1629091897688') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-xiangyou:before {
+  content: "\e612";
+}
+.icon-a-jiantou:before {
+  content: "\e609";
+}
+.icon-a-LeftArrow-copy:before {
+  content: "\e608";
+}
+.icon-yuechi:before {
+  content: "\e619";
+}
+.icon-fankui:before {
+  content: "\e600";
+}
+.icon-fangzi:before {
+  content: "\e673";
+}
+.icon-haizi1:before {
+  content: "\e67f";
+}
+.icon-buoumaotubiao14:before {
+  content: "\e60d";
+}
+.icon-message:before {
+  content: "\e78a";
+}
+.icon-message-fill:before {
+  content: "\e84a";
+}
+.icon-bad:before {
+  content: "\e666";
+}
+.icon-download:before {
+  content: "\e66c";
+}
+.icon-faxian:before {
+  content: "\e8af";
+}
+.icon-fuzhi:before {
+  content: "\e8b0";
+}
+.icon-wode:before {
+  content: "\e8bb";
+}
+.icon-weixin:before {
+  content: "\e8bc";
+}
+.icon-WIFI:before {
+  content: "\e8c1";
+}
+.icon-zhiwen:before {
+  content: "\e8c2";
+}
+.icon-aixin:before {
+  content: "\e8c3";
+}
+.icon-chenggong:before {
+  content: "\e8c4";
+}
+.icon-dianzan1:before {
+  content: "\e8c5";
+}
+.icon-dianhua:before {
+  content: "\e8c6";
+}
+.icon-faxian1:before {
+  content: "\e8c7";
+}
+.icon-dingwei:before {
+  content: "\e8c8";
+}
+.icon-pinglun:before {
+  content: "\e8c9";
+}
+.icon-shequ:before {
+  content: "\e8ca";
+}
+.icon-shoucang1:before {
+  content: "\e8cb";
+}
+.icon-yanjing:before {
+  content: "\e8cc";
+}
+.icon-xiangji:before {
+  content: "\e8cd";
+}
+.icon-yingyuan:before {
+  content: "\e8ce";
+}
+.icon-zengjia:before {
+  content: "\e8cf";
+}
+.icon-remen:before {
+  content: "\e8d0";
+}
+.icon-chuangzuo:before {
+  content: "\e8d1";
+}
+.icon-kaishi-outline:before {
+  content: "\e802";
+}
+.icon-fanhui-outline:before {
+  content: "\e803";
+}
+.icon-home:before {
+  content: "\e821";
+}
+.icon-home-outline:before {
+  content: "\e822";
+}
+.icon-user:before {
+  content: "\e823";
+}
+.icon-user-outline:before {
+  content: "\e824";
+}
+.icon-gengduo:before {
+  content: "\e601";
+}
+.icon-shoucang:before {
+  content: "\e602";
+}
+.icon-lishi:before {
+  content: "\e603";
+}
+.icon-sousuo:before {
+  content: "\e604";
+}
+.icon-shanchu:before {
+  content: "\e605";
+}
+.icon-dianzan:before {
+  content: "\e606";
+}
+.icon-wenda:before {
+  content: "\e607";
+}
+.icon-zuojiantou:before {
+  content: "\e60a";
+}
+.icon-guanbi:before {
+  content: "\e6b3";
+}
+page {
+	background-image: url('http://p1362.bvimg.com/10465/cec1b7d96cf7acf2.png');
+}
+.index {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
@@ -14,24 +173,185 @@
 	-webkit-justify-content: center;
 	        justify-content: center;
 }
-.logo {
-	height: 200rpx;
-	width: 200rpx;
-	margin-top: 200rpx;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 50rpx;
+.index-swiper {
+	height: 360rpx;
+	width: 670rpx;
+	margin: 24rpx 0 16rpx 0;
+	border-radius: 20rpx;
+	overflow: hidden;
 }
-.text-area {
+.index-swiper-image image {
+	height: 360rpx;
+	width: 670rpx;
+}
+.index-blog {
+	background: white;
+	border-radius: 20rpx;
+	margin: 10rpx 10rpx;
+	margin-bottom: 10rpx;
+	width: 670rpx;
+	height: 120rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+}
+.index-blog-left {
+	margin-left: 20rpx;
+	width: 120rpx;
+}
+.index-blog-left image {
+	width: 118rpx;
+	height: 118rpx;
+}
+.index-blog-center-line {
+	background: rgba(0, 0, 0, .3);
+	height: 66rpx;
+	width: 4rpx;
+}
+.index-blog-center {
+	height: 100%;
+	width: 4rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	        justify-content: center;
+	margin-left: 10rpx;
 }
-.title {
-	font-size: 36rpx;
-	color: #8f8f94;
+.index-blog-right {
+	margin: 14rpx 16rpx 14rpx 14rpx;
+	margin-left: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	position: relative;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+}
+.index-blog-right-top {}
+.index-blog-right-top text {
+	font-size: 26rpx;
+	color: #3f3f3f;
+}
+.index-blog-right-bottom {
+	position: absolute;
+	top: 40rpx;
+}
+.index-blog-right-bottom text {
+	font-size: 22rpx;
+	color: #B8B9B8;
+}
+.index-blog-right-icon {
+	position: absolute;
+	top: 20rpx;
+	right: 0rpx;
+}
+.index-blog-right-icon text {
+	color: #00aa7f;
+	font-size: 44rpx;
+}
+.index-VillageParty {
+	width: 670rpx;
+	height: 500rpx;
+	margin: 10rpx;
+	/* background: green; */
+}
+.index-ServieceToPeople {
+	margin-top: 10rpx;
+	width: 670rpx;
+	height: 480;
+}
+.index-VillageParty-title,
+.index-ServieceToPeople-title,
+.index-polling-title {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.index-VillageParty-title-image image,
+.index-polling-title-image image {
+	height: 100rpx;
+	width: 100rpx;
+}
+.index-VillageParty-title text {
+	margin-left: 14rpx;
+	font-size: 34rpx;
+}
+.index-VillageParty-content-onePart {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	margin-bottom: 20rpx;
+}
+.index-VillageParty-content-onePart-left {
+	width: 300rpx;
+	height: 114rpx;
+	background: white;
+	border-radius: 20rpx;
+	margin: 0 16rpx;
+	position: relative;
+}
+.funcion-top {
+	padding: 10rpx 0 4rpx 20rpx;
+}
+.funcion-top text {
+	font-size: 30rpx;
+	color: #3f3f3f;
+}
+.funcion-bottom {
+	position: absolute;
+	top: 44rpx;
+	padding: 0 0 4rpx 20rpx;
+}
+.funcion-bottom text {
+	font-size: 20rpx;
+	color: #B3B4B3;
+}
+.function-image {
+	position: absolute;
+	height: 114rpx;
+	width: 114rpx;
+	top: 0;
+	right: 8rpx;
+}
+.function-image image {
+	width: 100%;
+	height: 100%;
+}
+.index-polling {
+	width: 670rpx;
+	height: 240rpx;
 }
 
