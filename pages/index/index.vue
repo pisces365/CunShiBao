@@ -15,7 +15,6 @@
 			<view class="index-blog-center">
 				<view class="index-blog-center-line">
 
-
 				</view>
 			</view>
 			<view class="index-blog-right">
