@@ -3,7 +3,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "村事宝"
 			}
 		}
 	    ,{
@@ -47,14 +47,25 @@
 	    "backgroundColor": "#ffffff",
 	    "list": [{
 	        "pagePath": "pages/index/index",
-	        "iconPath": "static/image/icon_component.png",
-	        "selectedIconPath": "static/image/icon_component_HL.png",
-	        "text": "组件"
+	        "iconPath": "static/image/home.png",
+	        "selectedIconPath": "static/image/home-acitve.png",
+	        "text": "村事宝"
 	    }, {
-	        "pagePath": "pages/API/index",
-	        "iconPath": "static/image/icon_API.png",
-	        "selectedIconPath": "static/image/icon_API_HL.png",
-	        "text": "接口"
-	    }]
+	        "pagePath": "pages/RuralCircle/RuralCircle",
+	        "iconPath": "static/image/ruralCircle.png",
+	        "selectedIconPath": "static/image/ruralCircle-acitve.png",
+	        "text": "乡村圈"
+	    },{
+			"pagePath": "pages/message/message",
+			"iconPath": "static/image/message.png",
+			"selectedIconPath": "static/image/message-active.png",
+			"text": "消息"
+		},{
+			"pagePath": "pages/mine/mine",
+			"iconPath": "static/image/user.png",
+			"selectedIconPath": "static/image/user-active.png",
+			"text": "我的"
+		}
+		]
 	}
 }

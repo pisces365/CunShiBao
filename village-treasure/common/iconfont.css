@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 2698742 */
-  src: url('//at.alicdn.com/t/font_2698742_765nq5w4q1j.woff2?t=1629034750216') format('woff2'),
-       url('//at.alicdn.com/t/font_2698742_765nq5w4q1j.woff?t=1629034750216') format('woff'),
-       url('//at.alicdn.com/t/font_2698742_765nq5w4q1j.ttf?t=1629034750216') format('truetype');
+  src: url('https://at.alicdn.com/t/font_2698742_yvdb8a39pg.woff2?t=1629091897688') format('woff2'),
+       url('https://at.alicdn.com/t/font_2698742_yvdb8a39pg.woff?t=1629091897688') format('woff'),
+       url('https://at.alicdn.com/t/font_2698742_yvdb8a39pg.ttf?t=1629091897688') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiangyou:before {
+  content: "\e612";
+}
+
+.icon-a-jiantou:before {
+  content: "\e609";
+}
+
+.icon-a-LeftArrow-copy:before {
+  content: "\e608";
+}
+
+.icon-yuechi:before {
+  content: "\e619";
+}
+
+.icon-fankui:before {
+  content: "\e600";
+}
+
+.icon-fangzi:before {
+  content: "\e673";
+}
+
+.icon-haizi1:before {
+  content: "\e67f";
 }
 
 .icon-buoumaotubiao14:before {
