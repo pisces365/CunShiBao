@@ -13,6 +13,7 @@
 			<navigator class="my-button">
 				<text class="iconfont function-text" id="modify-logo">修改头像</text>
 			</navigator>
+			
 			<navigator class="my-button">
 				<text class="iconfont function-text" id="modify-password">修改密码</text>
 			</navigator>
