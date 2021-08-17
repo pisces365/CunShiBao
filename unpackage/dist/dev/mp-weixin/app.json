@@ -3,7 +3,13 @@
     "pages/index/index",
     "pages/message/message",
     "pages/mine/mine",
-    "pages/RuralCircle/RuralCircle"
+    "pages/RuralCircle/RuralCircle",
+    "component/policyInterpretation/navigation/navigation",
+    "subPackages/policy/newAndExpert/newAndExpert",
+    "component/policyInterpretation/information/information",
+    "component/election/personalProfile/personalProfile",
+    "subPackages/election/infoAndVote/infoAndVote",
+    "subPackages/election/personalDetails/personalDetails"
   ],
   "subPackages": [],
   "window": {
