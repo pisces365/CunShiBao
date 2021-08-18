@@ -2,7 +2,7 @@
 <template>
 	<view>
 		<view>
-			<image class="topImage" src="http://b1137.bvimg.com/10453/2c8db019f4c78ad6.png" mode="widthFix"></image>
+			<image class="topImage" src="http://p1362.bvimg.com/10465/5981e6676b65372d.png" mode="widthFix"></image>
 		</view>
 		<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		<information v-show="getTitle0()" :info="latestInfo"></information> 
@@ -57,7 +57,7 @@
 				person:[//具体信息
 					{
 						
-						pic_url:"http://b1137.bvimg.com/10453/7326eea62c412fe8.jpg",
+						pic_url:"http://p1362.bvimg.com/10465/a61cef977dc06b42.jpg",
 						name:"赵芳舟",
 						sex:"男",
 						age:"28",
@@ -68,7 +68,7 @@
 						plan:"工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划工作规划"
 					},
 					{ 
-						pic_url:"http://b1137.bvimg.com/10453/d21bc989b999da41.jpg",
+						pic_url:"http://p1362.bvimg.com/10465/926e05346203527e.jpg",
 						name:"雷军",
 						sex:"女",
 						age:"37",
