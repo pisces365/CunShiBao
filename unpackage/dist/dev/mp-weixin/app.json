@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
     "pages/message/message",
     "pages/mine/mine",
-    "pages/RuralCircle/RuralCircle"
+    "pages/RuralCircle/RuralCircle",
+    "pages/test/test"
   ],
   "subPackages": [
     {
@@ -53,6 +55,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

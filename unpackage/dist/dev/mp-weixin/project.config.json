@@ -27,9 +27,9 @@
       "current": 0,
       "list": [
         {
-          "name": "村事宝",
+          "name": "测试",
           "id": 0,
-          "pathName": "pages/welcome/welcome"
+          "pathName": "pages/test/test"
         }
       ]
     }
