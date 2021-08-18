@@ -9,7 +9,7 @@
   "compileType": "miniprogram",
   "libVersion": "",
   "appid": "wxfa6eb206635e4d92",
-  "projectname": "village-treasure",
+  "projectname": "CunShiBao",
   "condition": {
     "search": {
       "current": -1,
@@ -24,8 +24,14 @@
       "list": []
     },
     "miniprogram": {
-      "current": -1,
-      "list": []
+      "current": 0,
+      "list": [
+        {
+          "name": "村事宝",
+          "id": 0,
+          "pathName": "pages/welcome/welcome"
+        }
+      ]
     }
   }
 }

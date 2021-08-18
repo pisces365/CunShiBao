@@ -5,7 +5,16 @@
     "pages/mine/mine",
     "pages/RuralCircle/RuralCircle"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        "election/personalDetails/personalDetails",
+        "election/infoAndVote/infoAndVote",
+        "policy/newAndExpert/newAndExpert"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -44,5 +53,6 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,8 @@
+
+.topImage {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	width: 750rpx;
+}
+

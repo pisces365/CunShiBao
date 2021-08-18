@@ -23,25 +23,37 @@
 			"path": "pages/RuralCircle/RuralCircle",
 			"style": {
 				"navigationBarTitleText": "乡村圈",
-				"enablePullDownRefresh": true
-			}
-
-		}, {
-			"path": "subPackages/policy/latest-policy/latest-policy",
-			"style": {
-				"navigationBarTitleText": "最新政策",
-				"enablePullDownRefresh": true
-			}
-
-		}, {
-			"path": "subPackages/policy/Experts-policy-reading/Experts-policy-reading",
-			"style": {
-				"navigationBarTitleText": "专家解读",
-				"enablePullDownRefresh": true
+				"enablePullDownRefresh": false
 			}
 
 		}
 	],
+	"subPackages": [{
+		"root": "pagesA",
+		"pages": [{
+				"path": "election/personalDetails/personalDetails",
+				"style": {
+					"navigationBarTitleText": "个人详情",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "election/infoAndVote/infoAndVote",
+				"style": {
+					"navigationBarTitleText": "换届选举",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "policy/newAndExpert/newAndExpert",
+				"style": {
+					"navigationBarTitleText": "政策解读",
+					"enablePullDownRefresh": false
+				}
+			}
+		]
+	}],
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -75,32 +87,11 @@
 			"text": "我的"
 		}]
 	},
-	"subPackages": [{
-		"root": "subPackages",
-		"pages": [{
-				"path": "policy/latest-policy/latest-policy",
-				"style": {
-					"navigationBarTitleText": "最新政策",
-					"enablePullDownRefresh": true
-				}
-			},
-			{
-				"path": "policy/Experts-policy-reading/Experts-policy-reading",
-				"style": {
-					"navigationBarTitleText": "专家解读",
-					"enablePullDownRefresh": true
-				}
-			}
-		]
-	}],
-	"preloadRule": {
-		"subPackages/policy/latest-policy/latest-policy": {
-			"network": "all",
-			"packages": ["__APP__"]
-		}
-		// "subPackages/policy/Experts-policy-reading/Experts-policy-reading": {
-		// 	"network": "all",
-		// 	"packages": ["subPackages"]
-		// }
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式（list 的索引项）
+		"list": [{
+			"name": "村事宝",
+			"path": "pages/welcome/welcome"
+		}]
 	}
 }

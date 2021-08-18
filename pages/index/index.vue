@@ -40,8 +40,8 @@
 			</view>
 			<view class="index-VillageParty-content">
 				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
-						<view class="funcion-top">
+					<navigator url="../../pagesA/policy/newAndExpert/newAndExpert" class="index-VillageParty-content-onePart-left">
+						<view  class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[0]}}</text>
 						</view>
 						<view class="funcion-bottom">
@@ -50,8 +50,8 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[0]" mode=""></image>
 						</view>
-					</view>
-					<view class="index-VillageParty-content-onePart-left">
+					</navigator>
+					<navigator url="../../pagesA/election/infoAndVote/infoAndVote" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[1]}}</text>
 						</view>
@@ -61,7 +61,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[1]" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
 					<view class="index-VillageParty-content-onePart-left">
