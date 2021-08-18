@@ -1,103 +1,123 @@
-<!-- 文章内容点击详情页 -->
 <template>
-	<view>
-		<view class="policy">
-			<view class="policy-title">
-				<view class="policy-title-content">
-					{{title.titleContent}}
-				</view>
-				<view class="policy-title-subtitle">
-					<text class="policy-title-subtitle-source">{{title.artileSource}}</text>
-					<text class="policy-title-subtitle-time">{{title.releaseTime}}</text>
-				</view>
-			</view>
-			<view class="policy-video">
-				<!-- <video id="myVideo"
-					src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317.mp4"
-					@error="videoErrorCallback" controls autoplay="false">
-				</video> -->
-			</view>
-			<view class="policy-content">
-				<view class="policy-content-part" v-for="(item,index) in content" :key="index">
-					{{item.part}}
-				</view>
-			</view>
-			<view class="policy-editor">
-				责任编辑 {{editorCharge}}
-			</view>
-			<view class="policy-readAndLike">
-				<view class="policy-read">
-					<text class="policy-read-title">阅读</text>
-					<text class="policy-read-number"> {{data_reading}}</text>
-				</view>
-				<view class="policy-like">
-					<text class="policy-like-title">点赞</text>
-					<text class="policy-like-number">{{data_like}}</text>
-					<image
-						:src="doyoulike=='true'?'../../../static/image/like-active.png':'../../../static/image/like.png'"
-						@click="likeArticle()"></image>
-				</view>
-			</view>
-			<!-- <navigator class="policy-recommended">
-				进入习近平文汇频道查看更多内容
-			</navigator> -->
-			<view class="policy-viewpoint">
-				<view class="policy-viewpoint-title">
-					<view class="policy-viewpoint-title-left">
-						<view class="policy-viewpoint-title-left-line">
+	<view class='wraper'>
+		<view class='main'>
+			<scroll-view class='main-scroll' scroll-y style="height: 100%">
+				<view class="policy">
+					<view class="policy-title">
+						<view class="policy-title-content">
+							{{title.titleContent}}
+						</view>
+						<view class="policy-title-subtitle">
+							<text class="policy-title-subtitle-source">{{title.artileSource}}</text>
+							<text class="policy-title-subtitle-time">{{title.releaseTime}}</text>
+						</view>
+					</view>
+					<view class="policy-video">
+						<video id="myVideo"
+							src="https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317.mp4"
+							@error="videoErrorCallback" controls autoplay="false">
+						</video>
+					</view>
+					<view class="policy-content">
+						<view class="policy-content-part" v-for="(item,index) in content" :key="index">
+							{{item.part}}
+						</view>
+					</view>
+					<view class="policy-editor">
+						责任编辑 {{editorCharge}}
+					</view>
+					<view class="policy-readAndLike">
+						<view class="policy-read">
+							<text class="policy-read-title">阅读</text>
+							<text class="policy-read-number"> {{data_reading}}</text>
+						</view>
+						<view class="policy-like">
+							<text class="policy-like-title">点赞</text>
+							<text class="policy-like-number">{{data_like}}</text>
+							<image
+								:src="doyoulike=='true'?'../../../static/image/like-active.png':'../../../static/image/like.png'"
+								@click="likeArticle()"></image>
+						</view>
+					</view>
+					<!-- <navigator class="policy-recommended">
+						进入习近平文汇频道查看更多内容
+					</navigator> -->
+					<view class="policy-viewpoint">
+						<view class="policy-viewpoint-title">
+							<view class="policy-viewpoint-title-left">
+								<view class="policy-viewpoint-title-left-line">
 
-						</view>
-					</view>
-					<view class="policy-viewpoint-title-right">
-						观点
-					</view>
-				</view>
-				<view class="policy-viewpoint-content" v-for="(item,index) in viewPoint">
-					<view class="policy-viewpoint-content-left">
-						<image :src=item.headPortraitUrl mode=""></image>
-					</view>
-					<view class="policy-viewpoint-content-right">
-						<view class="viewpoint-top">
-							<view class="viewPoint-peopleName">
-								{{item.peopleName}}
+								</view>
 							</view>
-							<view class="viewPoint-like">
-								<text>{{item.likeNumber | formatCount}}</text>
-								<text class="iconfont icon-dianzan2"></text>
+							<view class="policy-viewpoint-title-right">
+								观点
 							</view>
 						</view>
-						<view class="viewpoint-bottom">
-							<view class="viewpoint-bottom-content">
-								{{item.content}}
+						<view class="policy-viewpoint-content" v-for="(item,index) in viewPoint">
+							<view class="policy-viewpoint-content-left">
+								<image :src='item.headPortraitUrl' mode="aspectFit"></image>
 							</view>
-							<view class="viewpoint-bottom-reply" v-if="item.replyNumber>0">
-								<view class="viewpoint-bottom-body" v-for="(replys,index1) in item.reply" :key="index1">
-									<view class="reply-name">
-										{{replys.peopleName}}
+							<view class="policy-viewpoint-content-right">
+								<view class="viewpoint-top">
+									<view class="viewPoint-peopleName">
+										{{item.peopleName}}
 									</view>
-									<view class="reply-identify" v-if="item.peopleName==replys.peopleName">
-										博主
+									<view class="viewPoint-like">
+										<text>{{item.likeNumber | formatCount}}</text>
+										<text class="iconfont icon-dianzan2"></text>
 									</view>
-									<view class="reply-content">
-										{{replys.content}}
+								</view>
+								<view class="viewpoint-bottom">
+									<view class="viewpoint-bottom-content">
+										{{item.content}}
+									</view>
+									<view class="viewpoint-bottom-reply" v-if="item.replyNumber>0">
+										<view class="viewpoint-bottom-body" v-for="(replys,index1) in item.reply"
+											:key="index1">
+											<view class="reply-name">
+												{{replys.peopleName}}
+											</view>
+											<view class="reply-identify" v-if="item.peopleName==replys.peopleName">
+												博主
+											</view>
+											<view class="reply-content">
+												{{replys.content}}
+											</view>
+										</view>
+									</view>
+									<view class="viewpoint-bottom-timeAndReply">
+										<text>{{item.TimeToRelease}}</text>
+										<text>·</text>
+										<text @click="replyView()">回复</text>
 									</view>
 								</view>
 							</view>
-							<view class="viewpoint-bottom-timeAndReply">
-								<text>{{item.TimeToRelease}}</text>
-								<text>·</text>
-								<text @click="replyView()">回复</text>
+							<view class="cross-line">
+
 							</view>
 						</view>
 					</view>
-					<view class="cross-line">
-
-					</view>
 				</view>
+			</scroll-view>
+
+		</view>
+		<view class='footer'>
+			<view class="footer-sayYourWords">
+				<text>欢迎发表你的观点</text>
+			</view>
+			<view class="footer-commit">
+				<text class="iconfont icon-pinglun1 footerIcon"></text>
+			</view>
+			<view class="footer-shoucang">
+				<text class="iconfont icon-shoucang11 footerIcon"></text>
+			</view>
+			<view class="footer-zhuanfa">
+				<text class="iconfont icon-zhuanfa footerIcon"></text>
 			</view>
 		</view>
 	</view>
 </template>
+
 
 <script>
 	export default {
@@ -116,6 +136,10 @@
 					},
 					{
 						part: '今天，人类社会再次面临何去何从的历史当口，是敌视对立还是相互尊重？是封闭脱钩还是开放合作？是零和博弈还是互利共赢？选择就在我们手中，责任就在我们肩上。'
+					},
+					{
+						part: '把握新发展阶段、贯彻新发展理念、构建新发展格局，是以习近平同志为核心的党中央统筹中华民族伟大复兴战略全局和世界百年未有之大变局，与时俱进提升我国经济发展水平、塑造我国国际经济合作和竞争新优势作出的重大战略判断和战略抉择。习近平同志对把握新发展阶段、贯彻新发展理念、构建新发展格局的重大意义、丰富内涵和实践要求等进行了深刻阐述，明确了我国发展的历史方位、现代化建设的指导原则、经济现代化的路径选择，反映了我们党对我国经济发展规律的新认识，丰富和发展了中国特色社会主义政治经济学。习近平同志关于把握新发展阶段、贯彻新发展理念、构建新发展格局的重要论述，是习近平新时代中国特色社会主义思想的重要组成部分，对于推动我国经济社会高质量发展'
+
 					}
 				],
 				editorCharge: '张菁菁',
@@ -123,7 +147,7 @@
 				data_like: '131952',
 				viewPoint: [{
 						peopleName: '周雪琼',
-						headPortraitUrl: '',
+						headPortraitUrl: 'http://p1362.bvimg.com/10465/f055218fcab03c86.jpg',
 						content: "为人民过上健康幸福的生活而努力！",
 						likeNumber: "123456",
 						TimeToRelease: '6小时',
@@ -145,8 +169,16 @@
 					{
 						peopleName: '马到成功',
 						content: "一个队伍经常是不大整齐的，所以就要常常喊看齐，向左看齐，向右看齐，向中看齐。我们要向中央基准看齐，向大会基准看齐。看齐是原则，有偏差是实际生活，有了偏差，就喊看齐",
-						likeNumber: "321456",
-						TimeToRelease: '4小时'
+						likeNumber: "112345",
+						TimeToRelease: '4小时',
+						headPortraitUrl: 'http://p1362.bvimg.com/10465/a61cef977dc06b42.jpg'
+					},
+					{
+						peopleName: '吴干事',
+						content: "从古至今,医师的使命都是治病救人、救死扶伤。 把医师比作“白衣天使”,不仅蕴涵着人们对医师的期望和要求,也承载着社会赋予医师的神圣使命。 人类社会无论尊卑，都离不开医务人员的本职",
+						likeNumber: "98234",
+						TimeToRelease: '3小时',
+						headPortraitUrl: 'http://p1362.bvimg.com/10465/926e05346203527e.jpg'
 					}
 				]
 
@@ -176,45 +208,134 @@
 <style>
 	@import url("@/common/iconfont.css");
 
-	.policy {
-		margin: 30rpx;
-
+	page {
+		width: 100%;
+		height: 100%;
 	}
 
-	.policy-title {}
+	.wraper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+	}
 
-	.policy-title-content {}
+	.header {
+		background: rgb(8, 117, 94);
+		color: #fff;
+		line-height: 100rpx;
+		flex: 0 0 100rpx;
+		/* 不放大不缩小固定100rpx */
+	}
+
+	.main {
+		flex: 1;
+		position: relative;
+	}
+
+	.main-scroll {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	.main-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+
+	.card {
+		width: 47vw;
+		margin-top: 10rpx;
+		margin-bottom: 10rpx;
+	}
+
+	.card-box {
+		width: 100%;
+		height: 200rpx;
+		border-radius: 6rpx;
+		background: #ccc;
+	}
+
+	.card-content {
+		color: blue;
+	}
+
+	.footer {
+		background: rgba(253, 247, 253, 0.3);
+		line-height: 80rpx;
+		flex: 0 0 80rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		/* justify-content: center; */
+	}
+	.footer-sayYourWords{
+		width: 380rpx;
+		height: 60rpx;
+		margin-left: 30rpx;
+		border-radius: 10rpx;
+		background: #ececec;
+		padding-left: 30rpx;
+		font-size: 30rpx;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		color: #75787c;
+		
+	}
+	.footerIcon{
+		flex: 1;
+		font-size: 38rpx;
+		margin-left: 40rpx;
+	}
+	.footer-commit{
+		margin-left: 30rpx;
+	}
+	.policy {
+		margin: 30rpx 50rpx;
+	}
+
+	.policy-title-content {
+		font-weight: bold;
+		font-size: 44rpx;
+	}
 
 	.policy-title-subtitle {
-		margin-top: 20rpx;
+		margin-top: 30rpx;
 	}
 
 	.policy-title-subtitle-source {
-		font-size: 20rpx;
+		font-size: 26rpx;
 		color: #928383;
 	}
 
 	.policy-title-subtitle-time {
 		color: #928383;
-		font-size: 20rpx;
+		font-size: 26rpx;
 		margin-left: 40rpx;
 	}
 
 	.policy-content {
-		margin-top: 30rpx;
+		margin-top: 34rpx;
 
 	}
 
 	.policy-content-part {
 		margin-top: 20rpx;
-		font-size: 30rpx;
-		line-height: 44rpx;
+		font-size: 36rpx;
+		line-height: 60rpx;
 	}
 
 	.policy-video {
-		margin-top: 20rpx;
-		width: 690rpx;
-		height: 300rpx;
+		margin-top: 40rpx;
+		width: 100%;
+		height: 320rpx;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -222,13 +343,13 @@
 	}
 
 	.policy-editor {
-		margin-top: 20rpx;
-		font-size: 20rpx;
+		margin-top: 30rpx;
+		font-size: 28rpx;
 		color: #9D9D9D;
 	}
 
 	.policy-readAndLike {
-		margin-top: 30rpx;
+		margin-top: 32rpx;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -243,7 +364,7 @@
 	.policy-read {
 		height: 40rpx;
 		width: 270rpx;
-		background: #F5F5F7;
+		background: #f8f8f9;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -251,7 +372,7 @@
 
 	.policy-read-title,
 	.policy-like-title {
-		font-size: 24rpx;
+		font-size: 30rpx;
 		color: #4f5154;
 	}
 
@@ -319,6 +440,11 @@
 		overflow: hidden;
 	}
 
+	.policy-viewpoint-content-left image {
+		width: 100%;
+		height: 100%;
+	}
+
 	.policy-viewpoint-content-right {
 		flex: 1;
 		margin: 10rpx 0 0 20rpx;
@@ -333,35 +459,42 @@
 
 	.viewPoint-peopleName {
 		color: #e2c54e;
-		font-size: 32rpx;
+		font-size: 34rpx;
 	}
-	.viewPoint-like text:nth-child(1){
+
+	.viewPoint-like text:nth-child(1) {
 		position: absolute;
 		right: 50rpx;
-		font-size: 20rpx;
-		
+		font-size: 24rpx;
+
 	}
-	.viewPoint-like text:nth-child(2){
+
+	.viewPoint-like text:nth-child(2) {
 		position: absolute;
 		right: 20rpx;
 		font-size: 20rpx;
-		
+
 	}
-	.viewpoint-bottom-content{
+
+	.viewpoint-bottom-content {
 		margin-top: 20rpx;
 		font-size: 34rpx;
 	}
-	.viewpoint-bottom-timeAndReply{
+
+	.viewpoint-bottom-timeAndReply {
 		margin-top: 20rpx;
 		font-size: 26rpx;
 	}
-	.viewpoint-bottom-timeAndReply text:nth-child(1){
+
+	.viewpoint-bottom-timeAndReply text:nth-child(1) {
 		color: #808080;
 	}
-	.viewpoint-bottom-timeAndReply text:nth-child(2){
+
+	.viewpoint-bottom-timeAndReply text:nth-child(2) {
 		margin-left: 6rpx;
 	}
-	.viewpoint-bottom-timeAndReply text:nth-child(3){
+
+	.viewpoint-bottom-timeAndReply text:nth-child(3) {
 		margin-left: 6rpx;
 	}
 </style>
