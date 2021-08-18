@@ -13,7 +13,8 @@
       "pages": [
         "election/personalDetails/personalDetails",
         "election/infoAndVote/infoAndVote",
-        "policy/newAndExpert/newAndExpert"
+        "policy/newAndExpert/newAndExpert",
+        "policy/policyDetails/policyDetails"
       ]
     }
   ],

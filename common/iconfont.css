@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'iconfont';  /* Project id 2698742 */
-  src: url('//at.alicdn.com/t/font_2698742_m9t39s9kyc.woff2?t=1629210199376') format('woff2'),
-       url('//at.alicdn.com/t/font_2698742_m9t39s9kyc.woff?t=1629210199376') format('woff'),
-       url('//at.alicdn.com/t/font_2698742_m9t39s9kyc.ttf?t=1629210199376') format('truetype');
+  font-family: "iconfont"; /* Project id 2698742 */
+  src: url('//at.alicdn.com/t/font_2698742_cgg4eslrbxq.woff2?t=1629283135084') format('woff2'),
+       url('//at.alicdn.com/t/font_2698742_cgg4eslrbxq.woff?t=1629283135084') format('woff'),
+       url('//at.alicdn.com/t/font_2698742_cgg4eslrbxq.ttf?t=1629283135084') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,22 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dianzan4:before {
+  content: "\e621";
+}
+
+.icon-dianzan3:before {
+  content: "\ebbe";
+}
+
+.icon-dianzan2:before {
+  content: "\e60b";
+}
+
+.icon-chazi:before {
+  content: "\e628";
 }
 
 .icon-xiangyou:before {

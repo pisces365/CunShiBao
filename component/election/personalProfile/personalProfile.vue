@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="news" v-for="(item , index) in person" :key="index">
-			<navigator :url="'../../../subPackages/election/personalDetails/personalDetails?person='+encodeURIComponent(JSON.stringify(person[index]))" class="navi">
+			<navigator :url="'../../../pagesA/election/personalDetails/personalDetails?person='+encodeURIComponent(JSON.stringify(person[index]))" class="navi">
 				<view>
 					<image :src="item.pic_url" mode="widthFix" class="personal-picture"></image>
 				</view>
