@@ -1,21 +1,21 @@
 
 .news {
-	
-	border-bottom: 1px solid #A6A7A6;
+	background-color: white;
 }
 .navi {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	padding: 30rpx;
+	padding: 30rpx 0;
+	margin: 0 30rpx;
+	border-bottom: 0.24rpx solid #eae9e9;
 }
 .personal-picture {
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	        flex: 1;
 	width: 120rpx;
-	-webkit-box-shadow: 0 0 20rpx #A6A7A6;
-	        box-shadow: 0 0 20rpx #A6A7A6;
+	box-shadow: 0 0 20rpx #A6A7A6;
 }
 .main {
 	-webkit-box-flex: 4;
@@ -24,11 +24,11 @@
 	margin-left: 30rpx;
 }
 .person-title {
-	font-size: 14px;
+	font-size: 32rpx;
 }
 .person-info {
 	margin-top: 20rpx;
-	font-size: 12px;
+	font-size: 24rpx;
 	word-break: break-word; /* 不允许单词内换行 */
 	text-overflow: ellipsis; /* 超出部分为省略号 */
 	color: #A6A7A6;

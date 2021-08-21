@@ -1,17 +1,30 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/index/index",
     "pages/message/message",
     "pages/mine/mine",
     "pages/RuralCircle/RuralCircle",
-    "component/policyInterpretation/navigation/navigation",
-    "subPackages/policy/newAndExpert/newAndExpert",
-    "component/policyInterpretation/information/information",
-    "component/election/personalProfile/personalProfile",
-    "subPackages/election/infoAndVote/infoAndVote",
-    "subPackages/election/personalDetails/personalDetails"
+    "pages/test/test",
+    "pagesB/landContract/landContract",
+    "componentB/landContract/contractPublicity/contractPublicity",
+    "pagesB/maintenanceCenter/maintenanceCenter",
+    "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
+    "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
+    "pagesB/maintenanceDetails/maintenanceDetails",
+    "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        "election/personalDetails/personalDetails",
+        "election/infoAndVote/infoAndVote",
+        "policy/newAndExpert/newAndExpert",
+        "policy/policyDetails/policyDetails"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -50,6 +63,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

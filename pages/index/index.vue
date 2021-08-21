@@ -40,7 +40,7 @@
 			</view>
 			<view class="index-VillageParty-content">
 				<view class="index-VillageParty-content-onePart">
-					<navigator url="../../subPackages/policy/newAndExpert/newAndExpert" class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesA/policy/newAndExpert/newAndExpert" class="index-VillageParty-content-onePart-left">
 						<view  class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[0]}}</text>
 						</view>
@@ -51,7 +51,7 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[0]" mode=""></image>
 						</view>
 					</navigator>
-					<navigator url="../../subPackages/election/infoAndVote/infoAndVote" class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesA/election/infoAndVote/infoAndVote" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[1]}}</text>
 						</view>
@@ -64,7 +64,7 @@
 					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesB/landContract/landContract" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[2]}}</text>
 						</view>
@@ -74,8 +74,8 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" mode=""></image>
 						</view>
-					</view>
-					<view class="index-VillageParty-content-onePart-left">
+					</navigator>
+					<navigator class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[3]}}</text>
 						</view>
@@ -85,7 +85,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[3]" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
 					<view class="index-VillageParty-content-onePart-left">
@@ -184,7 +184,7 @@
 			</view>
 			<view class="index-polling-content">
 				<view class="index-polling-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesB/maintenanceCenter/maintenanceCenter" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[10]}}</text>
 						</view>
@@ -194,7 +194,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[10]" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 				</view>
 			</view>
 		</view>

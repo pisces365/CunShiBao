@@ -1,0 +1,1 @@
+<button class="bottom-btn" type="primary" data-event-opts="{{[['tap',[['goLogin',['$event']]]]]}}" bindtap="__e">登入</button>

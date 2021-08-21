@@ -1,58 +1,57 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index", 
+			"path": "pages/welcome/welcome",
+			"style": {
+				"navigationBarTitleText": "村事宝",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "村事宝"
-			} 
+			}
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "消息",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/RuralCircle/RuralCircle",
+			"style": {
+				"navigationBarTitleText": "乡村圈",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/test/test",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	    ,{
-            "path" : "pages/message/message",
+            "path" : "pagesB/landContract/landContract",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "消息",
+                "navigationBarTitleText": "土地承包",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
-            "path" : "pages/mine/mine",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "我的",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/RuralCircle/RuralCircle",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "乡村圈",
-                "enablePullDownRefresh": false
-            }
-            
-        } 
-		,{
-		    "path" : "component/policyInterpretation/navigation/navigation",
-		    "style" :                                                                                    
-		    {
-		        "navigationBarTitleText": "",
-		        "enablePullDownRefresh": false
-		    }
-		    
-		}	 
-        ,{
-            "path" : "subPackages/policy/newAndExpert/newAndExpert",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "政策解读",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "component/policyInterpretation/information/information",
+            "path" : "componentB/landContract/contractPublicity/contractPublicity",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -61,7 +60,16 @@
             
         }
         ,{
-            "path" : "component/election/personalProfile/personalProfile",
+            "path" : "pagesB/maintenanceCenter/maintenanceCenter",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "维修中心",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
@@ -70,24 +78,66 @@
             
         }
         ,{
-            "path" : "subPackages/election/infoAndVote/infoAndVote",
+            "path" : "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "换届选举",
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             
         }
         ,{
-            "path" : "subPackages/election/personalDetails/personalDetails", 
+            "path" : "pagesB/maintenanceDetails/maintenanceDetails",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "个人详情",
+                "navigationBarTitleText": "维修详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
             
         }
     ],
+	"subPackages": [{
+		"root": "pagesA",
+		"pages": [{
+				"path": "election/personalDetails/personalDetails",
+				"style": {
+					"navigationBarTitleText": "个人详情",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "election/infoAndVote/infoAndVote",
+				"style": {
+					"navigationBarTitleText": "换届选举",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "policy/newAndExpert/newAndExpert",
+				"style": {
+					"navigationBarTitleText": "政策解读",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "policy/policyDetails/policyDetails",
+				"style": {
+					"navigationBarTitleText": "文章详情",
+					"enablePullDownRefresh": false
+				}
+			}
+		]
+	}],
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -95,31 +145,37 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-	    "color": "#7A7E83",
-	    "selectedColor": "#3cc51f",
-	    "borderStyle": "black",
-	    "backgroundColor": "#ffffff",
-	    "list": [{
-	        "pagePath": "pages/index/index",
-	        "iconPath": "static/image/home.png",
-	        "selectedIconPath": "static/image/home-acitve.png",
-	        "text": "村事宝"
-	    }, {
-	        "pagePath": "pages/RuralCircle/RuralCircle",
-	        "iconPath": "static/image/ruralCircle.png",
-	        "selectedIconPath": "static/image/ruralCircle-acitve.png",
-	        "text": "乡村圈"
-	    },{
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/image/home.png",
+			"selectedIconPath": "static/image/home-acitve.png",
+			"text": "村事宝"
+		}, {
+			"pagePath": "pages/RuralCircle/RuralCircle",
+			"iconPath": "static/image/ruralCircle.png",
+			"selectedIconPath": "static/image/ruralCircle-acitve.png",
+			"text": "乡村圈"
+		}, {
 			"pagePath": "pages/message/message",
 			"iconPath": "static/image/message.png",
 			"selectedIconPath": "static/image/message-active.png",
 			"text": "消息"
-		},{
+		}, {
 			"pagePath": "pages/mine/mine",
 			"iconPath": "static/image/user.png",
 			"selectedIconPath": "static/image/user-active.png",
 			"text": "我的"
-		}
-		]
+		}]
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式（list 的索引项）
+		"list": [{
+			"name": "文章内容",
+			"path": "pagesA/policy/policyDetails/policyDetails"
+		}]
 	}
 }

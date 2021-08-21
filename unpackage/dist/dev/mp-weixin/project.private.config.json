@@ -1,0 +1,36 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": 0,
+          "name": "文章内容",
+          "pathName": "pagesA/policy/policyDetails/policyDetails",
+          "query": ""
+        },
+        {
+          "name": "维修详情",
+          "pathName": "pagesB/maintenanceDetails/maintenanceDetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "维修中心",
+          "pathName": "pagesB/maintenanceCenter/maintenanceCenter",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

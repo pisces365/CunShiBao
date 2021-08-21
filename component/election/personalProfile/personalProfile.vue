@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="news" v-for="(item , index) in person" :key="index">
-			<navigator :url="'../../../subPackages/election/personalDetails/personalDetails?person='+encodeURIComponent(JSON.stringify(person[index]))" class="navi">
+			<navigator :url="'../../../pagesA/election/personalDetails/personalDetails?person='+encodeURIComponent(JSON.stringify(person[index]))" class="navi">
 				<view>
 					<image :src="item.pic_url" mode="widthFix" class="personal-picture"></image>
 				</view>
@@ -34,13 +34,14 @@
 
 <style>
 	.news {
-		
-		border-bottom: 1px solid #A6A7A6;
+		background-color: white;
 	}
 	
 	.navi {
 		display: flex;
-		padding: 30rpx;
+		padding: 30rpx 0;
+		margin: 0 30rpx;
+		border-bottom: 0.24rpx solid #eae9e9;
 	}
 	
 	.personal-picture {
@@ -55,12 +56,12 @@
 	}
 	
 	.person-title {
-		font-size: 14px;
+		font-size: 32rpx;
 	}
 	
 	.person-info {
 		margin-top: 20rpx;
-		font-size: 12px;
+		font-size: 24rpx;
 		word-break: break-word; /* 不允许单词内换行 */
 		text-overflow: ellipsis; /* 超出部分为省略号 */
 		color: #A6A7A6;
