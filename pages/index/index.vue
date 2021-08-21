@@ -4,20 +4,20 @@
 			indicator-active-color="#f7f7f7" indicator-color="rgba(145, 145, 145, 0.7)">
 			<swiper-item v-for="(item , index) in homeSlide" :key="index">
 				<view class="index-swiper-image">
-					<image :src="item" mode="aspectFit"></image>
+					<image :src="item" mode="aspectFit" lazy-load="true"></image>
 				</view>
 			</swiper-item>
 		</swiper>
 		<view class="index-blog">
 			<view class="index-blog-left">
-				<image src="http://p1362.bvimg.com/10465/7d1de6bb8f0e7dfd.png" mode=""></image>
+				<image src="http://p1362.bvimg.com/10465/7d1de6bb8f0e7dfd.png" lazy-load="true" mode=""></image>
 			</view>
 			<view class="index-blog-center">
 				<view class="index-blog-center-line">
 
 				</view>
 			</view>
-			<view class="index-blog-right">
+			<view class="index-blog-right" @click="toDetails()">
 				<view class="index-blog-right-top">
 					<text>三农数据洞察</text>
 				</view>
@@ -32,7 +32,7 @@
 		<view class="index-VillageParty">
 			<view class="index-VillageParty-title">
 				<view class="index-VillageParty-title-image">
-					<image src="http://p1362.bvimg.com/10465/5f6f4059cd36c002.png" mode=""></image>
+					<image src="http://p1362.bvimg.com/10465/5f6f4059cd36c002.png" lazy-load="true" mode=""></image>
 				</view>
 				<view class="index-VillageParty-title-text">
 					<text>村务党建</text>
@@ -48,7 +48,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[0]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[0]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[0]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
 					<navigator url="../../pagesA/election/infoAndVote/infoAndVote" class="index-VillageParty-content-onePart-left">
@@ -59,7 +59,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[1]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[1]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[1]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
 				</view>
@@ -72,7 +72,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[2]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 					<view class="index-VillageParty-content-onePart-left">
@@ -83,7 +83,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[3]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[3]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[3]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 				</view>
@@ -96,7 +96,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[4]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 					<view class="index-VillageParty-content-onePart-left">
@@ -107,7 +107,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[5]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[5]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[5]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 				</view>
@@ -116,7 +116,7 @@
 		<view class="index-ServieceToPeople">
 			<view class="index-ServieceToPeople-title">
 				<view class="index-VillageParty-title-image">
-					<image src="http://p1362.bvimg.com/10465/e1e8ef9ddb3bb0d5.png" mode=""></image>
+					<image src="http://p1362.bvimg.com/10465/e1e8ef9ddb3bb0d5.png" lazy-load="true" mode=""></image>
 				</view>
 				<view class="index-VillageParty-title-text">
 					<text>民生服务</text>
@@ -132,7 +132,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[6]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[6]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[6]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 					<view class="index-VillageParty-content-onePart-left">
@@ -143,7 +143,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[7]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[7]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[7]"  lazy-load="true" mode=""></image>
 						</view>
 					</view>
 				</view>
@@ -156,7 +156,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[8]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 					<view class="index-VillageParty-content-onePart-left">
@@ -167,7 +167,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[9]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[9]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[9]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 				</view>
@@ -176,7 +176,7 @@
 		<view class="index-polling">
 			<view class="index-polling-title">
 				<view class="index-polling-title-image">
-					<image src="http://p1362.bvimg.com/10465/48c9cea3fa41b180.png" mode=""></image>
+					<image src="http://p1362.bvimg.com/10465/48c9cea3fa41b180.png" lazy-load="true" mode=""></image>
 				</view>
 				<view class="index-polling-title-text">
 					<text>安全巡检</text>
@@ -192,7 +192,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[10]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[10]" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[10]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 				</view>
@@ -250,7 +250,11 @@
 
 		},
 		methods: {
-
+			toDetails(){
+				uni.navigateTo({
+					url:('../../pagesA/policy/policyDetails/policyDetails')
+				})
+			}
 		}
 	}
 </script>

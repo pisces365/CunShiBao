@@ -24,23 +24,30 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.comment-component.data-v-3e202046 {
-  font-family: PingFang-SC-Regular, PingFang-SC;
-  background: transparent;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999;
+.mask.data-v-7ae90f58 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
   position: fixed;
-  top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-}
-.comment-component .comment-write.data-v-3e202046 {
-  position: absolute;
+  top: 0px;
   bottom: 0;
-  width: 100vw;
-  height: 100px;
-  background: #fff;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 9995;
+  transition: .3s;
+  -webkit-transition: .3s;
+}
+.mask .mask-content.data-v-7ae90f58 {
+  width: 100%;
+  background: #FFFFFF;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: .3s;
+  -webkit-transition: .3s;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -49,23 +56,7 @@
   -webkit-flex-direction: column;
           flex-direction: column;
 }
-.comment-component .comment-write .comment-input.data-v-3e202046 {
-  width: calc(100% - 40px);
-  height: 40px;
-  background: #f7f8fa;
-  margin: 15px auto;
-}
-.comment-component .comment-write .comment-input textarea.data-v-3e202046 {
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
-}
-.comment-component .comment-write .comment-send.data-v-3e202046 {
-  padding: 0 20px;
-  height: 60px;
+.mask .mask-content .mask-content-topbar.data-v-7ae90f58 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -76,23 +67,39 @@
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
           justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  padding: 20rpx 30rpx 10rpx;
+  font-size: 32rpx;
 }
-.comment-component .comment-write .comment-send .content-num.data-v-3e202046 {
-  font-size: 12px;
-  font-weight: 400;
-  color: #b4b2c0;
+.mask .mask-content .mask-content-topbar .left.data-v-7ae90f58 {
+  padding: 10rpx 0rpx;
+  color: #606266;
 }
-.comment-component .comment-write .comment-send .send-btn.data-v-3e202046 {
-  cursor: pointer;
-  width: 65px;
-  height: 30px;
-  background: #000000;
-  border-radius: 2px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
+.mask .mask-content .mask-content-topbar .right.data-v-7ae90f58 {
+  padding: 10rpx 100rpx;
+  border-radius: 6rpx;
+  color: #FFFFFF;
+  font-weight: 500;
+  background-color: #5A9BEC;
+}
+.mask .mask-content .mask-content-input.data-v-7ae90f58 {
+  width: 718rpx;
+  padding: 10rpx 16rpx 20rpx;
+}
+.mask .mask-content .mask-content-input .textarea.data-v-7ae90f58 {
+  height: 100px;
+  width: 686rpx;
+  padding: 16rpx;
+  border: 2rpx solid #d5d5d6;
+  border-radius: 8rpx;
+}
+.mask.none.data-v-7ae90f58 {
+  display: none;
+}
+.mask.show.data-v-7ae90f58 {
+  background: rgba(0, 0, 0, 0.4);
+}
+.mask.show .mask-content.data-v-7ae90f58 {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
