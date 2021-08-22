@@ -64,7 +64,7 @@
 					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesB/landContract/landContract" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[2]}}</text>
 						</view>
@@ -74,7 +74,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 					<view class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[3]}}</text>
@@ -184,7 +184,7 @@
 			</view>
 			<view class="index-polling-content">
 				<view class="index-polling-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesB/maintenanceCenter/maintenanceCenter" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[10]}}</text>
 						</view>
@@ -194,7 +194,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[10]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 				</view>
 			</view>
 		</view>

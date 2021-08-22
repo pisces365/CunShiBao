@@ -1,8 +1,21 @@
 
 .topImage {
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: flex;
-	width: 750rpx;
+		border-radius: 40rpx;
+		margin:30rpx;
+		margin-bottom: 0;
+		display: block;	
+		width: 690rpx;
+}
+.top {
+		 box-shadow: 0rpx 10rpx 30rpx #dcdddc;
+		 background-color: white;
+		 z-index: 100; 
+		 float: left; 
+		 width: 100%; 
+		 position: fixed;
+}
+page {
+		min-height: 100%;
+		background-color: #f3f2f2;
 }
 

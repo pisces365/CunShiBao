@@ -1,10 +1,13 @@
 <!-- 政策解读的主页 -->
 <template>
 	<view>
-		<view>
-			<image class="topImage" src="http://b1137.bvimg.com/10453/1ac06e8ac644d104.png" mode="widthFix"></image>
+		<view class="top">		
+			<view>
+				<image class="topImage" src="http://b1137.bvimg.com/10453/1ac06e8ac644d104.png" mode="widthFix"></image>
+			</view>
+			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>
-		<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
+		<view style="height: 420rpx;"></view>
 		<information v-show="getTitle0()" :info="latestPolicy"></information> 
 		<information v-show="getTitle1()" :info="expertInterpretation"></information> 
 	</view>
@@ -40,7 +43,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					},
 					{ 
 						title:"国务院全民健身",
@@ -48,7 +51,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					}
 				],
 					   
@@ -59,7 +62,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					},
 					{ 
 						title:"创业是更加积极的就业",
@@ -67,7 +70,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					}
 				],	   
 			}
@@ -93,8 +96,5 @@
 </script>
 
 <style>
-	.topImage {
-		display: flex;
-		width: 750rpx;
-	}
+	@import url("../../../common/common_layout.css");
 </style>

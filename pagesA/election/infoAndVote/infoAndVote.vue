@@ -1,10 +1,13 @@
 <!-- 换届选举的主页 -->
 <template>
 	<view>
-		<view>
-			<image class="topImage" src="http://p1362.bvimg.com/10465/5981e6676b65372d.png" mode="widthFix"></image>
+		<view class="top">
+			<view>
+				<image class="topImage" src="http://p1362.bvimg.com/10465/5981e6676b65372d.png" mode="widthFix"></image>
+			</view>
+			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>
-		<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
+		<view style="height: 420rpx;"></view>
 		<information v-show="getTitle0()" :info="latestInfo"></information> 
 		<personalProfile v-show="getTitle1()" :person="person"></personalProfile> 
 	</view>
@@ -42,7 +45,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../../policy/policyDetails/policyDetails"
 					},
 					{ 
 						title:"大地乡多搓并举做好村级换届选举工作",
@@ -50,7 +53,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../../policy/policyDetails/policyDetails"
 					}
 				],
 					   
@@ -102,9 +105,10 @@
 </script>
 
 <style>
-	.topImage {
-		display: flex;
-		width: 750rpx;
+	@import url("../../../common/common_layout.css"); 
+	page {
+		min-height: 100%;
+		background-color: #f3f2f2;
 	}
 </style>
 

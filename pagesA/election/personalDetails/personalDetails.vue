@@ -102,7 +102,7 @@
 	.float-back {
 		float: left;
 		z-index: 100;
-		position: absolute;
+		position: fixed;
 		left: 0;
 		right: 0;
 		top: 0;
