@@ -1,5 +1,13 @@
 {
+<<<<<<< HEAD
   "navigationBarTitleText": "我要报修",
+=======
+<<<<<<< HEAD:unpackage/dist/dev/mp-weixin/pages/test/test.json
+  "navigationBarTitleText": "测试",
+=======
+  "navigationBarTitleText": "",
+>>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e:unpackage/dist/dev/mp-weixin/componentB/maintenanceCenter/iWannaRepair/iWannaRepair.json
+>>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
   "enablePullDownRefresh": false,
   "usingComponents": {}
 }

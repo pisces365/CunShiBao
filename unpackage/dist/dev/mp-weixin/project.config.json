@@ -27,6 +27,7 @@
       "current": 0,
       "list": [
         {
+<<<<<<< HEAD
           "name": "测试",
           "id": 0,
           "pathName": "pages/test/test"
@@ -35,6 +36,16 @@
           "name": "文章内容",
           "id": 1,
           "pathName": "pagesA/policy/policyDetails/policyDetails"
+=======
+          "name": "文章内容",
+          "id": 0,
+          "pathName": "pagesA/policy/policyDetails/policyDetails"
+        },
+        {
+          "name": "测试",
+          "id": 1,
+          "pathName": "pages/test/test"
+>>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
         }
       ]
     }

@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "navigationBarTitleText": "工单介绍",
+=======
+  "navigationBarTitleText": "",
+>>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
   "enablePullDownRefresh": false,
   "usingComponents": {}
 }
