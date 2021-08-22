@@ -11,6 +11,48 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-qipao:before {
+  content: "\e622";
+}
+.icon-men:before {
+  content: "\e627";
+}
+.icon-didian:before {
+  content: "\ec8b";
+}
+.icon-biaoqian:before {
+  content: "\e610";
+}
+.icon-xiangji1:before {
+  content: "\e616";
+}
+.icon-wenjian:before {
+  content: "\e613";
+}
+.icon-FontAwesomeidcardsolid:before {
+  content: "\ea10";
+}
+.icon-dianhua1:before {
+  content: "\efe5";
+}
+.icon-chazi1:before {
+  content: "\e668";
+}
+.icon-hao:before {
+  content: "\e60f";
+}
+.icon-position:before {
+  content: "\e60e";
+}
+.icon-zhuanfa:before {
+  content: "\e60c";
+}
+.icon-pinglun1:before {
+  content: "\e651";
+}
+.icon-shoucang11:before {
+  content: "\e629";
+}
 .icon-dianzan4:before {
   content: "\e621";
 }

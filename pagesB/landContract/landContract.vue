@@ -64,7 +64,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../../pagesA/policy/policyDetails/policyDetails"
 					},
 					{ 
 						title:"土地出租信息2",
@@ -72,7 +72,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../../pagesA/policy/policyDetails/policyDetails"
 					}
 				],	   
 			}

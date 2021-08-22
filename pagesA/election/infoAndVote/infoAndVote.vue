@@ -45,7 +45,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../../policy/policyDetails/policyDetails"
 					},
 					{ 
 						title:"大地乡多搓并举做好村级换届选举工作",
@@ -53,7 +53,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../../policy/policyDetails/policyDetails"
 					}
 				],
 					   

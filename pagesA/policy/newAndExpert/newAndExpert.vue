@@ -43,7 +43,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					},
 					{ 
 						title:"国务院全民健身",
@@ -51,7 +51,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					}
 				],
 					   
@@ -62,7 +62,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					},
 					{ 
 						title:"创业是更加积极的就业",
@@ -70,7 +70,7 @@
 						date:"9"+"月"+"24"+"日",
 						reading:"13.5"+"万",
 						like:"105",
-						url:"https://www.baidu.com"
+						url:"../policyDetails/policyDetails"
 					}
 				],	   
 			}

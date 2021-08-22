@@ -237,7 +237,7 @@
 					minute = '00';
 				}
 				else {
-					if(type == 'load' && date.getHours() < '17')
+					if(type == 'load' && date.getHours() >= 9 && date.getHours() < '17')
 					{
 						hour = date.getHours();
 						// let min = new Date().getMinutes();
@@ -248,9 +248,9 @@
 						hour = hour > 9 ? hour : '0' + hour;
 						minute = minute > 9 ? minute : '0' + minute;
 					}
-					else if(currentDate === this.date && date.getHours() < '17')
+					else if(currentDate === this.date && date.getHours() >= 9 && date.getHours() < '17')
 					{
-						hour = date.getHours();
+						hour = date.getHours(); 
 						// let min = new Date().getMinutes();
 						// minute = 15-(min%15) + min;
 						minute = date.getMinutes();

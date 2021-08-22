@@ -1,95 +1,238 @@
-<template>
-	<button @click="goLogin" class="bottom-btn" type="primary">登入</button>
+<!-- <template>
+	<view class="content" @click="inputContent()">
+		<view class="input-text" id="input-text" :style="{top:ifClicked?'100vh':'0vh'}">
+			<view class="input-text-top">
+				<view class="cancel">
+					取消
+				</view>
+				<view class="publishContent">
+					发送
+				</view>
+			</view>
+			<view class="input-text-bottom">
+				<textarea value="" placeholder='好观点将会被优先展示' />
+			</view>
+		</view>
+	</view>
+
 </template>
 
-
 <script>
-	import {
-		mapMutations
-	} from 'vuex'
 	export default {
+
 		data() {
 			return {
-				code: "",
-				SessionKey: '',
-				encryptedData: "",
-				iv: "",
-				OpenId: '',
-				nickName: null,
-				gender: 0,
-				avatarUrl: null,
-				isCanUse: uni.getStorageSync('isCanUse') //默认为true  记录当前用户是否是第一次授权使用的
+				ifClicked: true,
+				Keyboard: 0, // 键盘高度
 			}
 		},
+		onLoad() {},
 		methods: {
-			goLogin() {
-				//判断缓存中是否有用户数据，没有则获取
-				if (!uni.getStorageSync('encryptedData')) {
-					uni.getUserProfile({
-						desc: '获取你的名称、头像、地区',
-						success: infoRes => {
-							if (infoRes.errMsg === 'getUserProfile:ok') {
-								// 获取到的当前数据存入缓存
-								console.log(infoRes)
-								uni.setStorageSync('encryptedData', infoRes.encryptedData);
-								uni.setStorageSync('iv', infoRes.iv);
-								uni.setStorageSync('rawData', infoRes.rawData);
-								uni.setStorageSync('signature', infoRes.signature);
-								uni.setStorageSync('securityStatus', 1);
-								// 选择版本
-								uni.navigateTo({
-									url: "../index/index"
-								});
-							} else {
-								uni.showToast({
-									title: '授权失败',
-									icon: 'error'
-								});
-							}
-						},
-						fail: err => {
-							console.log('userInfo-err', JSON.stringify(err));
-						}
-					});
-				} else {
-					uni.navigateTo({
-						url: "../index/index"
-					});
-				}
+			inputContent() {
+				this.ifClicked = false
 			}
 		}
 	}
 </script>
 
 <style>
-	.header {
-		margin: 90rpx 0 90rpx 50rpx;
-		border-bottom: 1px solid #ccc;
-		text-align: center;
-		width: 650rpx;
-		height: 300rpx;
-		line-height: 450rpx;
-	}
-
-	.header image {
-		width: 200rpx;
-		height: 200rpx;
-	}
-
 	.content {
-		margin-left: 50rpx;
-		margin-bottom: 90rpx;
+		height: 100vh;
+		width: 100vw;
 	}
 
-	.content text {
-		display: block;
-		color: #9d9d9d;
-		margin-top: 40rpx;
+	.input-text {
+		width: 100%;
+		height: 150rpx;
+		position: absolute;
 	}
 
-	.bottom {
-		border-radius: 80rpx;
-		margin: 70rpx 50rpx;
-		font-size: 35rpx;
+	.input-text-top {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		width: 100%;
+		height: 60rpx;
+		position: relative;
+		color: #dadada;
+	}
+
+	.publishContent {
+		width: 100rpx;
+		position: absolute;
+		right: 0rpx;
+	}
+
+	.cancel {
+		margin-left: 40rpx;
+		width: 100rpx;
+	}
+
+	.input-text-bottom {
+		margin: 8rpx 40rpx;
+		padding: 8rpx 10rpx;
+		height: 110rpx;
+		background: #f0f0f0;
+	}
+
+	.textarea {
+		height: 110rpx;
+		width: 100%;
+	}
+</style>
+ -->
+<template class="comment-page">
+	<div class="comment-component">
+		<div class="comment-write" :style="{bottom: inputWrapHeight}">
+			<div class="comment-input">
+				<textarea :maxlength="maxlength" placeholder-style="color:#9796A9" :placeholder="`评论一下…`"
+					@focus="inputFocus" @keyboardheightchange="keyboardheightchange" @blur="inputBlur"
+					hold-keyboard="true" auto-blur="true" adjust-position="false" show-confirm-bar="false"
+					ref="inputRef" fixed="true" :focus="focus" :disabled="disabled" @input="inputChange" />
+			</div>
+			<div class="comment-send">
+				<span class="content-num">剩余{{ calcNums }}字</span>
+				<div class="send-btn" @click="sendComment">发送</div>
+			</div>
+		</div>
+	</div>
+</template>
+<script>
+	export default {
+		data() {
+			return {
+				maxlength: 100,
+				focus: false,
+				inputWrapHeight: '0px',
+				disabled: false,
+				calcNums: 100,
+				platform: 'android',
+				systemInfo: {},
+				Keyboard: 0, // 键盘高度
+				targetNode: null,
+				machineHeight: 0
+			};
+		},
+		methods: {
+			inputChange(e) {
+				if (!e.detail) return;
+				this.calcNums = this.maxlength - e.detail.value.length;
+			},
+			sendComment() {
+				this.focus = false;
+			},
+			inputFocus(e) {
+				let that = this;
+				let {
+					screenHeight,
+					screenWidth,
+					statusBarHeight,
+					windowHeight
+				} = this.systemInfo;
+				this.machineHeight = screenHeight - windowHeight; // 虚位高度
+				let dp = screenWidth / screenHeight;
+				if (e) {
+					let {
+						height
+					} = e.detail; // 获取键盘高度
+					if (height) this.inputWrapHeight = `${(height) * dp}px`;
+				}
+			},
+			inputBlur() {
+				this.inputWrapHeight = 0;
+			},
+
+			keyboardheightchange(e) {
+				console.log(e);
+			},
+
+			show() {},
+			hide() {},
+			calcMaskHeight() {
+				let that = this;
+				let targetNode = uni.createSelectorQuery().select('.comment-component'); // 获取某个元素
+				targetNode
+					.boundingClientRect(function(data) {
+						// console.log(data.height.toFixed(2)); // 获取元素宽度
+						that.inputWrapHeight = data.height;
+					})
+					.exec();
+			}
+		},
+		mounted() {
+			let that = this;
+			// this.calcMaskHeight();
+
+			const info = wx.getSystemInfoSync();
+			console.log(info);
+			if (info) this.platform = info.platform;
+			this.systemInfo = info;
+		}
+	};
+</script>
+<style lang="scss" scoped>
+	.comment-component {
+		font-family: PingFang-SC-Regular, PingFang-SC;
+		background: transparent;
+		background: rgba(0, 0, 0, 0.8);
+		z-index: 99999;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		.comment-write {
+			position: absolute;
+			bottom: 0;
+			width: 100vw;
+			height: 100px;
+			background: #fff;
+			display: flex;
+			flex-direction: column;
+
+			.comment-input {
+				// width: 335px;
+				width: calc(100% - 40px);
+				height: 40px;
+				background: #f7f8fa;
+				margin: 15px auto;
+
+				textarea {
+					width: 100%;
+					height: 100%;
+					padding: 10px;
+					font-size: 14px;
+					font-weight: 400;
+					color: #333;
+				}
+			}
+
+			.comment-send {
+				padding: 0 20px;
+				height: 60px;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+
+				.content-num {
+					font-size: 12px;
+					font-weight: 400;
+					color: #b4b2c0;
+				}
+
+				.send-btn {
+					cursor: pointer;
+					width: 65px;
+					height: 30px;
+					background: #000000;
+					border-radius: 2px;
+					font-size: 14px;
+					font-weight: 400;
+					color: #ffffff;
+				}
+			}
+		}
 	}
 </style>
