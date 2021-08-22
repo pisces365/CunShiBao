@@ -36,7 +36,6 @@
 		}, {
 			"path": "pages/test/test",
 			"style": {
-<<<<<<< HEAD
 				"navigationBarTitleText": "测试",
 				"enablePullDownRefresh": false
 			}
@@ -51,13 +50,10 @@
 		}, {
 			"path": "componentB/landContract/contractPublicity/contractPublicity",
 			"style": {
-=======
->>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
 
-<<<<<<< HEAD
 		}, {
 			"path": "pagesB/maintenanceCenter/maintenanceCenter",
 			"style": {
@@ -96,74 +92,6 @@
 		}
 
 	],
-=======
-		}
-	    ,{
-            "path" : "pagesB/landContract/landContract",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "土地承包",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/landContract/contractPublicity/contractPublicity",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pagesB/maintenanceCenter/maintenanceCenter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "维修中心",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pagesB/maintenanceDetails/maintenanceDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "维修详情",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-		
-    ],
->>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
 	"subPackages": [{
 		"root": "pagesA",
 		"pages": [{
@@ -233,7 +161,6 @@
 	"condition": { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式（list 的索引项）
 		"list": [{
-<<<<<<< HEAD
 				"name": "测试",
 				"path": "pages/test/test"
 			}, {
@@ -242,14 +169,5 @@
 			}
 
 		]
-=======
-			"name": "文章内容",
-			"path": "pagesA/policy/policyDetails/policyDetails"
-		},
-			{
-				"name": "测试",
-				"path": "pages/test/test"
-			}]
->>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
 	}
 }

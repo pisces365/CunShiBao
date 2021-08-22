@@ -39,7 +39,7 @@
   position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 100px;
+  height: 160rpx;
   background: #fff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -50,22 +50,22 @@
           flex-direction: column;
 }
 .comment-component .comment-write .comment-input.data-v-3e202046 {
-  width: calc(100% - 40px);
-  height: 40px;
+  width: calc(100% - 80rpx);
+  height: 80rpx;
   background: #f7f8fa;
-  margin: 15px auto;
+  margin: 30rpx auto;
 }
 .comment-component .comment-write .comment-input textarea.data-v-3e202046 {
   width: 100%;
   height: 100%;
-  padding: 10px;
-  font-size: 14px;
+  padding: 10rpx;
+  font-size: 14rpx;
   font-weight: 400;
   color: #333;
 }
 .comment-component .comment-write .comment-send.data-v-3e202046 {
-  padding: 0 20px;
-  height: 60px;
+  padding: 0 20rpx;
+  height: 60rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -81,17 +81,17 @@
           align-items: center;
 }
 .comment-component .comment-write .comment-send .content-num.data-v-3e202046 {
-  font-size: 12px;
+  font-size: 12rpx;
   font-weight: 400;
   color: #b4b2c0;
 }
 .comment-component .comment-write .comment-send .send-btn.data-v-3e202046 {
   cursor: pointer;
-  width: 65px;
-  height: 30px;
+  width: 65rpx;
+  height: 30rpx;
   background: #000000;
-  border-radius: 2px;
-  font-size: 14px;
+  border-radius: 2rpx;
+  font-size: 14rpx;
   font-weight: 400;
   color: #ffffff;
 }

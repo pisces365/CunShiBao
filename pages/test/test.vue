@@ -103,7 +103,7 @@
 			return {
 				maxlength: 100,
 				focus: false,
-				inputWrapHeight: '0px',
+				inputWrapHeight: '0rpx',
 				disabled: false,
 				calcNums: 100,
 				platform: 'android',
@@ -135,7 +135,7 @@
 					let {
 						height
 					} = e.detail; // 获取键盘高度
-					if (height) this.inputWrapHeight = `${(height) * dp}px`;
+					if (height) this.inputWrapHeight = `${(height) * dp}rpx`;
 				}
 			},
 			inputBlur() {
@@ -186,49 +186,49 @@
 			position: absolute;
 			bottom: 0;
 			width: 100vw;
-			height: 100px;
+			height: 160rpx;
 			background: #fff;
 			display: flex;
 			flex-direction: column;
 
 			.comment-input {
-				// width: 335px;
-				width: calc(100% - 40px);
-				height: 40px;
+				// width: 335rpx;
+				width: calc(100% - 80rpx);
+				height: 80rpx;
 				background: #f7f8fa;
-				margin: 15px auto;
+				margin: 30rpx auto;
 
 				textarea {
 					width: 100%;
 					height: 100%;
-					padding: 10px;
-					font-size: 14px;
+					padding: 10rpx;
+					font-size: 14rpx;
 					font-weight: 400;
 					color: #333;
 				}
 			}
 
 			.comment-send {
-				padding: 0 20px;
-				height: 60px;
+				padding: 0 20rpx;
+				height: 60rpx;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
 
 				.content-num {
-					font-size: 12px;
+					font-size: 12rpx;
 					font-weight: 400;
 					color: #b4b2c0;
 				}
 
 				.send-btn {
 					cursor: pointer;
-					width: 65px;
-					height: 30px;
+					width: 65rpx;
+					height: 30rpx;
 					background: #000000;
-					border-radius: 2px;
-					font-size: 14px;
+					border-radius: 2rpx;
+					font-size: 14rpx;
 					font-weight: 400;
 					color: #ffffff;
 				}
