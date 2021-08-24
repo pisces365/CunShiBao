@@ -5,70 +5,96 @@
 				<image class="topImage" src="http://p1362.bvimg.com/10465/b9c3700c55d6549a.png" mode="widthFix"></image>
 			</view>
 			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
+			<view class="IWanna-write-noshow" @click="backToMyLetter"></view>
 		</view>
 		<view style="height: 420rpx;margin-bottom: 10rpx;"></view>
 		<information v-show="getTitle0()" :info="EmailOutline"></information>
 		<view class="IWanna-write" v-show="getTitle1()">
-			<view class="IWanna-write-ifOpen">
-				<view class="IWanna-write-ifOpen-left">
-					<image v-if="ifOpened==true" src="http://p1362.bvimg.com/10465/39ea698296ea4db0.png" mode="">
-					</image>
-					<image v-else src="http://p1362.bvimg.com/10465/f1313d8804ca1e09.png" mode=""></image>
-					<text>是否公开</text>
-				</view>
-				<view class="IWanna-write-ifOpen-right">
-					<text>公开</text>
-					<radio class="radio" value="1" :checked="ifOpened==='1'" color="#FE7837" @click="changeIfOpen('1')">
-					</radio>
-					<text>不公开</text>
-					<radio class="radio" value="2" :checked="ifOpened==='2'" color="#FE7837" @click="changeIfOpen('2')">
-					</radio>
+			<view class="IWanna-write-myLetter" v-if="!ifClickWriting" @click="clickMail">
+				<MyLetter :info="LetterOfMine"></MyLetter>
+				<view class="IWanna-write-myLetter-click">
+					<text class="iconfont icon-shuxin"></text>
+					<view class="IWanna-write-myLetter-click-text">我要写信</view>
 				</view>
 			</view>
-			<view class="cross-line"></view>
-			<view class="IWanna-write-ifAnonymity">
-				<view class="IWanna-write-ifAnonymity-top">
-					<view class="IWanna-write-ifAnonymity-left">
-						<image src="http://p1362.bvimg.com/10465/a910089553e1af85.png" mode="">
+			<view class="IWanna-write-WriteLetter" v-if="ifClickWriting">
+				<view class="IWanna-write-ifOpen">
+					<view class="IWanna-write-ifOpen-left">
+						<image v-if="ifOpened==true" src="http://p1362.bvimg.com/10465/39ea698296ea4db0.png" mode="">
 						</image>
-						<text>是否匿名</text>
+						<image v-else src="http://p1362.bvimg.com/10465/f1313d8804ca1e09.png" mode=""></image>
+						<text>是否公开</text>
 					</view>
-					<view class="IWanna-write-ifAnonymity-right">
-						<text>匿名</text>
-						<radio class="radio" value="1" :checked="ifAnonymity==='1'" color="#FE7837"
-							@click="changeIfAnonymity('1')">
+					<view class="IWanna-write-ifOpen-right">
+						<text>公开</text>
+						<radio class="radio" value="1" :checked="ifOpened==='1'" color="#FE7837"
+							@click="changeIfOpen('1')">
 						</radio>
-						<text>不匿名</text>
-						<radio class="radio" value="2" :checked="ifAnonymity==='2'" color="#FE7837"
-							@click="changeIfAnonymity('2')">
+						<text>不公开</text>
+						<radio class="radio" value="2" :checked="ifOpened==='2'" color="#FE7837"
+							@click="changeIfOpen('2')">
 						</radio>
 					</view>
 				</view>
-				<view class="IWanna-write-ifAnonymity-bottom">
-					<view class="IWanna-write-linkman" v-if="ifAnonymity=='2'">
-						联系人姓名： 
-						<input type="text" value="" placeholder="请填写您的姓名" maxlength="7" style="color: #606160;" />
+				<view class="cross-line"></view>
+				<view class="IWanna-write-ifAnonymity">
+					<view class="IWanna-write-ifAnonymity-top">
+						<view class="IWanna-write-ifAnonymity-left">
+							<image src="http://p1362.bvimg.com/10465/a910089553e1af85.png" mode="">
+							</image>
+							<text>是否匿名</text>
+						</view>
+						<view class="IWanna-write-ifAnonymity-right">
+							<text>匿名</text>
+							<radio class="radio" value="1" :checked="ifAnonymity==='1'" color="#FE7837"
+								@click="changeIfAnonymity('1')">
+							</radio>
+							<text>不匿名</text>
+							<radio class="radio" value="2" :checked="ifAnonymity==='2'" color="#FE7837"
+								@click="changeIfAnonymity('2')">
+							</radio>
+						</view>
 					</view>
-					<view class="IWanna-write-phone" v-if="ifAnonymity=='2'">
-						联系人电话：
-						<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11" style="color: #606160;" />
+					<view class="IWanna-write-ifAnonymity-bottom">
+						<view class="IWanna-write-linkman" v-if="ifAnonymity=='2'">
+							联系人姓名：
+							<input type="text" value="" placeholder="请填写您的姓名" maxlength="7" style="color: #606160;" />
+						</view>
+						<view class="IWanna-write-phone" v-if="ifAnonymity=='2'">
+							联系人电话：
+							<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11"
+								style="color: #606160;" />
+						</view>
 					</view>
 				</view>
-			</view>
 
-			<view class="cross-line"></view>
-			<view class="IWanna-write-letter">
-				<view class="IWanna-write-letter-title">
-					<image src="http://p1362.bvimg.com/10465/88eba4332b79c8b8.png" mode="">
-					</image>
-					<text>信件内容</text>
+				<view class="cross-line"></view>
+				<view class="IWanna-write-letter">
+					<view class="IWanna-write-letter-title">
+						<image src="http://p1362.bvimg.com/10465/88eba4332b79c8b8.png" mode="">
+						</image>
+						<text>信件内容</text>
+					</view>
+					<view class="IWanna-write-letter-headline">
+						<input type="text" value="" placeholder="标题" v-model="ArticleTitle" />
+						<view class="cross-line">
+
+						</view>
+					</view>
+					<view class="IWanna-write-letter-content">
+						<textarea @input="inputTextArea" v-model="ArticleBody" placeholder="请输入您的信件内容"
+							:maxlength="MaxLen" />
+						<view class="IWanna-write-letter-NumberTip">
+							{{existingNumber}}/{{MaxLen}}
+						</view>
+					</view>
 				</view>
-				<view class="IWanna-write-letter-content">
-					<textarea value="" placeholder="请输入您的信件内容" />
+				<view class="IWanna-write-submit">
+					<view class="IWanna-write-letter-content-back" @click="clickBackToMyLetter">
+						<text class="iconfont icon-zuojiantou">返回</text>
+					</view>
+					<button type="default" @click="submitMail">提交信件</button>
 				</view>
-			</view>
-			<view class="IWanna-write-submit">
-				<button type="default" @click="submitMail">提交信件</button>
 			</view>
 		</view>
 	</view>
@@ -77,16 +103,23 @@
 <script>
 	import navigation from '@/component/policyInterpretation/navigation/navigation.vue'
 	import information from '@/component/policyInterpretation/information/information.vue'
+	import MyLetter from '@/component/policyInterpretation/information/information_noLike.vue'
 	export default {
 		components: {
 			navigation,
-			information
+			information,
+			MyLetter
 		},
 		data() {
 			return {
 				ifOpened: '1',
 				ifAnonymity: '1',
+				ifClickWriting: false,
 				opened: 'letterOpened',
+				existingNumber: 0, //备注当前字数
+				MaxLen: 800, //备注最多字数 
+				ArticleBody: "", //正文内容
+				ArticleTitle: "", //正文标题
 				titles: [{
 						id: 0,
 						name: "信件公示",
@@ -94,7 +127,7 @@
 					},
 					{
 						id: 1,
-						name: "我要写信",
+						name: "我的信件",
 						isActive: false
 					}
 				],
@@ -107,7 +140,43 @@
 						like: "6,318",
 						url: "../../News?newsID=9"
 					}
-				]
+				],
+				LetterOfMine: [{
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}, {
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}, {
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}, {
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}, {
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}, {
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}, {
+					title: "村长爷爷，您好！",
+					source: "村事宝",
+					date: "2021 年08 月 24 日",
+					url: "../../News?newsID=9"
+				}]
 			}
 		},
 		methods: {
@@ -130,25 +199,48 @@
 				this.ifAnonymity = e;
 			},
 			submitMail() {
-				
+				let that = this;
 				uni.showModal({
 					title: '提示',
 					content: '您确定要提交信件给村长书记吗',
 					success: function(res) {
 						if (res.confirm) {
 							console.log('用户点击确定');
+							that.ArticleBody = '';
+							that.ArticleTitle = '';
+							that.existingNumber = 0;
+							uni.showToast({
+								title: '寄信成功',
+								duration: 1000
+							});
+							//延迟1秒回到我的信箱
+							setTimeout(that.clickBackToMyLetter, 1000)
 						} else if (res.cancel) {
 							console.log('用户点击取消');
 						}
 					}
 				});
-				
-			}
+
+			},
+			clickMail() {
+				this.ifClickWriting = true;
+			},
+			clickBackToMyLetter() {
+				this.ifClickWriting = false;
+				console.log(this.ifClickWriting)
+			},
+			//字数改变触发事件 
+			inputTextArea(e) {
+				this.ArticleBody = e.detail.value;
+				this.existingNumber = this.MaxLen - e.detail.value.length;
+			},
 		}
 	}
 </script>
 
 <style>
+	@import url("../../../common/iconfont.css");
+
 	.topImage {
 		width: 100%;
 		height: 100%;
@@ -193,10 +285,7 @@
 	}
 
 	.IWanna-write-letter {
-		margin-top: 10rpx;
-		margin-left: 30rpx;
-		height: 700rpx;
-		width: 100%;
+		margin: 10rpx 30rpx 10rpx 30rpx;
 	}
 
 	.IWanna-write-ifOpen-left,
@@ -246,23 +335,52 @@
 
 	.IWanna-write-letter-content {
 		margin: 20rpx 10rpx;
-		height: 700rpx;
+		height: 600rpx;
+		-moz-box-shadow: inset 0 0 10px #CCC;
+		-webkit-box-shadow: inset 0 0 10px #CCC;
+		box-shadow: inset 0 0 10px #CCC;
+		position: relative;
+	}
+
+	.IWanna-write-letter-NumberTip {
+		position: absolute;
+		bottom: 4rpx;
+		right: 4rpx;
+		font-size: 28rpx;
+		color: #C2C3C2;
+	}
+
+	.IWanna-write-letter-content textarea {
+		padding: 10rpx;
+		height: 550rpx;
+		width: 100%;
+		color: #333333;
 	}
 
 	.IWanna-write-submit {
 		margin: 10rpx;
-		width: 100%;
-		height: 80rpx;
+		margin-top: 130rpx;
+		margin-bottom: 80rpx;
+		height: 120rpx;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		position: relative;
+	}
+
+	.IWanna-write-letter-content-back {
+		font-size: 40rpx;
+		text-align: center;
+		position: absolute;
+		left: 20rpx;
+		bottom: 20rpx;
 	}
 
 	.IWanna-write-submit button {
-		width: 300rpx;
-		height: 70rpx;
+		width: 320rpx;
+		height: 80rpx;
 		background-color: #4ECF68;
-		border-radius: 30rpx;
+		border-radius: 80rpx;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -276,5 +394,36 @@
 		flex-direction: row;
 		margin: 34rpx 40rpx;
 		font-size: 30rpx;
+	}
+
+	.IWanna-write-myLetter-click {
+		width: 200rpx;
+		height: 200rpx;
+		position: fixed;
+		right: 6px;
+		bottom: 30px;
+		display: flex;
+		flex-direction: column;
+		justify-items: center;
+		align-items: center;
+	}
+
+	.IWanna-write-myLetter-click text {
+		font-size: 80rpx;
+		font-weight: 600;
+		color: #ea9400;
+	}
+
+	.IWanna-write-myLetter-click-text {
+		margin-top: 6rpx;
+		font-size: 28rpx;
+		color: #737473;
+	}
+
+	.IWanna-write-letter-headline input {
+		text-align: center;
+		font-size: 36rpx;
+		color: #3F3F3F;
+		font-weight: 500;
 	}
 </style>

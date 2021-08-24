@@ -141,7 +141,34 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 135));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 135));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MyLetter = function MyLetter() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information_noLike */ "component/policyInterpretation/information/information_noLike").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information_noLike.vue */ 214));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,13 +250,19 @@ __webpack_require__.r(__webpack_exports__);
 {
   components: {
     navigation: navigation,
-    information: information },
+    information: information,
+    MyLetter: MyLetter },
 
   data: function data() {
     return {
       ifOpened: '1',
       ifAnonymity: '1',
+      ifClickWriting: false,
       opened: 'letterOpened',
+      existingNumber: 0, //备注当前字数
+      MaxLen: 800, //备注最多字数 
+      ArticleBody: "", //正文内容
+      ArticleTitle: "", //正文标题
       titles: [{
         id: 0,
         name: "信件公示",
@@ -237,7 +270,7 @@ __webpack_require__.r(__webpack_exports__);
 
       {
         id: 1,
-        name: "我要写信",
+        name: "我的信件",
         isActive: false }],
 
 
@@ -248,8 +281,44 @@ __webpack_require__.r(__webpack_exports__);
         date: "2021 年08 月 24 日",
         reading: "14,603",
         like: "6,318",
-        url: "../../News?newsID=9" }] };
+        url: "../../News?newsID=9" }],
 
+
+      LetterOfMine: [{
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" },
+      {
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" },
+      {
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" },
+      {
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" },
+      {
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" },
+      {
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" },
+      {
+        title: "村长爷爷，您好！",
+        source: "村事宝",
+        date: "2021 年08 月 24 日",
+        url: "../../News?newsID=9" }] };
 
 
   },
@@ -273,19 +342,40 @@ __webpack_require__.r(__webpack_exports__);
       this.ifAnonymity = e;
     },
     submitMail: function submitMail() {
-
+      var that = this;
       uni.showModal({
         title: '提示',
         content: '您确定要提交信件给村长书记吗',
         success: function success(res) {
           if (res.confirm) {
             console.log('用户点击确定');
+            that.ArticleBody = '';
+            that.ArticleTitle = '';
+            that.existingNumber = 0;
+            uni.showToast({
+              title: '寄信成功',
+              duration: 1000 });
+
+            //延迟1秒回到我的信箱
+            setTimeout(that.clickBackToMyLetter, 1000);
           } else if (res.cancel) {
             console.log('用户点击取消');
           }
         } });
 
 
+    },
+    clickMail: function clickMail() {
+      this.ifClickWriting = true;
+    },
+    clickBackToMyLetter: function clickBackToMyLetter() {
+      this.ifClickWriting = false;
+      console.log(this.ifClickWriting);
+    },
+    //字数改变触发事件 
+    inputTextArea: function inputTextArea(e) {
+      this.ArticleBody = e.detail.value;
+      this.existingNumber = this.MaxLen - e.detail.value.length;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

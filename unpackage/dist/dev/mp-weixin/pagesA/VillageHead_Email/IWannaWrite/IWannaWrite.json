@@ -3,6 +3,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "navigation": "/component/policyInterpretation/navigation/navigation",
-    "information": "/component/policyInterpretation/information/information"
+    "information": "/component/policyInterpretation/information/information",
+    "my-letter": "/component/policyInterpretation/information/information_noLike"
   }
 }
