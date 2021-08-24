@@ -69,7 +69,6 @@
 							<view class="viewpoint-bottom-content">
 								{{item.content}}
 							</view>
-							<ygc-comment ref="ygcComment" :placeholder="'发布评论'" @pubComment="pubComment"></ygc-comment>
 							<view class="viewpoint-bottom-timeAndReply">
 								<text>{{item.TimeToRelease}}</text>
 								<text>·</text>
@@ -93,27 +92,33 @@
 									</view>
 								</view>
 							</view>
-							<view class="viewpoint-bottom-reply" v-if="commentContent.length>0">
-								<view class="viewpoint-bottom-body">
-									<view class="viewpoint-bottom-body-left">
-										<image src="../../../static/image/user_default.png" mode=""></image>
-									</view>
-									<view class="viewpoint-bottom-body-right">
-										<view class="reply-name">
-											马晓峰
-										</view>
-										<view class="reply-content">
-											<text>{{commentContent}}</text>
-										</view>
-
-									</view>
-								</view>
+						</view>
+						<view class="cross-line"></view>
+					</view>
+				</view>
+				<view class="policy-viewpoint-content" v-if="commentContent.length>0">
+					<view class="policy-viewpoint-content-left">
+						<image src="../../../static/image/user_default.png" mode="aspectFit"></image>
+					</view>
+					<view class="policy-viewpoint-content-right">
+						<view class="viewpoint-top">
+							<view class="viewPoint-peopleName">
+								马晓峰
 							</view>
-
+							<view class="viewPoint-like">
+								<text>0</text>
+								<text class="iconfont icon-dianzan2"></text>
+							</view>
 						</view>
-						<view class="cross-line">
-
+						<view class="viewpoint-bottom">
+							<view class="viewpoint-bottom-content">
+								<text>{{commentContent}}</text>
+							</view>
+							<view class="viewpoint-bottom-timeAndReply">
+								<text>刚刚</text>
+							</view>
 						</view>
+						<view class="cross-line"></view>
 					</view>
 
 				</view>
@@ -123,7 +128,8 @@
 		<view class='footer'>
 			<view class="footer-container">
 				<view class="footer-sayYourWords" @click="ClikeInput()">
-					<input type="text" value="" :placeholder="ifClickInput==false?'欢迎发表你的观点':'好的观点将会优先展示'" />
+					<input type="text" v-model="inputContext" @input="inputData" focus
+						:placeholder="ifClickInput==false?'欢迎发表你的观点':'好的观点将会优先展示'" />
 				</view>
 				<view class="footer-iconChanged" v-if="ifClickInput===false">
 					<view class="footer-commit" @click="ToSpecifiedLocation()">
@@ -136,12 +142,12 @@
 						<text class="iconfont icon-zhuanfa footerIcon"></text>
 					</view>
 				</view>
-				<view class="footer-send" v-if="ifClickInput===true">
+				<view class="footer-send" v-if="ifClickInput===true" @click="publishedView">
 					<text>发布</text>
 				</view>
 			</view>
 		</view>
-		
+
 	</view>
 </template>
 
@@ -155,6 +161,7 @@
 		data() {
 			return {
 				commentContent: '',
+				inputContext: '',
 				ifClickInput: false,
 				doyoulike: 'false',
 				videoSrc: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317.mp4',
@@ -179,66 +186,68 @@
 				data_reading: '6548879',
 				data_like: '131952',
 				viewPoint: [{
-						IdBelongToArticle: 'D10000', //所属文章编号
-						viewpointId: 'D100001', //评论的编号
-						IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
-						peopleName: '周雪琼', //该评论发布者的名称
-						headPortraitUrl: 'http://p1362.bvimg.com/10465/f055218fcab03c86.jpg', //评论发布者的头像
-						content: "为人民过上健康幸福的生活而努力！", //评论的内容
-						likeNumber: "123456", //点赞的数量
-						TimeToRelease: '6小时', //现在距发布的时间间隔
-						replyNumber: '2', //回复的数量
-						reply: [{
-							IdBelongToArticle: 'D10000', //所属文章编号
-							viewpointId: 'D100004', //评论的编号
-							IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
-							peopleName: '陈婕定',
-							headPortraitUrl: 'http://p1362.bvimg.com/10465/07bce6259ac1e2b8.jpg',
-							content: "你说得对！",
-							likeNumber: "123",
-							TimeToRelease: '5小时',
-							replyNumber: '0', //回复的数量
-						}, {
-							IdBelongToArticle: 'D10000', //所属文章编号
-							viewpointId: 'D100004', //评论的编号
-							IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
-							peopleName: '刘康',
-							headPortraitUrl: 'http://p1362.bvimg.com/10465/54c1d2c3b9aee237.jpg',
-							content: "国家安康，人民幸福",
-							likeNumber: "321",
-							TimeToRelease: '2小时',
-							replyNumber: '0', //回复的数量
-						}]
-					},
-					{
-						IdBelongToArticle: 'D10000', //所属文章编号
-						viewpointId: 'D100002', //评论的编号
-						IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
-						peopleName: '马到成功',
-						content: "一个队伍经常是不大整齐的，所以就要常常喊看齐，向左看齐，向右看齐，向中看齐。我们要向中央基准看齐，向大会基准看齐。看齐是原则，有偏差是实际生活，有了偏差，就喊看齐",
-						likeNumber: "112345",
-						TimeToRelease: '4小时',
-						headPortraitUrl: 'http://p1362.bvimg.com/10465/a61cef977dc06b42.jpg',
-						replyNumber: '0', //回复的数量
-					},
-					{
-						IdBelongToArticle: 'D10000', //所属文章编号
-						viewpointId: 'D100003', //评论的编号
-						IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
-						peopleName: '吴干事',
-						content: "从古至今,医师的使命都是治病救人、救死扶伤。 把医师比作“白衣天使”,不仅蕴涵着人们对医师的期望和要求,也承载着社会赋予医师的神圣使命。 人类社会无论尊卑，都离不开医务人员的本职",
-						likeNumber: "98234",
-						TimeToRelease: '3小时',
-						headPortraitUrl: 'http://p1362.bvimg.com/10465/926e05346203527e.jpg',
-						replyNumber: '2', //回复的数量
-					}
-				]
+					IdBelongToArticle: 'D10000', //所属文章编号
+					viewpointId: 'D100001', //评论的编号
+					IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
+					peopleName: '周雪琼', //该评论发布者的名称
+					headPortraitUrl: 'http://p1362.bvimg.com/10465/f055218fcab03c86.jpg', //评论发布者的头像
+					content: "为人民过上健康幸福的生活而努力！", //评论的内容
+					likeNumber: "123456", //点赞的数量
+					TimeToRelease: '6小时', //现在距发布的时间间隔，
+					DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+					replyNumber: '2', //回复的数量
+				}, {
+					IdBelongToArticle: 'D10000', //所属文章编号
+					viewpointId: 'D100004', //评论的编号
+					IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
+					peopleName: '陈婕定',
+					headPortraitUrl: 'http://p1362.bvimg.com/10465/07bce6259ac1e2b8.jpg',
+					content: "你说得对！",
+					likeNumber: "123",
+					TimeToRelease: '5小时',
+					DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+					replyNumber: '0', //回复的数量
+				}, {
+					IdBelongToArticle: 'D10000', //所属文章编号
+					viewpointId: 'D100004', //评论的编号
+					IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
+					peopleName: '刘康',
+					headPortraitUrl: 'http://p1362.bvimg.com/10465/54c1d2c3b9aee237.jpg',
+					content: "国家安康，人民幸福",
+					likeNumber: "321",
+					TimeToRelease: '2小时',
+					DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+					replyNumber: '0', //回复的数量
+				}, {
+					IdBelongToArticle: 'D10000', //所属文章编号
+					viewpointId: 'D100002', //评论的编号
+					IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
+					peopleName: '马到成功',
+					content: "一个队伍经常是不大整齐的，所以就要常常喊看齐，向左看齐，向右看齐，向中看齐。我们要向中央基准看齐，向大会基准看齐。看齐是原则，有偏差是实际生活，有了偏差，就喊看齐",
+					likeNumber: "112345",
+					TimeToRelease: '4小时',
+					headPortraitUrl: 'http://p1362.bvimg.com/10465/a61cef977dc06b42.jpg',
+					DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+					replyNumber: '0', //回复的数量
+				}, {
+					IdBelongToArticle: 'D10000', //所属文章编号
+					viewpointId: 'D100003', //评论的编号
+					IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
+					peopleName: '吴干事',
+					content: "从古至今,医师的使命都是治病救人、救死扶伤。 把医师比作“白衣天使”,不仅蕴涵着人们对医师的期望和要求,也承载着社会赋予医师的神圣使命。 人类社会无论尊卑，都离不开医务人员的本职",
+					likeNumber: "98234",
+					TimeToRelease: '3小时',
+					DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+					headPortraitUrl: 'http://p1362.bvimg.com/10465/926e05346203527e.jpg',
+					replyNumber: '2', //回复的数量
+				}]
 
 			}
 
 		},
-		onload(){},
+		onload() {},
 		methods: {
+
 			videoErrorCallback: function(e) {
 				uni.showModal({
 					content: e.target.errMsg,
@@ -273,7 +282,23 @@
 			},
 			clikeOthers() {
 				this.ifClickInput = false;
+			},
+			inputData(e) {
+				console.log(e.detail)
+				this.inputContext = e.detail.value;
+			},
+			publishedView(e) {
+				this.commentContent = this.inputContext;
+				this.inputContext = ''
+				console.log(this.commentContent)
+				uni.showToast({
+					title: '发布成功',
+					duration: 1000
+				});
+
+
 			}
+
 		}
 	};
 </script>

@@ -146,89 +146,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -261,13 +178,13 @@ var _default =
 
 
       this.systemInfo,screenHeight = _this$systemInfo.screenHeight,screenWidth = _this$systemInfo.screenWidth,statusBarHeight = _this$systemInfo.statusBarHeight,windowHeight = _this$systemInfo.windowHeight;
-      this.machineHeight = screenHeight - windowHeight; // 虚位高度
+      this.machineHeight = (screenHeight - windowHeight) / 2; // 虚位高度
       var dp = screenWidth / screenHeight;
       if (e) {var
 
         height =
         e.detail.height; // 获取键盘高度
-        if (height) this.inputWrapHeight = "".concat(height * dp, "rpx");
+        if (height) this.inputWrapHeight = "".concat(height * dp * 0.50, "rpx");
       }
     },
     inputBlur: function inputBlur() {

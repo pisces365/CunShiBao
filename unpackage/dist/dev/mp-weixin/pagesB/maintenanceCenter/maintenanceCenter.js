@@ -162,7 +162,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 var _workOrderIntroduce = _interopRequireDefault(__webpack_require__(/*! @/componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce.vue */ 77));
-var _iWannaRepair = _interopRequireDefault(__webpack_require__(/*! @/componentB/maintenanceCenter/iWannaRepair/iWannaRepair.vue */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 143));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _iWannaRepair = _interopRequireDefault(__webpack_require__(/*! @/componentB/maintenanceCenter/iWannaRepair/iWannaRepair.vue */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 151));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: {
     navigation: navigation,

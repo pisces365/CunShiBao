@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,gI;AACAA,UAAU,CAACC,kCAAD,CAAV,C","file":"pagesA/threeAgriculturalQuestion.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pagesA/threeAgriculturalQuestion.vue'\ncreatePage(Page)"],"sourceRoot":""}

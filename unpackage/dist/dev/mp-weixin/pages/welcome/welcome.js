@@ -168,11 +168,22 @@ var _default =
       nickName: null,
       gender: 0,
       avatarUrl: null,
-      isCanUse: uni.getStorageSync('isCanUse') //默认为true  记录当前用户是否是第一次授权使用的
-    };
+      isCanUse: uni.getStorageSync('isCanUse'), //默认为true  记录当前用户是否是第一次授权使用的
+      userInfomation: {
+        avatarUrl: '',
+        city: '',
+        country: '',
+        gender: '',
+        language: '',
+        nickName: '',
+        province: '' } };
+
+
+
   },
   methods: {
     goLogin: function goLogin() {
+      var that = this;
       //判断缓存中是否有用户数据，没有则获取
       if (!uni.getStorageSync('encryptedData')) {
         uni.getUserProfile({
@@ -186,6 +197,7 @@ var _default =
               uni.setStorageSync('rawData', infoRes.rawData);
               uni.setStorageSync('signature', infoRes.signature);
               uni.setStorageSync('securityStatus', 1);
+              uni.setStorageSync('userInfo', infoRes.userInfo);
               // 选择版本
               uni.switchTab({
                 url: "../index/index" });
@@ -203,6 +215,14 @@ var _default =
 
       } else {
         console.log("已有缓存，直接进入");
+        uni.getStorage({
+          key: 'userInfo',
+          success: function success(res) {
+            that.userInfomation = res.data;
+            console.log('获取成功', res);
+          } });
+
+
         uni.switchTab({
           url: "../index/index" });
 

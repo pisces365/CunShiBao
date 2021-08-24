@@ -1,10 +1,11 @@
 <template>
-	<view  class="content">
+	<view  class="content" v-show="ifLoading">
 		<view class="logo-box">
-			<image mode="aspectFill" class="logo" src="http://b1137.bvimg.com/10453/585be99bc830c431.jpg"></image>
+			<image v-if="avatarUrl==''" mode="aspectFill" class="logo" src="http://b1137.bvimg.com/10453/585be99bc830c431.jpg"></image>
+			<image v-else mode="aspectFill" class="logo" :src="avatarUrl"></image>
 		</view>
 		<view class="text-area">
-			<text class="name">{{name}}</text>
+			<text class="name">{{nickName !=''?nickName:'村民'}}</text>
 		</view>
 		<view class="text-area">
 			<text class="duty">{{duty}}</text>
@@ -30,12 +31,69 @@
 	export default {
 		data() {
 			return {
-				name: '姓名',
-				duty: '村民'
+				avatarUrl: '',
+				city: '',
+				country: '',
+				gender: '',
+				language: '',
+				nickName: '',
+				province: '',
+				duty: '村民',
+				ifLoading:false,//是否加载完毕 加载完毕在进行加载
+				userInfomation: {}
 			}
 		},
 		methods: {
+			getUserInfo() {
+					let that = this;
+					//判断缓存中是否有用户数据，没有则获取
+					if (!uni.getStorageSync('encryptedData')) {
+						uni.getUserProfile({
+							desc: '获取你的名称、头像、地区',
+							success: infoRes => {
+								if (infoRes.errMsg === 'getUserProfile:ok') {
+									// 获取到的当前数据存入缓存
+									console.log(infoRes)
+									uni.setStorageSync('encryptedData', infoRes.encryptedData);
+									uni.setStorageSync('iv', infoRes.iv);
+									uni.setStorageSync('rawData', infoRes.rawData);
+									uni.setStorageSync('signature', infoRes.signature);
+									uni.setStorageSync('securityStatus', 1);
+									uni.setStorageSync('userInfo', infoRes.userInfo);
+								} else {
+									uni.showToast({
+										title: '授权失败',
+										icon: 'error'
+									});
+								}
+							},
+							fail: err => {
+								console.log('userInfo-err', JSON.stringify(err));
+							}
+						});
+					} else {
+						console.log("已有缓存，直接进入")
+						uni.getStorage({
+							key: 'userInfo',
+							success(res) {
+								that.userInfomation = res.data;
+								that.avatarUrl = res.data.avatarUrl;
+								that.city = res.data.city;
+								that.country = res.data.country;
+								that.gender = res.data.gender;
+								that.language = res.data.language;
+								that.nickName = res.data.nickName;
+								that.province = res.data.province;
+								console.log('获取成功', res);
+							}
+						})
+					}
+				}
 			
+		},
+		onLoad() {
+			this.getUserInfo();
+			this.ifLoading = true;
 		}
 	}
 </script>

@@ -27,14 +27,19 @@
       "current": 0,
       "list": [
         {
-          "name": "测试",
+          "name": "111",
           "id": 0,
+          "pathName": "pagesA/policy/newAndExpert/newAndExpert"
+        },
+        {
+          "name": "测试",
+          "id": 1,
           "pathName": "pages/test/test"
         },
         {
           "name": "文章内容",
-          "id": 1,
-          "pathName": "pagesA/policy/policyDetails/policyDetails"
+          "id": 2,
+          "pathName": "pagesA/NewsPage1"
         }
       ]
     }

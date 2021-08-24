@@ -338,6 +338,7 @@ var _default =
   data: function data() {
     return {
       title: 'Hello',
+      ifLoading: false,
       homeSlide: [
       'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
       'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
@@ -379,12 +380,12 @@ var _default =
 
   },
   onLoad: function onLoad() {
-
+    this.ifLoading = true;
   },
   methods: {
     toDetails: function toDetails() {
       uni.navigateTo({
-        url: '../../pagesA/policy/policyDetails/policyDetails' });
+        url: "../../pagesA/News?newsID=0" });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

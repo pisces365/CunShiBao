@@ -93,29 +93,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
-try {
-  components = {
-    ygcComment: function() {
-      return __webpack_require__.e(/*! import() | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then(__webpack_require__.bind(null, /*! @/components/ygc-comment/ygc-comment.vue */ 164))
-    }
-  }
-} catch (e) {
-  if (
-    e.message.indexOf("Cannot find module") !== -1 &&
-    e.message.indexOf(".vue") !== -1
-  ) {
-    console.error(e.message)
-    console.error("1. 排查组件名称拼写是否正确")
-    console.error(
-      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
-    )
-    console.error(
-      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
-    )
-  } else {
-    throw e
-  }
-}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -172,7 +149,13 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ygcComment = function ygcComment() {__webpack_require__.e(/*! require.ensure | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then((function () {return resolve(__webpack_require__(/*! @/components/ygc-comment/ygc-comment.vue */ 164));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ygcComment = function ygcComment() {__webpack_require__.e(/*! require.ensure | components/ygc-comment/ygc-comment */ "components/ygc-comment/ygc-comment").then((function () {return resolve(__webpack_require__(/*! @/components/ygc-comment/ygc-comment.vue */ 172));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
 
 
 
@@ -329,6 +312,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       commentContent: '',
+      inputContext: '',
       ifClickInput: false,
       doyoulike: 'false',
       videoSrc: 'https://img.cdn.aliyun.dcloud.net.cn/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20200317.mp4',
@@ -360,31 +344,32 @@ __webpack_require__.r(__webpack_exports__);
         headPortraitUrl: 'http://p1362.bvimg.com/10465/f055218fcab03c86.jpg', //评论发布者的头像
         content: "为人民过上健康幸福的生活而努力！", //评论的内容
         likeNumber: "123456", //点赞的数量
-        TimeToRelease: '6小时', //现在距发布的时间间隔
-        replyNumber: '2', //回复的数量
-        reply: [{
-          IdBelongToArticle: 'D10000', //所属文章编号
-          viewpointId: 'D100004', //评论的编号
-          IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
-          peopleName: '陈婕定',
-          headPortraitUrl: 'http://p1362.bvimg.com/10465/07bce6259ac1e2b8.jpg',
-          content: "你说得对！",
-          likeNumber: "123",
-          TimeToRelease: '5小时',
-          replyNumber: '0' //回复的数量
-        }, {
-          IdBelongToArticle: 'D10000', //所属文章编号
-          viewpointId: 'D100004', //评论的编号
-          IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
-          peopleName: '刘康',
-          headPortraitUrl: 'http://p1362.bvimg.com/10465/54c1d2c3b9aee237.jpg',
-          content: "国家安康，人民幸福",
-          likeNumber: "321",
-          TimeToRelease: '2小时',
-          replyNumber: '0' //回复的数量
-        }] },
-
-      {
+        TimeToRelease: '6小时', //现在距发布的时间间隔，
+        DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+        replyNumber: '2' //回复的数量
+      }, {
+        IdBelongToArticle: 'D10000', //所属文章编号
+        viewpointId: 'D100004', //评论的编号
+        IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
+        peopleName: '陈婕定',
+        headPortraitUrl: 'http://p1362.bvimg.com/10465/07bce6259ac1e2b8.jpg',
+        content: "你说得对！",
+        likeNumber: "123",
+        TimeToRelease: '5小时',
+        DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+        replyNumber: '0' //回复的数量
+      }, {
+        IdBelongToArticle: 'D10000', //所属文章编号
+        viewpointId: 'D100004', //评论的编号
+        IdBelongToViewPoint: 'D10001', //该评论隶属于哪条评论，0代表不属于某评论
+        peopleName: '刘康',
+        headPortraitUrl: 'http://p1362.bvimg.com/10465/54c1d2c3b9aee237.jpg',
+        content: "国家安康，人民幸福",
+        likeNumber: "321",
+        TimeToRelease: '2小时',
+        DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
+        replyNumber: '0' //回复的数量
+      }, {
         IdBelongToArticle: 'D10000', //所属文章编号
         viewpointId: 'D100002', //评论的编号
         IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
@@ -393,9 +378,9 @@ __webpack_require__.r(__webpack_exports__);
         likeNumber: "112345",
         TimeToRelease: '4小时',
         headPortraitUrl: 'http://p1362.bvimg.com/10465/a61cef977dc06b42.jpg',
+        DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
         replyNumber: '0' //回复的数量
-      },
-      {
+      }, {
         IdBelongToArticle: 'D10000', //所属文章编号
         viewpointId: 'D100003', //评论的编号
         IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
@@ -403,16 +388,17 @@ __webpack_require__.r(__webpack_exports__);
         content: "从古至今,医师的使命都是治病救人、救死扶伤。 把医师比作“白衣天使”,不仅蕴涵着人们对医师的期望和要求,也承载着社会赋予医师的神圣使命。 人类社会无论尊卑，都离不开医务人员的本职",
         likeNumber: "98234",
         TimeToRelease: '3小时',
+        DateToRelease: '8月23日', //TimeToRelease 超过12小时则为发布日期
         headPortraitUrl: 'http://p1362.bvimg.com/10465/926e05346203527e.jpg',
         replyNumber: '2' //回复的数量
       }] };
 
 
 
-
   },
   onload: function onload() {},
   methods: {
+
     videoErrorCallback: function videoErrorCallback(e) {
       uni.showModal({
         content: e.target.errMsg,
@@ -447,6 +433,21 @@ __webpack_require__.r(__webpack_exports__);
     },
     clikeOthers: function clikeOthers() {
       this.ifClickInput = false;
+    },
+    inputData: function inputData(e) {
+      console.log(e.detail);
+      this.inputContext = e.detail.value;
+    },
+    publishedView: function publishedView(e) {
+      this.commentContent = this.inputContext;
+      this.inputContext = '';
+      console.log(this.commentContent);
+      uni.showToast({
+        title: '发布成功',
+        duration: 1000 });
+
+
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

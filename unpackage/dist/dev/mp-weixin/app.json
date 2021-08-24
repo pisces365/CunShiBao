@@ -21,7 +21,8 @@
         "election/personalDetails/personalDetails",
         "election/infoAndVote/infoAndVote",
         "policy/newAndExpert/newAndExpert",
-        "policy/policyDetails/policyDetails"
+        "policy/policyDetails/policyDetails",
+        "News"
       ]
     }
   ],

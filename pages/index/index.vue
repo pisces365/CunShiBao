@@ -1,5 +1,5 @@
 <template>
-	<view class="index">
+	<view class="index" v-show="ifLoading">
 		<swiper class="index-swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true"
 			indicator-active-color="#f7f7f7" indicator-color="rgba(145, 145, 145, 0.7)">
 			<swiper-item v-for="(item , index) in homeSlide" :key="index">
@@ -22,7 +22,7 @@
 					<text>三农数据洞察</text>
 				</view>
 				<view class="index-blog-right-bottom">
-					<text>2021年夏季粮食产量数据新报告，劳动最光荣！</text>
+					<text>国家黑土地保护工程实施方案（2021—2025年）</text>
 				</view>
 				<view class="index-blog-right-icon">
 					<text class="icon-xiangyou iconfont"></text>
@@ -206,6 +206,7 @@
 		data() {
 			return {
 				title: 'Hello',
+				ifLoading:false,
 				homeSlide: [
 					'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
 					'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
@@ -247,12 +248,12 @@
 			}
 		},
 		onLoad() {
-
+			this.ifLoading = true;
 		},
 		methods: {
 			toDetails(){
 				uni.navigateTo({
-					url:('../../pagesA/policy/policyDetails/policyDetails')
+					url:("../../pagesA/News?newsID=0")
 				})
 			}
 		}

@@ -130,7 +130,8 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
 //
 //
 //
@@ -162,11 +163,71 @@ var _default =
 {
   data: function data() {
     return {
-      name: '姓名',
-      duty: '村民' };
+      avatarUrl: '',
+      city: '',
+      country: '',
+      gender: '',
+      language: '',
+      nickName: '',
+      province: '',
+      duty: '村民',
+      ifLoading: false, //是否加载完毕 加载完毕在进行加载
+      userInfomation: {} };
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    getUserInfo: function getUserInfo() {
+      var that = this;
+      //判断缓存中是否有用户数据，没有则获取
+      if (!uni.getStorageSync('encryptedData')) {
+        uni.getUserProfile({
+          desc: '获取你的名称、头像、地区',
+          success: function success(infoRes) {
+            if (infoRes.errMsg === 'getUserProfile:ok') {
+              // 获取到的当前数据存入缓存
+              console.log(infoRes);
+              uni.setStorageSync('encryptedData', infoRes.encryptedData);
+              uni.setStorageSync('iv', infoRes.iv);
+              uni.setStorageSync('rawData', infoRes.rawData);
+              uni.setStorageSync('signature', infoRes.signature);
+              uni.setStorageSync('securityStatus', 1);
+              uni.setStorageSync('userInfo', infoRes.userInfo);
+            } else {
+              uni.showToast({
+                title: '授权失败',
+                icon: 'error' });
+
+            }
+          },
+          fail: function fail(err) {
+            console.log('userInfo-err', JSON.stringify(err));
+          } });
+
+      } else {
+        console.log("已有缓存，直接进入");
+        uni.getStorage({
+          key: 'userInfo',
+          success: function success(res) {
+            that.userInfomation = res.data;
+            that.avatarUrl = res.data.avatarUrl;
+            that.city = res.data.city;
+            that.country = res.data.country;
+            that.gender = res.data.gender;
+            that.language = res.data.language;
+            that.nickName = res.data.nickName;
+            that.province = res.data.province;
+            console.log('获取成功', res);
+          } });
+
+      }
+    } },
+
+
+  onLoad: function onLoad() {
+    this.getUserInfo();
+    this.ifLoading = true;
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
