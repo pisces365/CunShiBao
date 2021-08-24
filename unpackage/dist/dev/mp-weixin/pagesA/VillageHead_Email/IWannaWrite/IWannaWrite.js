@@ -97,8 +97,8 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = _vm.getTitle1()
-  var m1 = _vm.getTitle0()
+  var m0 = _vm.getTitle0()
+  var m1 = _vm.getTitle1()
   _vm.$mp.data = Object.assign(
     {},
     {
@@ -227,8 +227,8 @@ __webpack_require__.r(__webpack_exports__);
 
   data: function data() {
     return {
-      ifOpened: null,
-      ifAnonymity: null,
+      ifOpened: '1',
+      ifAnonymity: '1',
       opened: 'letterOpened',
       titles: [{
         id: 0,
@@ -266,23 +266,11 @@ __webpack_require__.r(__webpack_exports__);
     getTitle1: function getTitle1() {
       return this.titles[1].isActive;
     },
-    changeIfOpen: function changeIfOpen() {
-      if (this.ifOpened == null) {
-        this.ifOpened = true;
-      } else if (this.ifOpened == true) {
-        this.ifOpened = false;
-      } else if (this.ifOpened == false) {
-        this.ifOpened = true;
-      }
+    changeIfOpen: function changeIfOpen(e) {
+      this.ifOpened = e;
     },
-    changeifAnonymity: function changeifAnonymity() {
-      if (this.ifAnonymity == null) {
-        this.ifAnonymity = true;
-      } else if (this.ifAnonymity == true) {
-        this.ifAnonymity = false;
-      } else if (this.ifAnonymity == false) {
-        this.ifAnonymity = true;
-      }
+    changeIfAnonymity: function changeIfAnonymity(e) {
+      this.ifAnonymity = e;
     },
     submitMail: function submitMail() {
       uni.showModal({

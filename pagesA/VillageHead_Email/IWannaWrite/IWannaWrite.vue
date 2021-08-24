@@ -6,24 +6,23 @@
 			</view>
 			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>
-		<view style="height: 420rpx;"></view>
-		<information v-show="getTitle1()" :info="EmailOutline"></information>
-		<view class="IWanna-write" v-show="getTitle0()">
+		<view style="height: 420rpx;margin-bottom: 10rpx;"></view>
+		<information v-show="getTitle0()" :info="EmailOutline"></information>
+		<view class="IWanna-write" v-show="getTitle1()">
 			<view class="IWanna-write-ifOpen">
 				<view class="IWanna-write-ifOpen-left">
 					<image v-if="ifOpened==true" src="http://p1362.bvimg.com/10465/39ea698296ea4db0.png" mode="">
 					</image>
 					<image v-else src="http://p1362.bvimg.com/10465/f1313d8804ca1e09.png" mode=""></image>
-					<text v-if="ifOpened==null">是否公开</text>
-					<text v-else-if="ifOpened==true">公开</text>
-					<text v-else>不公开</text>
+					<text>是否公开</text>
 				</view>
 				<view class="IWanna-write-ifOpen-right">
-					<label>
-						<label>
-							<checkbox @click="changeIfOpen" :value="opened" /><text></text>
-						</label>
-					</label>
+					<text>公开</text>
+					<radio class="radio" value="1" :checked="ifOpened==='1'" color="#FE7837" @click="changeIfOpen('1')">
+					</radio>
+					<text>不公开</text>
+					<radio class="radio" value="2" :checked="ifOpened==='2'" color="#FE7837" @click="changeIfOpen('2')">
+					</radio>
 				</view>
 			</view>
 			<view class="cross-line"></view>
@@ -32,30 +31,31 @@
 					<view class="IWanna-write-ifAnonymity-left">
 						<image src="http://p1362.bvimg.com/10465/a910089553e1af85.png" mode="">
 						</image>
-						<text v-if="ifAnonymity==null">是否匿名</text>
-						<text v-else-if="ifAnonymity==true">匿名</text>
-						<text v-else>不匿名</text>
+						<text>是否匿名</text>
 					</view>
 					<view class="IWanna-write-ifAnonymity-right">
-						<label>
-							<label>
-								<checkbox @click="changeifAnonymity" :value="Anonymityed" /><text></text>
-							</label>
-						</label>
+						<text>匿名</text>
+						<radio class="radio" value="1" :checked="ifAnonymity==='1'" color="#FE7837"
+							@click="changeIfAnonymity('1')">
+						</radio>
+						<text>不匿名</text>
+						<radio class="radio" value="2" :checked="ifAnonymity==='2'" color="#FE7837"
+							@click="changeIfAnonymity('2')">
+						</radio>
 					</view>
 				</view>
 				<view class="IWanna-write-ifAnonymity-bottom">
-					<view class="IWanna-write-linkman"  v-if="ifAnonymity==false">
+					<view class="IWanna-write-linkman" v-if="ifAnonymity=='2'">
 						联系人姓名：
-						<input type="text" value="" placeholder="请填写您的姓名"maxlength="10" />
+						<input type="text" value="" placeholder="请填写您的姓名" maxlength="10" />
 					</view>
-					<view class="IWanna-write-phone" v-if="ifAnonymity==false">
+					<view class="IWanna-write-phone" v-if="ifAnonymity=='2'">
 						联系人电话：
-						<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11"/>
+						<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11" />
 					</view>
 				</view>
 			</view>
-			
+
 			<view class="cross-line"></view>
 			<view class="IWanna-write-letter">
 				<view class="IWanna-write-letter-title">
@@ -84,8 +84,8 @@
 		},
 		data() {
 			return {
-				ifOpened: null,
-				ifAnonymity: null,
+				ifOpened: '1',
+				ifAnonymity: '1',
 				opened: 'letterOpened',
 				titles: [{
 						id: 0,
@@ -123,35 +123,23 @@
 			getTitle1() {
 				return this.titles[1].isActive;
 			},
-			changeIfOpen() {
-				if (this.ifOpened == null) {
-					this.ifOpened = true;
-				} else if (this.ifOpened == true) {
-					this.ifOpened = false;
-				} else if (this.ifOpened == false) {
-					this.ifOpened = true;
-				}
+			changeIfOpen(e) {
+				this.ifOpened = e;
 			},
-			changeifAnonymity() {
-				if (this.ifAnonymity == null) {
-					this.ifAnonymity = true;
-				} else if (this.ifAnonymity == true) {
-					this.ifAnonymity = false;
-				} else if (this.ifAnonymity == false) {
-					this.ifAnonymity = true;
-				}
+			changeIfAnonymity(e) {
+				this.ifAnonymity = e;
 			},
-			submitMail(){
+			submitMail() {
 				uni.showModal({
-				    title: '提示',
-				    content: '您确定要提交信件给村长书记吗',
-				    success: function (res) {
-				        if (res.confirm) {
-				            console.log('用户点击确定');
-				        } else if (res.cancel) {
-				            console.log('用户点击取消');
-				        }
-				    }
+					title: '提示',
+					content: '您确定要提交信件给村长书记吗',
+					success: function(res) {
+						if (res.confirm) {
+							console.log('用户点击确定');
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
 				});
 			}
 		}
@@ -192,7 +180,8 @@
 		display: flex;
 		flex-direction: row;
 	}
-	.IWanna-write-ifAnonymity-top{
+
+	.IWanna-write-ifAnonymity-top {
 		margin-top: 40rpx;
 		margin-left: 30rpx;
 		height: 50rpx;
@@ -216,7 +205,8 @@
 		width: 200rpx;
 		height: 100%;
 	}
-	.IWanna-write-letter-title{
+
+	.IWanna-write-letter-title {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -241,19 +231,23 @@
 	.IWanna-write-ifOpen-right,
 	.IWanna-write-ifAnonymity-right {
 		flex: 1;
-		position: relative;
+		position: absolute;
+		right: 20rpx;
+
 	}
 
-	.IWanna-write-ifOpen-right checkbox,
-	.IWanna-write-ifAnonymity-right checkbox {
-		position: absolute;
-		right: 50rpx;
+	.IWanna-write-ifOpen-right text,
+	.IWanna-write-ifAnonymity-right text {
+		font-size: 30rpx;
+		margin-right: 10rpx;
 	}
-	.IWanna-write-letter-content{
+
+	.IWanna-write-letter-content {
 		margin: 20rpx 10rpx;
 		height: 700rpx;
 	}
-	.IWanna-write-submit{
+
+	.IWanna-write-submit {
 		margin: 10rpx;
 		width: 100%;
 		height: 80rpx;
@@ -261,9 +255,10 @@
 		justify-content: center;
 		align-items: center;
 	}
-	.IWanna-write-submit button{
+
+	.IWanna-write-submit button {
 		width: 300rpx;
-		height:70rpx;
+		height: 70rpx;
 		background-color: #4ECF68;
 		border-radius: 30rpx;
 		display: flex;
@@ -272,7 +267,9 @@
 		font-size: 32rpx;
 		color: white;
 	}
-	.IWanna-write-linkman,.IWanna-write-phone{
+
+	.IWanna-write-linkman,
+	.IWanna-write-phone {
 		display: flex;
 		flex-direction: row;
 		margin: 20rpx 40rpx;
