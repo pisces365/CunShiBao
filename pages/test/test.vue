@@ -21,6 +21,7 @@
 				maxlength: 100,
 				focus: false,
 				inputWrapHeight: '0rpx',
+				// inputWrapHeight_init:'0rpx',
 				disabled: false,
 				calcNums: 100,
 				platform: 'android',
@@ -78,8 +79,6 @@
 		},
 		mounted() {
 			let that = this;
-			// this.calcMaskHeight();
-
 			const info = wx.getSystemInfoSync();
 			console.log(info);
 			if (info) this.platform = info.platform;

@@ -246,6 +246,7 @@ var _default =
 {
   data: function data() {
     return {
+      publishColor: '#b8b8b8',
       NewsID: '',
       commentContent: '',
       nickName: '',
@@ -620,12 +621,18 @@ var _default =
     },
     clikeOthers: function clikeOthers() {
       this.ifClickInput = false;
+      this.publishColor = '#b8b8b8';
     },
     inputData: function inputData(e) {
       this.inputContext = e.detail.value;
+      if (this.inputContext.length > 0) {
+        this.publishColor = '#dd1a1a';
+      } else {
+        this.publishColor = '#b8b8b8';
+      }
     },
     publishedView: function publishedView(e) {
-      if (this.inputContext.length > 0) {
+      if (this.inputContext.length > 1) {
         this.commentContent = this.inputContext;
         uni.showToast({
           title: '发布成功',
@@ -637,6 +644,7 @@ var _default =
 
       }
       this.inputContext = '';
+      this.publishColor = '#b8b8b8';
     } },
 
 

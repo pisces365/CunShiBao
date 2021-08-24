@@ -387,6 +387,11 @@ var _default =
       uni.navigateTo({
         url: "../../pagesA/News?newsID=0" });
 
+    },
+    goToVillageHead_Mail: function goToVillageHead_Mail() {
+      uni.navigateTo({
+        url: '../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

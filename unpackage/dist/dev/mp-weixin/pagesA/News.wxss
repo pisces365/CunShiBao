@@ -286,6 +286,8 @@ page {
 }
 .footer-send text {
   float: right;
+  font-weight: 450;
+  font-size: 30rpx;
 }
 .footer-sayYourWords {
   width: 380rpx;

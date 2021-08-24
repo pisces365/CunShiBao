@@ -46,12 +46,12 @@
 				</view>
 				<view class="IWanna-write-ifAnonymity-bottom">
 					<view class="IWanna-write-linkman" v-if="ifAnonymity=='2'">
-						联系人姓名：
-						<input type="text" value="" placeholder="请填写您的姓名" maxlength="10" />
+						联系人姓名： 
+						<input type="text" value="" placeholder="请填写您的姓名" maxlength="7" style="color: #606160;" />
 					</view>
 					<view class="IWanna-write-phone" v-if="ifAnonymity=='2'">
 						联系人电话：
-						<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11" />
+						<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11" style="color: #606160;" />
 					</view>
 				</view>
 			</view>
@@ -130,6 +130,7 @@
 				this.ifAnonymity = e;
 			},
 			submitMail() {
+				
 				uni.showModal({
 					title: '提示',
 					content: '您确定要提交信件给村长书记吗',
@@ -141,6 +142,7 @@
 						}
 					}
 				});
+				
 			}
 		}
 	}
@@ -272,7 +274,7 @@
 	.IWanna-write-phone {
 		display: flex;
 		flex-direction: row;
-		margin: 20rpx 40rpx;
+		margin: 34rpx 40rpx;
 		font-size: 30rpx;
 	}
 </style>

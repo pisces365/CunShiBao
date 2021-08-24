@@ -101,7 +101,7 @@
 					</view>
 				</view>
 				<view class="footer-send" v-if="ifClickInput===true" @click="publishedView">
-					<text>发布</text>
+					<text :style="{color:publishColor}">发布</text>
 				</view>
 			</view>
 		</view>
@@ -114,6 +114,7 @@
 	export default {
 		data() {
 			return {
+				publishColor:'#b8b8b8',
 				NewsID: '',
 				commentContent: '',
 				nickName: '',
@@ -488,12 +489,18 @@
 			},
 			clikeOthers() {
 				this.ifClickInput = false;
+				this.publishColor = '#b8b8b8'
 			},
 			inputData(e) {
 				this.inputContext = e.detail.value;
+				if(this.inputContext.length>0){
+					this.publishColor = '#dd1a1a';
+				}else{
+					this.publishColor = '#b8b8b8';
+				}
 			},
 			publishedView(e) {
-				if (this.inputContext.length > 0) {
+				if (this.inputContext.length > 1) {
 					this.commentContent = this.inputContext;
 					uni.showToast({
 						title: '发布成功',
@@ -504,7 +511,8 @@
 						content: '请输入您的观点'
 					});
 				}
-				this.inputContext = ''
+				this.inputContext = '';
+				this.publishColor = '#b8b8b8'
 			}
 
 		},
@@ -561,6 +569,8 @@
 
 	.footer-send text {
 		float: right;
+		font-weight: 450;
+		font-size: 30rpx;
 	}
 
 	.footer-sayYourWords {

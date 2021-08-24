@@ -99,7 +99,7 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
-					<view class="index-VillageParty-content-onePart-left">
+					<view class="index-VillageParty-content-onePart-left" @click="goToVillageHead_Mail">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[5]}}</text>
 						</view>
@@ -254,6 +254,11 @@
 			toDetails(){
 				uni.navigateTo({
 					url:("../../pagesA/News?newsID=0")
+				})
+			},
+			goToVillageHead_Mail(){
+				uni.navigateTo({
+					url:'../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite'
 				})
 			}
 		}

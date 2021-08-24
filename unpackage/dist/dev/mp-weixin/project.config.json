@@ -27,9 +27,9 @@
       "current": 0,
       "list": [
         {
-          "name": "111",
+          "name": "test",
           "id": 0,
-          "pathName": "pagesA/policy/newAndExpert/newAndExpert"
+          "pathName": "pages/test/test"
         },
         {
           "name": "我要写信",
@@ -39,7 +39,7 @@
         {
           "name": "文章内容",
           "id": 2,
-          "pathName": "pagesA/News_Image"
+          "pathName": "pagesA/News"
         }
       ]
     }

@@ -149,7 +149,7 @@ page {
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: row;
 	        flex-direction: row;
-	margin: 20rpx 40rpx;
+	margin: 34rpx 40rpx;
 	font-size: 30rpx;
 }
 
