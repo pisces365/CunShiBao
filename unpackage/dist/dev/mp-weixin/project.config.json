@@ -32,14 +32,14 @@
           "pathName": "pagesA/policy/newAndExpert/newAndExpert"
         },
         {
-          "name": "测试",
+          "name": "我要写信",
           "id": 1,
-          "pathName": "pages/test/test"
+          "pathName": "pagesA/VillageHead_Email/IWannaWrite/IWannaWrite"
         },
         {
           "name": "文章内容",
           "id": 2,
-          "pathName": "pagesA/NewsPage1"
+          "pathName": "pagesA/News_Image"
         }
       ]
     }

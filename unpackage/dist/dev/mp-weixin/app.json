@@ -15,7 +15,9 @@
         "election/infoAndVote/infoAndVote",
         "policy/newAndExpert/newAndExpert",
         "policy/policyDetails/policyDetails",
-        "News"
+        "News",
+        "News_Image",
+        "VillageHead_Email/IWannaWrite/IWannaWrite"
       ]
     },
     {
@@ -85,5 +87,6 @@
       ]
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

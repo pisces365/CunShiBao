@@ -74,7 +74,25 @@
 				}
 
 			}
-		]
+		    ,{
+                    "path" : "News_Image",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "文章详情",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "VillageHead_Email/IWannaWrite/IWannaWrite",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我要写信",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
 	}, {
 		"root": "pagesB",
 		"pages": [{
@@ -140,11 +158,11 @@
 				"name": "111",
 				"path": "pagesA/policy/newAndExpert/newAndExpert"
 			}, {
-				"name": "测试",
-				"path": "pages/test/test"
+				"name": "我要写信",
+				"path": "pagesA/VillageHead_Email/IWannaWrite/IWannaWrite"
 			}, {
 				"name": "文章内容",
-				"path": "pagesA/NewsPage1"
+				"path": "pagesA/News_Image"
 			}
 
 		]

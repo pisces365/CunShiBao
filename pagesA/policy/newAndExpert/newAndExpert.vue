@@ -3,7 +3,7 @@
 	<view>
 		<view class="top">
 			<view>
-				<image class="topImage" src="http://b1137.bvimg.com/10453/1ac06e8ac644d104.png" mode="widthFix"></image>
+				<image class="topImage" src="http://p1362.bvimg.com/10465/6f9eb56b92010ff7.png" mode="widthFix"></image>
 			</view>
 			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我要写信",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "navigation": "/component/policyInterpretation/navigation/navigation",
+    "information": "/component/policyInterpretation/information/information"
+  }
+}
