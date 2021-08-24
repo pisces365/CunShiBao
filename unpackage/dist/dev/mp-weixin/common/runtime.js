@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"component/policyInterpretation/information/information":1,"component/policyInterpretation/navigation/navigation":1,"component/election/personalProfile/personalProfile":1,"components/ygc-comment/ygc-comment":1};
+/******/ 		var cssChunks = {"component/election/personalProfile/personalProfile":1,"component/policyInterpretation/information/information":1,"component/policyInterpretation/navigation/navigation":1,"components/ygc-comment/ygc-comment":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"component/policyInterpretation/information/information":"component/policyInterpretation/information/information","component/policyInterpretation/navigation/navigation":"component/policyInterpretation/navigation/navigation","component/election/personalProfile/personalProfile":"component/election/personalProfile/personalProfile","components/ygc-comment/ygc-comment":"components/ygc-comment/ygc-comment"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"component/election/personalProfile/personalProfile":"component/election/personalProfile/personalProfile","component/policyInterpretation/information/information":"component/policyInterpretation/information/information","component/policyInterpretation/navigation/navigation":"component/policyInterpretation/navigation/navigation","components/ygc-comment/ygc-comment":"components/ygc-comment/ygc-comment"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

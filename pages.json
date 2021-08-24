@@ -6,7 +6,6 @@
 				"navigationBarTitleText": "村事宝",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/index/index",
 			"style": {
@@ -18,79 +17,25 @@
 				"navigationBarTitleText": "消息",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/mine/mine",
 			"style": {
 				"navigationBarTitleText": "我的",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/RuralCircle/RuralCircle",
 			"style": {
 				"navigationBarTitleText": "乡村圈",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/test/test",
 			"style": {
 				"navigationBarTitleText": "测试",
 				"enablePullDownRefresh": false
 			}
-
-		}, {
-			"path": "pagesB/landContract/landContract",
-			"style": {
-				"navigationBarTitleText": "土地承包",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "componentB/landContract/contractPublicity/contractPublicity",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pagesB/maintenanceCenter/maintenanceCenter",
-			"style": {
-				"navigationBarTitleText": "维修中心",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
-			"style": {
-				"navigationBarTitleText": "工单介绍",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
-			"style": {
-				"navigationBarTitleText": "我要报修",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pagesB/maintenanceDetails/maintenanceDetails",
-			"style": {
-				"navigationBarTitleText": "维修详情",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails",
-			"style": {
-				"navigationBarTitleText": "工单详情",
-				"enablePullDownRefresh": false
-			}
-
 		}
-
 	],
 	"subPackages": [{
 		"root": "pagesA",
@@ -130,6 +75,30 @@
 
 			}
 		]
+	}, {
+		"root": "pagesB",
+		"pages": [{
+			"path": "maintenanceDetails/maintenanceDetails",
+			"style": {
+				"navigationBarTitleText": "维修详情",
+				"enablePullDownRefresh": false
+			}
+
+		},{
+			"path": "maintenanceCenter/maintenanceCenter",
+			"style": {
+				"navigationBarTitleText": "维修中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "landContract/landContract",
+			"style": {
+				"navigationBarTitleText": "土地承包",
+				"enablePullDownRefresh": false
+			}
+
+		}]
 	}],
 
 	"globalStyle": {
@@ -170,7 +139,7 @@
 		"list": [{
 				"name": "111",
 				"path": "pagesA/policy/newAndExpert/newAndExpert"
-			},{
+			}, {
 				"name": "测试",
 				"path": "pages/test/test"
 			}, {

@@ -5,14 +5,7 @@
     "pages/message/message",
     "pages/mine/mine",
     "pages/RuralCircle/RuralCircle",
-    "pages/test/test",
-    "pagesB/landContract/landContract",
-    "componentB/landContract/contractPublicity/contractPublicity",
-    "pagesB/maintenanceCenter/maintenanceCenter",
-    "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
-    "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
-    "pagesB/maintenanceDetails/maintenanceDetails",
-    "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails"
+    "pages/test/test"
   ],
   "subPackages": [
     {
@@ -23,6 +16,14 @@
         "policy/newAndExpert/newAndExpert",
         "policy/policyDetails/policyDetails",
         "News"
+      ]
+    },
+    {
+      "root": "pagesB",
+      "pages": [
+        "maintenanceDetails/maintenanceDetails",
+        "maintenanceCenter/maintenanceCenter",
+        "landContract/landContract"
       ]
     }
   ],
@@ -64,6 +65,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
