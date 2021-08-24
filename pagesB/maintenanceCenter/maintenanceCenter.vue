@@ -15,9 +15,9 @@
 </template>
 
 <script>
-	import navigation from '@/component/policyInterpretation/navigation/navigation.vue'
-	import workOrderIntroduce from '@/componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce.vue'
-	import iWannaRepair from '@/componentB/maintenanceCenter/iWannaRepair/iWannaRepair.vue'
+	import navigation from '../../component/policyInterpretation/navigation/navigation.vue'
+	import workOrderIntroduce from '../../componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce.vue'
+	import iWannaRepair from '../../componentB/maintenanceCenter/iWannaRepair/iWannaRepair.vue'
 	export default {
 		components: { 
 			navigation,

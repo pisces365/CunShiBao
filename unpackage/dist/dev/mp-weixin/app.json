@@ -65,5 +65,25 @@
       }
     ]
   },
+  "preloadRule": {
+    "pages/welcome/welcome": {
+      "network": "all",
+      "packages": [
+        "__APP__"
+      ]
+    },
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesA"
+      ]
+    },
+    "pagesB/landContract/landContract": {
+      "network": "all",
+      "packages": [
+        "pagesB"
+      ]
+    }
+  },
   "usingComponents": {}
 }

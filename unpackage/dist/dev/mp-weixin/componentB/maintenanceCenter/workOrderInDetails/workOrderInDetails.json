@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "工单详情",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {},
+  "component": true
 }

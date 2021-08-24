@@ -1,5 +1,5 @@
 <!-- 处理详情界面顶部工单信息 -->
-<template>
+<template name="workOrderInDetails">
 	<view>
 		<view class="news">
 			<view class="navw">

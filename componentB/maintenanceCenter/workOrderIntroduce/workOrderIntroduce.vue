@@ -1,4 +1,4 @@
-<template>
+<template name="workOrderIntroduce">
 	<view>
 		<view class="news" v-for="(item , index) in intro" :key="index">
 			<navigator url="../../pagesB/maintenanceDetails/maintenanceDetails" class="navw">

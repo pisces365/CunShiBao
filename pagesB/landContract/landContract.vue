@@ -15,9 +15,9 @@
 </template>
 
 <script>
-	import navigation from '@/component/policyInterpretation/navigation/navigation.vue'
-	import contractPublicity from '@/componentB/landContract/contractPublicity/contractPublicity.vue'
-	import information from '@/component/policyInterpretation/information/information.vue'
+	import navigation from '../../component/policyInterpretation/navigation/navigation.vue'
+	import contractPublicity from '../../componentB/landContract/contractPublicity/contractPublicity.vue'
+	import information from '../../component/policyInterpretation/information/information.vue'
 	export default {
 		components: { 
 			navigation,

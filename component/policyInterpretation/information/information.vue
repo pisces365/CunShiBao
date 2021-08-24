@@ -1,5 +1,5 @@
 <!-- 政策解读每条信息简介 -->
-<template>
+<template name="information">
 	<view>
 		<view class="news" v-for="(item , index) in info" :key="index">
 			<navigator :url="item.url" class="nav">
