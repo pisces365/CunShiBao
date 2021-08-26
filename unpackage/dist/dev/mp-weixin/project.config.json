@@ -27,9 +27,9 @@
       "current": 0,
       "list": [
         {
-          "name": "test",
+          "name": "我的",
           "id": 0,
-          "pathName": "pages/test/test"
+          "pathName": "pages/mine/mine"
         },
         {
           "name": "我要写信",

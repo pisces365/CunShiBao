@@ -220,8 +220,8 @@
 					replyNumber: '0', //回复的数量
 				}, {
 					IdBelongToArticle: 'D10000', //所属文章编号
-					viewpointId: 'D100002', //评论的编号
-					IdBelongToViewPoint: '0', //该评论隶属于哪条评论，0代表不属于某评论
+					viewpointId: 'D100002', //评论的编号 主键
+					IdBelongToViewPoint: 'D100004', //该评论隶属于哪条评论，0代表不属于某评论
 					peopleName: '马到成功',
 					content: "一个队伍经常是不大整齐的，所以就要常常喊看齐，向左看齐，向右看齐，向中看齐。我们要向中央基准看齐，向大会基准看齐。看齐是原则，有偏差是实际生活，有了偏差，就喊看齐",
 					likeNumber: "112345",
