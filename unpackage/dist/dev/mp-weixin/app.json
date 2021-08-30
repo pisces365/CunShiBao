@@ -17,7 +17,10 @@
         "policy/policyDetails/policyDetails",
         "News",
         "News_Image",
-        "VillageHead_Email/IWannaWrite/IWannaWrite"
+        "VillageHead_Email/IWannaWrite/IWannaWrite",
+        "rent/rent_index/rent_index",
+        "rent/rent_content/rent_content",
+        "rent/rent_house_description/rent_house_description"
       ]
     },
     {

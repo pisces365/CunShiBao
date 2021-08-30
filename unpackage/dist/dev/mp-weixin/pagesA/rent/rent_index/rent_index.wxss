@@ -1,0 +1,557 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@font-face {
+  font-family: "iconfont"; /* Project id 2698742 */
+  src: url('//at.alicdn.com/t/font_2698742_zgp9ijxuitg.woff2?t=1630322277953') format('woff2'),
+       url('//at.alicdn.com/t/font_2698742_zgp9ijxuitg.woff?t=1630322277953') format('woff'),
+       url('//at.alicdn.com/t/font_2698742_zgp9ijxuitg.ttf?t=1630322277953') format('truetype');
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-youhuiquan1:before {
+  content: "\e642";
+}
+.icon-weibiaoti:before {
+  content: "\e615";
+}
+.icon-arrow-down-copy:before {
+  content: "\e614";
+}
+.icon-daibanshixiang1:before {
+  content: "\e6e3";
+}
+.icon-shixiangdengji:before {
+  content: "\e61c";
+}
+.icon-shoucang2:before {
+  content: "\e6f8";
+}
+.icon-daibanshixiang:before {
+  content: "\e62f";
+}
+.icon-tousu:before {
+  content: "\e6be";
+}
+.icon-zhuxiao:before {
+  content: "\e6ac";
+}
+.icon-zixun:before {
+  content: "\f766";
+}
+.icon-fanhui:before {
+  content: "\e722";
+}
+.icon-shuxin:before {
+  content: "\e659";
+}
+.icon-jiahao3:before {
+  content: "\e61f";
+}
+.icon-plus:before {
+  content: "\e611";
+}
+.icon-shafaA:before {
+  content: "\ec8c";
+}
+.icon-dianji:before {
+  content: "\e68f";
+}
+.icon-qipao:before {
+  content: "\e622";
+}
+.icon-men:before {
+  content: "\e627";
+}
+.icon-didian:before {
+  content: "\ec8b";
+}
+.icon-biaoqian:before {
+  content: "\e610";
+}
+.icon-xiangji1:before {
+  content: "\e616";
+}
+.icon-wenjian:before {
+  content: "\e613";
+}
+.icon-FontAwesomeidcardsolid:before {
+  content: "\ea10";
+}
+.icon-dianhua1:before {
+  content: "\efe5";
+}
+.icon-chazi1:before {
+  content: "\e668";
+}
+.icon-hao:before {
+  content: "\e60f";
+}
+.icon-position:before {
+  content: "\e60e";
+}
+.icon-zhuanfa:before {
+  content: "\e60c";
+}
+.icon-pinglun1:before {
+  content: "\e651";
+}
+.icon-shoucang11:before {
+  content: "\e629";
+}
+.icon-dianzan4:before {
+  content: "\e621";
+}
+.icon-dianzan3:before {
+  content: "\ebbe";
+}
+.icon-dianzan2:before {
+  content: "\e60b";
+}
+.icon-chazi:before {
+  content: "\e628";
+}
+.icon-xiangyou:before {
+  content: "\e612";
+}
+.icon-a-jiantou:before {
+  content: "\e609";
+}
+.icon-a-LeftArrow-copy:before {
+  content: "\e608";
+}
+.icon-yuechi:before {
+  content: "\e619";
+}
+.icon-fankui:before {
+  content: "\e600";
+}
+.icon-fangzi:before {
+  content: "\e673";
+}
+.icon-haizi1:before {
+  content: "\e67f";
+}
+.icon-buoumaotubiao14:before {
+  content: "\e60d";
+}
+.icon-message:before {
+  content: "\e78a";
+}
+.icon-message-fill:before {
+  content: "\e84a";
+}
+.icon-bad:before {
+  content: "\e666";
+}
+.icon-download:before {
+  content: "\e66c";
+}
+.icon-faxian:before {
+  content: "\e8af";
+}
+.icon-fuzhi:before {
+  content: "\e8b0";
+}
+.icon-wode:before {
+  content: "\e8bb";
+}
+.icon-weixin:before {
+  content: "\e8bc";
+}
+.icon-WIFI:before {
+  content: "\e8c1";
+}
+.icon-zhiwen:before {
+  content: "\e8c2";
+}
+.icon-aixin:before {
+  content: "\e8c3";
+}
+.icon-chenggong:before {
+  content: "\e8c4";
+}
+.icon-dianzan1:before {
+  content: "\e8c5";
+}
+.icon-dianhua:before {
+  content: "\e8c6";
+}
+.icon-faxian1:before {
+  content: "\e8c7";
+}
+.icon-dingwei:before {
+  content: "\e8c8";
+}
+.icon-pinglun:before {
+  content: "\e8c9";
+}
+.icon-shequ:before {
+  content: "\e8ca";
+}
+.icon-shoucang1:before {
+  content: "\e8cb";
+}
+.icon-yanjing:before {
+  content: "\e8cc";
+}
+.icon-xiangji:before {
+  content: "\e8cd";
+}
+.icon-yingyuan:before {
+  content: "\e8ce";
+}
+.icon-zengjia:before {
+  content: "\e8cf";
+}
+.icon-remen:before {
+  content: "\e8d0";
+}
+.icon-chuangzuo:before {
+  content: "\e8d1";
+}
+.icon-kaishi-outline:before {
+  content: "\e802";
+}
+.icon-fanhui-outline:before {
+  content: "\e803";
+}
+.icon-home:before {
+  content: "\e821";
+}
+.icon-home-outline:before {
+  content: "\e822";
+}
+.icon-user:before {
+  content: "\e823";
+}
+.icon-user-outline:before {
+  content: "\e824";
+}
+.icon-gengduo:before {
+  content: "\e601";
+}
+.icon-shoucang:before {
+  content: "\e602";
+}
+.icon-lishi:before {
+  content: "\e603";
+}
+.icon-sousuo:before {
+  content: "\e604";
+}
+.icon-shanchu:before {
+  content: "\e605";
+}
+.icon-dianzan:before {
+  content: "\e606";
+}
+.icon-wenda:before {
+  content: "\e607";
+}
+.icon-zuojiantou:before {
+  content: "\e60a";
+}
+.icon-guanbi:before {
+  content: "\e6b3";
+}
+.rent {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+.rent-top {
+  padding: 20rpx 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}
+.rent-top .rent-title {
+  width: 100%;
+}
+.rent-top .rent-title .rent-title-search {
+  background: #eeefee;
+  border-radius: 10rpx;
+}
+.rent-top .rent-title .rent-title-search .swiper {
+  height: 70rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.rent-top .rent-title .rent-title-search .swiper .rent-title-search-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.rent-top .rent-title .rent-title-search .swiper .rent-title-search-content .iconfont {
+  margin-right: 16rpx;
+  font-size: 40rpx;
+}
+.rent-top .rent-title .rent-title-function {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+  margin-top: 20rpx;
+}
+.rent-top .rent-title .rent-title-function .functionPart {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.rent-top .rent-title .rent-title-function .functionPart .functionPart-image {
+  width: 130rpx;
+  height: 130rpx;
+}
+.rent-top .rent-classify {
+  margin-top: 20rpx;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+}
+.rent-top .rent-classify .vertical-line {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 2rpx;
+  margin-top: 10rpx;
+  height: 30rpx;
+  background: #C6C7C6;
+}
+.rent-top .rent-classify .rent-classify-Part {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.rent-top .rent-classify .rent-classify-Part .uni-input {
+  display: inline-block;
+  font-size: 28rpx;
+}
+.rent-top .rent-classify .rent-classify-Part .icon-arrow-down-copy {
+  margin-left: 16rpx;
+  font-size: 24rpx;
+}
+.rent-bottom {
+  margin-top: 20rpx;
+  height: 1100rpx;
+}
+.rent-bottom .houseInfo {
+  margin-top: 10rpx;
+  height: 260rpx;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+          flex-direction: row;
+}
+.rent-bottom .houseInfo .houseInfo-left {
+  margin-left: 30rpx;
+  width: 260rpx;
+  height: 240rpx;
+  border-radius: 14rpx;
+  overflow: hidden;
+}
+.rent-bottom .houseInfo .houseInfo-left .houseInfo-left-image {
+  width: 100%;
+  height: 100%;
+}
+.rent-bottom .houseInfo .houseInfo-right {
+  margin: 0 28rpx;
+  width: 400rpx;
+}
+.rent-bottom .houseInfo .houseInfo-right .houseInfo-right-type {
+  color: #343534;
+  margin: 6rpx 0;
+  width: 100%;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 32rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.rent-bottom .houseInfo .houseInfo-right .houseInfo-right-location {
+  color: #7e7f7e;
+  margin: 6rpx 0;
+  font-size: 28rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rent-bottom .houseInfo .houseInfo-right .houseInfo-right-label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rent-bottom .houseInfo .houseInfo-right .houseInfo-right-label .houseInfo-label {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin: 6rpx 10rpx;
+  margin-left: 0;
+  padding: 0 2rpx;
+  font-size: 26rpx;
+  color: #0c8b15;
+  border: 2rpx solid #67a636;
+  border-radius: 8rpx;
+}
+.rent-bottom .houseInfo .houseInfo-right .houseInfo-right-info_Based {
+  position: relative;
+  margin-top: 6rpx;
+  color: #8b8c8b;
+  font-size: 26rpx;
+}
+#item1,
+#item2,
+#item3 {
+  width: 100%;
+  height: 100%;
+  line-height: 70rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  vertical-align: center;
+}
+.houseInfo-right-info_Based text:nth-child(1) {
+  font-size: 36rpx;
+  color: #ee2c2c;
+  font-weight: 600;
+}
+.houseInfo-right-info_Based text:nth-child(2) {
+  margin-left: 6rpx;
+  font-size: 30rpx;
+  color: #f35a3f;
+}
+.houseInfo-right-info_Based text:nth-child(3) {
+  margin-left: 14rpx;
+}
+.houseInfo-right-info_Based text:nth-child(4) {
+  margin-left: 6rpx;
+}
+.houseInfo-right-info_Based text:nth-child(5) {
+  margin-left: 6rpx;
+}
+.houseInfo-right-info_Based text:nth-child(6) {
+  font-size: 18rpx;
+  position: absolute;
+  top: 4rpx;
+}
+.rent-classify-Location {
+  font-size: 28rpx;
+}
+.functionPart-description {
+  font-size: 28rpx;
+  color: #5d5e5d;
+}
+

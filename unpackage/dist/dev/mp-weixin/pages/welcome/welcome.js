@@ -179,7 +179,6 @@ var _default =
         province: '' } };
 
 
-
   },
   methods: {
     goLogin: function goLogin() {

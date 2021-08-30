@@ -40,7 +40,6 @@
 					language: '',
 					nickName: '',
 					province: ''
-
 				}
 			}
 		},
