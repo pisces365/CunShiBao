@@ -4,125 +4,293 @@
 		<view class="rent">
 			<view class="rentTop">
 				<swiper class="swiper" indicator-dots="true" indicator-color="#9d9d9d" indicator-active-color="#FFFFFF"
-					autoplay="true" circular="true" interval="3000" duration="500">
+					autoplay="true" circular="true" interval="3000" duration="500" previous-margin="80rpx"
+					next-margin="80rpx" :current="swiperCurrent" @change="swiperChange">
 					<swiper-item v-for="(Item , Index) in houseInfo.images" :key="Index">
-						<image class="rentTop-image" :src="Item" mode=""></image>
+						<view class="rentTop-item">
+							<image class="rentTop-image" :src="Item" mode="" :class="Index==swiperCurrent?'active':''">
+							</image>
+						</view>
+
 					</swiper-item>
 				</swiper>
 			</view>
-			<view class="rent-description">
-				<view class="rent-desc-location">
-					<text> {{houseInfo.locationStreet}}</text>
-					<text>·</text>
-					<text> {{houseInfo.locationDetail}}</text>
-				</view>
-				<view class="rent-desc-des">
-					<text class="rent-desc-des-text">{{houseInfo.description}}</text>
-				</view>
-				<view class="rent-desc-label-top">
-					<view class="rent-desc-textFixed1">
-						{{additionalInfo.label1}}
+			<scroll-view scroll-y="true" class="rent-center">
+				<view class="rent-description">
+					<view class="rent-desc-location">
+						<text> {{houseInfo.locationStreet}}</text>
+						<text>·</text>
+						<text> {{houseInfo.locationDetail}}</text>
+						<text>| {{houseInfo.type}}</text>
+						<text>| 距我 {{houseInfo.distance}}km</text>
 					</view>
-					<view class="rent-desc-textFixed2">
-						{{additionalInfo.label2}}
+					<view class="rent-desc-des">
+						<text class="rent-desc-des-text">{{houseInfo.description}}</text>
 					</view>
-				</view>
-				<view class="rent-desc-label-bottom">
-					<view class="rent-desc-text" v-for="(item,index) in houseInfo.label" :key="index">
-						{{item}}
+					<view class="rent-desc-label-bottom">
+						<view class="rent-desc-text" v-for="(item,index) in houseInfo.label" :key="index">
+							{{item}}
+						</view>
 					</view>
-				</view>
 
-			</view>
-			<view class="rent-ad">
-				<navigator url="" hover-stay-time="300" class="rent-ad-content">
-					<view class="rent-ad-left">
-						<text>现在预定，立享夏季特惠8折</text>
-						<text>夏季特惠机不可失，马上预定 8月30日-8月31日的住宿，锁定限时好价</text>
-					</view>
-					<view class="rent-ad-right">
-						<image class="rent-ad-right-image" src="http://p1362.bvimg.com/10465/d1d1b66036068f27.png"
-							mode=""></image>
-					</view>
-				</navigator>
-			</view>
-			<view class="rent-preview">
-				<view class="rent-preview-title">
-					房源预览
 				</view>
-				<view class="rent-preview-center">
-					<view class="previewItem">
-						<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/ea3505b3dc95802f.png"
-							mode=""></image>
-						{{houseInfo.RoomInfo}}间卧室
-					</view>
-					<view class="previewItem">
-						<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/ee2089ba216841af.png"
-							mode=""></image>
-						{{houseInfo.RoomInfo}}张床
-					</view>
-					<view class="previewItem">
-						<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/7166f07443a73d00.png"
-							mode=""></image>
-						{{houseInfo.RoomInfo*2}}个房客
-					</view>
-				</view>
-			</view>
-			<view class="rent-hostWords">
-				<view class="rent-hostWords-title">
-					房源描述
-				</view>
-				<view class="rent-hostWords-content">
-					<uni-collapse>
-						<uni-collapse-item title="致可爱的你:    雾Woo在用心做好每一个房间，大到地面吊顶设计，小到灯....">
-							<view class="content">
-								<text class="rent-hostWords-content-text">{{additionalInfo.description}}</text>
-							</view>
-						</uni-collapse-item>
-					</uni-collapse>
-				</view>
-			</view>
-			<view class="rent-hostOwner">
-				<view class="rent-hostOwner-title">
-					房东介绍
-				</view>
-				<view class="rent-hostOwner-top">
-					<view class="rent-hostOwner-top-image">
-						<image class="rent-hostOwner-image" :src="additionalInfo.hostImage[houseInfo.index]" mode=""></image>
-					</view>
-					<view class="rent-hostOwner-top-right">
-						<view class="rent-hostOwner-top-right-top">
-							<view class="rent-hostOwner-top-right-nicekname">
-								{{additionalInfo.hostNickname[houseInfo.index]}}
-							</view>
-							<view class="rent-hostOwner-top-right-evaluate">
-								超赞房东
-							</view>
+				<view class="rent-ad">
+					<navigator url="" hover-stay-time="300" class="rent-ad-content">
+						<view class="rent-ad-left">
+							<text>现在预定，立享夏季特惠8折</text>
+							<text>夏季特惠机不可失，马上预定 8月30日-8月31日的住宿，锁定限时好价</text>
 						</view>
-						<view class="rent-hostOwner-top-right-bottom">
-							已核验身份
+						<view class="rent-ad-right">
+							<image class="rent-ad-right-image" src="http://p1362.bvimg.com/10465/d1d1b66036068f27.png"
+								mode=""></image>
+						</view>
+					</navigator>
+				</view>
+				<view class="rent-preview">
+					<view class="rent-preview-title">
+						房源预览
+					</view>
+					<view class="rent-preview-center">
+						<view class="previewItem">
+							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/b941d24f1fa6aaa0.png"
+								mode=""></image>
+							1 间客厅
+						</view>
+						<view class="previewItem">
+							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/68d499ac8241be3b.png"
+								mode=""></image>
+							{{houseInfo.RoomInfo}} 间卧室
+						</view>
+						<view class="previewItem">
+							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/072d265e15481414.png"
+								mode=""></image>
+							{{houseInfo.RoomInfo}} 张床
+						</view>
+						<view class="previewItem">
+							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/ee2089ba216841af.png"
+								mode=""></image>
+							{{houseInfo.RoomInfo-1}} 间卫生间
+						</view>
+						<view class="previewItem">
+							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/65a8df1a24a4d2b1.png"
+								mode=""></image>
+							{{houseInfo.RoomInfo*2-1}} 位房客
 						</view>
 					</view>
 				</view>
-				<view class="rent-hostOwner-center">
-					<view class="rent-hostOwner-center-text">
-						超赞房东经验丰富、评分很高，致力于为房客提供优质的住宿体验。
+				<view class="rent-hostWords">
+					<view class="rent-hostWords-title">
+						房源介绍
 					</view>
-					<view class="rent-hostOwner-center-right">
-						<image class="rent-hostOwner-center-image"
-							src="http://p1362.bvimg.com/10465/5f61d0c830620373.png" mode=""></image>
+					<view class="rent-hostWords-content">
+						<uni-collapse>
+							<uni-collapse-item title="这是一套精致轻奢的现代装修风格为主的温馨小屋，在这里享受高速WIFI带给您的一路畅通无阻精致">
+								<view class="content">
+									<view class="rent-hostWords-content-text"
+										v-for="(item,index) in additionalInfo.description" :key="index">
+										{{item}}
+									</view>
+								</view>
+							</uni-collapse-item>
+						</uni-collapse>
 					</view>
 				</view>
-			</view>
+				<view class="rent-hostOwner">
+					<view class="rent-hostOwner-title">
+						房东介绍
+					</view>
+					<view class="rent-hostOwner-top">
+						<view class="rent-hostOwner-top-image">
+							<image class="rent-hostOwner-image" :src="additionalInfo.hostImage[houseInfo.index]"
+								mode="">
+							</image>
+						</view>
+						<view class="rent-hostOwner-top-right">
+							<view class="rent-hostOwner-top-right-left">
+								<view class="rent-hostOwner-top-right-top">
+									<view class="rent-hostOwner-top-right-nicekname">
+										{{additionalInfo.hostNickname[houseInfo.index]}}
+									</view>
+								</view>
+								<view class="rent-hostOwner-top-right-bottom">
+									已核验身份
+								</view>
+							</view>
+							<view class="rent-hostOwner-top-right-right">
+								<view class="contact-left">
+									<image class="contact-image" src="http://p1362.bvimg.com/10465/65a8df1a24a4d2b1.png"
+										mode=""></image>
+								</view>
+								<view class="contact-right">
+									联系房东
+								</view>
+							</view>
+
+						</view>
+					</view>
+					<view class="rent-hostOwner-center">
+						<view class="rent-hostOwner-center-text">
+							超赞房东经验丰富、评分很高，致力于为房客提供优质的住宿体验。
+						</view>
+						<view class="rent-hostOwner-center-right">
+							<image class="rent-hostOwner-center-image"
+								src="http://p1362.bvimg.com/10465/5f61d0c830620373.png" mode=""></image>
+						</view>
+					</view>
+				</view>
+				<view class="rent-infrastructure">
+					<view class="rent-infrastructure-title">
+						设施服务
+					</view>
+					<view class="rent-infrastructure-part">
+						<view class="rent-infrastructure-part-left">
+							<view class="left-icon">
+								<text class="iconfont icon-ruzhu"></text>
+							</view>
+							<view class="left-text">
+								入住服务
+							</view>
+						</view>
+						<view class="rent-infrastructure-part-right">
+							<view class="top">
+								<view class="top-left">
+									<text class="iconfont icon-dui"></text>
+									<text>电梯</text>
+								</view>
+								<view class="top-right">
+									<text class="iconfont icon-dui"></text>
+									<text>可预订长期住宿</text>
+								</view>
+							</view>
+							<view class="bottom">
+								<view class="bottom-left">
+									<text class="iconfont icon-dui"></text>
+									<text>独立入口</text>
+								</view>
+								<view class="bottom-right">
+									<text class="iconfont icon-dui"></text>
+									<text>付费停车位</text>
+								</view>
+							</view>
+						</view>
+
+					</view>
+					<view class="cross-line"></view>
+					<view class="rent-infrastructure-part">
+						<view class="rent-infrastructure-part-left">
+							<view class="left-icon">
+								<text class="iconfont icon-WIFI"></text>
+							</view>
+							<view class="left-text">
+								基础设施
+							</view>
+						</view>
+						<view class="rent-infrastructure-part-right">
+							<view class="top">
+								<view class="top-left">
+									<text class="iconfont icon-dui"></text>
+									<text>空调</text>
+								</view>
+								<view class="top-right">
+									<text class="iconfont icon-dui"></text>
+									<text>洗衣机</text>
+								</view>
+							</view>
+							<view class="bottom">
+								<view class="bottom-left">
+									<text class="iconfont icon-dui"></text>
+									<text>无线网络</text>
+								</view>
+								<view class="bottom-right">
+									<text class="iconfont icon-dui"></text>
+									<text>暖气</text>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="cross-line"></view>
+					<view class="rent-infrastructure-part">
+						<view class="rent-infrastructure-part-left">
+							<view class="left-icon">
+								<text class="iconfont icon-yugang"></text>
+							</view>
+							<view class="left-text">
+								洗浴设施
+							</view>
+						</view>
+						<view class="rent-infrastructure-part-right">
+							<view class="top">
+								<view class="top-left">
+									<text class="iconfont icon-dui"></text>
+									<text>洗发水</text>
+								</view>
+								<view class="top-right">
+									<text class="iconfont icon-dui"></text>
+									<text>吹风机</text>
+								</view>
+							</view>
+							<view class="bottom">
+								<view class="bottom-left">
+									<text class="iconfont icon-dui"></text>
+									<text>热水</text>
+								</view>
+								<view class="bottom-right">
+									<text class="iconfont icon-dui"></text>
+									<text>沐浴露</text>
+								</view>
+							</view>
+						</view>
+
+					</view>
+					<view class="cross-line"></view>
+					<view class="rent-infrastructure-part">
+						<view class="rent-infrastructure-part-left">
+							<view class="left-icon">
+								<text class="iconfont icon-chufang"></text>
+							</view>
+							<view class="left-text">
+								厨房用品
+							</view>
+						</view>
+						<view class="rent-infrastructure-part-right">
+							<view class="top">
+								<view class="top-left">
+									<text class="iconfont icon-dui"></text>
+									<text>冰箱</text>
+								</view>
+								<view class="top-right">
+									<text class="iconfont icon-dui"></text>
+									<text>热水壶</text>
+								</view>
+							</view>
+						</view>
+
+					</view>
+					<view class="cross-line"></view>
+				</view>
+				<view class="rent-readMe">
+					<view class="rent-readMe-title">
+						订房须知
+					</view>
+					<view class="rent-readMe-part" v-for="(item,index) in additionalInfo.readMe" :key="index">
+						<view class="rent-readMe-part-left">
+							{{item.title}}
+						</view>
+						<view class="rent-readMe-part-right">
+							<view class="rent-readMe-part-right-text" v-for="(textItem,indexIndex) in item.content" :key="indexIndex">
+								{{textItem}}
+							</view>
+						</view>
+
+					</view>
+				</view>
+			</scroll-view>
 			<view class="rent-bottom">
 				<view class="rent-bottom-price">
 					<view class="rent-bottom-price-top">
 						<text>￥{{houseInfo.price}}</text>
 						<text style="">￥{{houseInfo.price+375}}</text>
 						<text> /月</text>
-					</view>
-					<view class="star">
-						⭐⭐⭐⭐⭐ 11
 					</view>
 					<view class="rent-bottom-price-bottom">
 						<view class="rent-bottom-price-bottom-jianmian">
@@ -133,8 +301,8 @@
 						</view>
 					</view>
 				</view>
-				<view class="rent-bottom-contact" @click="callHost()">预约看房</view>
-				<view class="rent-bottom-contact" @click="callHost()">联系房东</view>
+				<view class="rent-bottom-contact" @click=" makeAnAppointment()">预约看房</view>
+				<view class="rent-bottom-contact" @click="DueToHousing()">预定房源</view>
 			</view>
 		</view>
 
@@ -145,13 +313,30 @@
 	export default {
 		data() {
 			return {
+				swiperCurrent: 0,
 				houseInfo: {},
 				additionalInfo: {
 					label1: '超赞房东',
 					label2: '5.0分 · 11条评论',
 					description: [
-						"致可爱的你:    雾Woo在用心做好每一个房间，大到地面吊顶设计，小到灯光亮度调节，我们希望能够尽我们的努力为可爱的你带来一个相对舒适的居住环境，能够为你的重庆之旅增添一分色彩。我们欢迎你居住过后能为我们在评论区留下你真实的居住体验和宝贵的意见及建议，我们也希望能通过大家的体验让我们的房间和服务不断地优化完善。        祝可爱的你重庆之旅愉快！位置:房屋位于重庆市中心位置，出行特别方便距离解放碑步行街1公里距离网红洪崖洞景区" +
-						"1.4公里距离网红李子坝轻轨站3公里（轻轨6站直达）距离长江索道1.3公里距离十八梯传统风貌区100米距离山城巷传统风貌区100米距离轻轨1.2号线较场口站200米距离公交站50米周边有各大商场，银行，娱乐场所。房屋楼下有各种重庆美食，火锅，小面，烤鱼，江湖菜配置:房屋床单为每客每日更换，干净整洁，均为9成新以上特密床单屋内配置100英寸1080P全高清GIMI极米无屏电视，搭载Harman/Kardon哈曼卡顿原装音箱，为你带来卧室里的影院和音乐会现场感受"
+						"Hello，你所浏览的房源是一套一室一厨一卫的精装公寓我们有一张1.8x2m大床，可供2人居住",
+						"这是一套以轻奢的现代装修风格为主的温馨小屋",
+						"在这里，享受高速WIFI带给您的一路畅通无阻。",
+						"房源地理位置非常优越：",
+						"我们的房子紧靠「人民北路」地铁站，",
+						"离「金牛万达商圈、文殊院景区」步行10分钟内，",
+						"离「春熙路」地铁4个站，",
+						"离「火车北站」地铁1个站，",
+						"离「机场专线」步行两分钟，",
+						"可方便快捷的到达各个景点。",
+						"房间设备：",
+						"『高速WIFI、高清投影、空调、冰箱、洗衣机、电梯、电热水器、门禁、电热水壶、沙发、衣架』",
+						"卫浴配置：",
+						"『手纸、淋浴、盥洗池、一次性牙刷、毛巾、浴巾、电吹风、洗发水、沐浴露、漱口杯、凉拖』",
+						"房门配有智能密码锁，方便您进出；",
+						"苛刻的卫生标准是我们一直以来所强调的，在这里，我们会有专业的保洁阿姨为房间提供【清洁】及【消毒】，您可以安心入住。",
+						"我们的房子麻雀虽小五脏俱全，希望能让您感受到家的温暖和舒适。"
+
 					],
 					hostNickname: [
 						'Lemon',
@@ -170,16 +355,54 @@
 						'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
 						'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
 						'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'
-					]
+					],
+					readMe: [{
+						title: '房屋守则',
+						content: [
+							'不允许举办派对和活动', '不允许携带宠物'
+						]
+					}, {
+						title: '取消政策',
+						content: [
+							'添加入住退房日期后，可查看取消政策详情'
+						]
+					}, {
+						title: '安全须知',
+						content: [
+							'在新冠肺炎疫情期间，我们要求所有房东和房客查看并遵守爱彼迎的社交距离准则和其他新冠肺炎疫情相关准则。',
+							'未报告装有一氧化碳报警器', '已配备烟雾报警器'
+
+						]
+					}, {
+						title: '安全预订',
+						content: [
+							'为了保护您的账号隐私及付款安全，请勿妄信第三方预订代理提供的折扣或礼金券，也不要在爱彼迎网站或App之外汇款或沟通。 查看详情'
+						]
+					}, {
+						title: '发票须知',
+						content: [
+							'房东将自行提供发票（非爱彼迎提供的发票），请让房东开具发票。'
+						]
+					}]
 				},
 			}
 		},
 		methods: {
-			callHost() {
+			makeAnAppointment() {
 				uni.makePhoneCall({
-					phoneNumber: '17858407426' //仅为示例
+					phoneNumber: '0571-88628854' //仅为示例
 				});
 			},
+			DueToHousing() {
+				uni.navigateTo({
+					url: '../../phoneRegistration/phoneRegistration'
+				})
+			},
+			swiperChange(e) {
+				this.swiperCurrent = e.detail.current;
+				// console.log(this.swiperCurrent)
+			}
+
 		},
 		onLoad(options) {
 			let that = this;
@@ -201,69 +424,110 @@
 
 	.rentTop {
 		width: 100%;
-		height: 374rpx;
+		height: 350rpx;
+		margin-bottom: 10rpx;
 
 		.swiper {
 			width: 100%;
 			height: 100%;
 		}
 
-		.rentTop-image {
-			width: 100%;
-			height: 100%;
+		.rentTop-item {
+			margin: 0 30rpx;
+
+			.rentTop-image {
+				position: absolute;
+				margin-top: 30upx;
+				width: 100%;
+				height: 80%;
+				z-index: 5;
+				opacity: 0.7;
+				top: 5%;
+				// transform: translateY(-50%);
+				box-shadow: 0px 4upx 15upx 0px rgba(153, 153, 153, 0.24);
+
+			}
+
+			.active {
+				background: #FFFFFF;
+				opacity: 1;
+				z-index: 10;
+				height: 95%;
+				top: -3%;
+				transition: all .1s ease-in 0s;
+				transform: translateY(0);
+			}
 		}
+
 	}
 
-	.rent-description,
-	.rent-ad,
-	.rent-preview,
-	.rent-hostWords {
-		background: #FFFFFF;
-		margin: 4rpx 0;
-		padding: 10rpx 20rpx;
+	.rent-center {
+		height: 1040rpx;
 
-		.rent-desc-location {
-			font-size: 28rpx;
-			color: #aa00ff;
-		}
+		.rent-description,
+		.rent-ad,
+		.rent-preview,
+		.rent-hostWords {
+			background: #FFFFFF;
+			margin: 14rpx 0;
+			padding: 10rpx 20rpx;
 
-		.rent-desc-des {
-			.rent-desc-des-text {
-				line-height: 58rpx;
-				font-size: 38rpx;
-				font-weight: 500;
+			.rent-desc-location {
+				margin: 10rpx 0;
+				font-size: 28rpx;
+				color: #8E8E9B;
+			}
+
+			.rent-desc-des {
+				.rent-desc-des-text {
+					line-height: 54rpx;
+					font-size: 34rpx;
+					font-weight: 500;
+				}
+			}
+
+			.rent-desc-label-top,
+			.rent-desc-label-bottom {
+				margin-top: 14rpx;
+				display: flex;
+				align-items: center;
+
+				.rent-desc-text {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 4rpx 12rpx;
+					padding: 0rpx 6rpx;
+					margin-left: 4rpx;
+					font-size: 26rpx;
+					color: #A1BF56;
+					border: 2rpx solid #A1BF56;
+					border-radius: 10rpx;
+				}
+
+				.rent-desc-textFixed1 {
+					background: #EAF8E8;
+					color: #416426;
+				}
+
+				.rent-desc-textFixed2 {
+					background: #F5F2E6;
+					color: #7a6d4b;
+				}
 			}
 		}
 
-		.rent-desc-label-top,
-		.rent-desc-label-bottom {
-			margin-top: 14rpx;
-			display: flex;
-			align-items: center;
-
-			.rent-desc-text,
-			.rent-desc-textFixed1,
-			.rent-desc-textFixed2 {
-				font-size: 24rpx;
-				padding: 10rpx 20rpx;
-				margin: 0 12rpx;
-				background: #e3e3e3;
-				border-radius: 6rpx;
-			}
-
-			.rent-desc-textFixed1 {
-				background: #EAF8E8;
-				color: #416426;
-			}
-
-			.rent-desc-textFixed2 {
-				background: #F5F2E6;
-				color: #7a6d4b;
-			}
-		}
 	}
 
 	.rent-desc-location text:nth-child(2) {
+		margin: 0 6rpx;
+	}
+
+	.rent-desc-location text:nth-child(3) {
+		margin: 0 6rpx;
+	}
+
+	.rent-desc-location text:nth-child(4) {
 		margin: 0 6rpx;
 	}
 
@@ -307,17 +571,18 @@
 			display: flex;
 
 			.previewItem {
-				margin: 20rpx 30rpx;
+				flex: 1;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 				color: #404140;
+				font-size: 26rpx;
 			}
 
 			.previewItem-Image {
-				height: 70rpx;
-				width: 70rpx;
+				height: 60rpx;
+				width: 60rpx;
 				margin-bottom: 10rpx;
 			}
 		}
@@ -372,31 +637,53 @@
 
 			.rent-hostOwner-top-right {
 				margin: 30rpx 20rpx;
+				display: flex;
+				flex: 1;
+				position: relative;
 
-				.rent-hostOwner-top-right-top {
-					display: flex;
+				.rent-hostOwner-top-right-left {
 
-					.rent-hostOwner-top-right-nicekname {
-						font-size: 34rpx;
+					.rent-hostOwner-top-right-top {
+						display: flex;
+
+						.rent-hostOwner-top-right-nicekname {
+							font-size: 34rpx;
+						}
 					}
 
-					.rent-hostOwner-top-right-evaluate {
-						margin-left: 20rpx;
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						padding: 6rpx;
-						background: #B14900;
-						color: white;
-						font-size: 20rpx;
-						font-weight: bold;
-						border-radius: 10rpx;
+					.rent-hostOwner-top-right-bottom {
+						margin-top: 10rpx;
+						font-size: 26rpx;
 					}
 				}
 
-				.rent-hostOwner-top-right-bottom {
-					margin-top: 10rpx;
-					font-size: 26rpx;
+				.rent-hostOwner-top-right-right {
+					position: absolute;
+					right: 0;
+					top: 4rpx;
+					border: 2rpx solid #93A663;
+					border-radius: 10rpx;
+					padding: 4rpx 10rpx;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					.contact-left {
+						width: 50rpx;
+						height: 60rpx;
+
+						.contact-image {
+							color: #93A663;
+							height: 100%;
+							width: 100%;
+						}
+					}
+
+					.contact-right {
+						margin-left: 10rpx;
+						font-size: 30rpx;
+						color: #93A663;
+					}
 				}
 			}
 		}
@@ -418,8 +705,8 @@
 				margin-left: 20rpx;
 
 				.rent-hostOwner-center-image {
-					width: 80rpx;
-					height: 80rpx;
+					width: 70rpx;
+					height: 70rpx;
 				}
 			}
 		}
@@ -428,6 +715,79 @@
 			font-size: 30rpx;
 			color: #4CD964;
 			margin: 20rpx;
+		}
+	}
+
+	.rent-infrastructure {
+		margin-top: 20rpx;
+		background: #FFFFFF;
+		margin: 4rpx 0;
+		padding: 10rpx 10rpx;
+		// margin-bottom: 140rpx;
+
+		.rent-infrastructure-title {
+			margin: 20rpx;
+			font-size: 36rpx;
+			font-weight: bold;
+		}
+
+		.rent-infrastructure-part {
+			margin: 20rpx;
+			display: flex;
+
+			.rent-infrastructure-part-left {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				.left-icon {
+					width: 60rpx;
+					height: 60rpx;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					.icon-yugang {
+						left: 0;
+						font-size: 60rpx;
+						color: #53b144;
+					}
+
+				}
+
+				.left-text {
+					margin-top: 10rpx;
+					color: #000000;
+				}
+			}
+
+			.rent-infrastructure-part-right {
+				display: flex;
+				flex: 1;
+				margin-top: 10rpx;
+				margin-left: 50rpx;
+				width: 490rpx;
+
+				.top {
+					flex: 1;
+
+					.top-left {}
+
+					.top-right {
+						margin-top: 20rpx;
+					}
+
+				}
+
+				.bottom {
+					flex: 1;
+
+					.bottom-right {
+						margin-top: 20rpx;
+					}
+				}
+			}
 		}
 	}
 
@@ -450,13 +810,14 @@
 				display: flex;
 
 				.rent-bottom-price-bottom-jianmian {
-					color: #d60000;
+					color: #e7b02e;
 					padding: 4rpx;
 					font-size: 26rpx;
 					margin: 10rpx 0;
-					background: rgba(202, 153, 153, 0.2);
+					background: #FEEFD1;
 				}
-				.rent-bottom-price-bottom-detail{
+
+				.rent-bottom-price-bottom-detail {
 					padding: 4rpx;
 					font-size: 26rpx;
 					margin: 10rpx 0;
@@ -468,23 +829,89 @@
 
 	.rent-bottom-price-top text:nth-child(1) {
 		font-weight: bold;
+		color: #f48b01;
+	}
+
+	.rent-bottom-price-top text:nth-child(3) {
+		font-size: 26rpx;
+		color: #FF9502;
 	}
 
 	.rent-bottom-price-top text:nth-child(2) {
 		text-decoration: line-through;
 		font-size: 26rpx;
+		color: #FF9502;
 	}
-	.rent-bottom-contact{
+
+	.rent-bottom-contact {
+		margin-top: 20rpx;
 		margin-left: 20rpx;
-		font-size: 38rpx;
+		font-size: 36rpx;
 		font-weight: bold;
 		color: white;
-		background: #36db2a;
-		border-radius: 10rpx;
+		background: #35cc27;
+		border-radius: 6rpx;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 90rpx;
-		width: 200rpx;
+		height: 74rpx;
+		width: 180rpx;
+	}
+
+	.icon-dui {
+		margin-right: 8rpx;
+		color: #30b94b;
+	}
+
+	.cross-line {
+		width: 100%;
+		height: 2rpx;
+		background: #f3f4f3;
+	}
+
+	.icon-ruzhu,
+	.icon-chufang,
+	.icon-WIFI {
+		font-size: 60rpx;
+		color: #53b144;
+	}
+
+	.rent-readMe {
+		margin-top: 20rpx;
+		background: #FFFFFF;
+		margin: 4rpx 0;
+		padding: 10rpx 10rpx;
+	}
+
+	.rent-readMe-title {
+		margin: 20rpx;
+		font-size: 36rpx;
+		font-weight: bold;
+	}
+
+	.rent-readMe-part {
+		display: flex;
+		margin: 20rpx;
+	}
+
+	.rent-readMe-part-left {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 28rpx;
+		// font-weight: bold;
+		width: 120rpx;
+
+	}
+
+	.rent-readMe-part-right {
+		margin: 10rpx 20rpx 10rpx 40rpx;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		flex: 1;
+	}
+	.rent-readMe-part-right-text{
+		margin-top: 10rpx;
 	}
 </style>

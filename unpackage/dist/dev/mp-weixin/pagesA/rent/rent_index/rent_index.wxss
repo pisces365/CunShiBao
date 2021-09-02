@@ -26,9 +26,9 @@
 /* 文章场景相关 */
 @font-face {
   font-family: "iconfont"; /* Project id 2698742 */
-  src: url('//at.alicdn.com/t/font_2698742_zgp9ijxuitg.woff2?t=1630322277953') format('woff2'),
-       url('//at.alicdn.com/t/font_2698742_zgp9ijxuitg.woff?t=1630322277953') format('woff'),
-       url('//at.alicdn.com/t/font_2698742_zgp9ijxuitg.ttf?t=1630322277953') format('truetype');
+  src: url('//at.alicdn.com/t/font_2698742_j074k25s4to.woff2?t=1630383932727') format('woff2'),
+       url('//at.alicdn.com/t/font_2698742_j074k25s4to.woff?t=1630383932727') format('woff'),
+       url('//at.alicdn.com/t/font_2698742_j074k25s4to.ttf?t=1630383932727') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -36,6 +36,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-dui:before {
+  content: "\e683";
+}
+.icon-yugang:before {
+  content: "\e669";
+}
+.icon-ruzhu:before {
+  content: "\e617";
+}
+.icon-chufang:before {
+  content: "\e8a6";
 }
 .icon-youhuiquan1:before {
   content: "\e642";
@@ -293,7 +305,6 @@
           flex-direction: column;
 }
 .rent-top {
-  padding: 20rpx 30rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -311,6 +322,11 @@
 }
 .rent-top .rent-title {
   width: 100%;
+  height: 300rpx;
+}
+.rent-top .rent-title .rent-title-image {
+  width: 100%;
+  height: 100%;
 }
 .rent-top .rent-title .rent-title-search {
   background: #eeefee;
@@ -378,7 +394,7 @@
   height: 130rpx;
 }
 .rent-top .rent-classify {
-  margin-top: 20rpx;
+  margin: 20rpx 0;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -426,12 +442,13 @@
   font-size: 24rpx;
 }
 .rent-bottom {
-  margin-top: 20rpx;
   height: 1100rpx;
 }
 .rent-bottom .houseInfo {
-  margin-top: 10rpx;
-  height: 260rpx;
+  margin: 10rpx 0;
+}
+.rent-bottom .houseInfo .houseInfo-top {
+  margin: 20rpx 0;
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -443,18 +460,36 @@
 }
 .rent-bottom .houseInfo .houseInfo-left {
   margin-left: 30rpx;
-  width: 260rpx;
-  height: 240rpx;
+  width: 230rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.rent-bottom .houseInfo .houseInfo-left .houseInfo-left-image {
+  width: 230rpx;
+  height: 180rpx;
   border-radius: 14rpx;
   overflow: hidden;
 }
-.rent-bottom .houseInfo .houseInfo-left .houseInfo-left-image {
-  width: 100%;
-  height: 100%;
-}
 .rent-bottom .houseInfo .houseInfo-right {
   margin: 0 28rpx;
-  width: 400rpx;
+  width: 500rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
 .rent-bottom .houseInfo .houseInfo-right .houseInfo-right-type {
   color: #343534;
@@ -463,15 +498,16 @@
   display: -webkit-box;
   word-break: break-all;
   text-overflow: ellipsis;
-  font-size: 32rpx;
+  font-size: 30rpx;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
+  font-weight: bold;
 }
 .rent-bottom .houseInfo .houseInfo-right .houseInfo-right-location {
   color: #7e7f7e;
   margin: 6rpx 0;
-  font-size: 28rpx;
+  font-size: 26rpx;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -495,13 +531,13 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  margin: 6rpx 10rpx;
+  margin: 4rpx 12rpx;
+  padding: 0rpx 6rpx;
   margin-left: 0;
-  padding: 0 2rpx;
   font-size: 26rpx;
-  color: #0c8b15;
-  border: 2rpx solid #67a636;
-  border-radius: 8rpx;
+  color: #A1BF56;
+  border: 2rpx solid #A1BF56;
+  border-radius: 10rpx;
 }
 .rent-bottom .houseInfo .houseInfo-right .houseInfo-right-info_Based {
   position: relative;
@@ -524,14 +560,14 @@
   vertical-align: center;
 }
 .houseInfo-right-info_Based text:nth-child(1) {
-  font-size: 36rpx;
-  color: #ee2c2c;
+  font-size: 32rpx;
+  color: #FF9502;
   font-weight: 600;
 }
 .houseInfo-right-info_Based text:nth-child(2) {
   margin-left: 6rpx;
-  font-size: 30rpx;
-  color: #f35a3f;
+  font-size: 28rpx;
+  color: #FF9502;
 }
 .houseInfo-right-info_Based text:nth-child(3) {
   margin-left: 14rpx;
@@ -553,5 +589,11 @@
 .functionPart-description {
   font-size: 28rpx;
   color: #5d5e5d;
+}
+.cross-line {
+  width: 100%;
+  height: 2rpx;
+  background: #DCDDDC;
+  margin: 12rpx 0;
 }
 

@@ -113,6 +113,15 @@
                 }
                 
                 }
+                ,{
+                    "path" : "phoneRegistration/phoneRegistration",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 	}, {
 		"root": "pagesB",
@@ -185,8 +194,8 @@
 				"name": "民宿详情",
 				"path": "pagesA/rent/rent_content/rent_content"
 			}, {
-				"name": "文章内容",
-				"path": "pagesA/News"
+				"name": "手机号注册",
+				"path": "pagesA/phoneRegistration/phoneRegistration"
 			}
 
 		]

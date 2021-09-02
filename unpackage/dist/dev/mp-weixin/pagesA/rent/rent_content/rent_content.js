@@ -96,10 +96,10 @@ var components
 try {
   components = {
     uniCollapse: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse/uni-collapse */ "uni_modules/uni-collapse/components/uni-collapse/uni-collapse").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue */ 192))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse/uni-collapse */ "uni_modules/uni-collapse/components/uni-collapse/uni-collapse").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue */ 200))
     },
     uniCollapseItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item */ "uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue */ 199))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item */ "uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue */ 207))
     }
   }
 } catch (e) {
@@ -299,17 +299,202 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      swiperCurrent: 0,
       houseInfo: {},
       additionalInfo: {
         label1: '超赞房东',
         label2: '5.0分 · 11条评论',
         description: [
-        "致可爱的你:    雾Woo在用心做好每一个房间，大到地面吊顶设计，小到灯光亮度调节，我们希望能够尽我们的努力为可爱的你带来一个相对舒适的居住环境，能够为你的重庆之旅增添一分色彩。我们欢迎你居住过后能为我们在评论区留下你真实的居住体验和宝贵的意见及建议，我们也希望能通过大家的体验让我们的房间和服务不断地优化完善。        祝可爱的你重庆之旅愉快！位置:房屋位于重庆市中心位置，出行特别方便距离解放碑步行街1公里距离网红洪崖洞景区" +
-        "1.4公里距离网红李子坝轻轨站3公里（轻轨6站直达）距离长江索道1.3公里距离十八梯传统风貌区100米距离山城巷传统风貌区100米距离轻轨1.2号线较场口站200米距离公交站50米周边有各大商场，银行，娱乐场所。房屋楼下有各种重庆美食，火锅，小面，烤鱼，江湖菜配置:房屋床单为每客每日更换，干净整洁，均为9成新以上特密床单屋内配置100英寸1080P全高清GIMI极米无屏电视，搭载Harman/Kardon哈曼卡顿原装音箱，为你带来卧室里的影院和音乐会现场感受"],
+        "Hello，你所浏览的房源是一套一室一厨一卫的精装公寓我们有一张1.8x2m大床，可供2人居住",
+        "这是一套以轻奢的现代装修风格为主的温馨小屋",
+        "在这里，享受高速WIFI带给您的一路畅通无阻。",
+        "房源地理位置非常优越：",
+        "我们的房子紧靠「人民北路」地铁站，",
+        "离「金牛万达商圈、文殊院景区」步行10分钟内，",
+        "离「春熙路」地铁4个站，",
+        "离「火车北站」地铁1个站，",
+        "离「机场专线」步行两分钟，",
+        "可方便快捷的到达各个景点。",
+        "房间设备：",
+        "『高速WIFI、高清投影、空调、冰箱、洗衣机、电梯、电热水器、门禁、电热水壶、沙发、衣架』",
+        "卫浴配置：",
+        "『手纸、淋浴、盥洗池、一次性牙刷、毛巾、浴巾、电吹风、洗发水、沐浴露、漱口杯、凉拖』",
+        "房门配有智能密码锁，方便您进出；",
+        "苛刻的卫生标准是我们一直以来所强调的，在这里，我们会有专业的保洁阿姨为房间提供【清洁】及【消毒】，您可以安心入住。",
+        "我们的房子麻雀虽小五脏俱全，希望能让您感受到家的温暖和舒适。"],
+
 
         hostNickname: [
         'Lemon',
@@ -327,17 +512,55 @@ var _default =
         'http://p1362.bvimg.com/10465/6de29a054bb84057.jpg',
         'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
         'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
-        'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'] } };
+        'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'],
+
+        readMe: [{
+          title: '房屋守则',
+          content: [
+          '不允许举办派对和活动', '不允许携带宠物'] },
+
+        {
+          title: '取消政策',
+          content: [
+          '添加入住退房日期后，可查看取消政策详情'] },
+
+        {
+          title: '安全须知',
+          content: [
+          '在新冠肺炎疫情期间，我们要求所有房东和房客查看并遵守爱彼迎的社交距离准则和其他新冠肺炎疫情相关准则。',
+          '未报告装有一氧化碳报警器', '已配备烟雾报警器'] },
+
+
+        {
+          title: '安全预订',
+          content: [
+          '为了保护您的账号隐私及付款安全，请勿妄信第三方预订代理提供的折扣或礼金券，也不要在爱彼迎网站或App之外汇款或沟通。 查看详情'] },
+
+        {
+          title: '发票须知',
+          content: [
+          '房东将自行提供发票（非爱彼迎提供的发票），请让房东开具发票。'] }] } };
+
 
 
 
   },
   methods: {
-    callHost: function callHost() {
+    makeAnAppointment: function makeAnAppointment() {
       uni.makePhoneCall({
-        phoneNumber: '17858407426' //仅为示例
+        phoneNumber: '0571-88628854' //仅为示例
       });
+    },
+    DueToHousing: function DueToHousing() {
+      uni.navigateTo({
+        url: '../../phoneRegistration/phoneRegistration' });
+
+    },
+    swiperChange: function swiperChange(e) {
+      this.swiperCurrent = e.detail.current;
+      // console.log(this.swiperCurrent)
     } },
+
 
   onLoad: function onLoad(options) {
     var that = this;

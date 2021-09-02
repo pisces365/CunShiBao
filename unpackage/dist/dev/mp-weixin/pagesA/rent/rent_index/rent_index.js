@@ -215,13 +215,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
       info: {
         AreaIndex: 0,
-        PriceIndex: 0 },
+        PriceIndex: 0,
+        rentTypeIndex: 0 },
 
       rent_function: [{
         imageUrl: 'http://p1362.bvimg.com/10465/50d2d8801b5312d3.png',
@@ -237,9 +255,10 @@ var _default =
         description: '发房源' }],
 
       AreaArray: ['地区分类', '相国寺', '郭家村', '岑村', '塘屋里', '新西湖小镇', '黄婆庙', '金家塘村'],
-      PriceArray: ['价格区间', '1000以下', '1000-1500元', '1500-2000元', '2000-2500元', '2500-3000元', '3000-3500元',
-      '3500-4000元', '4000以上'],
+      PriceArray: ['价格区间', '1k以下', '1k-1.5k', '1.5k-2k', '2k-2.5k', '2.5k-3k', '3k-3.5k',
+      '3.5k-4k', '4k以上'],
 
+      rentTypeArray: ['整租', '合租', '长租', '短租'],
       houseInfo: [{
         index: 0,
         images: [
@@ -250,13 +269,14 @@ var _default =
         'http://p1362.bvimg.com/10465/0926d8cf12e38c14.jpg'],
 
         type: '整租',
-        description: '暗黑工业风Loft投影双床房/步行至解放碑洪崖洞/下楼即达地铁站/免费寄存行李',
+        description: '暗黑工业风Loft投影双床房 / 步行至解放碑洪崖洞 / 下楼即达地铁站 / 免费寄存行李',
         locationStreet: '解放碑洪崖洞',
         locationDetail: '怡景花城',
         label: ['南北', '近地铁', '精装修', '有电梯'],
         price: 4500,
         RoomInfo: '3',
-        hourseAream: '58.70' },
+        hourseAream: '58.70',
+        distance: '2.4' },
 
       {
         index: 1,
@@ -268,13 +288,14 @@ var _default =
         'http://p1362.bvimg.com/10465/20d674b0f767f3d9.jpg'],
 
         type: '合租',
-        description: '高层/高空江景/落地窗/180度全江景/洪崖洞步行5分钟',
+        description: '高层 / 高空江景 / 落地窗 / 180度全江景 / 洪崖洞步行5分钟',
         locationStreet: '崖街',
         locationDetail: '彼岸花园',
         label: ['可开发票', '提供接送', '自助入住'],
         price: 2300,
         RoomInfo: '1',
-        hourseAream: '20.36' },
+        hourseAream: '20.36',
+        distance: '3.6' },
 
       {
         index: 2,
@@ -286,13 +307,14 @@ var _default =
         'http://p1362.bvimg.com/10465/53e77cccc3c830bc.jpg'],
 
         type: '整租',
-        description: '低风险地区无需核酸-【路寓·香草】步行十分钟到洪崖洞,解放碑商圈,江景豪华大床房 A2',
-        locationStreet: '解放碑洪崖洞',
-        locationDetail: '怡景花城',
+        description: '低风险地区无需核酸 - 【路寓·香草】 步行十分钟到洪崖洞 , 解放碑商圈 , 江景豪华大床房 A2',
+        locationStreet: '锦里',
+        locationDetail: '长者小镇',
         label: ['南北', '近地铁', '精装修', '有电梯'],
         price: 3400,
         RoomInfo: '3',
-        hourseAream: '47.36' },
+        hourseAream: '47.36',
+        distance: '3.7' },
 
       {
         index: 3,
@@ -304,13 +326,14 @@ var _default =
         'http://p1362.bvimg.com/10465/756b9c4f8c848de1.jpg'],
 
         type: '整租',
-        description: '低风险地区无需核酸-【路寓·香草】步行十分钟到洪崖洞,解放碑商圈,江景豪华大床房 A2',
-        locationStreet: '解放碑洪崖洞',
-        locationDetail: '怡景花城',
+        description: '低风险地区无需核酸 - 【路寓·香草】 步行十分钟到洪崖洞 , 解放碑商圈 , 江景豪华大床房 A2',
+        locationStreet: '春熙路',
+        locationDetail: '江南摩卡',
         label: ['景区', '近地铁', '拎包入住', '风景美'],
         price: 2800,
         RoomInfo: '2',
-        hourseAream: '28.9' },
+        hourseAream: '28.9',
+        distance: '4.2' },
 
       {
         index: 4,
@@ -322,13 +345,14 @@ var _default =
         'http://p1362.bvimg.com/10465/d900d0e6c2396a8e.jpg'],
 
         type: '整租',
-        description: '<100英寸超清无屏电视>解放碑洪崖洞地铁口后现代轻奢蓝大床影院LOFT2⑦',
-        locationStreet: '解放碑洪崖洞',
-        locationDetail: '怡景花城',
+        description: '< 100英寸超清 无屏电视 >解放碑 洪崖洞地铁口 后现代轻奢蓝大床影院 LOFT2⑦',
+        locationStreet: '人民公园',
+        locationDetail: '年华里',
         label: ['投影仪', '近地铁', '可存行李', '四楼'],
         price: 3400,
         RoomInfo: '3',
-        hourseAream: '40.86' },
+        hourseAream: '40.86',
+        distance: '2.5' },
 
       {
 
@@ -341,13 +365,14 @@ var _default =
         'http://p1362.bvimg.com/10465/13e2c9ace6e3ddca.jpg'],
 
         type: '合租',
-        description: '《一半 · 安迪晓屋》暗黑系日式禅意投影双床房/步行至解放碑/下楼即达地铁站洪崖洞/免费寄存行李',
-        locationStreet: '解放碑洪崖洞',
-        locationDetail: '怡景花城',
+        description: '《 一半 · 安迪晓屋 》 暗黑系日式禅意投影双床房 / 步行至解放碑 / 下楼即达地铁站洪崖洞/免费寄存行李',
+        locationStreet: '武侯祠',
+        locationDetail: '满庭芳',
         label: ['向南', '超赞房东', '精装修', '有电梯'],
         price: 3800,
         RoomInfo: '3',
-        hourseAream: '50.36' },
+        hourseAream: '50.36',
+        distance: '5.2' },
 
       {
         index: 6,
@@ -359,13 +384,14 @@ var _default =
         'http://p1362.bvimg.com/10465/3793f4d28e093137.jpg'],
 
         type: '整租',
-        description: '【日暮】全屋消毒安心入住｜距七星岗轻轨站5分钟｜近解放碑 洪崖洞 长江索道 李子坝｜舒适居家一居',
-        locationStreet: '解放碑洪崖洞',
-        locationDetail: '怡景花城',
+        description: '【日暮】 全屋消毒安心入住 ｜ 距七星岗轻轨站5分钟 ｜ 近解放碑 洪崖洞 长江索道 李子坝｜舒适居家一居',
+        locationStreet: '宽窄巷子',
+        locationDetail: '繁华里',
         label: ['夜晚美', '超赞风景', '风格独特', '安全'],
         price: 6700,
         RoomInfo: '4',
-        hourseAream: '60.36' }] };
+        hourseAream: '60.36',
+        distance: '2.9' }] };
 
 
 
@@ -377,6 +403,9 @@ var _default =
     },
     PricePicker: function PricePicker(e) {
       this.info.PriceIndex = e.detail.value;
+    },
+    rentTypePicker: function rentTypePicker(e) {
+      this.info.rentTypeIndex = e.detail.value;
     },
     handleToDetail: function handleToDetail(houseInfo) {
       var that = this;

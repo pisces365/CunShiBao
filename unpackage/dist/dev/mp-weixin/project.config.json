@@ -42,9 +42,9 @@
           "pathName": "pagesA/rent/rent_content/rent_content"
         },
         {
-          "name": "文章内容",
+          "name": "手机号注册",
           "id": 3,
-          "pathName": "pagesA/News"
+          "pathName": "pagesA/phoneRegistration/phoneRegistration"
         }
       ]
     }
