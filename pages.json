@@ -94,35 +94,29 @@
 					"enablePullDownRefresh": false
 				}
 
+			}, {
+				"path": "rent/rent_content/rent_content",
+				"style": {
+					"navigationBarTitleText": "房源详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/rent_house_description/rent_house_description",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/phoneRegistration/phoneRegistration",
+				"style": {
+					"navigationBarTitleText": "绑定手机",
+					"enablePullDownRefresh": false
+				}
+
 			}
-		    ,{
-                    "path" : "rent/rent_content/rent_content",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "房源详情",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "rent/rent_house_description/rent_house_description",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "phoneRegistration/phoneRegistration",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-            ]
+		]
 	}, {
 		"root": "pagesB",
 		"pages": [{
@@ -190,12 +184,12 @@
 			}, {
 				"name": "民宿首页",
 				"path": "pagesA/rent/rent_index/rent_index"
-			},{
+			}, {
 				"name": "民宿详情",
 				"path": "pagesA/rent/rent_content/rent_content"
 			}, {
 				"name": "手机号注册",
-				"path": "pagesA/phoneRegistration/phoneRegistration"
+				"path": "pagesA/rent/phoneRegistration/phoneRegistration"
 			}
 
 		]

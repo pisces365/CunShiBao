@@ -2063,6 +2063,70 @@ function normalizeComponent (
 
 /***/ }),
 
+/***/ 139:
+/*!*************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/api.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;var _config = __webpack_require__(/*! ./config.js */ 140);
+
+
+//发送手机验证码到对应手机上
+function sendSmsCode(data) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/sms/send"),
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('发送手机验证码', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+
+      } });
+
+  });
+}
+//用户填写的校验码进行手机绑定验证
+function phoneBind(data) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/bind/phone"),
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('手机绑定验证', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+      } });
+
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 140:
+/*!****************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/config.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = void 0;var baseUrl = "https://www.zjutleo.cn/village";exports.baseUrl = baseUrl;
+
+/***/ }),
+
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
@@ -8112,7 +8176,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 247:
+/***/ 249:
 /*!***************************************************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************************************/

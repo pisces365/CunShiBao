@@ -395,7 +395,7 @@
 			},
 			DueToHousing() {
 				uni.navigateTo({
-					url: '../../phoneRegistration/phoneRegistration'
+					url: '../phoneRegistration/phoneRegistration'
 				})
 			},
 			swiperChange(e) {
