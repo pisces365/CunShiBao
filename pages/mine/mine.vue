@@ -73,7 +73,7 @@
 				<view class="homePage-image">
 					<image class="homePage-imageSelf" src="http://p1362.bvimg.com/10465/0af17ea9ed3160bb.png" mode=""></image>
 				</view>
-				<text class="homePage-work-part-title">账号注销</text>
+				<text class="homePage-work-part-title">我的预约</text>
 				<text class="homePage-iconRight iconfont icon-a-LeftArrow-copy"></text>
 			</view>
 		</view>

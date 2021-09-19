@@ -116,7 +116,7 @@
 				}
 
 			}, {
-				"path": "rentOrder/rentOrder",
+				"path": "rent/rentOrder/rentOrder",
 				"style": {
 					"navigationBarTitleText": "预定房源",
 					"enablePullDownRefresh": false
