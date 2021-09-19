@@ -115,6 +115,13 @@
 					"enablePullDownRefresh": false
 				}
 
+			}, {
+				"path": "rentOrder/rentOrder",
+				"style": {
+					"navigationBarTitleText": "预定房源",
+					"enablePullDownRefresh": false
+				}
+
 			}
 		]
 	}, {
@@ -190,6 +197,10 @@
 			}, {
 				"name": "手机号注册",
 				"path": "pagesA/rent/phoneRegistration/phoneRegistration"
+			},
+			{
+				"path": "pagesA/rentOrder/rentOrder",
+				"name": "预定房源"
 			}
 
 		]

@@ -2071,7 +2071,7 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;var _config = __webpack_require__(/*! ./config.js */ 140);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;exports.wechatLogin = wechatLogin;var _config = __webpack_require__(/*! ./config.js */ 140);
 
 
 //发送手机验证码到对应手机上
@@ -2103,6 +2103,24 @@ function phoneBind(data) {
       success: function success(res) {
         var result = res.data;
         console.log('手机绑定验证', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+      } });
+
+  });
+}
+//微信用户登录
+function wechatLogin(data) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/login/wechat"),
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('微信用户登录', res);
         reslove(result);
       },
       fail: function fail() {},

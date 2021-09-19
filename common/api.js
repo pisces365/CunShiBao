@@ -38,3 +38,21 @@ export function phoneBind(data) {
 		})
 	})
 }
+//微信用户登录
+export function wechatLogin(data) {
+	return new Promise(function(reslove, reject) {
+		uni.request({
+			url: `${baseUrl}/login/wechat`,
+			method: 'POST',
+			data: data,
+			success: res => {
+				let result = res.data;
+				console.log('微信用户登录',res);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {
+			}
+		})
+	})
+}

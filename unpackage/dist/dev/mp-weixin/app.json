@@ -21,7 +21,8 @@
         "rent/rent_index/rent_index",
         "rent/rent_content/rent_content",
         "rent/rent_house_description/rent_house_description",
-        "rent/phoneRegistration/phoneRegistration"
+        "rent/phoneRegistration/phoneRegistration",
+        "rentOrder/rentOrder"
       ]
     },
     {
