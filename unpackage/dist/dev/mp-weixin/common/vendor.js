@@ -2063,7 +2063,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 139:
+/***/ 17:
 /*!*************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/api.js ***!
   \*************************************************************************************/
@@ -2071,7 +2071,7 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;exports.wechatLogin = wechatLogin;var _config = __webpack_require__(/*! ./config.js */ 140);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;exports.wechatLogin = wechatLogin;var _config = __webpack_require__(/*! ./config.js */ 18);
 
 
 //发送手机验证码到对应手机上
@@ -2133,7 +2133,7 @@ function wechatLogin(data) {
 
 /***/ }),
 
-/***/ 140:
+/***/ 18:
 /*!****************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/config.js ***!
   \****************************************************************************************/
@@ -8194,7 +8194,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 249:
+/***/ 257:
 /*!***************************************************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************************************/

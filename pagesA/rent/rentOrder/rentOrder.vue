@@ -4,36 +4,36 @@
 			<view class="top">
 				<view class="houseDes">
 					<view class="houseDes-left">
-						<image src="http://p1362.bvimg.com/10465/97bf88170c900f16.jpg" mode=""></image>
+						<image :src="houseInfo.images[0]" mode=""></image>
 					</view>
 					<view class="houseDes-right">
 						<view class="houseDes-right-top">
-							<text>{{'整租 '}}</text>
+							<text>{{houseInfo.type}}</text>
 							<text>{{'|'}}</text>
-							<text class="noWarp">{{'打不守法不服啊伤风败俗腐败苏发生过覅'}}</text>
+							<text class="noWarp">{{ houseInfo.description}}</text>
 						</view>
 						<view class="houseDes-right-center">
-							押一付三 {{' · 2室'}}·{{'45m · 南北'}}
+							押一付三 {{' · '+houseInfo.RoomInfo+'室 '}}·{{houseInfo.hourseAream+'m · 南北'}}
 						</view>
 						<view class="houseDes-right-bottom">
-							2500元/月
+							{{houseInfo.price}}元/月
 						</view>
 					</view>
 				</view>
 				<view class="cross-line">
-
 				</view>
 				<view class="rentOwner">
 					<view class="rentOwner-image">
-						<image src="http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg" mode=""></image>
+						<image :src="hostImage[houseInfo.index]" mode=""></image>
 					</view>
 					<view class="rentOwner-info">
 						<view class="rentOwner-info-left">
 							<view class="rentOwner-info-name">
-								<text class="hostName">左 峥嵘</text> <text class="hostDsc">优质房东</text>
+								<text class="hostName">{{hostNickname[houseInfo.index]}}</text> <text class="hostDsc">优质房东</text>
 							</view>
 							<view class="rentOwner-info-address">
-								凤凰山村五组裘家头13号楼
+								{{houseInfo.locationStreet+' '}}
+								{{houseInfo.locationDetail}}
 							</view>
 						</view>
 
@@ -92,6 +92,15 @@
 					'刘浩',
 					'管家',
 					'LittleLion',
+				],
+				hostImage: [
+					'http://p1362.bvimg.com/10465/f820643ce376c33c.jpg',
+					'http://p1362.bvimg.com/10465/33480984caf9342e.jpg',
+					'http://p1362.bvimg.com/10465/4dbcd200d3aa2d00.jpg',
+					'http://p1362.bvimg.com/10465/6de29a054bb84057.jpg',
+					'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
+					'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
+					'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'
 				],
 				dateTime: '',
 				currentDate: new Date().toISOString().slice(0, 10),
@@ -200,12 +209,12 @@
 				}
 			}
 		},
-		// onLoad(options) {
-		// 	let that = this;
-		// 	var data = JSON.parse(options.houseInfo); // 字符串转对象
-		// 	that.houseInfo = data;
-		// 	console.log(that.houseInfo)
-		// }
+		onLoad(options) {
+			let that = this;
+			var data = JSON.parse(options.houseInfo); // 字符串转对象
+			that.houseInfo = data;
+			console.log(that.houseInfo)
+		}
 	}
 </script>
 
