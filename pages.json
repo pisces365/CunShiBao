@@ -6,7 +6,6 @@
 				"navigationBarTitleText": "村事宝",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/index/index",
 			"style": {
@@ -18,94 +17,26 @@
 				"navigationBarTitleText": "消息",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/mine/mine",
 			"style": {
 				"navigationBarTitleText": "我的",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/RuralCircle/RuralCircle",
 			"style": {
 				"navigationBarTitleText": "乡村圈",
 				"enablePullDownRefresh": false
 			}
-
 		}, {
 			"path": "pages/test/test",
 			"style": {
-				"navigationBarTitleText": "",
+				"navigationBarTitleText": "测试",
 				"enablePullDownRefresh": false
 			}
-
 		}
-	    ,{
-            "path" : "pagesB/landContract/landContract",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "土地承包",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/landContract/contractPublicity/contractPublicity",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pagesB/maintenanceCenter/maintenanceCenter",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "维修中心",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pagesB/maintenanceDetails/maintenanceDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "维修详情",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-		
-    ],
+	],
 	"subPackages": [{
 		"root": "pagesA",
 		"pages": [{
@@ -135,8 +66,118 @@
 					"navigationBarTitleText": "文章详情",
 					"enablePullDownRefresh": false
 				}
+			}, {
+				"path": "News",
+				"style": {
+					"navigationBarTitleText": "文章详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "News_Image",
+				"style": {
+					"navigationBarTitleText": "文章详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "VillageHead_Email/IWannaWrite/IWannaWrite",
+				"style": {
+					"navigationBarTitleText": "我要写信",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/rent_index/rent_index",
+				"style": {
+					"navigationBarTitleText": "出租",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/rent_content/rent_content",
+				"style": {
+					"navigationBarTitleText": "房源详情",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/rent_house_description/rent_house_description",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/phoneRegistration/phoneRegistration",
+				"style": {
+					"navigationBarTitleText": "绑定手机",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "rent/rentOrder/rentOrder",
+				"style": {
+					"navigationBarTitleText": "预定房源",
+					"enablePullDownRefresh": false
+				}
 			}
 		]
+	}, {
+		"root": "pagesB",
+		"pages": [{
+			"path": "maintenanceDetails/maintenanceDetails",
+			"style": {
+				"navigationBarTitleText": "维修详情",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "maintenanceCenter/maintenanceCenter",
+			"style": {
+				"navigationBarTitleText": "维修中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "landContract/landContract",
+			"style": {
+				"navigationBarTitleText": "土地承包",
+				"enablePullDownRefresh": false
+			}
+
+		}]
+	},
+	{
+		"root": "pagesBus",
+		"pages": [{
+			"path": "info/info",
+			"style": {
+				"navigationBarTitleText": "实时公交",
+				"enablePullDownRefresh": false
+			}
+	
+		}, {
+			"path": "routeInfo/routeInfo",
+			"style": {
+				"navigationBarTitleText": "线路信息",
+				"enablePullDownRefresh": false
+			}
+	
+		}, {
+			"path": "search/search",
+			"style": {
+				"navigationBarTitleText": "公交搜索",
+				"enablePullDownRefresh": false
+			}},
+			{
+				"path": "stationInfo/stationInfo",
+				"style": {
+					"navigationBarTitleText": "站台信息",
+					"enablePullDownRefresh": false
+				}
+			
+		}]
 	}],
 
 	"globalStyle": {
@@ -175,12 +216,41 @@
 	"condition": { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式（list 的索引项）
 		"list": [{
-			"name": "文章内容",
-			"path": "pagesA/policy/policyDetails/policyDetails"
-		},
+				"name": "我的",
+				"path": "pages/mine/mine"
+			}, {
+				"name": "民宿首页",
+				"path": "pagesA/rent/rent_index/rent_index"
+			}, {
+				"name": "民宿详情",
+				"path": "pagesA/rent/rent_content/rent_content"
+			}, {
+				"name": "手机号注册",
+				"path": "pagesA/rent/phoneRegistration/phoneRegistration"
+			},
 			{
-				"name": "测试",
-				"path": "pages/test/test"
-			}]
+				"path": "pagesA/rentOrder/rentOrder",
+				"name": "预定房源"
+			}
+
+		]
+	},
+	// https://uniapp.dcloud.io/collocation/pages?id=subpackages
+	// 配置preloadRule后，在进入小程序某个页面时，由框架自动预下载可能需要的分包，提升进入后续分包页面时的启动速度
+	// packages 进入页面后预下载分包的 root 或 name。__APP__ 表示主包。
+	// network  在指定网络下预下载，可选值为：all（不限网络）、wifi（仅wifi下预下载）
+	"preloadRule": {
+		"pages/welcome/welcome": {
+			"network": "all",
+			"packages": ["__APP__"]
+		},
+		"pages/index/index": {
+			"network": "all",
+			"packages": ["pagesA"]
+		},
+		"pagesB/landContract/landContract": {
+			"network": "all",
+			"packages": ["pagesB"]
+		}
 	}
 }

@@ -1,6 +1,5 @@
-<template>
+<template name="iWannaRepair">
 	<view class="page">
-		
 		<view class="float-back" v-show="showFloatWindow">
 			<view class="float-window">
 				<view class="iconfont close" @click="toVote()">

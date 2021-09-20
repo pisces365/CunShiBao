@@ -1,4 +1,4 @@
-<template>
+<template name="contractPublicity">
 	<view>
 		<view class="news" v-for="(item , index) in publicity" :key="index">
 			<navigator url="" class="navp">

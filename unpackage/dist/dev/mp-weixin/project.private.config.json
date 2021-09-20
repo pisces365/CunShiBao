@@ -29,6 +29,15 @@
           "pathName": "pagesB/maintenanceCenter/maintenanceCenter",
           "query": "",
           "scene": null
+<<<<<<< HEAD
+        },
+        {
+          "name": "测试",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+=======
+>>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
         }
       ]
     }

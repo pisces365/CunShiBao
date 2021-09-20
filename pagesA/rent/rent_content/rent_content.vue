@@ -11,7 +11,10 @@
 							<image class="rentTop-image" :src="Item" mode="" :class="Index==swiperCurrent?'active':''">
 							</image>
 						</view>
+<!-- <<<<<<< HEAD
 
+=======
+>>>>>>> 34b16180938e0df86331b848561a67462163db63 -->
 					</swiper-item>
 				</swiper>
 			</view>
@@ -389,13 +392,28 @@
 		},
 		methods: {
 			makeAnAppointment() {
+// <<<<<<< HEAD
 				uni.makePhoneCall({
 					phoneNumber: '0571-88628854' //仅为示例
 				});
 			},
 			DueToHousing() {
 				uni.navigateTo({
-					url: '../../phoneRegistration/phoneRegistration'
+					url: '../../phoneRegistration/phoneRegistration'})
+// =======
+				let _this = this;
+				var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
+				uni.navigateTo({
+					url:'../rentOrder/rentOrder?houseInfo=' + houseInfo
+				})
+				// uni.makePhoneCall({
+				// 	phoneNumber: '0571-88628854' //仅为示例
+				// });
+			},
+			DueToHousing() {
+				uni.navigateTo({
+					url: '../phoneRegistration/phoneRegistration'
+// >>>>>>> 34b16180938e0df86331b848561a67462163db63
 				})
 			},
 			swiperChange(e) {

@@ -5,14 +5,7 @@
     "pages/message/message",
     "pages/mine/mine",
     "pages/RuralCircle/RuralCircle",
-    "pages/test/test",
-    "pagesB/landContract/landContract",
-    "componentB/landContract/contractPublicity/contractPublicity",
-    "pagesB/maintenanceCenter/maintenanceCenter",
-    "componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
-    "componentB/maintenanceCenter/iWannaRepair/iWannaRepair",
-    "pagesB/maintenanceDetails/maintenanceDetails",
-    "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails"
+    "pages/test/test"
   ],
   "subPackages": [
     {
@@ -21,7 +14,32 @@
         "election/personalDetails/personalDetails",
         "election/infoAndVote/infoAndVote",
         "policy/newAndExpert/newAndExpert",
-        "policy/policyDetails/policyDetails"
+        "policy/policyDetails/policyDetails",
+        "News",
+        "News_Image",
+        "VillageHead_Email/IWannaWrite/IWannaWrite",
+        "rent/rent_index/rent_index",
+        "rent/rent_content/rent_content",
+        "rent/rent_house_description/rent_house_description",
+        "rent/phoneRegistration/phoneRegistration",
+        "rent/rentOrder/rentOrder"
+      ]
+    },
+    {
+      "root": "pagesB",
+      "pages": [
+        "maintenanceDetails/maintenanceDetails",
+        "maintenanceCenter/maintenanceCenter",
+        "landContract/landContract"
+      ]
+    },
+    {
+      "root": "pagesBus",
+      "pages": [
+        "info/info",
+        "routeInfo/routeInfo",
+        "search/search",
+        "stationInfo/stationInfo"
       ]
     }
   ],
@@ -62,6 +80,26 @@
         "text": "我的"
       }
     ]
+  },
+  "preloadRule": {
+    "pages/welcome/welcome": {
+      "network": "all",
+      "packages": [
+        "__APP__"
+      ]
+    },
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pagesA"
+      ]
+    },
+    "pagesB/landContract/landContract": {
+      "network": "all",
+      "packages": [
+        "pagesB"
+      ]
+    }
   },
   "usingComponents": {}
 }

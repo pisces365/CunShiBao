@@ -1,6 +1,6 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
-/* 0 */,
-/* 1 */
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -1933,7 +1933,219 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-/* 2 */
+
+/***/ 10:
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode, /* vue-cli only */
+  components, // fixed by xxxxxx auto components
+  renderjs // fixed by xxxxxx renderjs
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // fixed by xxxxxx auto components
+  if (components) {
+    if (!options.components) {
+      options.components = {}
+    }
+    var hasOwn = Object.prototype.hasOwnProperty
+    for (var name in components) {
+      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
+        options.components[name] = components[name]
+      }
+    }
+  }
+  // fixed by xxxxxx renderjs
+  if (renderjs) {
+    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
+      this[renderjs.__module] = this
+    });
+    (options.mixins || (options.mixins = [])).push(renderjs)
+  }
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 17:
+/*!*************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;exports.wechatLogin = wechatLogin;var _config = __webpack_require__(/*! ./config.js */ 18);
+
+
+//发送手机验证码到对应手机上
+function sendSmsCode(data) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/sms/send"),
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('发送手机验证码', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+
+      } });
+
+  });
+}
+//用户填写的校验码进行手机绑定验证
+function phoneBind(data) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/bind/phone"),
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('手机绑定验证', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+      } });
+
+  });
+}
+//微信用户登录
+function wechatLogin(data) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/login/wechat"),
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('微信用户登录', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+      } });
+
+  });
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 18:
+/*!****************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/config.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = void 0;var baseUrl = "https://www.zjutleo.cn/village";exports.baseUrl = baseUrl;
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -7981,7 +8193,150 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 3 */
+
+/***/ 250:
+/*!***************************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  "pulldown": "\uE588",
+  "refreshempty": "\uE461",
+  "back": "\uE471",
+  "forward": "\uE470",
+  "more": "\uE507",
+  "more-filled": "\uE537",
+  "scan": "\uE612",
+  "qq": "\uE264",
+  "weibo": "\uE260",
+  "weixin": "\uE261",
+  "pengyouquan": "\uE262",
+  "loop": "\uE565",
+  "refresh": "\uE407",
+  "refresh-filled": "\uE437",
+  "arrowthindown": "\uE585",
+  "arrowthinleft": "\uE586",
+  "arrowthinright": "\uE587",
+  "arrowthinup": "\uE584",
+  "undo-filled": "\uE7D6",
+  "undo": "\uE406",
+  "redo": "\uE405",
+  "redo-filled": "\uE7D9",
+  "bars": "\uE563",
+  "chatboxes": "\uE203",
+  "camera": "\uE301",
+  "chatboxes-filled": "\uE233",
+  "camera-filled": "\uE7EF",
+  "cart-filled": "\uE7F4",
+  "cart": "\uE7F5",
+  "checkbox-filled": "\uE442",
+  "checkbox": "\uE7FA",
+  "arrowleft": "\uE582",
+  "arrowdown": "\uE581",
+  "arrowright": "\uE583",
+  "smallcircle-filled": "\uE801",
+  "arrowup": "\uE580",
+  "circle": "\uE411",
+  "eye-filled": "\uE568",
+  "eye-slash-filled": "\uE822",
+  "eye-slash": "\uE823",
+  "eye": "\uE824",
+  "flag-filled": "\uE825",
+  "flag": "\uE508",
+  "gear-filled": "\uE532",
+  "reload": "\uE462",
+  "gear": "\uE502",
+  "hand-thumbsdown-filled": "\uE83B",
+  "hand-thumbsdown": "\uE83C",
+  "hand-thumbsup-filled": "\uE83D",
+  "heart-filled": "\uE83E",
+  "hand-thumbsup": "\uE83F",
+  "heart": "\uE840",
+  "home": "\uE500",
+  "info": "\uE504",
+  "home-filled": "\uE530",
+  "info-filled": "\uE534",
+  "circle-filled": "\uE441",
+  "chat-filled": "\uE847",
+  "chat": "\uE263",
+  "mail-open-filled": "\uE84D",
+  "email-filled": "\uE231",
+  "mail-open": "\uE84E",
+  "email": "\uE201",
+  "checkmarkempty": "\uE472",
+  "list": "\uE562",
+  "locked-filled": "\uE856",
+  "locked": "\uE506",
+  "map-filled": "\uE85C",
+  "map-pin": "\uE85E",
+  "map-pin-ellipse": "\uE864",
+  "map": "\uE364",
+  "minus-filled": "\uE440",
+  "mic-filled": "\uE332",
+  "minus": "\uE410",
+  "micoff": "\uE360",
+  "mic": "\uE302",
+  "clear": "\uE434",
+  "smallcircle": "\uE868",
+  "close": "\uE404",
+  "closeempty": "\uE460",
+  "paperclip": "\uE567",
+  "paperplane": "\uE503",
+  "paperplane-filled": "\uE86E",
+  "person-filled": "\uE131",
+  "contact-filled": "\uE130",
+  "person": "\uE101",
+  "contact": "\uE100",
+  "images-filled": "\uE87A",
+  "phone": "\uE200",
+  "images": "\uE87B",
+  "image": "\uE363",
+  "image-filled": "\uE877",
+  "location-filled": "\uE333",
+  "location": "\uE303",
+  "plus-filled": "\uE439",
+  "plus": "\uE409",
+  "plusempty": "\uE468",
+  "help-filled": "\uE535",
+  "help": "\uE505",
+  "navigate-filled": "\uE884",
+  "navigate": "\uE501",
+  "mic-slash-filled": "\uE892",
+  "search": "\uE466",
+  "settings": "\uE560",
+  "sound": "\uE590",
+  "sound-filled": "\uE8A1",
+  "spinner-cycle": "\uE465",
+  "download-filled": "\uE8A4",
+  "personadd-filled": "\uE132",
+  "videocam-filled": "\uE8AF",
+  "personadd": "\uE102",
+  "upload": "\uE402",
+  "upload-filled": "\uE8B1",
+  "starhalf": "\uE463",
+  "star-filled": "\uE438",
+  "star": "\uE408",
+  "trash": "\uE401",
+  "phone-filled": "\uE230",
+  "compose": "\uE400",
+  "videocam": "\uE300",
+  "trash-filled": "\uE8DC",
+  "download": "\uE403",
+  "chatbubble-filled": "\uE232",
+  "chatbubble": "\uE202",
+  "cloud-download": "\uE8E4",
+  "cloud-upload-filled": "\uE8E5",
+  "cloud-upload": "\uE8E6",
+  "cloud-download-filled": "\uE8E9",
+  "headphones": "\uE8BF",
+  "shop": "\uE609" };exports.default = _default;
+
+/***/ }),
+
+/***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
   \***********************************/
@@ -8011,7 +8366,451 @@ module.exports = g;
 
 
 /***/ }),
-/* 4 */
+
+/***/ 305:
+/*!***********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {function AMapWX(a) {
+  this.key = a.key, this.requestConfig = {
+    key: a.key,
+    s: "rsx",
+    platform: "WXJS",
+    appname: a.key,
+    sdkversion: "1.2.0",
+    logversion: "2.0" };
+
+}
+AMapWX.prototype.getWxLocation = function (a, b) {
+  uni.getLocation({
+    type: "gcj02",
+    success: function success(a) {
+      var c = a.longitude + "," + a.latitude;
+      uni.setStorage({
+        key: "userLocation",
+        data: c }),
+      b(c);
+    },
+    fail: function fail(c) {
+      uni.getStorage({
+        key: "userLocation",
+        success: function success(a) {
+          a.data && b(a.data);
+        } }),
+      a.fail({
+        errCode: "0",
+        errMsg: c.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getRegeo = function (a) {
+  function c(c) {
+    var d = b.requestConfig;
+    uni.request({
+      url: "https://restapi.amap.com/v3/geocode/regeo",
+      data: {
+        key: b.key,
+        location: c,
+        extensions: "all",
+        s: d.s,
+        platform: d.platform,
+        appname: b.key,
+        sdkversion: d.sdkversion,
+        logversion: d.logversion },
+
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        var d, e, f, g, h, i, j, k, l;
+        b.data.status && "1" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = "", d && d.roads[
+        0] && d.roads[0].name && (g = d.roads[0].name + "附近"), h = c.split(",")[0], i = c.split(",")[1], d.pois && d.
+        pois[0] && (g = d.pois[0].name + "附近", j = d.pois[0].location, j && (h = parseFloat(j.split(",")[0]), i =
+        parseFloat(j.split(",")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(
+        e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street),
+        f.push(e.streetNumber.number)) : (k = "", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(
+        k)), f = f.join(""), l = [{
+          iconPath: a.iconPath,
+          width: a.iconWidth,
+          height: a.iconHeight,
+          name: f,
+          desc: g,
+          longitude: h,
+          latitude: i,
+          id: 0,
+          regeocodeData: d }],
+        a.success(l)) : a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+  var b = this;
+  a.location ? c(a.location) : b.getWxLocation(a, function (a) {
+    c(a);
+  });
+}, AMapWX.prototype.getWeather = function (a) {
+  function d(d) {
+    var e = "base";
+    a.type && "forecast" == a.type && (e = "all"), uni.request({
+      url: "https://restapi.amap.com/v3/weather/weatherInfo",
+      data: {
+        key: b.key,
+        city: d,
+        extensions: e,
+        s: c.s,
+        platform: c.platform,
+        appname: b.key,
+        sdkversion: c.sdkversion,
+        logversion: c.logversion },
+
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        function c(a) {
+          var b = {
+            city: {
+              text: "城市",
+              data: a.city },
+
+            weather: {
+              text: "天气",
+              data: a.weather },
+
+            temperature: {
+              text: "温度",
+              data: a.temperature },
+
+            winddirection: {
+              text: "风向",
+              data: a.winddirection + "风" },
+
+            windpower: {
+              text: "风力",
+              data: a.windpower + "级" },
+
+            humidity: {
+              text: "湿度",
+              data: a.humidity + "%" } };
+
+
+          return b;
+        }
+        var d, e;
+        b.data.status && "1" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(
+        d), e["liveData"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({
+          forecast: b.data.forecasts[0] }) :
+        a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+
+  function e(e) {
+    uni.request({
+      url: "https://restapi.amap.com/v3/geocode/regeo",
+      data: {
+        key: b.key,
+        location: e,
+        extensions: "all",
+        s: c.s,
+        platform: c.platform,
+        appname: b.key,
+        sdkversion: c.sdkversion,
+        logversion: c.logversion },
+
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        var c, e;
+        b.data.status && "1" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode :
+        e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+  var b = this,
+  c = b.requestConfig;
+  a.city ? d(a.city) : b.getWxLocation(a, function (a) {
+    e(a);
+  });
+}, AMapWX.prototype.getPoiAround = function (a) {
+  function d(d) {
+    var e = {
+      key: b.key,
+      location: d,
+      s: c.s,
+      platform: c.platform,
+      appname: b.key,
+      sdkversion: c.sdkversion,
+      logversion: c.logversion };
+
+    a.querytypes && (e["types"] = a.querytypes), a.querykeywords && (e["keywords"] = a.querykeywords), uni.request({
+      url: "https://restapi.amap.com/v3/place/around",
+      data: e,
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        var c, d, e, f;
+        if (b.data.status && "1" == b.data.status) {
+          if (b = b.data, b && b.pois) {
+            for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({
+                latitude: parseFloat(b.pois[d].location.split(",")[1]),
+                longitude: parseFloat(b.pois[d].location.split(",")[0]),
+                iconPath: e,
+                width: 22,
+                height: 32,
+                id: d,
+                name: b.pois[d].name,
+                address: b.pois[d].address });}
+
+            f = {
+              markers: c,
+              poisData: b.pois },
+            a.success(f);
+          }
+        } else a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+  var b = this,
+  c = b.requestConfig;
+  a.location ? d(a.location) : b.getWxLocation(a, function (a) {
+    d(a);
+  });
+}, AMapWX.prototype.getStaticmap = function (a) {
+  function f(b) {
+    c.push("location=" + b), a.zoom && c.push("zoom=" + a.zoom), a.size && c.push("size=" + a.size), a.scale && c.push(
+    "scale=" + a.scale), a.markers && c.push("markers=" + a.markers), a.labels && c.push("labels=" + a.labels), a.paths &&
+    c.push("paths=" + a.paths), a.traffic && c.push("traffic=" + a.traffic);
+    var e = d + c.join("&");
+    a.success({
+      url: e });
+
+  }
+  var e,b = this,
+  c = [],
+  d = "https://restapi.amap.com/v3/staticmap?";
+  c.push("key=" + b.key), e = b.requestConfig, c.push("s=" + e.s), c.push("platform=" + e.platform), c.push("appname=" +
+  e.appname), c.push("sdkversion=" + e.sdkversion), c.push("logversion=" + e.logversion), a.location ? f(a.location) :
+  b.getWxLocation(a, function (a) {
+    f(a);
+  });
+}, AMapWX.prototype.getInputtips = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.location && (d["location"] = a.location), a.keywords && (d["keywords"] = a.keywords), a.type && (d["type"] = a.type),
+  a.city && (d["city"] = a.city), a.citylimit && (d["citylimit"] = a.citylimit), uni.request({
+    url: "https://restapi.amap.com/v3/assistant/inputtips",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      b && b.data && b.data.tips && a.success({
+        tips: b.data.tips });
+
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getDrivingRoute = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin),
+  a.destination && (d["destination"] = a.destination),
+  a.strategy && (d["strategy"] = a.strategy),
+  a.waypoints && (d["waypoints"] = a.waypoints),
+  a.avoidpolygons && (d["avoidpolygons"] = a.avoidpolygons),
+  a.avoidroad && (d["avoidroad"] = a.avoidroad),
+  uni.request({
+    url: "https://restapi.amap.com/v3/direction/driving",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      b && b.data && b.data.route && a.success({
+        paths: b.data.route.paths,
+        taxi_cost: b.data.route.taxi_cost || "" });
+
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getWalkingRoute = function (a) {
+
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), uni.request({
+    url: "https://restapi.amap.com/v3/direction/walking",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      // console.log(b,'12')
+      b && b.data && b.data.route && a.success({
+        paths: b.data.route.paths });
+
+    },
+    fail: function fail(b) {
+      // console.log(b,'24')
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getTransitRoute = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d[
+  "strategy"] = a.strategy), a.city && (d["city"] = a.city), a.cityd && (d["cityd"] = a.cityd), uni.request({
+    url: "https://restapi.amap.com/v3/direction/transit/integrated",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      if (b && b.data && b.data.route) {
+        var c = b.data.route;
+        a.success({
+          distance: c.distance || "",
+          taxi_cost: c.taxi_cost || "",
+          transits: c.transits });
+
+      }
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getRidingRoute = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), uni.request({
+    url: "https://restapi.amap.com/v4/direction/bicycling",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      b && b.data && b.data.data && a.success({
+        paths: b.data.data.paths });
+
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, module.exports.AMapWX = AMapWX;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 4:
 /*!**********************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pages.json ***!
   \**********************************************************/
@@ -8020,139 +8819,7 @@ module.exports = g;
 
 
 
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
-/*!**********************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode, /* vue-cli only */
-  components, // fixed by xxxxxx auto components
-  renderjs // fixed by xxxxxx renderjs
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // fixed by xxxxxx auto components
-  if (components) {
-    if (!options.components) {
-      options.components = {}
-    }
-    var hasOwn = Object.prototype.hasOwnProperty
-    for (var name in components) {
-      if (hasOwn.call(components, name) && !hasOwn.call(options.components, name)) {
-        options.components[name] = components[name]
-      }
-    }
-  }
-  // fixed by xxxxxx renderjs
-  if (renderjs) {
-    (renderjs.beforeCreate || (renderjs.beforeCreate = [])).unshift(function() {
-      this[renderjs.__module] = this
-    });
-    (options.mixins || (options.mixins = [])).push(renderjs)
-  }
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
 /***/ })
-]]);
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

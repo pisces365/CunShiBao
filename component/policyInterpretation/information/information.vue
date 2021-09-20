@@ -1,14 +1,11 @@
 <!-- 政策解读每条信息简介 -->
-<template>
+<template name="information">
 	<view>
 		<view class="news" v-for="(item , index) in info" :key="index">
 			<navigator :url="item.url" class="nav">
 				<view class="title">
 					{{item.title}}
 				</view>
-				<view class="null">
-					
-				</view> 
 				<view class="bottom-infomation">
 					<text class="source">
 						{{item.source}}
@@ -54,33 +51,21 @@
 	}
 	
 	.title {
-		font-size: 32rpx;
-		/* font-weight: bold; */
+		margin:0 10rpx 10rpx 10rpx;
+		font-size: 36rpx;
 	}
-	
-	.null {
-		padding:35rpx 0rpx;
-	}
-	
-	
-	
 	.bottom-infomation {
-		display: flex;
-		font-size: 24rpx;
-		color: #A6A7A6;
+		margin-top: 30rpx;
+		margin-left: 10rpx;
+		font-size: 20rpx;
 	}
-	.source {
-		flex: 1.5;
+	.source,.date{
 		color: #939493;
-		font-weight: bold;
+		margin-right: 20rpx;
 	}
-	.date {
-		flex: 1.8;
-
-	}
-	.reading {
-		flex: 1.1;
-		
+	.reading,.like {
+		float: right;
+		margin-right: 20rpx;
 	}
 	.reading text {
 		color: rgba(86,120,243,1);

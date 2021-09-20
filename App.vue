@@ -13,12 +13,13 @@
 </script>
 
 <style>
-		::-webkit-scrollbar {   
-		    display: none;  
-		    width: 0 !important;  
-		    height: 0 !important;  
-		    -webkit-appearance: none;  
-		    background: transparent;  
-		}
+	::-webkit-scrollbar {
+		display: none;
+		width: 0 !important;
+		height: 0 !important;
+		-webkit-appearance: none;
+		background: transparent;
+	}
+
 	/*每个页面公共css */
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<view class="index">
+	<view class="index" v-show="ifLoading">
 		<swiper class="index-swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true"
 			indicator-active-color="#f7f7f7" indicator-color="rgba(145, 145, 145, 0.7)">
 			<swiper-item v-for="(item , index) in homeSlide" :key="index">
@@ -22,7 +22,7 @@
 					<text>三农数据洞察</text>
 				</view>
 				<view class="index-blog-right-bottom">
-					<text>2021年夏季粮食产量数据新报告，劳动最光荣！</text>
+					<text>国家黑土地保护工程实施方案（2021—2025年）</text>
 				</view>
 				<view class="index-blog-right-icon">
 					<text class="icon-xiangyou iconfont"></text>
@@ -75,7 +75,7 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesA/rent/rent_index/rent_index" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[3]}}</text>
 						</view>
@@ -85,10 +85,10 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[3]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesBus/info/info" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[4]}}</text>
 						</view>
@@ -98,8 +98,8 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
-					<view class="index-VillageParty-content-onePart-left">
+					</navigator>
+					<view class="index-VillageParty-content-onePart-left" @click="goToVillageHead_Mail">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[5]}}</text>
 						</view>
@@ -206,6 +206,7 @@
 		data() {
 			return {
 				title: 'Hello',
+				ifLoading:false,
 				homeSlide: [
 					'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
 					'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
@@ -213,7 +214,7 @@
 				], // 定义值接收轮播图数据
 				VillageParty: {
 					VillagePartyTitle: [
-						"政策解读", "换届选举", "土地承包", "脱贫致富", "乡村规划", "村长信箱",
+						"政策解读", "换届选举", "土地承包", "二手租房", "实时公交", "村长信箱",
 						"村民办事", "村务监督", "精准帮扶", "乡村快递", "我要报修"
 					],
 					VillagePartyDescripetion: [
@@ -247,12 +248,17 @@
 			}
 		},
 		onLoad() {
-
+			this.ifLoading = true;
 		},
 		methods: {
 			toDetails(){
 				uni.navigateTo({
-					url:('../../pagesA/policy/policyDetails/policyDetails')
+					url:("../../pagesA/News?newsID=0")
+				})
+			},
+			goToVillageHead_Mail(){
+				uni.navigateTo({
+					url:'../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite'
 				})
 			}
 		}

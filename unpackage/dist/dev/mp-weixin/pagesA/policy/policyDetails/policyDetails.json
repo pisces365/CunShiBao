@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "文章详情",
   "enablePullDownRefresh": false,
-  "usingComponents": {
-    "ygc-comment": "/components/ygc-comment/ygc-comment"
-  }
+  "usingComponents": {}
 }

@@ -20,6 +20,9 @@
 </template>
 
 <script>
+	import {
+		wechatLogin
+	} from '../../common/api.js'
 	export default {
 		data() {
 			return {
@@ -31,28 +34,87 @@
 				nickName: null,
 				gender: 0,
 				avatarUrl: null,
-				isCanUse: uni.getStorageSync('isCanUse') //默认为true  记录当前用户是否是第一次授权使用的
+				isCanUse: uni.getStorageSync('isCanUse'), //默认为true  记录当前用户是否是第一次授权使用的
+				userInfomation: {
+					avatarUrl: '',
+					city: '',
+					country: '',
+					gender: '',
+					language: '',
+					nickName: '',
+					province: ''
+				}
 			}
 		},
 		methods: {
 			goLogin() {
+				let that = this;
 				//判断缓存中是否有用户数据，没有则获取
 				if (!uni.getStorageSync('encryptedData')) {
 					uni.getUserProfile({
 						desc: '获取你的名称、头像、地区',
 						success: infoRes => {
+							//调用接口获取登录凭证（code）。通过凭证进而换取用户登录态信息，包括用户在当前小程序的唯一标识（openid）
 							if (infoRes.errMsg === 'getUserProfile:ok') {
 								// 获取到的当前数据存入缓存
-								console.log(infoRes)
-								uni.setStorageSync('encryptedData', infoRes.encryptedData);
+								console.log('uni.getUserProfile',infoRes)
+								uni.setStorageSync('encryptedData', infoRes
+									.encryptedData);
 								uni.setStorageSync('iv', infoRes.iv);
 								uni.setStorageSync('rawData', infoRes.rawData);
-								uni.setStorageSync('signature', infoRes.signature);
+								uni.setStorageSync('signature', infoRes
+									.signature);
 								uni.setStorageSync('securityStatus', 1);
-								// 选择版本
-								uni.switchTab({
-									url: "../index/index"
-								});
+								uni.setStorageSync('userInfo', infoRes
+									.userInfo);
+								//微信用户登录接口
+								wx.login({
+									success: function(res) {
+										// console.log(res);
+										if (res.code) {
+											//换取openid & session_key
+											let appid = 'wxfa6eb206635e4d92'
+											let secret = '570488294950a89f427cb72eede89887'
+											let url =
+												'https://api.weixin.qq.com/sns/jscode2session?appid=' +
+												appid + '&secret=' +
+												secret + '&js_code=' + res.code +
+												'&grant_type=authorization_code';
+												wx.request({
+													url: url,
+													method: 'POST',
+													header: {
+														'content-type': 'authorization'
+													},
+													data: {
+														code: res.code
+													}
+												})
+											var data = {
+												"avatarUrl": infoRes.userInfo.avatarUrl,
+												"code": res.code,
+												"nickname": infoRes.userInfo.nickName
+											}
+											console.log(data);
+											wechatLogin(data).then((res) => {
+												// console.log('微信登陆',res);
+												if(res.code=="200"){
+													// 选择版本
+													uni.switchTab({
+														url: "../index/index"
+													});
+												}
+											})
+										} else {
+											console.log('登录失败！' + res.errMsg)
+										}
+
+									},
+									fail() {
+										console.log('wxLogin失败');
+									}
+								})
+
 							} else {
 								uni.showToast({
 									title: '授权失败',
@@ -64,8 +126,17 @@
 							console.log('userInfo-err', JSON.stringify(err));
 						}
 					});
+
 				} else {
 					console.log("已有缓存，直接进入")
+					uni.getStorage({
+						key: 'userInfo',
+						success(res) {
+							that.userInfomation = res.data;
+							console.log('获取成功', res);
+						}
+					})
+
 					uni.switchTab({
 						url: "../index/index"
 					});

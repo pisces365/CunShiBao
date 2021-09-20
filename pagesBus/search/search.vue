@@ -16,7 +16,7 @@
 				background-color: rgba(142, 142, 147, 0.6);
 				margin: 0 auto;
 				border-radius: 20rpx;
-				margin-top: 10rpx;
+				margin-top: 10rpx; 
 				z-index: 100;">
 					
 				</view>
