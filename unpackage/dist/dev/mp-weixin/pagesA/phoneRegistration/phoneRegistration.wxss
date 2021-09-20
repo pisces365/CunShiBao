@@ -1,0 +1,44 @@
+
+page {
+	background: #f7f7f7;
+}
+.phone {
+	margin: 20rpx;
+	background-color: white;
+	border-radius: 20rpx;
+}
+.phone-title {
+	padding: 20rpx 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-content: center;
+	        align-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	font-size: 40rpx;
+	font-weight: 600;
+}
+.phone-input{
+	margin: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	padding: 10rpx;
+	border: #d4e0e7 2rpx solid;
+}
+.phone-input-title,.phone-input-input,.phone-input-sendCode{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	margin-right: 10rpx;
+}
+.phone-input-sendCode{
+	color: #3143e1;
+	font-weight: bold;
+}
+
