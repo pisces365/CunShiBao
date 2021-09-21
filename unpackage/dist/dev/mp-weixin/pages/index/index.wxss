@@ -437,6 +437,14 @@ page {
 	margin: 0 16rpx;
 	position: relative;
 }
+.index-VillageParty-content-onePart-noShow {
+	width: 300rpx;
+	height: 114rpx;
+	/* background: white; */
+	border-radius: 20rpx;
+	margin: 0 16rpx;
+	position: relative;
+}
 .funcion-top {
 	padding: 10rpx 0 4rpx 20rpx;
 }

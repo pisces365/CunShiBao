@@ -155,6 +155,27 @@
 						</view>
 					</view>
 				</view>
+				<view class="index-VillageParty-content-onePart">
+					<view class="index-VillageParty-content-onePart-left">
+						<view class="funcion-top">
+							<text>{{VillageParty.VillagePartyTitle[8]}}</text>
+						</view>
+						<view class="funcion-bottom">
+							<text>{{VillageParty.VillagePartyDescripetion[8]}}</text>
+						</view>
+						<view class="function-image">
+							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" lazy-load="true" mode=""></image>
+						</view>
+					</view>
+					<view class="index-VillageParty-content-onePart-noShow">
+						<view class="funcion-top">
+						</view>
+						<view class="funcion-bottom">
+						</view>
+						<view class="function-image">
+						</view>
+					</view>
+				</view>
 			</view>
 		</view>
 		<view class="index-polling">
@@ -171,13 +192,13 @@
 					<navigator url="../../pagesB/maintenanceCenter/maintenanceCenter"
 						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[8]}}</text>
+							<text>{{VillageParty.VillagePartyTitle[9]}}</text>
 						</view>
 						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[8]}}</text>
+							<text>{{VillageParty.VillagePartyDescripetion[9]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" lazy-load="true" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[9]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
 				</view>
@@ -199,7 +220,7 @@
 				], // 定义值接收轮播图数据
 				VillageParty: {
 					VillagePartyTitle: [
-						"政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶", "我要报修"
+						"政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶","实时公交", "我要报修"
 					],
 					VillagePartyDescripetion: [
 						"最新的乡村政策资讯",
@@ -210,6 +231,7 @@
 						"实时公交家家晓",
 						"权力透明制度公开",
 						"精准帮扶关爱你我",
+						"实时公交信息查询",
 						"有事我来帮",
 					],
 					VillagePartyTitleImageUrl: [
@@ -222,6 +244,7 @@
 						// "http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
 						"http://p1362.bvimg.com/10465/3c309d7aa4bac16e.png",
 						"http://p1362.bvimg.com/10465/ffdf9a711b41a235.png",
+						"http://p1362.bvimg.com/10465/91b1c80e585e5cd2.png",//实时公交
 						// "http://p1362.bvimg.com/10465/fe79bc86a6854375.png",乡村快递
 						"http://p1362.bvimg.com/10465/b3d8800d3950de8a.png",
 					]
@@ -396,6 +419,14 @@
 		width: 300rpx;
 		height: 114rpx;
 		background: white;
+		border-radius: 20rpx;
+		margin: 0 16rpx;
+		position: relative;
+	}
+	.index-VillageParty-content-onePart-noShow {
+		width: 300rpx;
+		height: 114rpx;
+		/* background: white; */
 		border-radius: 20rpx;
 		margin: 0 16rpx;
 		position: relative;

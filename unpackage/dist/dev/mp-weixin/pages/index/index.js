@@ -318,6 +318,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -331,7 +352,7 @@ var _default =
       // 定义值接收轮播图数据
       VillageParty: {
         VillagePartyTitle: [
-        "政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶", "我要报修"],
+        "政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶", "实时公交", "我要报修"],
 
         VillagePartyDescripetion: [
         "最新的乡村政策资讯",
@@ -342,6 +363,7 @@ var _default =
         "实时公交家家晓",
         "权力透明制度公开",
         "精准帮扶关爱你我",
+        "实时公交信息查询",
         "有事我来帮"],
 
         VillagePartyTitleImageUrl: [
@@ -354,6 +376,7 @@ var _default =
         // "http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
         "http://p1362.bvimg.com/10465/3c309d7aa4bac16e.png",
         "http://p1362.bvimg.com/10465/ffdf9a711b41a235.png",
+        "http://p1362.bvimg.com/10465/91b1c80e585e5cd2.png", //实时公交
         // "http://p1362.bvimg.com/10465/fe79bc86a6854375.png",乡村快递
         "http://p1362.bvimg.com/10465/b3d8800d3950de8a.png"] } };
 
