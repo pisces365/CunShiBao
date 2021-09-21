@@ -40,8 +40,9 @@
 			</view>
 			<view class="index-VillageParty-content">
 				<view class="index-VillageParty-content-onePart">
-					<navigator url="../../pagesA/policy/newAndExpert/newAndExpert" class="index-VillageParty-content-onePart-left">
-						<view  class="funcion-top">
+					<navigator url="../../pagesA/policy/newAndExpert/newAndExpert"
+						class="index-VillageParty-content-onePart-left">
+						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[0]}}</text>
 						</view>
 						<view class="funcion-bottom">
@@ -51,7 +52,8 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[0]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
-					<navigator url="../../pagesA/election/infoAndVote/infoAndVote" class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesA/election/infoAndVote/infoAndVote"
+						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[1]}}</text>
 						</view>
@@ -64,7 +66,8 @@
 					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
-					<navigator url="../../pagesB/landContract/landContract" class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesB/landContract/landContract"
+						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[2]}}</text>
 						</view>
@@ -75,7 +78,8 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite"
+						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[3]}}</text>
 						</view>
@@ -85,31 +89,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[3]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
-				</view>
-				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
-						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[4]}}</text>
-						</view>
-						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[4]}}</text>
-						</view>
-						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" lazy-load="true" mode=""></image>
-						</view>
-					</view>
-					<view class="index-VillageParty-content-onePart-left" @click="goToVillageHead_Mail">
-						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[5]}}</text>
-						</view>
-						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[5]}}</text>
-						</view>
-						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[5]" lazy-load="true" mode=""></image>
-						</view>
-					</view>
+					</navigator>
 				</view>
 			</view>
 		</view>
@@ -123,6 +103,34 @@
 				</view>
 			</view>
 			<view class="index-ServieceToPeople-content">
+				<view class="index-VillageParty-content-onePart">
+					<!-- 房屋租赁 -->
+					<navigator url="../../pagesA/rent/rent_index/rent_index"
+						class="index-VillageParty-content-onePart-left">
+						<view class="funcion-top">
+							<text>{{VillageParty.VillagePartyTitle[4]}}</text>
+						</view>
+						<view class="funcion-bottom">
+							<text>{{VillageParty.VillagePartyDescripetion[4]}}</text>
+						</view>
+						<view class="function-image">
+							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" lazy-load="true" mode=""></image>
+						</view>
+					</navigator>
+					<!--  -->
+					<navigator class="index-VillageParty-content-onePart-left">
+						<view class="funcion-top">
+							<text>{{VillageParty.VillagePartyTitle[5]}}</text>
+						</view>
+						<view class="funcion-bottom">
+							<text>{{VillageParty.VillagePartyDescripetion[5]}}</text>
+						</view>
+						<view class="function-image">
+							<image :src="VillageParty.VillagePartyTitleImageUrl[5]" lazy-load="true" mode=""></image>
+						</view>
+					</navigator>
+				</view>
+
 				<view class="index-VillageParty-content-onePart">
 					<view class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
@@ -143,31 +151,7 @@
 							<text>{{VillageParty.VillagePartyDescripetion[7]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[7]"  lazy-load="true" mode=""></image>
-						</view>
-					</view>
-				</view>
-				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
-						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[8]}}</text>
-						</view>
-						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[8]}}</text>
-						</view>
-						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" lazy-load="true" mode=""></image>
-						</view>
-					</view>
-					<view class="index-VillageParty-content-onePart-left">
-						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[9]}}</text>
-						</view>
-						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[9]}}</text>
-						</view>
-						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[9]" lazy-load="true" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[7]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
 				</view>
@@ -184,15 +168,16 @@
 			</view>
 			<view class="index-polling-content">
 				<view class="index-polling-content-onePart">
-					<navigator url="../../pagesB/maintenanceCenter/maintenanceCenter" class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesB/maintenanceCenter/maintenanceCenter"
+						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[10]}}</text>
+							<text>{{VillageParty.VillagePartyTitle[8]}}</text>
 						</view>
 						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[10]}}</text>
+							<text>{{VillageParty.VillagePartyDescripetion[8]}}</text>
 						</view>
 						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[10]" lazy-load="true" mode=""></image>
+							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
 				</view>
@@ -206,7 +191,7 @@
 		data() {
 			return {
 				title: 'Hello',
-				ifLoading:false,
+				ifLoading: false,
 				homeSlide: [
 					'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
 					'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
@@ -214,33 +199,30 @@
 				], // 定义值接收轮播图数据
 				VillageParty: {
 					VillagePartyTitle: [
-						"政策解读", "换届选举", "土地承包", "脱贫致富", "乡村规划", "村长信箱",
-						"村民办事", "村务监督", "精准帮扶", "乡村快递", "我要报修"
+						"政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶", "我要报修"
 					],
 					VillagePartyDescripetion: [
 						"最新的乡村政策资讯",
 						"选举新一届乡村干部",
 						"乡村土地承包事务",
-						"脱贫致富幸福生活",
-						"最新乡村规划资讯",
 						"村长信箱倾听心声",
-						"乡村办事大厅",
+						"乡村民宿宾至如归",
+						"实时公交家家晓",
 						"权力透明制度公开",
-						"因地制宜 分类指导",
-						"村村通快递",
-						"有事我来帮"
+						"精准帮扶关爱你我",
+						"有事我来帮",
 					],
 					VillagePartyTitleImageUrl: [
 						"http://p1362.bvimg.com/10465/7f4763358d4dada6.png",
 						"http://p1362.bvimg.com/10465/71814c662f242be1.png",
 						"http://p1362.bvimg.com/10465/4cc0018e009ece23.png",
-						"http://p1362.bvimg.com/10465/b039ac741e77de7b.gif",
-						"http://p1362.bvimg.com/10465/470d5a8fd3df6ad2.png",
 						"http://p1362.bvimg.com/10465/950715978bdf8348.png",
-						"http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
+						"http://p1362.bvimg.com/10465/7672bfb364fcb889.png",
+						"http://p1362.bvimg.com/10465/470d5a8fd3df6ad2.png",
+						// "http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
 						"http://p1362.bvimg.com/10465/3c309d7aa4bac16e.png",
 						"http://p1362.bvimg.com/10465/ffdf9a711b41a235.png",
-						"http://p1362.bvimg.com/10465/fe79bc86a6854375.png",
+						// "http://p1362.bvimg.com/10465/fe79bc86a6854375.png",乡村快递
 						"http://p1362.bvimg.com/10465/b3d8800d3950de8a.png",
 					]
 				}
@@ -251,14 +233,14 @@
 			this.ifLoading = true;
 		},
 		methods: {
-			toDetails(){
+			toDetails() {
 				uni.navigateTo({
-					url:("../../pagesA/News?newsID=0")
+					url: ("../../pagesA/News?newsID=0")
 				})
 			},
-			goToVillageHead_Mail(){
+			goToVillageHead_Mail() {
 				uni.navigateTo({
-					url:'../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite'
+					url: '../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite'
 				})
 			}
 		}
@@ -370,7 +352,7 @@
 
 	.index-VillageParty {
 		width: 670rpx;
-		height: 500rpx;
+		/* height: 500rpx; */
 		margin: 10rpx;
 		/* background: green; */
 	}
@@ -418,6 +400,7 @@
 		margin: 0 16rpx;
 		position: relative;
 	}
+
 	.funcion-top {
 		padding: 10rpx 0 4rpx 20rpx;
 	}

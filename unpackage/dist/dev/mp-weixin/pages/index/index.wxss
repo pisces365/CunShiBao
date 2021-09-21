@@ -379,7 +379,7 @@ page {
 }
 .index-VillageParty {
 	width: 670rpx;
-	height: 500rpx;
+	/* height: 500rpx; */
 	margin: 10rpx;
 	/* background: green; */
 }

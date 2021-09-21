@@ -318,21 +318,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -346,33 +331,30 @@ var _default =
       // 定义值接收轮播图数据
       VillageParty: {
         VillagePartyTitle: [
-        "政策解读", "换届选举", "土地承包", "脱贫致富", "乡村规划", "村长信箱",
-        "村民办事", "村务监督", "精准帮扶", "乡村快递", "我要报修"],
+        "政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶", "我要报修"],
 
         VillagePartyDescripetion: [
         "最新的乡村政策资讯",
         "选举新一届乡村干部",
         "乡村土地承包事务",
-        "脱贫致富幸福生活",
-        "最新乡村规划资讯",
         "村长信箱倾听心声",
-        "乡村办事大厅",
+        "乡村民宿宾至如归",
+        "实时公交家家晓",
         "权力透明制度公开",
-        "因地制宜 分类指导",
-        "村村通快递",
+        "精准帮扶关爱你我",
         "有事我来帮"],
 
         VillagePartyTitleImageUrl: [
         "http://p1362.bvimg.com/10465/7f4763358d4dada6.png",
         "http://p1362.bvimg.com/10465/71814c662f242be1.png",
         "http://p1362.bvimg.com/10465/4cc0018e009ece23.png",
-        "http://p1362.bvimg.com/10465/b039ac741e77de7b.gif",
-        "http://p1362.bvimg.com/10465/470d5a8fd3df6ad2.png",
         "http://p1362.bvimg.com/10465/950715978bdf8348.png",
-        "http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
+        "http://p1362.bvimg.com/10465/7672bfb364fcb889.png",
+        "http://p1362.bvimg.com/10465/470d5a8fd3df6ad2.png",
+        // "http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
         "http://p1362.bvimg.com/10465/3c309d7aa4bac16e.png",
         "http://p1362.bvimg.com/10465/ffdf9a711b41a235.png",
-        "http://p1362.bvimg.com/10465/fe79bc86a6854375.png",
+        // "http://p1362.bvimg.com/10465/fe79bc86a6854375.png",乡村快递
         "http://p1362.bvimg.com/10465/b3d8800d3950de8a.png"] } };
 
 

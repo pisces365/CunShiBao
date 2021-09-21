@@ -147,6 +147,37 @@
 			}
 
 		}]
+	},
+	{
+		"root": "pagesBus",
+		"pages": [{
+			"path": "info/info",
+			"style": {
+				"navigationBarTitleText": "实时公交",
+				"enablePullDownRefresh": false
+			}
+	
+		}, {
+			"path": "routeInfo/routeInfo",
+			"style": {
+				"navigationBarTitleText": "线路信息",
+				"enablePullDownRefresh": false
+			}
+	
+		}, {
+			"path": "search/search",
+			"style": {
+				"navigationBarTitleText": "公交搜索",
+				"enablePullDownRefresh": false
+			}},
+			{
+				"path": "stationInfo/stationInfo",
+				"style": {
+					"navigationBarTitleText": "站台信息",
+					"enablePullDownRefresh": false
+				}
+			
+		}]
 	}],
 
 	"globalStyle": {

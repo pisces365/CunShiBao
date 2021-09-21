@@ -32,6 +32,15 @@
         "maintenanceCenter/maintenanceCenter",
         "landContract/landContract"
       ]
+    },
+    {
+      "root": "pagesBus",
+      "pages": [
+        "info/info",
+        "routeInfo/routeInfo",
+        "search/search",
+        "stationInfo/stationInfo"
+      ]
     }
   ],
   "window": {

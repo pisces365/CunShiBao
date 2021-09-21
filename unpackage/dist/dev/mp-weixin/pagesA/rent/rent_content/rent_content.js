@@ -96,10 +96,10 @@ var components
 try {
   components = {
     uniCollapse: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse/uni-collapse */ "uni_modules/uni-collapse/components/uni-collapse/uni-collapse").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue */ 210))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse/uni-collapse */ "uni_modules/uni-collapse/components/uni-collapse/uni-collapse").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse/uni-collapse.vue */ 236))
     },
     uniCollapseItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item */ "uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue */ 217))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item */ "uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item.vue */ 243))
     }
   }
 } catch (e) {
@@ -156,7 +156,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _methods;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
+//
+//
+//
+//
 //
 //
 //
@@ -544,8 +548,17 @@ var _default =
 
 
   },
-  methods: {
+  methods: (_methods = {
     makeAnAppointment: function makeAnAppointment() {
+      // <<<<<<< HEAD
+      uni.makePhoneCall({
+        phoneNumber: '0571-88628854' //仅为示例
+      });
+    },
+    DueToHousing: function DueToHousing() {
+      uni.navigateTo({
+        url: '../../phoneRegistration/phoneRegistration' });
+      // =======
       var _this = this;
       var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
       uni.navigateTo({
@@ -554,16 +567,17 @@ var _default =
       // uni.makePhoneCall({
       // 	phoneNumber: '0571-88628854' //仅为示例
       // });
-    },
-    DueToHousing: function DueToHousing() {
-      uni.navigateTo({
-        url: '../phoneRegistration/phoneRegistration' });
-
-    },
-    swiperChange: function swiperChange(e) {
-      this.swiperCurrent = e.detail.current;
-      // console.log(this.swiperCurrent)
-    } },
+    } }, _defineProperty(_methods, "DueToHousing", function DueToHousing()
+  {
+    uni.navigateTo({
+      url: '../phoneRegistration/phoneRegistration'
+      // >>>>>>> 34b16180938e0df86331b848561a67462163db63
+    });
+  }), _defineProperty(_methods, "swiperChange", function swiperChange(
+  e) {
+    this.swiperCurrent = e.detail.current;
+    // console.log(this.swiperCurrent)
+  }), _methods),
 
 
   onLoad: function onLoad(options) {
