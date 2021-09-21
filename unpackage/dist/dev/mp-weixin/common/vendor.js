@@ -2145,6 +2145,449 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = 
 
 /***/ }),
 
+/***/ 197:
+/*!***********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(uni) {function AMapWX(a) {
+  this.key = a.key, this.requestConfig = {
+    key: a.key,
+    s: "rsx",
+    platform: "WXJS",
+    appname: a.key,
+    sdkversion: "1.2.0",
+    logversion: "2.0" };
+
+}
+AMapWX.prototype.getWxLocation = function (a, b) {
+  uni.getLocation({
+    type: "gcj02",
+    success: function success(a) {
+      var c = a.longitude + "," + a.latitude;
+      uni.setStorage({
+        key: "userLocation",
+        data: c }),
+      b(c);
+    },
+    fail: function fail(c) {
+      uni.getStorage({
+        key: "userLocation",
+        success: function success(a) {
+          a.data && b(a.data);
+        } }),
+      a.fail({
+        errCode: "0",
+        errMsg: c.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getRegeo = function (a) {
+  function c(c) {
+    var d = b.requestConfig;
+    uni.request({
+      url: "https://restapi.amap.com/v3/geocode/regeo",
+      data: {
+        key: b.key,
+        location: c,
+        extensions: "all",
+        s: d.s,
+        platform: d.platform,
+        appname: b.key,
+        sdkversion: d.sdkversion,
+        logversion: d.logversion },
+
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        var d, e, f, g, h, i, j, k, l;
+        b.data.status && "1" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = "", d && d.roads[
+        0] && d.roads[0].name && (g = d.roads[0].name + "附近"), h = c.split(",")[0], i = c.split(",")[1], d.pois && d.
+        pois[0] && (g = d.pois[0].name + "附近", j = d.pois[0].location, j && (h = parseFloat(j.split(",")[0]), i =
+        parseFloat(j.split(",")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(
+        e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street),
+        f.push(e.streetNumber.number)) : (k = "", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(
+        k)), f = f.join(""), l = [{
+          iconPath: a.iconPath,
+          width: a.iconWidth,
+          height: a.iconHeight,
+          name: f,
+          desc: g,
+          longitude: h,
+          latitude: i,
+          id: 0,
+          regeocodeData: d }],
+        a.success(l)) : a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+  var b = this;
+  a.location ? c(a.location) : b.getWxLocation(a, function (a) {
+    c(a);
+  });
+}, AMapWX.prototype.getWeather = function (a) {
+  function d(d) {
+    var e = "base";
+    a.type && "forecast" == a.type && (e = "all"), uni.request({
+      url: "https://restapi.amap.com/v3/weather/weatherInfo",
+      data: {
+        key: b.key,
+        city: d,
+        extensions: e,
+        s: c.s,
+        platform: c.platform,
+        appname: b.key,
+        sdkversion: c.sdkversion,
+        logversion: c.logversion },
+
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        function c(a) {
+          var b = {
+            city: {
+              text: "城市",
+              data: a.city },
+
+            weather: {
+              text: "天气",
+              data: a.weather },
+
+            temperature: {
+              text: "温度",
+              data: a.temperature },
+
+            winddirection: {
+              text: "风向",
+              data: a.winddirection + "风" },
+
+            windpower: {
+              text: "风力",
+              data: a.windpower + "级" },
+
+            humidity: {
+              text: "湿度",
+              data: a.humidity + "%" } };
+
+
+          return b;
+        }
+        var d, e;
+        b.data.status && "1" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(
+        d), e["liveData"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({
+          forecast: b.data.forecasts[0] }) :
+        a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+
+  function e(e) {
+    uni.request({
+      url: "https://restapi.amap.com/v3/geocode/regeo",
+      data: {
+        key: b.key,
+        location: e,
+        extensions: "all",
+        s: c.s,
+        platform: c.platform,
+        appname: b.key,
+        sdkversion: c.sdkversion,
+        logversion: c.logversion },
+
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        var c, e;
+        b.data.status && "1" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode :
+        e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+  var b = this,
+  c = b.requestConfig;
+  a.city ? d(a.city) : b.getWxLocation(a, function (a) {
+    e(a);
+  });
+}, AMapWX.prototype.getPoiAround = function (a) {
+  function d(d) {
+    var e = {
+      key: b.key,
+      location: d,
+      s: c.s,
+      platform: c.platform,
+      appname: b.key,
+      sdkversion: c.sdkversion,
+      logversion: c.logversion };
+
+    a.querytypes && (e["types"] = a.querytypes), a.querykeywords && (e["keywords"] = a.querykeywords), uni.request({
+      url: "https://restapi.amap.com/v3/place/around",
+      data: e,
+      method: "GET",
+      header: {
+        "content-type": "application/json" },
+
+      success: function success(b) {
+        var c, d, e, f;
+        if (b.data.status && "1" == b.data.status) {
+          if (b = b.data, b && b.pois) {
+            for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({
+                latitude: parseFloat(b.pois[d].location.split(",")[1]),
+                longitude: parseFloat(b.pois[d].location.split(",")[0]),
+                iconPath: e,
+                width: 22,
+                height: 32,
+                id: d,
+                name: b.pois[d].name,
+                address: b.pois[d].address });}
+
+            f = {
+              markers: c,
+              poisData: b.pois },
+            a.success(f);
+          }
+        } else a.fail({
+          errCode: b.data.infocode,
+          errMsg: b.data.info });
+
+      },
+      fail: function fail(b) {
+        a.fail({
+          errCode: "0",
+          errMsg: b.errMsg || "" });
+
+      } });
+
+  }
+  var b = this,
+  c = b.requestConfig;
+  a.location ? d(a.location) : b.getWxLocation(a, function (a) {
+    d(a);
+  });
+}, AMapWX.prototype.getStaticmap = function (a) {
+  function f(b) {
+    c.push("location=" + b), a.zoom && c.push("zoom=" + a.zoom), a.size && c.push("size=" + a.size), a.scale && c.push(
+    "scale=" + a.scale), a.markers && c.push("markers=" + a.markers), a.labels && c.push("labels=" + a.labels), a.paths &&
+    c.push("paths=" + a.paths), a.traffic && c.push("traffic=" + a.traffic);
+    var e = d + c.join("&");
+    a.success({
+      url: e });
+
+  }
+  var e,b = this,
+  c = [],
+  d = "https://restapi.amap.com/v3/staticmap?";
+  c.push("key=" + b.key), e = b.requestConfig, c.push("s=" + e.s), c.push("platform=" + e.platform), c.push("appname=" +
+  e.appname), c.push("sdkversion=" + e.sdkversion), c.push("logversion=" + e.logversion), a.location ? f(a.location) :
+  b.getWxLocation(a, function (a) {
+    f(a);
+  });
+}, AMapWX.prototype.getInputtips = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.location && (d["location"] = a.location), a.keywords && (d["keywords"] = a.keywords), a.type && (d["type"] = a.type),
+  a.city && (d["city"] = a.city), a.citylimit && (d["citylimit"] = a.citylimit), uni.request({
+    url: "https://restapi.amap.com/v3/assistant/inputtips",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      b && b.data && b.data.tips && a.success({
+        tips: b.data.tips });
+
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getDrivingRoute = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin),
+  a.destination && (d["destination"] = a.destination),
+  a.strategy && (d["strategy"] = a.strategy),
+  a.waypoints && (d["waypoints"] = a.waypoints),
+  a.avoidpolygons && (d["avoidpolygons"] = a.avoidpolygons),
+  a.avoidroad && (d["avoidroad"] = a.avoidroad),
+  uni.request({
+    url: "https://restapi.amap.com/v3/direction/driving",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      b && b.data && b.data.route && a.success({
+        paths: b.data.route.paths,
+        taxi_cost: b.data.route.taxi_cost || "" });
+
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getWalkingRoute = function (a) {
+
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), uni.request({
+    url: "https://restapi.amap.com/v3/direction/walking",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      // console.log(b,'12')
+      b && b.data && b.data.route && a.success({
+        paths: b.data.route.paths });
+
+    },
+    fail: function fail(b) {
+      // console.log(b,'24')
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getTransitRoute = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d[
+  "strategy"] = a.strategy), a.city && (d["city"] = a.city), a.cityd && (d["cityd"] = a.cityd), uni.request({
+    url: "https://restapi.amap.com/v3/direction/transit/integrated",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      if (b && b.data && b.data.route) {
+        var c = b.data.route;
+        a.success({
+          distance: c.distance || "",
+          taxi_cost: c.taxi_cost || "",
+          transits: c.transits });
+
+      }
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, AMapWX.prototype.getRidingRoute = function (a) {
+  var b = this,
+  c = b.requestConfig,
+  d = {
+    key: b.key,
+    s: c.s,
+    platform: c.platform,
+    appname: b.key,
+    sdkversion: c.sdkversion,
+    logversion: c.logversion };
+
+  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), uni.request({
+    url: "https://restapi.amap.com/v4/direction/bicycling",
+    data: d,
+    method: "GET",
+    header: {
+      "content-type": "application/json" },
+
+    success: function success(b) {
+      b && b.data && b.data.data && a.success({
+        paths: b.data.data.paths });
+
+    },
+    fail: function fail(b) {
+      a.fail({
+        errCode: "0",
+        errMsg: b.errMsg || "" });
+
+    } });
+
+}, module.exports.AMapWX = AMapWX;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
@@ -6866,6 +7309,20 @@ function getData (data, vm) {
 
 var computedWatcherOptions = { lazy: true };
 
+<<<<<<< Updated upstream
+function flushCallbacks$1(vm) {
+    if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
+        }
+        var copies = vm.__next_tick_callbacks.slice(0);
+        vm.__next_tick_callbacks.length = 0;
+        for (var i = 0; i < copies.length; i++) {
+            copies[i]();
+        }
+=======
 function initComputed (vm, computed) {
   // $flow-disable-line
   var watchers = vm._computedWatchers = Object.create(null);
@@ -6890,6 +7347,7 @@ function initComputed (vm, computed) {
         noop,
         computedWatcherOptions
       );
+>>>>>>> Stashed changes
     }
 
     // component-defined computed properties are already defined on the
@@ -6938,6 +7396,45 @@ function defineComputed (
   Object.defineProperty(target, key, sharedPropertyDefinition);
 }
 
+<<<<<<< Updated upstream
+function nextTick$1(vm, cb) {
+    //1.nextTick 之前 已 setData 且 setData 还未回调完成
+    //2.nextTick 之前存在 render watcher
+    if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
+                ']:nextVueTick');
+        }
+        return nextTick(cb, vm)
+    }else{
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+            var mpInstance$1 = vm.$scope;
+            console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
+                ']:nextMPTick');
+        }
+    }
+    var _resolve;
+    if (!vm.__next_tick_callbacks) {
+        vm.__next_tick_callbacks = [];
+    }
+    vm.__next_tick_callbacks.push(function () {
+        if (cb) {
+            try {
+                cb.call(vm);
+            } catch (e) {
+                handleError(e, vm, 'nextTick');
+            }
+        } else if (_resolve) {
+            _resolve(vm);
+        }
+    });
+    // $flow-disable-line
+    if (!cb && typeof Promise !== 'undefined') {
+        return new Promise(function (resolve) {
+            _resolve = resolve;
+        })
+=======
 function createComputedGetter (key) {
   return function computedGetter () {
     var watcher = this._computedWatchers && this._computedWatchers[key];
@@ -6949,13 +7446,51 @@ function createComputedGetter (key) {
         watcher.depend();
       }
       return watcher.value
+>>>>>>> Stashed changes
     }
   }
 }
 
+<<<<<<< Updated upstream
+var patch = function(oldVnode, vnode) {
+  var this$1 = this;
+
+  if (vnode === null) { //destroy
+    return
+  }
+  if (this.mpType === 'page' || this.mpType === 'component') {
+    var mpInstance = this.$scope;
+    var data = Object.create(null);
+    try {
+      data = cloneWithData(this);
+    } catch (err) {
+      console.error(err);
+    }
+    data.__webviewId__ = mpInstance.data.__webviewId__;
+    var mpData = Object.create(null);
+    Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
+      mpData[key] = mpInstance.data[key];
+    });
+    var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
+    if (Object.keys(diffData).length) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
+          ']差量更新',
+          JSON.stringify(diffData));
+      }
+      this.__next_tick_pending = true;
+      mpInstance.setData(diffData, function () {
+        this$1.__next_tick_pending = false;
+        flushCallbacks$1(this$1);
+      });
+    } else {
+      flushCallbacks$1(this);
+    }
+=======
 function createGetterInvoker(fn) {
   return function computedGetter () {
     return fn.call(this, this)
+>>>>>>> Stashed changes
   }
 }
 
@@ -7358,6 +7893,14 @@ function initAssetRegisters (Vue) {
 
 
 
+<<<<<<< Updated upstream
+/***/ 205:
+/*!***********************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/amap-uni.js ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+=======
 function getComponentName (opts) {
   return opts && (opts.Ctor.options.name || opts.tag)
 }
@@ -7672,7 +8215,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7693,14 +8236,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7742,6 +8285,7 @@ function cloneWithData(vm) {
     ret[key] = vm[key];
     return ret
   }, ret);
+>>>>>>> Stashed changes
 
   // vue-composition-api
   var compositionApiState = vm.__composition_api_state__ || vm.__secret_vfa_state__;
@@ -7786,7 +8330,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8194,446 +8738,176 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 205:
-/*!***********************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/amap-uni.js ***!
-  \***********************************************************************************/
+/***/ 283:
+/*!***************************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(uni) {function AMapWX(a) {
-  this.key = a.key, this.requestConfig = {
-    key: a.key,
-    s: "rsx",
-    platform: "WXJS",
-    appname: a.key,
-    sdkversion: "1.2.0",
-    logversion: "2.0" };
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  "pulldown": "\uE588",
+  "refreshempty": "\uE461",
+  "back": "\uE471",
+  "forward": "\uE470",
+  "more": "\uE507",
+  "more-filled": "\uE537",
+  "scan": "\uE612",
+  "qq": "\uE264",
+  "weibo": "\uE260",
+  "weixin": "\uE261",
+  "pengyouquan": "\uE262",
+  "loop": "\uE565",
+  "refresh": "\uE407",
+  "refresh-filled": "\uE437",
+  "arrowthindown": "\uE585",
+  "arrowthinleft": "\uE586",
+  "arrowthinright": "\uE587",
+  "arrowthinup": "\uE584",
+  "undo-filled": "\uE7D6",
+  "undo": "\uE406",
+  "redo": "\uE405",
+  "redo-filled": "\uE7D9",
+  "bars": "\uE563",
+  "chatboxes": "\uE203",
+  "camera": "\uE301",
+  "chatboxes-filled": "\uE233",
+  "camera-filled": "\uE7EF",
+  "cart-filled": "\uE7F4",
+  "cart": "\uE7F5",
+  "checkbox-filled": "\uE442",
+  "checkbox": "\uE7FA",
+  "arrowleft": "\uE582",
+  "arrowdown": "\uE581",
+  "arrowright": "\uE583",
+  "smallcircle-filled": "\uE801",
+  "arrowup": "\uE580",
+  "circle": "\uE411",
+  "eye-filled": "\uE568",
+  "eye-slash-filled": "\uE822",
+  "eye-slash": "\uE823",
+  "eye": "\uE824",
+  "flag-filled": "\uE825",
+  "flag": "\uE508",
+  "gear-filled": "\uE532",
+  "reload": "\uE462",
+  "gear": "\uE502",
+  "hand-thumbsdown-filled": "\uE83B",
+  "hand-thumbsdown": "\uE83C",
+  "hand-thumbsup-filled": "\uE83D",
+  "heart-filled": "\uE83E",
+  "hand-thumbsup": "\uE83F",
+  "heart": "\uE840",
+  "home": "\uE500",
+  "info": "\uE504",
+  "home-filled": "\uE530",
+  "info-filled": "\uE534",
+  "circle-filled": "\uE441",
+  "chat-filled": "\uE847",
+  "chat": "\uE263",
+  "mail-open-filled": "\uE84D",
+  "email-filled": "\uE231",
+  "mail-open": "\uE84E",
+  "email": "\uE201",
+  "checkmarkempty": "\uE472",
+  "list": "\uE562",
+  "locked-filled": "\uE856",
+  "locked": "\uE506",
+  "map-filled": "\uE85C",
+  "map-pin": "\uE85E",
+  "map-pin-ellipse": "\uE864",
+  "map": "\uE364",
+  "minus-filled": "\uE440",
+  "mic-filled": "\uE332",
+  "minus": "\uE410",
+  "micoff": "\uE360",
+  "mic": "\uE302",
+  "clear": "\uE434",
+  "smallcircle": "\uE868",
+  "close": "\uE404",
+  "closeempty": "\uE460",
+  "paperclip": "\uE567",
+  "paperplane": "\uE503",
+  "paperplane-filled": "\uE86E",
+  "person-filled": "\uE131",
+  "contact-filled": "\uE130",
+  "person": "\uE101",
+  "contact": "\uE100",
+  "images-filled": "\uE87A",
+  "phone": "\uE200",
+  "images": "\uE87B",
+  "image": "\uE363",
+  "image-filled": "\uE877",
+  "location-filled": "\uE333",
+  "location": "\uE303",
+  "plus-filled": "\uE439",
+  "plus": "\uE409",
+  "plusempty": "\uE468",
+  "help-filled": "\uE535",
+  "help": "\uE505",
+  "navigate-filled": "\uE884",
+  "navigate": "\uE501",
+  "mic-slash-filled": "\uE892",
+  "search": "\uE466",
+  "settings": "\uE560",
+  "sound": "\uE590",
+  "sound-filled": "\uE8A1",
+  "spinner-cycle": "\uE465",
+  "download-filled": "\uE8A4",
+  "personadd-filled": "\uE132",
+  "videocam-filled": "\uE8AF",
+  "personadd": "\uE102",
+  "upload": "\uE402",
+  "upload-filled": "\uE8B1",
+  "starhalf": "\uE463",
+  "star-filled": "\uE438",
+  "star": "\uE408",
+  "trash": "\uE401",
+  "phone-filled": "\uE230",
+  "compose": "\uE400",
+  "videocam": "\uE300",
+  "trash-filled": "\uE8DC",
+  "download": "\uE403",
+  "chatbubble-filled": "\uE232",
+  "chatbubble": "\uE202",
+  "cloud-download": "\uE8E4",
+  "cloud-upload-filled": "\uE8E5",
+  "cloud-upload": "\uE8E6",
+  "cloud-download-filled": "\uE8E9",
+  "headphones": "\uE8BF",
+  "shop": "\uE609" };exports.default = _default;
 
+/***/ }),
+
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
 }
-AMapWX.prototype.getWxLocation = function (a, b) {
-  uni.getLocation({
-    type: "gcj02",
-    success: function success(a) {
-      var c = a.longitude + "," + a.latitude;
-      uni.setStorage({
-        key: "userLocation",
-        data: c }),
-      b(c);
-    },
-    fail: function fail(c) {
-      uni.getStorage({
-        key: "userLocation",
-        success: function success(a) {
-          a.data && b(a.data);
-        } }),
-      a.fail({
-        errCode: "0",
-        errMsg: c.errMsg || "" });
 
-    } });
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
 
-}, AMapWX.prototype.getRegeo = function (a) {
-  function c(c) {
-    var d = b.requestConfig;
-    uni.request({
-      url: "https://restapi.amap.com/v3/geocode/regeo",
-      data: {
-        key: b.key,
-        location: c,
-        extensions: "all",
-        s: d.s,
-        platform: d.platform,
-        appname: b.key,
-        sdkversion: d.sdkversion,
-        logversion: d.logversion },
+module.exports = g;
 
-      method: "GET",
-      header: {
-        "content-type": "application/json" },
-
-      success: function success(b) {
-        var d, e, f, g, h, i, j, k, l;
-        b.data.status && "1" == b.data.status ? (d = b.data.regeocode, e = d.addressComponent, f = [], g = "", d && d.roads[
-        0] && d.roads[0].name && (g = d.roads[0].name + "附近"), h = c.split(",")[0], i = c.split(",")[1], d.pois && d.
-        pois[0] && (g = d.pois[0].name + "附近", j = d.pois[0].location, j && (h = parseFloat(j.split(",")[0]), i =
-        parseFloat(j.split(",")[1]))), e.provice && f.push(e.provice), e.city && f.push(e.city), e.district && f.push(
-        e.district), e.streetNumber && e.streetNumber.street && e.streetNumber.number ? (f.push(e.streetNumber.street),
-        f.push(e.streetNumber.number)) : (k = "", d && d.roads[0] && d.roads[0].name && (k = d.roads[0].name), f.push(
-        k)), f = f.join(""), l = [{
-          iconPath: a.iconPath,
-          width: a.iconWidth,
-          height: a.iconHeight,
-          name: f,
-          desc: g,
-          longitude: h,
-          latitude: i,
-          id: 0,
-          regeocodeData: d }],
-        a.success(l)) : a.fail({
-          errCode: b.data.infocode,
-          errMsg: b.data.info });
-
-      },
-      fail: function fail(b) {
-        a.fail({
-          errCode: "0",
-          errMsg: b.errMsg || "" });
-
-      } });
-
-  }
-  var b = this;
-  a.location ? c(a.location) : b.getWxLocation(a, function (a) {
-    c(a);
-  });
-}, AMapWX.prototype.getWeather = function (a) {
-  function d(d) {
-    var e = "base";
-    a.type && "forecast" == a.type && (e = "all"), uni.request({
-      url: "https://restapi.amap.com/v3/weather/weatherInfo",
-      data: {
-        key: b.key,
-        city: d,
-        extensions: e,
-        s: c.s,
-        platform: c.platform,
-        appname: b.key,
-        sdkversion: c.sdkversion,
-        logversion: c.logversion },
-
-      method: "GET",
-      header: {
-        "content-type": "application/json" },
-
-      success: function success(b) {
-        function c(a) {
-          var b = {
-            city: {
-              text: "城市",
-              data: a.city },
-
-            weather: {
-              text: "天气",
-              data: a.weather },
-
-            temperature: {
-              text: "温度",
-              data: a.temperature },
-
-            winddirection: {
-              text: "风向",
-              data: a.winddirection + "风" },
-
-            windpower: {
-              text: "风力",
-              data: a.windpower + "级" },
-
-            humidity: {
-              text: "湿度",
-              data: a.humidity + "%" } };
-
-
-          return b;
-        }
-        var d, e;
-        b.data.status && "1" == b.data.status ? b.data.lives ? (d = b.data.lives, d && d.length > 0 && (d = d[0], e = c(
-        d), e["liveData"] = d, a.success(e))) : b.data.forecasts && b.data.forecasts[0] && a.success({
-          forecast: b.data.forecasts[0] }) :
-        a.fail({
-          errCode: b.data.infocode,
-          errMsg: b.data.info });
-
-      },
-      fail: function fail(b) {
-        a.fail({
-          errCode: "0",
-          errMsg: b.errMsg || "" });
-
-      } });
-
-  }
-
-  function e(e) {
-    uni.request({
-      url: "https://restapi.amap.com/v3/geocode/regeo",
-      data: {
-        key: b.key,
-        location: e,
-        extensions: "all",
-        s: c.s,
-        platform: c.platform,
-        appname: b.key,
-        sdkversion: c.sdkversion,
-        logversion: c.logversion },
-
-      method: "GET",
-      header: {
-        "content-type": "application/json" },
-
-      success: function success(b) {
-        var c, e;
-        b.data.status && "1" == b.data.status ? (e = b.data.regeocode, e.addressComponent ? c = e.addressComponent.adcode :
-        e.aois && e.aois.length > 0 && (c = e.aois[0].adcode), d(c)) : a.fail({
-          errCode: b.data.infocode,
-          errMsg: b.data.info });
-
-      },
-      fail: function fail(b) {
-        a.fail({
-          errCode: "0",
-          errMsg: b.errMsg || "" });
-
-      } });
-
-  }
-  var b = this,
-  c = b.requestConfig;
-  a.city ? d(a.city) : b.getWxLocation(a, function (a) {
-    e(a);
-  });
-}, AMapWX.prototype.getPoiAround = function (a) {
-  function d(d) {
-    var e = {
-      key: b.key,
-      location: d,
-      s: c.s,
-      platform: c.platform,
-      appname: b.key,
-      sdkversion: c.sdkversion,
-      logversion: c.logversion };
-
-    a.querytypes && (e["types"] = a.querytypes), a.querykeywords && (e["keywords"] = a.querykeywords), uni.request({
-      url: "https://restapi.amap.com/v3/place/around",
-      data: e,
-      method: "GET",
-      header: {
-        "content-type": "application/json" },
-
-      success: function success(b) {
-        var c, d, e, f;
-        if (b.data.status && "1" == b.data.status) {
-          if (b = b.data, b && b.pois) {
-            for (c = [], d = 0; d < b.pois.length; d++) {e = 0 == d ? a.iconPathSelected : a.iconPath, c.push({
-                latitude: parseFloat(b.pois[d].location.split(",")[1]),
-                longitude: parseFloat(b.pois[d].location.split(",")[0]),
-                iconPath: e,
-                width: 22,
-                height: 32,
-                id: d,
-                name: b.pois[d].name,
-                address: b.pois[d].address });}
-
-            f = {
-              markers: c,
-              poisData: b.pois },
-            a.success(f);
-          }
-        } else a.fail({
-          errCode: b.data.infocode,
-          errMsg: b.data.info });
-
-      },
-      fail: function fail(b) {
-        a.fail({
-          errCode: "0",
-          errMsg: b.errMsg || "" });
-
-      } });
-
-  }
-  var b = this,
-  c = b.requestConfig;
-  a.location ? d(a.location) : b.getWxLocation(a, function (a) {
-    d(a);
-  });
-}, AMapWX.prototype.getStaticmap = function (a) {
-  function f(b) {
-    c.push("location=" + b), a.zoom && c.push("zoom=" + a.zoom), a.size && c.push("size=" + a.size), a.scale && c.push(
-    "scale=" + a.scale), a.markers && c.push("markers=" + a.markers), a.labels && c.push("labels=" + a.labels), a.paths &&
-    c.push("paths=" + a.paths), a.traffic && c.push("traffic=" + a.traffic);
-    var e = d + c.join("&");
-    a.success({
-      url: e });
-
-  }
-  var e,b = this,
-  c = [],
-  d = "https://restapi.amap.com/v3/staticmap?";
-  c.push("key=" + b.key), e = b.requestConfig, c.push("s=" + e.s), c.push("platform=" + e.platform), c.push("appname=" +
-  e.appname), c.push("sdkversion=" + e.sdkversion), c.push("logversion=" + e.logversion), a.location ? f(a.location) :
-  b.getWxLocation(a, function (a) {
-    f(a);
-  });
-}, AMapWX.prototype.getInputtips = function (a) {
-  var b = this,
-  c = b.requestConfig,
-  d = {
-    key: b.key,
-    s: c.s,
-    platform: c.platform,
-    appname: b.key,
-    sdkversion: c.sdkversion,
-    logversion: c.logversion };
-
-  a.location && (d["location"] = a.location), a.keywords && (d["keywords"] = a.keywords), a.type && (d["type"] = a.type),
-  a.city && (d["city"] = a.city), a.citylimit && (d["citylimit"] = a.citylimit), uni.request({
-    url: "https://restapi.amap.com/v3/assistant/inputtips",
-    data: d,
-    method: "GET",
-    header: {
-      "content-type": "application/json" },
-
-    success: function success(b) {
-      b && b.data && b.data.tips && a.success({
-        tips: b.data.tips });
-
-    },
-    fail: function fail(b) {
-      a.fail({
-        errCode: "0",
-        errMsg: b.errMsg || "" });
-
-    } });
-
-}, AMapWX.prototype.getDrivingRoute = function (a) {
-  var b = this,
-  c = b.requestConfig,
-  d = {
-    key: b.key,
-    s: c.s,
-    platform: c.platform,
-    appname: b.key,
-    sdkversion: c.sdkversion,
-    logversion: c.logversion };
-
-  a.origin && (d["origin"] = a.origin),
-  a.destination && (d["destination"] = a.destination),
-  a.strategy && (d["strategy"] = a.strategy),
-  a.waypoints && (d["waypoints"] = a.waypoints),
-  a.avoidpolygons && (d["avoidpolygons"] = a.avoidpolygons),
-  a.avoidroad && (d["avoidroad"] = a.avoidroad),
-  uni.request({
-    url: "https://restapi.amap.com/v3/direction/driving",
-    data: d,
-    method: "GET",
-    header: {
-      "content-type": "application/json" },
-
-    success: function success(b) {
-      b && b.data && b.data.route && a.success({
-        paths: b.data.route.paths,
-        taxi_cost: b.data.route.taxi_cost || "" });
-
-    },
-    fail: function fail(b) {
-      a.fail({
-        errCode: "0",
-        errMsg: b.errMsg || "" });
-
-    } });
-
-}, AMapWX.prototype.getWalkingRoute = function (a) {
-
-  var b = this,
-  c = b.requestConfig,
-  d = {
-    key: b.key,
-    s: c.s,
-    platform: c.platform,
-    appname: b.key,
-    sdkversion: c.sdkversion,
-    logversion: c.logversion };
-
-  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), uni.request({
-    url: "https://restapi.amap.com/v3/direction/walking",
-    data: d,
-    method: "GET",
-    header: {
-      "content-type": "application/json" },
-
-    success: function success(b) {
-      // console.log(b,'12')
-      b && b.data && b.data.route && a.success({
-        paths: b.data.route.paths });
-
-    },
-    fail: function fail(b) {
-      // console.log(b,'24')
-      a.fail({
-        errCode: "0",
-        errMsg: b.errMsg || "" });
-
-    } });
-
-}, AMapWX.prototype.getTransitRoute = function (a) {
-  var b = this,
-  c = b.requestConfig,
-  d = {
-    key: b.key,
-    s: c.s,
-    platform: c.platform,
-    appname: b.key,
-    sdkversion: c.sdkversion,
-    logversion: c.logversion };
-
-  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), a.strategy && (d[
-  "strategy"] = a.strategy), a.city && (d["city"] = a.city), a.cityd && (d["cityd"] = a.cityd), uni.request({
-    url: "https://restapi.amap.com/v3/direction/transit/integrated",
-    data: d,
-    method: "GET",
-    header: {
-      "content-type": "application/json" },
-
-    success: function success(b) {
-      if (b && b.data && b.data.route) {
-        var c = b.data.route;
-        a.success({
-          distance: c.distance || "",
-          taxi_cost: c.taxi_cost || "",
-          transits: c.transits });
-
-      }
-    },
-    fail: function fail(b) {
-      a.fail({
-        errCode: "0",
-        errMsg: b.errMsg || "" });
-
-    } });
-
-}, AMapWX.prototype.getRidingRoute = function (a) {
-  var b = this,
-  c = b.requestConfig,
-  d = {
-    key: b.key,
-    s: c.s,
-    platform: c.platform,
-    appname: b.key,
-    sdkversion: c.sdkversion,
-    logversion: c.logversion };
-
-  a.origin && (d["origin"] = a.origin), a.destination && (d["destination"] = a.destination), uni.request({
-    url: "https://restapi.amap.com/v4/direction/bicycling",
-    data: d,
-    method: "GET",
-    header: {
-      "content-type": "application/json" },
-
-    success: function success(b) {
-      b && b.data && b.data.data && a.success({
-        paths: b.data.data.paths });
-
-    },
-    fail: function fail(b) {
-      a.fail({
-        errCode: "0",
-        errMsg: b.errMsg || "" });
-
-    } });
-
-}, module.exports.AMapWX = AMapWX;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

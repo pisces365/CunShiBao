@@ -141,7 +141,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+<<<<<<< Updated upstream
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 216));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var workOrderInDetails = function workOrderInDetails() {__webpack_require__.e(/*! require.ensure | componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails */ "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails").then((function () {return resolve(__webpack_require__(/*! @/componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails.vue */ 258));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+=======
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 208));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var workOrderInDetails = function workOrderInDetails() {__webpack_require__.e(/*! require.ensure | componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails */ "componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails").then((function () {return resolve(__webpack_require__(/*! @/componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails.vue */ 250));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+>>>>>>> Stashed changes
 
 
 
