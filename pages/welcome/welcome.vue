@@ -199,7 +199,7 @@
 	.welcome-button {
 		width: 100%;
 		height: 100%;
-		background: #A2C056;
+		background: #4ecf68;
 		color: white;
 		font-size: 34rpx;
 	}
