@@ -156,7 +156,7 @@
 					</view>
 				</view>
 				<view class="index-VillageParty-content-onePart">
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator class="index-VillageParty-content-onePart-left" url="../../pagesBus/info/info">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[8]}}</text>
 						</view>
@@ -166,7 +166,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[8]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 					<view class="index-VillageParty-content-onePart-noShow">
 						<view class="funcion-top">
 						</view>

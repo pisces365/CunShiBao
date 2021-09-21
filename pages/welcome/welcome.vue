@@ -13,7 +13,7 @@
 				</view>
 			</view>
 			<view class="welcome-initial-button">
-				<button @click="goLogin" class="bottom-btn" type="primary">点击进入</button>
+				<button @click="goLogin" class="welcome-button">点击进入</button>
 			</view>
 		</view>
 	</view>
@@ -202,5 +202,6 @@
 		background: #4ecf68;
 		color: white;
 		font-size: 34rpx;
+		font-weight: bold;
 	}
 </style>
