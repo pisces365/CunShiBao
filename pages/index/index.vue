@@ -118,7 +118,7 @@
 						</view>
 					</navigator>
 					<!--  -->
-					<navigator class="index-VillageParty-content-onePart-left">
+					<navigator  class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[5]}}</text>
 						</view>
