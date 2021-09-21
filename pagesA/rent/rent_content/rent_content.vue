@@ -11,10 +11,6 @@
 							<image class="rentTop-image" :src="Item" mode="" :class="Index==swiperCurrent?'active':''">
 							</image>
 						</view>
-<!-- <<<<<<< HEAD
-
-=======
->>>>>>> 34b16180938e0df86331b848561a67462163db63 -->
 					</swiper-item>
 				</swiper>
 			</view>
@@ -280,7 +276,8 @@
 							{{item.title}}
 						</view>
 						<view class="rent-readMe-part-right">
-							<view class="rent-readMe-part-right-text" v-for="(textItem,indexIndex) in item.content" :key="indexIndex">
+							<view class="rent-readMe-part-right-text" v-for="(textItem,indexIndex) in item.content"
+								:key="indexIndex">
 								{{textItem}}
 							</view>
 						</view>
@@ -304,7 +301,7 @@
 						</view>
 					</view>
 				</view>
-				<view class="rent-bottom-contact" @click=" makeAnAppointment()">预约看房</view>
+				<view class="rent-bottom-contact" @click=" toRentOrder()">预约看房</view>
 				<view class="rent-bottom-contact" @click="DueToHousing()">预定房源</view>
 			</view>
 		</view>
@@ -391,29 +388,21 @@
 			}
 		},
 		methods: {
-			makeAnAppointment() {
-// <<<<<<< HEAD
-				uni.makePhoneCall({
-					phoneNumber: '0571-88628854' //仅为示例
-				});
-			},
-			DueToHousing() {
-				uni.navigateTo({
-					url: '../../phoneRegistration/phoneRegistration'})
-// =======
+			// makeAnAppointment() {
+			// 	uni.makePhoneCall({
+			// 		phoneNumber: '0571-88628854' //仅为示例
+			// 	});
+			// },
+			toRentOrder() {
 				let _this = this;
 				var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
 				uni.navigateTo({
-					url:'../rentOrder/rentOrder?houseInfo=' + houseInfo
+					url: '../rentOrder/rentOrder?houseInfo=' + houseInfo
 				})
-				// uni.makePhoneCall({
-				// 	phoneNumber: '0571-88628854' //仅为示例
-				// });
 			},
 			DueToHousing() {
 				uni.navigateTo({
 					url: '../phoneRegistration/phoneRegistration'
-// >>>>>>> 34b16180938e0df86331b848561a67462163db63
 				})
 			},
 			swiperChange(e) {
@@ -929,7 +918,8 @@
 		justify-content: center;
 		flex: 1;
 	}
-	.rent-readMe-part-right-text{
+
+	.rent-readMe-part-right-text {
 		margin-top: 10rpx;
 	}
 </style>

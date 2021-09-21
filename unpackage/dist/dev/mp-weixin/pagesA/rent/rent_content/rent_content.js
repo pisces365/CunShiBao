@@ -156,10 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _methods;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
-//
-//
-//
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -548,36 +545,28 @@ var _default =
 
 
   },
-  methods: (_methods = {
-    makeAnAppointment: function makeAnAppointment() {
-      // <<<<<<< HEAD
-      uni.makePhoneCall({
-        phoneNumber: '0571-88628854' //仅为示例
-      });
-    },
-    DueToHousing: function DueToHousing() {
-      uni.navigateTo({
-        url: '../../phoneRegistration/phoneRegistration' });
-      // =======
+  methods: {
+    // makeAnAppointment() {
+    // 	uni.makePhoneCall({
+    // 		phoneNumber: '0571-88628854' //仅为示例
+    // 	});
+    // },
+    toRentOrder: function toRentOrder() {
       var _this = this;
       var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
       uni.navigateTo({
         url: '../rentOrder/rentOrder?houseInfo=' + houseInfo });
 
-      // uni.makePhoneCall({
-      // 	phoneNumber: '0571-88628854' //仅为示例
-      // });
-    } }, _defineProperty(_methods, "DueToHousing", function DueToHousing()
-  {
-    uni.navigateTo({
-      url: '../phoneRegistration/phoneRegistration'
-      // >>>>>>> 34b16180938e0df86331b848561a67462163db63
-    });
-  }), _defineProperty(_methods, "swiperChange", function swiperChange(
-  e) {
-    this.swiperCurrent = e.detail.current;
-    // console.log(this.swiperCurrent)
-  }), _methods),
+    },
+    DueToHousing: function DueToHousing() {
+      uni.navigateTo({
+        url: '../phoneRegistration/phoneRegistration' });
+
+    },
+    swiperChange: function swiperChange(e) {
+      this.swiperCurrent = e.detail.current;
+      // console.log(this.swiperCurrent)
+    } },
 
 
   onLoad: function onLoad(options) {
