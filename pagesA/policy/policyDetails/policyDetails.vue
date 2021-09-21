@@ -153,11 +153,7 @@
 
 
 <script>
-	import ygcComment from '@/components/ygc-comment/ygc-comment.vue';
 	export default {
-		components: {
-			ygcComment
-		},
 		data() {
 			return {
 				commentContent: '',
