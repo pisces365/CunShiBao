@@ -38,147 +38,158 @@
 		}
 	],
 	"subPackages": [{
-		"root": "pagesA",
-		"pages": [{
-				"path": "election/personalDetails/personalDetails",
-				"style": {
-					"navigationBarTitleText": "个人详情",
-					"enablePullDownRefresh": false
-				}
-			},
-			{
-				"path": "election/infoAndVote/infoAndVote",
-				"style": {
-					"navigationBarTitleText": "换届选举",
-					"enablePullDownRefresh": false
-				}
+			"root": "pagesA",
+			"pages": [{
+					"path": "election/personalDetails/personalDetails",
+					"style": {
+						"navigationBarTitleText": "个人详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "election/infoAndVote/infoAndVote",
+					"style": {
+						"navigationBarTitleText": "换届选举",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "policy/newAndExpert/newAndExpert",
-				"style": {
-					"navigationBarTitleText": "政策解读",
-					"enablePullDownRefresh": false
-				}
-			},
-			{
-				"path": "policy/policyDetails/policyDetails",
-				"style": {
-					"navigationBarTitleText": "文章详情",
-					"enablePullDownRefresh": false
-				}
-			}, {
-				"path": "News",
-				"style": {
-					"navigationBarTitleText": "文章详情",
-					"enablePullDownRefresh": false
-				}
+				}, {
+					"path": "policy/newAndExpert/newAndExpert",
+					"style": {
+						"navigationBarTitleText": "政策解读",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "policy/policyDetails/policyDetails",
+					"style": {
+						"navigationBarTitleText": "文章详情",
+						"enablePullDownRefresh": false
+					}
+				}, {
+					"path": "News",
+					"style": {
+						"navigationBarTitleText": "文章详情",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "News_Image",
-				"style": {
-					"navigationBarTitleText": "文章详情",
-					"enablePullDownRefresh": false
-				}
+				}, {
+					"path": "News_Image",
+					"style": {
+						"navigationBarTitleText": "文章详情",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "VillageHead_Email/IWannaWrite/IWannaWrite",
-				"style": {
-					"navigationBarTitleText": "我要写信",
-					"enablePullDownRefresh": false
-				}
+				}, {
+					"path": "VillageHead_Email/IWannaWrite/IWannaWrite",
+					"style": {
+						"navigationBarTitleText": "我要写信",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "rent/rent_index/rent_index",
-				"style": {
-					"navigationBarTitleText": "出租",
-					"enablePullDownRefresh": false
-				}
+				},
+				{
+					"path": "rent/rent_index/rent_index",
+					"style": {
+						"navigationBarTitleText": "出租",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "rent/rent_content/rent_content",
-				"style": {
-					"navigationBarTitleText": "房源详情",
-					"enablePullDownRefresh": false
-				}
+				}, {
+					"path": "rent/rent_content/rent_content",
+					"style": {
+						"navigationBarTitleText": "房源详情",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "rent/rent_house_description/rent_house_description",
-				"style": {
-					"navigationBarTitleText": "",
-					"enablePullDownRefresh": false
-				}
+				}, {
+					"path": "rent/rent_house_description/rent_house_description",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "rent/phoneRegistration/phoneRegistration",
-				"style": {
-					"navigationBarTitleText": "绑定手机",
-					"enablePullDownRefresh": false
-				}
+				}, {
+					"path": "rent/phoneRegistration/phoneRegistration",
+					"style": {
+						"navigationBarTitleText": "绑定手机",
+						"enablePullDownRefresh": false
+					}
 
-			}, {
-				"path": "rent/rentOrder/rentOrder",
-				"style": {
-					"navigationBarTitleText": "预定房源",
-					"enablePullDownRefresh": false
-				}
-			}
-		]
-	}, {
-		"root": "pagesB",
-		"pages": [{
-			"path": "maintenanceDetails/maintenanceDetails",
-			"style": {
-				"navigationBarTitleText": "维修详情",
-				"enablePullDownRefresh": false
-			}
+				}, {
+					"path": "rent/rentOrder/rentOrder",
+					"style": {
+						"navigationBarTitleText": "预定房源",
+						"enablePullDownRefresh": false
+					}
+				}, {
+					"path": "rent/rentType/rentType",
+					"style": {
+						"navigationBarTitleText": "房屋出租分类",
+						"enablePullDownRefresh": false
+					}
 
+				}
+			]
 		}, {
-			"path": "maintenanceCenter/maintenanceCenter",
-			"style": {
-				"navigationBarTitleText": "维修中心",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "landContract/landContract",
-			"style": {
-				"navigationBarTitleText": "土地承包",
-				"enablePullDownRefresh": false
-			}
-
-		}]
-	},
-	{
-		"root": "pagesBus",
-		"pages": [{
-			"path": "info/info",
-			"style": {
-				"navigationBarTitleText": "实时公交",
-				"enablePullDownRefresh": false
-			}
-	
-		}, {
-			"path": "routeInfo/routeInfo",
-			"style": {
-				"navigationBarTitleText": "线路信息",
-				"enablePullDownRefresh": false
-			}
-	
-		}, {
-			"path": "search/search",
-			"style": {
-				"navigationBarTitleText": "公交搜索",
-				"enablePullDownRefresh": false
-			}},
-			{
-				"path": "stationInfo/stationInfo",
+			"root": "pagesB",
+			"pages": [{
+				"path": "maintenanceDetails/maintenanceDetails",
 				"style": {
-					"navigationBarTitleText": "站台信息",
+					"navigationBarTitleText": "维修详情",
 					"enablePullDownRefresh": false
 				}
-			
-		}]
-	}],
+
+			}, {
+				"path": "maintenanceCenter/maintenanceCenter",
+				"style": {
+					"navigationBarTitleText": "维修中心",
+					"enablePullDownRefresh": false
+				}
+
+			}, {
+				"path": "landContract/landContract",
+				"style": {
+					"navigationBarTitleText": "土地承包",
+					"enablePullDownRefresh": false
+				}
+
+			}]
+		},
+		{
+			"root": "pagesBus",
+			"pages": [{
+					"path": "info/info",
+					"style": {
+						"navigationBarTitleText": "实时公交",
+						"enablePullDownRefresh": false
+					}
+
+				}, {
+					"path": "routeInfo/routeInfo",
+					"style": {
+						"navigationBarTitleText": "线路信息",
+						"enablePullDownRefresh": false
+					}
+
+				}, {
+					"path": "search/search",
+					"style": {
+						"navigationBarTitleText": "公交搜索",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "stationInfo/stationInfo",
+					"style": {
+						"navigationBarTitleText": "站台信息",
+						"enablePullDownRefresh": false
+					}
+
+				}
+			]
+		}
+	],
 
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -219,17 +230,14 @@
 				"name": "我的",
 				"path": "pages/mine/mine"
 			}, {
-				"name": "民宿首页",
-				"path": "pagesA/rent/rent_index/rent_index"
-			}, {
 				"name": "民宿详情",
-				"path": "pagesA/rent/rent_content/rent_content"
+				"path": "pagesA/rent/rentType/rentType"
 			}, {
 				"name": "手机号注册",
 				"path": "pagesA/rent/phoneRegistration/phoneRegistration"
 			},
 			{
-				"path": "pagesA/rentOrder/rentOrder",
+				"path": "pagesA/rent/rentOrder/rentOrder",
 				"name": "预定房源"
 			}
 

@@ -32,24 +32,19 @@
           "pathName": "pages/mine/mine"
         },
         {
-          "name": "民宿首页",
-          "id": 1,
-          "pathName": "pagesA/rent/rent_index/rent_index"
-        },
-        {
           "name": "民宿详情",
-          "id": 2,
-          "pathName": "pagesA/rent/rent_content/rent_content"
+          "id": 1,
+          "pathName": "pagesA/rent/rentType/rentType"
         },
         {
           "name": "手机号注册",
-          "id": 3,
+          "id": 2,
           "pathName": "pagesA/rent/phoneRegistration/phoneRegistration"
         },
         {
           "name": "预定房源",
-          "id": 4,
-          "pathName": "pagesA/rentOrder/rentOrder"
+          "id": 3,
+          "pathName": "pagesA/rent/rentOrder/rentOrder"
         }
       ]
     }

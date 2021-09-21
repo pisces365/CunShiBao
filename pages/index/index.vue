@@ -105,7 +105,7 @@
 			<view class="index-ServieceToPeople-content">
 				<view class="index-VillageParty-content-onePart">
 					<!-- 房屋租赁 -->
-					<navigator url="../../pagesA/rent/rent_index/rent_index"
+					<navigator url="../../pagesA/rent/rentType/rentType"
 						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[4]}}</text>

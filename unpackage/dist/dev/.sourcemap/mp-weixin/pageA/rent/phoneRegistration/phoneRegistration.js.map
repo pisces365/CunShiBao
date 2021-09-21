@@ -1,0 +1,1 @@
+{"version":3,"sources":["uni-app:///main.js"],"names":["createPage","Page"],"mappings":";;;;;;;;;;kDAAA;AACA;AACA,qP;AACAA,UAAU,CAACC,0BAAD,CAAV,C","file":"pageA/rent/phoneRegistration/phoneRegistration.js","sourcesContent":["import 'uni-pages';\nimport Vue from 'vue'\nimport Page from './pageA/rent/phoneRegistration/phoneRegistration.vue'\ncreatePage(Page)"],"sourceRoot":""}
