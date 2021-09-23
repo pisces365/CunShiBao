@@ -14,30 +14,33 @@
       "list": [
         {
           "id": 0,
-          "name": "文章内容",
-          "pathName": "pagesA/policy/policyDetails/policyDetails",
+          "name": "我的",
+          "pathName": "pages/mine/mine",
           "query": ""
         },
         {
-          "name": "维修详情",
-          "pathName": "pagesB/maintenanceDetails/maintenanceDetails",
-          "query": "",
-          "scene": null
+          "id": 1,
+          "name": "民宿详情",
+          "pathName": "pagesA/rent/rentType/rentType",
+          "query": ""
         },
         {
-          "name": "维修中心",
-          "pathName": "pagesB/maintenanceCenter/maintenanceCenter",
-          "query": "",
-          "scene": null
-<<<<<<< HEAD
+          "id": 2,
+          "name": "手机号注册",
+          "pathName": "pagesA/rent/phoneRegistration/phoneRegistration",
+          "query": ""
         },
         {
-          "name": "测试",
-          "pathName": "pages/test/test",
+          "id": 3,
+          "name": "预定房源",
+          "pathName": "pagesA/rent/rentOrder/rentOrder",
+          "query": ""
+        },
+        {
+          "name": "资质认证",
+          "pathName": "pagesA/rent/host_qualification/host_qualification",
           "query": "",
           "scene": null
-=======
->>>>>>> 2b8dd6f4cd374ac2d2cf07edfdd68904412e0e2e
         }
       ]
     }

@@ -45,6 +45,11 @@
           "name": "预定房源",
           "id": 3,
           "pathName": "pagesA/rent/rentOrder/rentOrder"
+        },
+        {
+          "name": "信息填写",
+          "id": 4,
+          "pathName": "pagesA/rent/host_qualification/host_qualification"
         }
       ]
     }

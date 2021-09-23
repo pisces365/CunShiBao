@@ -129,6 +129,19 @@
 						"enablePullDownRefresh": false
 					}
 
+				}, {
+					"path": "rent/host_qualification/host_qualification",
+					"style": {
+						"navigationBarTitleText": "房东资质认证",
+						"enablePullDownRefresh": false
+					}
+
+				}, {
+					"path": "rent/host_qualification/citys/citys",
+					"style": {
+						"navigationBarTitleText": "城市选择",
+						"enablePullDownRefresh": false
+					}
 				}
 			]
 		}, {
@@ -239,6 +252,10 @@
 			{
 				"path": "pagesA/rent/rentOrder/rentOrder",
 				"name": "预定房源"
+			},
+			{
+				"path": "pagesA/rent/host_qualification/host_qualification",
+				"name": "信息填写"
 			}
 
 		]
