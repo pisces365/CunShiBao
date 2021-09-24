@@ -93,6 +93,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uniEasyinput: function() {
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 273))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -283,11 +306,69 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
-      city: '' };
+      city: '',
+      cell: '',
+      area: '',
+      floor: '',
+      priceOfSale: '',
+      contactPeople: '',
+      phone: '',
+      array_chaoxiang: ['请选择', '东', '西', '南', '北', '东南', '西南', '西北', '东北'],
+      index_chaoxiang: 0,
+      array_ZhuangXiu: ['请选择', '毛坯', '简单装修', '精装修', '豪华装修'],
+      index_ZhuangXiu: 0,
+      array_HouseType: ['请选择', '普通住宅', '公寓', '别墅', '平房', '商住楼', '其他', '排屋'],
+      index_HouseType: 0,
+      typeIndex: 0,
+      typeItems: 0,
+      cityRange: [
+      ['请选择', '1室', '2室', '3室', '4室', '5室', '6室', '7室', '8室', '9室'],
+      ['']],
+
+      problemItems: [
+      [''],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫'],
+      ['请选择厅卫', '0厅0卫', '0厅1卫', '1厅0卫', '1厅1卫', '1厅2卫', '2厅0卫', '2厅1卫', '2厅2卫', '3厅0卫', '3厅1卫', '3厅2卫']] };
+
 
   },
   onLoad: function onLoad(options) {
@@ -303,6 +384,42 @@ var _default =
       uni.navigateTo({
         url: './citys/citys' });
 
+    },
+    submit: function submit() {
+      uni.showToast({
+        title: this.cell,
+        icon: 'none',
+        duration: 2000 });
+
+    },
+    pickerCity: function pickerCity(e) {
+      this.typeIndex = e.target.value[0];
+      this.typeItems = e.target.value[1];
+      var indexValue = this.cityRange[0][this.typeIndex];
+      var itemsValue = this.cityRange[1][this.typeItems];
+      // console.log(value);
+    },
+    pickerCity_bind: function pickerCity_bind(e) {
+      if (e.detail.column == 0) {
+        var index = e.detail.value;
+        // console.log(index);
+        this.cityRange[1].splice(0, this.cityRange[1].length);
+        this.cityRange[1] = this.cityRange[1].concat(this.problemItems[index]);
+        // console.log(this.cityRange[1]);
+        this.$forceUpdate();
+      }
+    },
+    pickerChaoXiang: function pickerChaoXiang(e) {
+      var _this = this;
+      _this.index_chaoxiang = e.detail.value;
+    },
+    pickerZhuangxiu: function pickerZhuangxiu(e) {
+      var _this = this;
+      _this.index_ZhuangXiu = e.detail.value;
+    },
+    pickerHouseType: function pickerHouseType(e) {
+      var _this = this;
+      _this.index_HouseType = e.detail.value;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
