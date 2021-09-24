@@ -3,7 +3,7 @@
 		<navigator class="IAmRenter" url="../rent_index/rent_index">
 			我是租客
 		</navigator>
-		<navigator class="IAmHost">
+		<navigator class="IAmHost" url="../host_qualification/host_qualification">
 			我是户主
 		</navigator>
 	</view>
