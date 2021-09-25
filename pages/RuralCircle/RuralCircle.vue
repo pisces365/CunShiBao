@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<view class="top">
+			<image src="http://p1362.bvimg.com/10465/0e9273a11808086a.jpg" mode=""></image>
+		</view>
 		<view class="ruralCicle">
 			<view class="ruralCicle-content" v-for="(item,index) in ruralCicleContent" :key="index" @click="toDetail(item.index)">
 				<view class="title">
@@ -94,6 +97,14 @@
 </script>
 
 <style>
+	.top{
+		width: 100vw;
+		height: 350rpx;
+	}
+	.top image{
+		width: 100%;
+		height: 100%;
+	}
 	.ruralCicle {
 		padding: 30rpx;
 		padding-left: 40rpx;
