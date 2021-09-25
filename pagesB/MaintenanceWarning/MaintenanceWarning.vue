@@ -1,4 +1,4 @@
-<template>
+<template name="orderWarning">
 	<view>
 		<view class="warning">
 			<view class="warning-top">
@@ -8,7 +8,7 @@
 				工作人员专用通道，请先绑定工号！
 			</view>
 			<view class="warning-bottom">
-				<button type="primary">{{count}}秒后自动跳转</button>
+				<button type="primary" class="button" @click="toOrder">{{count}}秒后自动跳转</button>
 			</view>
 		</view>
 	</view>
@@ -18,18 +18,37 @@
 	export default {
 		data() {
 			return {
-				count: 4
+				count: 5
 			}
 		},
 		methods: {
-
+			toOrder(){
+				uni.redirectTo({
+					url: '../myWorkOrder/myWorkOrder'
+				})
+			}
+		},
+		mounted() {
+			let _this = this
+			this.timer = setInterval(() => {
+				_this.count--
+				if (_this.count <= 0) {
+					uni.redirectTo({
+						url: '../myWorkOrder/myWorkOrder'
+					})
+				}
+			}, 1000)
 		}
-		
+
 	}
 </script>
 
 <style>
+	page{
+		background: white;
+	}
 	.warning-top {
+		margin-top: 20rpx;
 		width: 100vw;
 		display: flex;
 		align-items: center;
@@ -39,5 +58,16 @@
 	.warning-top image {
 		width: 340rpx;
 		height: 220rpx;
+	}
+
+	.warning-center {
+		margin: 20rpx 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.button{
+		margin-top: 20rpx;
+		width: 500rpx;
 	}
 </style>

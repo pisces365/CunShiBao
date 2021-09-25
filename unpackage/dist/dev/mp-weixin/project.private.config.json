@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -44,6 +45,12 @@
         {
           "name": "pagesBus/info/info",
           "pathName": "pagesBus/info/info",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的工单",
+          "pathName": "pagesB/myWorkOrder/myWorkOrder",
           "query": "",
           "scene": null
         }
