@@ -7,6 +7,7 @@
 			</view>
 			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>
+		
 		<view style="height: 420rpx;"></view>
 		<workOrderIntroduce v-show="showIndex==0" :intro="allIntro"></workOrderIntroduce>
 		<iWannaRepair v-show="showIndex==1"></iWannaRepair>
