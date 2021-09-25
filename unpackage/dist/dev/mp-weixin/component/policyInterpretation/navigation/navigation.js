@@ -142,6 +142,7 @@ var _default =
   methods: {
     hanldeItemTap: function hanldeItemTap(index) {
       this.$emit("setItem", index);
+
     } } };exports.default = _default;
 
 /***/ }),

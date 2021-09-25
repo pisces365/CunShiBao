@@ -26,6 +26,7 @@
 		methods: {
 			hanldeItemTap: function(index) {
 				this.$emit("setItem", index);
+
 			}
 		}
 	}
@@ -74,6 +75,12 @@
 	}
 
 	.tabs_border2 {
+		flex: 1;
+		display: flex;
+		/* border-left: 1px solid #a6a7a6; */
+	}
+
+	.tabs_border3 {
 		flex: 1;
 		display: flex;
 		/* border-left: 1px solid #a6a7a6; */

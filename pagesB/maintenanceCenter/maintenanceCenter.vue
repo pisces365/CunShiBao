@@ -9,7 +9,7 @@
 		</view>
 		<view style="height: 420rpx;"></view>
 		<workOrderIntroduce v-show="getTitle0()" :intro="allIntro"></workOrderIntroduce>
-		<iWannaRepair v-show="getTitle1()"></iWannaRepair>
+		<iWannaRepair v-show="getTitle1()"></iWannaRepair>	
 		<workOrderIntroduce v-show="getTitle2()" :intro="myIntro"></workOrderIntroduce>
 	</view>
 </template>
@@ -40,6 +40,11 @@
 						  {
 						  	id:2,
 						  	name:"我的报修",
+						  	isActive:false
+						  },
+						  {
+						  	id:3,
+						  	name:"我的工单",
 						  	isActive:false
 						  }
 					   ],

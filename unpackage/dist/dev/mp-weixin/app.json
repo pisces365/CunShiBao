@@ -38,7 +38,9 @@
       "pages": [
         "maintenanceDetails/maintenanceDetails",
         "maintenanceCenter/maintenanceCenter",
-        "landContract/landContract"
+        "landContract/landContract",
+        "MaintenanceWarning/MaintenanceWarning",
+        "myWorkOrder/myWorkOrder"
       ]
     },
     {

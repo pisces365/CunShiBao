@@ -57,6 +57,15 @@
 	display: flex;
 	/* border-left: 1px solid #a6a7a6; */
 }
+.tabs_border3 {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	/* border-left: 1px solid #a6a7a6; */
+}
 .active {
 	color: #101010;
 	border-bottom: 8rpx solid #4ecf68;
