@@ -133,7 +133,7 @@
 						</view>
 						<view class="secondHandItem">
 							<viewx>
-								<image src="http://p1362.bvimg.com/10465/515b3af70f8568ab.png"  style="width: 340rpx; height: 200rpx; border-radius: 20rpx;"></image>
+								<image src="http://p1362.bvimg.com/10465/515b3af70f8568ab.png"  style="width: 340rpx; height: 200rpx; border-radius: 20rpx; margin-bottom: 10rpx;"></image>
 							</viewx>
 							<navigator url="../../pagesMarket/buy/buy" >
 								<viewx>
