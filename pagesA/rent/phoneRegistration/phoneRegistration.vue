@@ -91,7 +91,7 @@
 					}
 					phoneBind(data).then((res) => {
 						if (res.code == "200") {
-
+							
 						} else {
 							_this.code = ""
 							uni.showToast({

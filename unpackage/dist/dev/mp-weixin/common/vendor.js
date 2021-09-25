@@ -2096,8 +2096,12 @@ function sendSmsCode(data) {
 //用户填写的校验码进行手机绑定验证
 function phoneBind(data) {
   return new Promise(function (reslove, reject) {
+    var token = uni.getStorageSync('token');
     uni.request({
       url: "".concat(_config.baseUrl, "/bind/phone"),
+      header: {
+        "authorization": token },
+
       method: 'POST',
       data: data,
       success: function success(res) {
