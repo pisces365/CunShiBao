@@ -1,5 +1,4 @@
 {
   "navigationBarTitleText": "公告推送",
-  "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "enablePullDownRefresh": false
 }
