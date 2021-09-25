@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "政策解读",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "navigation": "/component/policyInterpretation/navigation/navigation",
-    "information": "/component/policyInterpretation/information/information"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "维修详情",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "navigation": "/component/policyInterpretation/navigation/navigation",
-    "work-order-in-details": "/componentB/maintenanceCenter/workOrderInDetails/workOrderInDetails"
-  }
-}
