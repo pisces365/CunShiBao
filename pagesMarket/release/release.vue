@@ -141,8 +141,8 @@
 				
 			</view>
 			<view class="release-button">
-				<button class="r-button1" @click="toVote">取 消</button>
-				<button class="r-button2" @click="toVote">发 布</button>
+				<button class="r-button1" @click="goBack">取 消</button>
+				<button class="r-button2" @click="goBack">发 布</button>
 			</view>	
 			<!-- <view style="height: 30rpx;">
 				
@@ -291,6 +291,11 @@
 						break;
 					}
 				}
+			},
+			goBack() {
+				uni.navigateBack({
+					delta: 1
+				})
 			}
 		}
 	}

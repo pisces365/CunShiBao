@@ -13,7 +13,7 @@
 				<view class="repair-item" style="margin: 0; padding-top: 0; margin-bottom: 20rpx;">
 					<navigator url="../select/select" class="repair-input" style="position: relative; margin-left: 90rpx;" >
 						<view class="" style="position: relative; left: 0; right: 0; margin-right: 0;">
-							<text style="font-size: 34rpx;">{{goods_name}}</text> 
+							<text class="goods-name iconfont" style="font-size: 34rpx;">{{goods_name}}</text> 
 							<text class=""></text>
 						</view>
 					</navigator>
@@ -61,8 +61,8 @@
 				
 			</view>
 			<view class="release-button">
-				<button class="r-button1" @click="toVote">取 消</button>
-				<button class="r-button2" @click="toVote">发 布</button>
+				<button class="r-button1" @click="goBack">取 消</button>
+				<button class="r-button2" @click="goBack">发 布</button>
 			</view>	
 			<!-- <view style="height: 30rpx;">
 				
@@ -77,7 +77,7 @@
 			return {
 				price:"0.00",
 				repair_address_main:"地点：请选择",
-				goods_name: "苹果 iPhone7 全网通",
+				goods_name: "点击选择商品",
 				imgArr:[],
 				donateType:["图书","衣服"],
 				donateIndex:0,
@@ -141,6 +141,13 @@
 						name:"凉爽"
 					}]
 			}
+		},
+		onShow() {
+			var that = this
+			uni.$on('text',function(data){
+							console.log(data);
+							that.goods_name = data;
+						})
 		},
 		methods: {
 			get_imgArrLength() {
@@ -218,6 +225,12 @@
 					}
 				}
 			}
+			,
+			goBack() {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
 		}
 	}
 </script>
@@ -226,6 +239,10 @@
 	@import url("../../common/iconfont.css");
 	
 	button::after { border: none }
+	
+	.goods-name:after {
+		content: "\e608";
+	}
 	
 	.goods-img {
 		margin-top: 30rpx;

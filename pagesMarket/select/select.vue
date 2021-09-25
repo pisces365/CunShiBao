@@ -373,6 +373,12 @@
 			},
 			changeDetail(e) {
 				this.detail = e;
+				console.log(this.detailType[this.main].content[this.middle].detail[e].name);
+				
+				uni.$emit('text', this.detailType[this.main].content[this.middle].detail[e].name)
+				uni.navigateBack({
+					delta: 1
+				})
 			}
 		}
 	}

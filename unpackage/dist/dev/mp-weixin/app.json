@@ -45,6 +45,20 @@
         "search/search",
         "stationInfo/stationInfo"
       ]
+    },
+    {
+      "root": "pagesMarket",
+      "pages": [
+        "buy/buy",
+        "donate/donate",
+        "iWant/iWant",
+        "mainPage/mainPage",
+        "release/release",
+        "secondHandDetails/secondHandDetails",
+        "select/select",
+        "test/test",
+        "managePage/managePage"
+      ]
     }
   ],
   "window": {

@@ -2064,9 +2064,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 17:
-/*!*************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/api.js ***!
-  \*************************************************************************************/
+/*!*************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2133,10 +2133,22 @@ function wechatLogin(data) {
 
 /***/ }),
 
-/***/ 173:
-/*!*********************************************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pagesA/rent/host_qualification/citys/citys.js ***!
-  \*********************************************************************************************************************/
+/***/ 18:
+/*!****************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/config.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = void 0;var baseUrl = "https://www.zjutleo.cn/village";exports.baseUrl = baseUrl;
+
+/***/ }),
+
+/***/ 181:
+/*!*********************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3164,18 +3176,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 {
   'cityCode': '659000',
   'cityName': '自治区直辖县级行政区划' }];exports.default = _default;
-
-/***/ }),
-
-/***/ 18:
-/*!****************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/config.js ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = void 0;var baseUrl = "https://www.zjutleo.cn/village";exports.baseUrl = baseUrl;
 
 /***/ }),
 
@@ -9228,10 +9228,10 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 220:
-/*!***********************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/amap-uni.js ***!
-  \***********************************************************************************/
+/***/ 228:
+/*!***********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9671,10 +9671,10 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 285:
-/*!************************************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/components/city-select/citySelect.js ***!
-  \************************************************************************************************************/
+/***/ 293:
+/*!************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9749,10 +9749,10 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 321:
-/*!***************************************************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \***************************************************************************************************************************/
+/***/ 329:
+/*!***************************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9892,9 +9892,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 4:
-/*!**********************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pages.json ***!
-  \**********************************************************************************/
+/*!**********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pages.json ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

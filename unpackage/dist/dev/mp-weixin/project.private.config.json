@@ -43,8 +43,20 @@
           "scene": null
         },
         {
+<<<<<<< Updated upstream
           "name": "乡村圈",
           "pathName": "pages/RuralCircle/RuralCircle",
+=======
+          "name": "二手市场首页",
+          "pathName": "pagesMarket/mainPage/mainPage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "二手市场购买",
+          "pathName": "pagesMarket/buy/buy",
+          "query": "",
+>>>>>>> Stashed changes
           "scene": null
         }
       ]

@@ -25,7 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 @font-face {
-  font-family: "iconfont"; /* Project id 2698742 */
+  font-family: 'iconfont';  /* Project id 2698742 */
   src: url('//at.alicdn.com/t/font_2698742_j074k25s4to.woff2?t=1630383932727') format('woff2'),
        url('//at.alicdn.com/t/font_2698742_j074k25s4to.woff?t=1630383932727') format('woff'),
        url('//at.alicdn.com/t/font_2698742_j074k25s4to.ttf?t=1630383932727') format('truetype');

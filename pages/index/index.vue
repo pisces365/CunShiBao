@@ -117,8 +117,8 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[4]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
-					<!--  -->
-					<navigator  class="index-VillageParty-content-onePart-left">
+					<!-- 二手市场 -->
+					<navigator url="../../pagesMarket/mainPage/mainPage"  class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[5]}}</text>
 						</view>
@@ -228,7 +228,7 @@
 						"乡村土地承包事务",
 						"村长信箱倾听心声",
 						"乡村民宿宾至如归",
-						"实时公交家家晓",
+						"你所爱的都在这里",
 						"权力透明制度公开",
 						"精准帮扶关爱你我",
 						"实时公交信息查询",
