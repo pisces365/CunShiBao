@@ -269,6 +269,64 @@
 .icon-guanbi:before {
   content: "\e6b3";
 }
+page {
+	background-color: #efefef;
+}
+.tk {
+	margin:0 auto;
+}
+.sh {
+	background-image: url(http://p1362.bvimg.com/10465/2e34886d83fd8dbe.png);
+	background-repeat: no-repeat;
+	background-size: 900rpx;
+	background-position: center 50rpx;
+}
+.new-sh {
+	display: inline-block;
+	padding: 10rpx 14rpx;
+	border-radius: 100rpx;
+	color: white;
+	margin:40rpx 0;
+	margin-bottom: 70rpx;
+}
+.secondHandItems navigator {
+	background-color: #fff;
+	border-radius: 20rpx;
+	padding-bottom: 10rpx;
+	margin-bottom: 20rpx;
+}
+.secondHandItems navigator view {
+	margin-left: 10rpx;
+}
+.sh-image {
+	width: 120rpx;
+	height: 120rpx;
+	display: inline-block;
+	margin: 0 auto;
+}
+.title {
+	font-size: 30rpx;
+	text-align: center;
+}
+.discribe {
+	font-size: 28rpx;
+	color: #A6A6A6;
+	text-align: center;
+}
+.icon {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	margin: 0 30rpx;
+}
+.search {
+	padding: 14rpx 20rpx;
+	margin:0rpx 30rpx;
+	background-color: rgb(243, 243, 243);
+	border-radius: 20rpx;
+	font-size: 28rpx;
+	/* width: 100%; */
+}
 .secondHandItems {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -281,24 +339,27 @@
 	margin: 10rpx;
 }
 .secondHandImage {
-	border-radius: 20rpx;
+	border-top-left-radius: 20rpx;
+	border-top-right-radius: 20rpx;
+	width: 100%;
 }
 .price-now {
-	font-size: 32rpx;
+	font-size: 30rpx;
 	color: rgb(243, 153, 18);
 }
 .price-before {
-	margin-left: 14rpx;
+	margin-left: 8rpx;
 	color: rgb(243, 153, 18);
 	font-size: 24rpx;
 	text-decoration: line-through;
 }
 .discount {
-	margin-left: 14rpx;
+	margin-left: 8rpx;
 	color: rgb(243, 153, 18);
 	background-color: rgba(243, 153, 18,0.1);
 	font-size: 24rpx;
 	padding: 6rpx;
+	margin-right: 10rpx;
 }
 .goods-name {
 	font-weight: bold;
@@ -313,12 +374,14 @@
 .topImage {
 	border-radius: 40rpx;
 	margin:30rpx;
+	margin-top: 0;
 	margin-bottom: 0;
 	display: block;	
 	width: 690rpx;
-	box-shadow: 0rpx 10rpx 30rpx #dcdddc;
+	box-shadow: 0rpx 10rpx 30rpx #eeefee;
 }
 .top {
+	padding-top: 30rpx;
 	 /* box-shadow: 0rpx 10rpx 30rpx #dcdddc; */
 	 /* background-color: white; */
 	 z-index: 100; 
@@ -350,7 +413,7 @@
 }
 .index-swiper-image image {
 	height: 360rpx;
-	width: 670rpx;
+	width: 720rpx;
 }
 .index-blog {
 	background: white;

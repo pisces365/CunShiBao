@@ -1,163 +1,199 @@
 <template>
 	<view>
 		<view>
-			<view class="top">
+			<view class="top" style="background-color: white;">
 				<view>
 					<image class="topImage" src="http://p1362.bvimg.com/10465/5981e6676b65372d.png" mode="widthFix"></image>
 				</view>
 				<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
-			</view>
-			<view class="index" v-show="ifLoading">
-				<view class="index-VillageParty">
-					<view class="index-VillageParty-title">
-						<view class="index-VillageParty-title-image">
-							<image src="http://p1362.bvimg.com/10465/5f6f4059cd36c002.png" lazy-load="true" mode=""></image>
-						</view>
-						<view class="index-VillageParty-title-text">
-							<text>我的二手</text>
-						</view>
-					</view>
-					<view class="index-VillageParty-content">
-						<view class="index-VillageParty-content-onePart">
-							<navigator url="../../pagesMarket/release/release"
-								class="index-VillageParty-content-onePart-left">
-								<view class="funcion-top">
-									<text>{{VillageParty.VillagePartyTitle[0]}}</text>
-								</view>
-								<view class="funcion-bottom">
-									<text>{{VillageParty.VillagePartyDescripetion[0]}}</text>
-								</view>
-								<view class="function-image">
-									<image :src="VillageParty.VillagePartyTitleImageUrl[0]" lazy-load="true" mode=""></image>
-								</view>
-							</navigator>
-							<navigator url="../../pagesMarket/iWant/iWant"
-								class="index-VillageParty-content-onePart-left">
-								<view class="funcion-top">
-									<text>{{VillageParty.VillagePartyTitle[1]}}</text>
-								</view>
-								<view class="funcion-bottom">
-									<text>{{VillageParty.VillagePartyDescripetion[1]}}</text>
-								</view>
-								<view class="function-image">
-									<image :src="VillageParty.VillagePartyTitleImageUrl[1]" lazy-load="true" mode=""></image>
-								</view>
-							</navigator>
-						</view>
-						<view class="index-VillageParty-content-onePart">
-							<navigator url="../../pagesMarket/donate/donate"
-								class="index-VillageParty-content-onePart-left">
-								<view class="funcion-top">
-									<text>{{VillageParty.VillagePartyTitle[2]}}</text>
-								</view>
-								<view class="funcion-bottom">
-									<text>{{VillageParty.VillagePartyDescripetion[2]}}</text>
-								</view>
-								<view class="function-image">
-									<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
-								</view>
-							</navigator>
-							<navigator url="../../pagesMarket/managePage/managePage"
-								class="index-VillageParty-content-onePart-left">
-								<view class="funcion-top">
-									<text>{{VillageParty.VillagePartyTitle[3]}}</text>
-								</view>
-								<view class="funcion-bottom">
-									<text>{{VillageParty.VillagePartyDescripetion[3]}}</text>
-								</view>
-								<view class="function-image">
-									<image :src="VillageParty.VillagePartyTitleImageUrl[3]" lazy-load="true" mode=""></image>
-								</view>
-							</navigator>
-						</view>
-					</view>
+				<view style="padding: 10rpx 0;"></view>
+				<view style="background-color: white;">
+					<input class="search" type="text" placeholder="搜索"/>
 				</view>
+				<view style="padding: 10rpx 0;"></view>
+			</view>
+			
+			<view class="index" style="
+			padding-bottom: 30rpx;
+			border-bottom-left-radius: 30rpx;
+			border-bottom-right-radius: 30rpx;
+			background-color: white;
+			box-shadow: 0rpx 30rpx 30rpx #dcdddc;">
+				
+				<view style="display: flex;">
+					<navigator url="../release/release" class="icon">
+						<image class="sh-image" src="http://p1362.bvimg.com/10465/9dc9cf65d237ca76.png"  mode=""></image>
+						<view class="title">
+							我要发布
+						</view>
+						<view class="discribe">
+							闲置售卖
+						</view>
+					</navigator>
+					<navigator url="../iWant/iWant" class="icon">
+						<image class="sh-image" src="http://p1362.bvimg.com/10465/4507149c1b281961.png"  mode=""></image>
+						<view class="title">
+							我想要的
+						</view>
+						<view class="discribe">
+							你的心声
+						</view>
+					</navigator>
+					<navigator url="../donate/donate" class="icon">
+						<image class="sh-image" src="http://p1362.bvimg.com/10465/7615adde370e63c0.png"  mode=""></image>
+						<view class="title">
+							我要捐赠
+						</view>
+						<view class="discribe">
+							物有所归
+						</view>
+					</navigator>
+					<navigator url="../managePage/managePage" class="icon">
+						<image class="sh-image" src="http://p1362.bvimg.com/10465/bdd1706b7e82c4b4.png"  mode=""></image>
+						<view class="title">
+							二手管理
+						</view>
+						<view class="discribe">
+							我的宝贝
+						</view>
+					</navigator>
+				</view>
+			</view>
+			<view class="index sh">
 				<view class="index-VillageParty">
 					<view class="index-VillageParty-title">
 						<view class="index-VillageParty-title-image">
-							<image src="http://p1362.bvimg.com/10465/5f6f4059cd36c002.png" lazy-load="true" mode=""></image>
+							<!-- <image src="http://p1362.bvimg.com/10465/5f6f4059cd36c002.png" lazy-load="true" mode=""></image> -->
 						</view>
-						<view class="index-VillageParty-title-text">
-							<text>最新二手</text>
+						<view class="index-VillageParty-title-text tk">
+							<text class="new-sh" style="background-color: rgb(255,174,174);">最</text>
+							<text class="new-sh" style="background-color: rgb(176,225,255);">新</text>
+							<text class="new-sh" style="background-color: rgb(255,225,176);">二</text>
+							<text class="new-sh" style="background-color: rgb(255,174,174);">手</text>
 						</view>
 					</view>
 					
 				</view>
 				<view class="secondHandItems">
-					<navigator url="../../pagesMarket/buy/buy" class="secondHandItem">
-						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
+					<view class="secondHandItem" >
+							<navigator url="../../pagesMarket/buy/buy" >
+								<viewx>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+								</viewx>
+								<view>
+									<text class="goods-name">二手商品名称</text>
+								</view>
+								<view class="">
+									<text class="brand-and-condition">品质</text>
+									<text class="brand-and-condition">|</text>
+									<text class="brand-and-condition">品牌</text>
+								</view>
+								<view class="" style="margin-bottom: 10rpx;">
+									<text class="price-now">￥1288</text>
+									<text class="price-before">￥1500</text>
+									<text class="discount">已减￥375</text>
+								</view>
+							</navigator>
+							<navigator url="../../pagesMarket/buy/buy">
+								<viewx>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/16896eec50403428.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+								</viewx>
+								<view>
+									<text class="goods-name">二手商品名称</text>
+								</view>
+								<view class="">
+									<text class="brand-and-condition">品质</text>
+									<text class="brand-and-condition">|</text>
+									<text class="brand-and-condition">品牌</text>
+								</view>
+								<view class="" style="margin-bottom: 10rpx;">
+									<text class="price-now">￥1288</text>
+									<text class="price-before">￥1500</text>
+									<text class="discount">已减￥375</text>
+								</view>
+							</navigator>
+							<navigator url="../../pagesMarket/buy/buy">
+								<viewx>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+								</viewx>
+								<view>
+									<text class="goods-name">二手商品名称</text>
+								</view>
+								<view class="">
+									<text class="brand-and-condition">品质</text>
+									<text class="brand-and-condition">|</text>
+									<text class="brand-and-condition">品牌</text>
+								</view>
+								<view class="" style="margin-bottom: 10rpx;">
+									<text class="price-now">￥1288</text>
+									<text class="price-before">￥1500</text>
+									<text class="discount">已减￥375</text>
+								</view>
+							</navigator>
 						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
+						<view class="secondHandItem">
+							<viewx>
+								<image src="http://p1362.bvimg.com/10465/515b3af70f8568ab.png"  style="width: 340rpx; height: 200rpx; border-radius: 20rpx; margin-bottom: 10rpx;"></image>
+							</viewx>
+							<navigator url="../../pagesMarket/buy/buy" >
+								<viewx>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png"  style="width: 340rpx;" mode="aspectFill"></image>
+								</viewx>
+								<view>
+									<text class="goods-name">二手商品名称</text>
+								</view>
+								<view class="">
+									<text class="brand-and-condition">品质</text>
+									<text class="brand-and-condition">|</text>
+									<text class="brand-and-condition">品牌</text>
+								</view>
+								<view class="" style="margin-bottom: 10rpx;">
+									<text class="price-now">￥1288</text>
+									<text class="price-before">￥1500</text>
+									<text class="discount">已减￥375</text>
+								</view>
+							</navigator>
+							<navigator url="../../pagesMarket/buy/buy" >
+								<viewx>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/1f1f04d7af08b655.png"  style="width: 340rpx;" mode="aspectFill"></image>
+								</viewx>
+								<view>
+									<text class="goods-name">二手商品名称</text>
+								</view>
+								<view class="">
+									<text class="brand-and-condition">品质</text>
+									<text class="brand-and-condition">|</text>
+									<text class="brand-and-condition">品牌</text>
+								</view>
+								<view class="" style="margin-bottom: 10rpx;">
+									<text class="price-now">￥1288</text>
+									<text class="price-before">￥1500</text>
+									<text class="discount">已减￥375</text>
+								</view>
+							</navigator>
+							<navigator url="../../pagesMarket/buy/buy" >
+								<viewx>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+								</viewx>
+								<view>
+									<text class="goods-name">二手商品名称</text>
+								</view>
+								<view class="">
+									<text class="brand-and-condition">品质</text>
+									<text class="brand-and-condition">|</text>
+									<text class="brand-and-condition">品牌</text>
+								</view>
+								<view class="" style="margin-bottom: 10rpx;">
+									<text class="price-now">￥1288</text>
+									<text class="price-before">￥1500</text>
+									<text class="discount">已减￥375</text>
+								</view>
+							</navigator>
 						</view>
-						<view class="">
-							<text class="brand-and-condition">品质</text>
-							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
-						</view>
-						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
-						</view>
-					</navigator>
-					<navigator url="../../pagesMarket/buy/buy" class="secondHandItem">
-						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
-						</view>
-						<view class="">
-							<text class="brand-and-condition">品质</text>
-							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
-						</view>
-						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
-						</view>
-					</navigator>
+					
 				</view>
-				<view class="secondHandItems">
-					<navigator url="../../pagesMarket/buy/buy" class="secondHandItem">
-						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
-						</view>
-						<view class="">
-							<text class="brand-and-condition">品质</text>
-							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
-						</view>
-						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
-						</view>
-					</navigator>
-					<navigator url="../../pagesMarket/buy/buy" class="secondHandItem">
-						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
-						</view>
-						<view class="">
-							<text class="brand-and-condition">品质</text>
-							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
-						</view>
-						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
-						</view>
-					</navigator>
+				<view style="font-size: 28rpx; color: #A6A6A6; margin:20rpx 0">
+					再多也木有咯……
 				</view>
 			</view>
 		</view>
@@ -226,6 +262,68 @@
 	
 	@import url("../../common/iconfont.css");
 
+	page {
+		background-color: #efefef;
+	}
+	.tk {
+		margin:0 auto;
+	}
+	.sh {
+		background-image: url(http://p1362.bvimg.com/10465/2e34886d83fd8dbe.png);
+		background-repeat: no-repeat;
+		background-size: 900rpx;
+		background-position: center 50rpx;
+	}
+	.new-sh {
+		display: inline-block;
+		padding: 10rpx 14rpx;
+		border-radius: 100rpx;
+		color: white;
+		margin:40rpx 0;
+		margin-bottom: 70rpx;
+	}
+	
+	.secondHandItems navigator {
+		background-color: #fff;
+		border-radius: 20rpx;
+		padding-bottom: 10rpx;
+		margin-bottom: 20rpx;
+	}
+	.secondHandItems navigator view {
+		margin-left: 10rpx;
+		
+	}
+	
+	.sh-image {
+		width: 120rpx;
+		height: 120rpx;
+		display: inline-block;
+		margin: 0 auto;
+	}
+	.title {
+		font-size: 30rpx;
+		text-align: center;
+	}
+	.discribe {
+		font-size: 28rpx;
+		color: #A6A6A6;
+		text-align: center;
+	}
+	.icon {
+		flex: 1;
+		margin: 0 30rpx;
+	}
+	.search {
+		padding: 14rpx 20rpx;
+		margin:0rpx 30rpx;
+		background-color: rgb(243, 243, 243);
+		border-radius: 20rpx;
+		font-size: 28rpx;
+		/* width: 100%; */
+	}
+
+
+
 	.secondHandItems {
 		display: flex;
 	}
@@ -234,24 +332,27 @@
 		margin: 10rpx;
 	}
 	.secondHandImage {
-		border-radius: 20rpx;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+		width: 100%;
 	}
 	.price-now {
-		font-size: 32rpx;
+		font-size: 30rpx;
 		color: rgb(243, 153, 18);
 	}
 	.price-before {
-		margin-left: 14rpx;
+		margin-left: 8rpx;
 		color: rgb(243, 153, 18);
 		font-size: 24rpx;
 		text-decoration: line-through;
 	}
 	.discount {
-		margin-left: 14rpx;
+		margin-left: 8rpx;
 		color: rgb(243, 153, 18);
 		background-color: rgba(243, 153, 18,0.1);
 		font-size: 24rpx;
 		padding: 6rpx;
+		margin-right: 10rpx;
 	}
 
 	.goods-name {
@@ -268,13 +369,15 @@
 	.topImage {
 		border-radius: 40rpx;
 		margin:30rpx;
+		margin-top: 0;
 		margin-bottom: 0;
 		display: block;	
 		width: 690rpx;
-		box-shadow: 0rpx 10rpx 30rpx #dcdddc;
+		box-shadow: 0rpx 10rpx 30rpx #eeefee;
 	}
 	
 	.top {
+		padding-top: 30rpx;
 		 /* box-shadow: 0rpx 10rpx 30rpx #dcdddc; */
 		 /* background-color: white; */
 		 z-index: 100; 
@@ -300,7 +403,7 @@
 
 	.index-swiper-image image {
 		height: 360rpx;
-		width: 670rpx;
+		width: 720rpx;
 	}
 
 	.index-blog {
