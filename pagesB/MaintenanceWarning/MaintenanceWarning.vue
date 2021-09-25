@@ -1,4 +1,4 @@
-<template name="orderWarning">
+<template>
 	<view>
 		<view class="warning">
 			<view class="warning-top">
@@ -22,7 +22,7 @@
 			}
 		},
 		methods: {
-			toOrder(){
+			toOrder() {
 				uni.redirectTo({
 					url: '../myWorkOrder/myWorkOrder'
 				})
@@ -32,21 +32,31 @@
 			let _this = this
 			this.timer = setInterval(() => {
 				_this.count--
+				console.log(_this.count);
 				if (_this.count <= 0) {
 					uni.redirectTo({
 						url: '../myWorkOrder/myWorkOrder'
 					})
 				}
 			}, 1000)
+
+
+		},
+		beforeDestroy() {
+			if (this.timer) {
+				clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+			}
 		}
+
 
 	}
 </script>
 
 <style>
-	page{
+	page {
 		background: white;
 	}
+
 	.warning-top {
 		margin-top: 20rpx;
 		width: 100vw;
@@ -57,7 +67,7 @@
 
 	.warning-top image {
 		width: 340rpx;
-		height: 220rpx;
+		height: 230rpx;
 	}
 
 	.warning-center {
@@ -66,7 +76,8 @@
 		align-items: center;
 		justify-content: center;
 	}
-	.button{
+
+	.button {
 		margin-top: 20rpx;
 		width: 500rpx;
 	}

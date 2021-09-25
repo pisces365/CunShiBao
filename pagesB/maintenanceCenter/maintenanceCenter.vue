@@ -8,10 +8,10 @@
 			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>
 		<view style="height: 420rpx;"></view>
-		<workOrderIntroduce v-show="getTitle0()" :intro="allIntro"></workOrderIntroduce>
-		<iWannaRepair v-show="getTitle1()"></iWannaRepair>
-		<workOrderIntroduce v-show="getTitle2()" :intro="myIntro"></workOrderIntroduce>
-		<orderWarning v-show="getTitle3()"></orderWarning>
+		<workOrderIntroduce v-show="showIndex==0" :intro="allIntro"></workOrderIntroduce>
+		<iWannaRepair v-show="showIndex==1"></iWannaRepair>
+		<workOrderIntroduce v-show="showIndex==2" :intro="myIntro"></workOrderIntroduce>
+		<orderWarning v-show="showIndex==3" :ifCount="ifCount"></orderWarning>
 	</view>
 </template>
 
@@ -19,16 +19,16 @@
 	import navigation from '../../component/policyInterpretation/navigation/navigation.vue'
 	import workOrderIntroduce from '../../componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce.vue'
 	import iWannaRepair from '../../componentB/maintenanceCenter/iWannaRepair/iWannaRepair.vue'
-	import orderWarning from '../MaintenanceWarning/MaintenanceWarning.vue'
 	export default {
 		components: {
 			navigation,
 			workOrderIntroduce,
-			iWannaRepair,
-			orderWarning
+			iWannaRepair
 		},
 		data() {
 			return {
+				ifCount: false,
+				showIndex: 0,
 				titles: [{
 						id: 0,
 						name: "报修广场",
@@ -92,22 +92,18 @@
 		},
 		methods: {
 			ItemSetFunc(index) {
-				for (var i = 0; i < this.titles.length; ++i) {
-					this.titles[i].isActive = false;
+				let _this = this
+				for (var i = 0; i < _this.titles.length; ++i) {
+					_this.titles[i].isActive = false;
+
 				}
-				this.titles[index].isActive = true;
-			},
-			getTitle0() {
-				return this.titles[0].isActive;
-			},
-			getTitle1() {
-				return this.titles[1].isActive;
-			},
-			getTitle2() {
-				return this.titles[2].isActive;
-			},
-			getTitle3() {
-				return this.titles[3].isActive;
+				_this.titles[index].isActive = true;
+				_this.showIndex = index
+				if (index == 3) {
+					uni.navigateTo({
+						url:'../MaintenanceWarning/MaintenanceWarning'
+					})
+				}
 			}
 
 		}
