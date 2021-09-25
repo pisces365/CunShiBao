@@ -47,17 +47,17 @@
 			}
 		},
 		methods: {
-			goLogin() {
+			goLogin: async function() {
 				let that = this;
 				//判断缓存中是否有用户数据，没有则获取
 				if (!uni.getStorageSync('encryptedData')) {
-					uni.getUserProfile({
+					await uni.getUserProfile({
 						desc: '获取你的名称、头像、地区',
 						success: infoRes => {
 							//调用接口获取登录凭证（code）。通过凭证进而换取用户登录态信息，包括用户在当前小程序的唯一标识（openid）
 							if (infoRes.errMsg === 'getUserProfile:ok') {
 								// 获取到的当前数据存入缓存
-								console.log('uni.getUserProfile',infoRes)
+								console.log('uni.getUserProfile', infoRes)
 								uni.setStorageSync('encryptedData', infoRes
 									.encryptedData);
 								uni.setStorageSync('iv', infoRes.iv);
@@ -78,31 +78,27 @@
 											let url =
 												'https://api.weixin.qq.com/sns/jscode2session?appid=' +
 												appid + '&secret=' +
-												secret + '&js_code=' + res.code +
+												secret + '&js_code=JSCODE' +
 												'&grant_type=authorization_code';
-												wx.request({
-													url: url,
-													method: 'POST',
-													header: {
-														'content-type': 'authorization'
-													},
-													data: {
-														code: res.code
-													}
-												})
+											wx.request({
+												url: url,
+												method: 'POST',
+												data: {
+													code: res.code
+												}
+											})
 											var data = {
 												"avatarUrl": infoRes.userInfo.avatarUrl,
 												"code": res.code,
 												"nickname": infoRes.userInfo.nickName
 											}
-											console.log(data);
 											wechatLogin(data).then((res) => {
-												// console.log('微信登陆',res);
-												if(res.code=="200"){
+												if (res.code == "200") {
 													// 选择版本
 													uni.switchTab({
 														url: "../index/index"
 													});
+
 												}
 											})
 										} else {

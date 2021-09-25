@@ -48,6 +48,7 @@ export function wechatLogin(data) {
 			success: res => {
 				let result = res.data;
 				console.log('微信用户登录',res);
+				uni.setStorageSync('token',res.data.data.token)
 				reslove(result);
 			},
 			fail: () => {},

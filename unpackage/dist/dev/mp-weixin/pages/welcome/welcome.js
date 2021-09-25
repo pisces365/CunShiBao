@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 485));
 
 
 
@@ -157,128 +157,121 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _api = __webpack_require__(/*! ../../common/api.js */ 17); //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default = { data: function data() {return { code: "", SessionKey: '', encryptedData: "", iv: "", OpenId: '', nickName: null, gender: 0, avatarUrl: null, isCanUse: uni.getStorageSync('isCanUse'), //默认为true  记录当前用户是否是第一次授权使用的
-      userInfomation: { avatarUrl: '', city: '', country: '', gender: '', language: '', nickName: '', province: '' } };
+var _api = __webpack_require__(/*! ../../common/api.js */ 17);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
+
+
+{
+  data: function data() {
+    return {
+      code: "",
+      SessionKey: '',
+      encryptedData: "",
+      iv: "",
+      OpenId: '',
+      nickName: null,
+      gender: 0,
+      avatarUrl: null,
+      isCanUse: uni.getStorageSync('isCanUse'), //默认为true  记录当前用户是否是第一次授权使用的
+      userInfomation: {
+        avatarUrl: '',
+        city: '',
+        country: '',
+        gender: '',
+        language: '',
+        nickName: '',
+        province: '' } };
 
 
   },
   methods: {
-    goLogin: function goLogin() {
-      var that = this;
-      //判断缓存中是否有用户数据，没有则获取
-      if (!uni.getStorageSync('encryptedData')) {
-        uni.getUserProfile({
-          desc: '获取你的名称、头像、地区',
-          success: function success(infoRes) {
-            //调用接口获取登录凭证（code）。通过凭证进而换取用户登录态信息，包括用户在当前小程序的唯一标识（openid）
-            if (infoRes.errMsg === 'getUserProfile:ok') {
-              // 获取到的当前数据存入缓存
-              console.log('uni.getUserProfile', infoRes);
-              uni.setStorageSync('encryptedData', infoRes.
-              encryptedData);
-              uni.setStorageSync('iv', infoRes.iv);
-              uni.setStorageSync('rawData', infoRes.rawData);
-              uni.setStorageSync('signature', infoRes.
-              signature);
-              uni.setStorageSync('securityStatus', 1);
-              uni.setStorageSync('userInfo', infoRes.
-              userInfo);
-              //微信用户登录接口
-              wx.login({
-                success: function success(res) {
-                  // console.log(res);
-                  if (res.code) {
-                    //换取openid & session_key
-                    var appid = 'wxfa6eb206635e4d92';
-                    var secret = '570488294950a89f427cb72eede89887';
-                    var url =
-                    'https://api.weixin.qq.com/sns/jscode2session?appid=' +
-                    appid + '&secret=' +
-                    secret + '&js_code=' + res.code +
-                    '&grant_type=authorization_code';
-                    wx.request({
-                      url: url,
-                      method: 'POST',
-                      header: {
-                        'content-type': 'authorization' },
-
-                      data: {
-                        code: res.code } });
+    goLogin: function () {var _goLogin = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var that;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                that = this;
+                //判断缓存中是否有用户数据，没有则获取
+                if (uni.getStorageSync('encryptedData')) {_context.next = 6;break;}_context.next = 4;return (
+                  uni.getUserProfile({
+                    desc: '获取你的名称、头像、地区',
+                    success: function success(infoRes) {
+                      //调用接口获取登录凭证（code）。通过凭证进而换取用户登录态信息，包括用户在当前小程序的唯一标识（openid）
+                      if (infoRes.errMsg === 'getUserProfile:ok') {
+                        // 获取到的当前数据存入缓存
+                        console.log('uni.getUserProfile', infoRes);
+                        uni.setStorageSync('encryptedData', infoRes.
+                        encryptedData);
+                        uni.setStorageSync('iv', infoRes.iv);
+                        uni.setStorageSync('rawData', infoRes.rawData);
+                        uni.setStorageSync('signature', infoRes.
+                        signature);
+                        uni.setStorageSync('securityStatus', 1);
+                        uni.setStorageSync('userInfo', infoRes.
+                        userInfo);
+                        //微信用户登录接口
+                        wx.login({
+                          success: function success(res) {
+                            // console.log(res);
+                            if (res.code) {
+                              //换取openid & session_key
+                              var appid = 'wxfa6eb206635e4d92';
+                              var secret = '570488294950a89f427cb72eede89887';
+                              var url =
+                              'https://api.weixin.qq.com/sns/jscode2session?appid=' +
+                              appid + '&secret=' +
+                              secret + '&js_code=JSCODE' +
+                              '&grant_type=authorization_code';
+                              wx.request({
+                                url: url,
+                                method: 'POST',
+                                data: {
+                                  code: res.code } });
 
 
-                    var data = {
-                      "avatarUrl": infoRes.userInfo.avatarUrl,
-                      "code": res.code,
-                      "nickname": infoRes.userInfo.nickName };
+                              var data = {
+                                "avatarUrl": infoRes.userInfo.avatarUrl,
+                                "code": res.code,
+                                "nickname": infoRes.userInfo.nickName };
 
-                    console.log(data);
-                    (0, _api.wechatLogin)(data).then(function (res) {
-                      // console.log('微信登陆',res);
-                      if (res.code == "200") {
-                        // 选择版本
-                        uni.switchTab({
-                          url: "../index/index" });
+                              (0, _api.wechatLogin)(data).then(function (res) {
+                                if (res.code == "200") {
+                                  // 选择版本
+                                  uni.switchTab({
+                                    url: "../index/index" });
+
+
+                                }
+                              });
+                            } else {
+                              console.log('登录失败！' + res.errMsg);
+                            }
+
+                          },
+                          fail: function fail() {
+                            console.log('wxLogin失败');
+                          } });
+
+
+                      } else {
+                        uni.showToast({
+                          title: '授权失败',
+                          icon: 'error' });
 
                       }
-                    });
-                  } else {
-                    console.log('登录失败！' + res.errMsg);
-                  }
-
-                },
-                fail: function fail() {
-                  console.log('wxLogin失败');
-                } });
+                    },
+                    fail: function fail(err) {
+                      console.log('userInfo-err', JSON.stringify(err));
+                    } }));case 4:_context.next = 9;break;case 6:
 
 
-            } else {
-              uni.showToast({
-                title: '授权失败',
-                icon: 'error' });
 
-            }
-          },
-          fail: function fail(err) {
-            console.log('userInfo-err', JSON.stringify(err));
-          } });
+                console.log("已有缓存，直接进入");
+                uni.getStorage({
+                  key: 'userInfo',
+                  success: function success(res) {
+                    that.userInfomation = res.data;
+                    console.log('获取成功', res);
+                  } });
 
 
-      } else {
-        console.log("已有缓存，直接进入");
-        uni.getStorage({
-          key: 'userInfo',
-          success: function success(res) {
-            that.userInfomation = res.data;
-            console.log('获取成功', res);
-          } });
-
-
-        uni.switchTab({
-          url: "../index/index" });
-
-      }
-    } } };exports.default = _default;
+                uni.switchTab({
+                  url: "../index/index" });case 9:case "end":return _context.stop();}}}, _callee, this);}));function goLogin() {return _goLogin.apply(this, arguments);}return goLogin;}() } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
