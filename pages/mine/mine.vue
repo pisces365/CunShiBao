@@ -80,8 +80,8 @@
 
 		<view class="homePage-developer">
 			<text>村事宝数字乡村小程序服务由[浙工大计算机村事宝开发团队]提供；使用[村事宝]即代表你完全接受我们的 </text>
-			<text style="color: #42b359;margin-left: 4rpx;">用户协议</text>
-			<text>客服电话：</text><text style="color: #42b359;"> 0571-8529 0027</text>
+			<text style="color: #42b359;margin-left: 4rpx;" @click="toAgreement()">用户协议</text>
+			<text>客服电话：</text><text style="color: #42b359;"@click="makeCall"> 0571-17858407426</text>
 		</view>
 	</view>
 </template>
@@ -105,6 +105,16 @@
 			}
 		},
 		methods: {
+			makeCall(){
+				uni.makePhoneCall({
+					phoneNumber: '17858407426'
+				})
+			},
+			toAgreement(){
+				uni.navigateTo({
+					url:'user/user-agree'
+				})
+			},
 			getUserInfo() {
 				let that = this;
 				//判断缓存中是否有用户数据，没有则获取

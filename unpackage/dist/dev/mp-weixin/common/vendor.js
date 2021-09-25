@@ -2064,9 +2064,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 17:
-/*!*************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
-  \*************************************************************/
+/*!*************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/api.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2134,9 +2134,9 @@ function wechatLogin(data) {
 /***/ }),
 
 /***/ 18:
-/*!****************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/config.js ***!
-  \****************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/config.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2146,9 +2146,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = 
 /***/ }),
 
 /***/ 183:
-/*!*********************************************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
-  \*********************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pagesA/rent/host_qualification/citys/citys.js ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9229,9 +9229,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 230:
-/*!***********************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
-  \***********************************************************/
+/*!***********************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/amap-uni.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9703,9 +9703,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 365:
-/*!************************************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
-  \************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/components/city-select/citySelect.js ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9750,9 +9750,9 @@ citySelect;exports.default = _default;
 /***/ }),
 
 /***/ 4:
-/*!**********************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pages.json ***!
-  \**********************************************************/
+/*!**********************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pages.json ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9761,9 +9761,9 @@ citySelect;exports.default = _default;
 /***/ }),
 
 /***/ 401:
-/*!***************************************************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \***************************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

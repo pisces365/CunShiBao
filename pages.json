@@ -47,6 +47,20 @@
 				"navigationBarTitleText": "乡村圈详情",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/mine/user/user-agree",
+			"style": {
+				"navigationBarTitleText": "用户须知",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/mine/user/privacy",
+			"style": {
+				"navigationBarTitleText": "隐私政策",
+				"enablePullDownRefresh": false
+			}
 		}
 	],
 	"subPackages": [
