@@ -1,0 +1,88 @@
+
+.scroll {
+	white-space: nowrap;
+	overflow: hidden;
+	box-shadow: 0rpx 10rpx 30rpx #dcdddc;
+}
+.image {
+	width: 120rpx;
+	height: 120rpx;
+	display: inline-block;
+	border-radius: 30rpx;
+	box-shadow: 0rpx 10rpx 20rpx #cdcecd;
+}
+.mainName {
+	text-align: center;
+	color: #8b8b8b;
+	display: inline-block;
+	margin: 0 auto;
+	padding-bottom: 8rpx;
+}
+.mainName-click {
+	color: rgb(22,132,252) !important;
+	border-bottom: 2px solid rgb(22,132,252);
+}
+.bottom {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.left-scroll {
+	-webkit-box-flex: 3;
+	-webkit-flex: 3;
+	        flex: 3;
+	background-color: #f7f6f6;
+	height: 100vh;
+}
+.left-tap {
+	text-align: center;
+	padding:30rpx 0;
+	color: #8b8b8b;
+}
+.left-tap-click {
+	background-color: rgb(128,179,235);
+	color: white !important;
+}
+.right-scroll {
+	-webkit-box-flex: 9;
+	-webkit-flex: 9;
+	        flex: 9;
+}
+.one-image {
+	width: 100rpx;
+	height: 100rpx;
+	display: inline-block;
+	border-radius: 50rpx;
+	box-shadow: 10rpx 10rpx 20rpx #dcdddc;
+}
+.g-item {
+	margin:50rpx 50rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	color: #8b8b8b;
+}
+.g-image {
+}
+.g-info {
+	margin-left: 30rpx;
+	padding: 10rpx 0;
+}
+.g-index {
+	background-color: rgb(243, 153, 18);
+	color: white;
+	border-radius: 6rpx;
+	padding: 4rpx 12rpx;
+	font-size: 28rpx;
+	margin-right: 16rpx;
+}
+.g-name {
+	margin-left: 10rpx;
+	color: #8b8b8b;
+}
+.g-price {
+	margin-top: 20rpx;
+	font-size: 32rpx;
+	color: rgb(243, 153, 18);
+}
+
