@@ -16,9 +16,9 @@
 					<text class="bus-stop">{{item.route}}</text>
 					<text class="station">开往</text>
 					<text class="station">{{item.bond}}</text>
-					<text style="font-size: 24rpx;float: right;">{{item.start}}-{{item.end}}</text>
+					<text style="font-size: 28rpx;float: right;margin-top: 2rpx;">{{item.start}}-{{item.end}}</text>
 				</view>
-				<view style="font-size: 20rpx; margin-top: 40rpx;">
+				<view style="font-size: 28rpx; margin-top: 40rpx;">
 					<text style="margin-right: 30rpx;">上车站：{{item.aboard}}</text>
 					<text>距离</text><text class="num">{{item.distance}}</text><text>站</text> <text class="num">{{item.minute}}</text><text>分钟</text>
 					<view class="icon">
@@ -30,10 +30,10 @@
 			<navigator :url="'../stationInfo/stationInfo?station='+item.station" v-show="getTitle1()" class="bus-item" v-for="(item , index) in station" :key="index">
 				<image class="icon-crowd" src="http://p1362.bvimg.com/10465/6f6692899d8c324a.png" mode="widthFix"></image>
 				<text style="vertical-align: top;">{{item.station}}</text>
-				<view style="display: inline; float: right;">
+				<view style="display: inline; float: right; ">
 					<text style="vertical-align: top;">距您</text><text style="vertical-align: top;" class="num">{{item.distance}}</text><text style="vertical-align: top;">m</text>					
 				</view>
-				<view>
+				<view style="margin-top: 26rpx;">
 					<text v-for="(item , index) in item.route" :key="index"  class="route">
 						{{item}}
 					</text>
@@ -178,7 +178,7 @@
 		margin: 14rpx 14rpx;
 		background-color: white;
 		border-radius: 20rpx;
-		font-size: 28rpx;
+		font-size: 30rpx;
 	}
 	
 	.bus-stop {
@@ -197,7 +197,7 @@
 		 border-bottom: 1px solid rgb(223, 223, 223);
 	}
 	.station {
-		font-size: 24rpx;
+		font-size: 28rpx;
 		margin-left: 10rpx;
 		color: rgba(142, 142, 147, 1);
 	}
@@ -226,7 +226,7 @@
 	.route {
 		border: 1px solid rgb(161,191,86);
 		border-radius: 10rpx; 
-		font-size: 20rpx; 
+		font-size: 26rpx; 
 		color: rgb(161,191,86);
 		margin-right: 12rpx;
 		margin-top: 10rpx;

@@ -28,7 +28,7 @@ page {
 	margin: 14rpx 14rpx;
 	background-color: white;
 	border-radius: 20rpx;
-	font-size: 28rpx;
+	font-size: 30rpx;
 }
 .bus-stop {
 	border: 2rpx solid rgb(161,191,86);
@@ -45,7 +45,7 @@ page {
 	 border-bottom: 1px solid rgb(223, 223, 223);
 }
 .station {
-	font-size: 24rpx;
+	font-size: 28rpx;
 	margin-left: 10rpx;
 	color: rgba(142, 142, 147, 1);
 }
@@ -70,7 +70,7 @@ page {
 .route {
 	border: 1px solid rgb(161,191,86);
 	border-radius: 10rpx; 
-	font-size: 8rpx; 
+	font-size: 26rpx; 
 	color: rgb(161,191,86);
 	margin-right: 12rpx;
 	margin-top: 10rpx;

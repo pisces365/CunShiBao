@@ -64,7 +64,7 @@
 					</view>
 					<text style="position: absolute; top: 24rpx; left: 70rpx;">{{item.station}}</text>
 					<block>	
-						<text v-show="isShow(index)" style="position: absolute; top: 24rpx; left: 140rpx; border: 1px solid rgb(161,191,86); color: rgb(161,191,86); border-radius: 10rpx; font-size: 20rpx;">离您最近</text>
+						<text v-show="isShow(index)" style="position: absolute; top: 24rpx; left: 140rpx; border: 1px solid rgb(161,191,86); color: rgb(161,191,86); border-radius: 10rpx; font-size: 24rpx;">离您最近</text>
 						<text v-show="isShow(index)" style="position: absolute; top: 14rpx; right: 0;" class="like">收藏站台</text>
 					</block>
 				</view>
@@ -219,7 +219,7 @@
 		padding: 10rpx;
 		padding-left: 46rpx;
 		color: white;
-		font-size: 20rpx;
+		font-size: 26rpx;
 		border-radius: 12rpx;
 		float: right;
 	}
@@ -243,7 +243,7 @@
 		background-size: 40rpx;
 		background-position:center 0rpx ;
 		padding-top: 40rpx;
-		font-size: 20rpx;
+		font-size: 24rpx;
 	}
 	
 	.search {
@@ -270,7 +270,7 @@
 		 border-bottom: 1px solid rgb(223, 223, 223);
 	}
 	.station {
-		font-size: 24rpx;
+		font-size: 28rpx;
 		margin-left: 10rpx;
 		color: rgba(142, 142, 147, 1);
 	}
@@ -299,7 +299,7 @@
 	.route {
 		border: 1px solid rgb(161,191,86);
 		border-radius: 10rpx; 
-		font-size: 8rpx; 
+		font-size: 28rpx; 
 		color: rgb(161,191,86);
 		margin-right: 12rpx;
 		margin-top: 10rpx;

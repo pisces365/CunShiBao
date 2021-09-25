@@ -1,5 +1,4 @@
 {
-  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -37,26 +36,15 @@
           "query": ""
         },
         {
-          "name": "资质认证",
+          "id": 4,
+          "name": "信息填写",
           "pathName": "pagesA/rent/host_qualification/host_qualification",
-          "query": "",
-          "scene": null
+          "query": ""
         },
         {
-<<<<<<< Updated upstream
-          "name": "乡村圈",
-          "pathName": "pages/RuralCircle/RuralCircle",
-=======
-          "name": "二手市场首页",
-          "pathName": "pagesMarket/mainPage/mainPage",
+          "name": "pagesBus/info/info",
+          "pathName": "pagesBus/info/info",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "二手市场购买",
-          "pathName": "pagesMarket/buy/buy",
-          "query": "",
->>>>>>> Stashed changes
           "scene": null
         }
       ]

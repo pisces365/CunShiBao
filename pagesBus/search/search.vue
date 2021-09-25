@@ -171,7 +171,7 @@
 <style>
 	page {
 		background-color: rgb(245,246,245);
-		font-size: 28rpx;
+		font-size: 32rpx;
 		color: rgba(142, 142, 147, 1);
 	}
 	.map {
@@ -215,7 +215,7 @@
 		background-color: #fff;
 	}
 	.station {
-		font-size: 24rpx;
+		font-size: 28rpx;
 		margin-left: 10rpx;
 	}
 	.icon-crowd{
