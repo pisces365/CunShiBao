@@ -41,6 +41,11 @@
           "pathName": "pagesA/rent/host_qualification/host_qualification",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "乡村圈",
+          "pathName": "pages/RuralCircle/RuralCircle",
+          "scene": null
         }
       ]
     }

@@ -232,7 +232,7 @@
 			},
 			submit() {
 				uni.showToast({
-					title: this.cell,
+					title: '请您将信息填写完整',
 					icon: 'none',
 					duration: 2000
 				})

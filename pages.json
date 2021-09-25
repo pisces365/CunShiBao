@@ -36,7 +36,16 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/RuralCircle/ruralCircleDetail",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "乡村圈详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [{
 			"root": "pagesA",
 			"pages": [{

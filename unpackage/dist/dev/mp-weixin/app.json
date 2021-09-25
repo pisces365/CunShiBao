@@ -5,7 +5,8 @@
     "pages/message/message",
     "pages/mine/mine",
     "pages/RuralCircle/RuralCircle",
-    "pages/test/test"
+    "pages/test/test",
+    "pages/RuralCircle/ruralCircleDetail"
   ],
   "subPackages": [
     {
@@ -104,6 +105,5 @@
       ]
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
