@@ -8,7 +8,9 @@
     "pages/test/test",
     "pages/RuralCircle/ruralCircleDetail",
     "pages/mine/user/user-agree",
-    "pages/mine/user/privacy"
+    "pages/mine/user/privacy",
+    "pages/message/announcementPush",
+    "pages/message/businessPush/businessPush"
   ],
   "subPackages": [
     {
@@ -121,6 +123,5 @@
       ]
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
