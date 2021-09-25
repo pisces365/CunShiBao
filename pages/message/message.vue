@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="message">
-			<view class="content">
+			<navigator class="content" url="announcementPush">
 				<view class="left">
 					<view class="content-left">
 						<image src="http://p1362.bvimg.com/10465/38b03e16d43faaa5.png" mode=""></image>
@@ -18,12 +18,12 @@
 				<view class="right">
 					>
 				</view>
-				
-			</view>
+
+			</navigator>
 			<view class="cross-line">
 
 			</view>
-			<view class="content">
+			<navigator class="content" url="businessPush/businessPush">
 				<view class="left">
 					<view class="content-left">
 						<image src="http://p1362.bvimg.com/10465/af35d4318af160fa.png" mode=""></image>
@@ -40,8 +40,7 @@
 				<view class="right">
 					>
 				</view>
-				
-			</view>
+			</navigator>
 		</view>
 	</view>
 </template>
@@ -98,7 +97,8 @@
 		display: flex;
 		justify-content: space-between;
 	}
-	.left{
+
+	.left {
 		display: flex;
 	}
 
@@ -106,7 +106,8 @@
 		margin-top: 6rpx;
 		color: #8E8F8E;
 	}
-	.right{
+
+	.right {
 		margin-top: 24rpx;
 		font-size: 40rpx;
 		font-weight: bold;
