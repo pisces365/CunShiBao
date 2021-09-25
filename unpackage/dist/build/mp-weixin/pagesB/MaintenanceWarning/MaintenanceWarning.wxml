@@ -1,0 +1,1 @@
+<view><view class="warning"><view class="warning-top"><image src="http://p1362.bvimg.com/10465/683f054ad71cedd3.png" mode></image></view><view class="warning-center">工作人员专用通道，请先绑定工号！</view><view class="warning-bottom"><button class="button" type="primary" data-event-opts="{{[['tap',[['toOrder',['$event']]]]]}}" bindtap="__e">{{count+"秒后自动跳转"}}</button></view></view></view>
