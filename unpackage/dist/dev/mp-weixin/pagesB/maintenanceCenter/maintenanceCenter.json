@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "维修中心",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "navigation": "/component/policyInterpretation/navigation/navigation",
-    "work-order-introduce": "/componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce",
-    "i-wanna-repair": "/componentB/maintenanceCenter/iWannaRepair/iWannaRepair"
-  }
-}

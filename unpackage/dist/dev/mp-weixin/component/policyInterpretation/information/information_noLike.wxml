@@ -1,1 +1,0 @@
-<view><block wx:for="{{info}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="news"><navigator class="nav" url="{{item.url}}"><view class="title">{{''+item.title+''}}</view><view class="bottom-infomation"><text class="source">{{''+item.source+''}}</text><text class="date">{{''+item.date+''}}</text></view></navigator></view></block></view>

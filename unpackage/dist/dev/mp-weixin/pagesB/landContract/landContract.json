@@ -1,9 +1,0 @@
-{
-  "navigationBarTitleText": "土地承包",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "navigation": "/component/policyInterpretation/navigation/navigation",
-    "information": "/component/policyInterpretation/information/information",
-    "contract-publicity": "/componentB/landContract/contractPublicity/contractPublicity"
-  }
-}

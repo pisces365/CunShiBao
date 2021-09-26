@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "实时公交",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "navigation": "/component/policyInterpretation/navigation/navigation"
-  }
-}
