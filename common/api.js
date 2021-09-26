@@ -61,3 +61,38 @@ export function wechatLogin(data) {
 		})
 	})
 }
+//根据可选条件获取房屋出租粗略信息列表
+export function houseList(data) {
+	return new Promise(function(reslove, reject) {
+		uni.request({
+			url: `${baseUrl}/houseRent/roughList`,
+			method: 'GET',
+			data: data,
+			success: res => {
+				let result = res.data;
+				console.log('房屋信息列表',result);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {
+			}
+		})
+	})
+}
+//根据可选条件获取房屋出租粗略信息列表
+export function houseDetail(id) {
+	return new Promise(function(reslove, reject) {
+		uni.request({
+			url: `${baseUrl}/houseRent/detail/`+id,
+			method: 'GET',
+			success: res => {
+				let result = res.data;
+				console.log('房屋具体信息',result);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {
+			}
+		})
+	})
+}

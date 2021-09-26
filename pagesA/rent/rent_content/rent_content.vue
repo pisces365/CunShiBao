@@ -6,7 +6,7 @@
 				<swiper class="swiper" indicator-dots="true" indicator-color="#9d9d9d" indicator-active-color="#FFFFFF"
 					autoplay="true" circular="true" interval="3000" duration="500" previous-margin="80rpx"
 					next-margin="80rpx" :current="swiperCurrent" @change="swiperChange">
-					<swiper-item v-for="(Item , Index) in houseInfo.images" :key="Index">
+					<swiper-item v-for="(Item , Index) in houseInfo.pictureUrl" :key="Index">
 						<view class="rentTop-item">
 							<image class="rentTop-image" :src="Item" mode="" :class="Index==swiperCurrent?'active':''">
 							</image>
@@ -17,14 +17,12 @@
 			<scroll-view scroll-y="true" class="rent-center">
 				<view class="rent-description">
 					<view class="rent-desc-location">
-						<text> {{houseInfo.locationStreet}}</text>
-						<text>·</text>
-						<text> {{houseInfo.locationDetail}}</text>
+						<text> {{houseInfo.location}}</text>
 						<text>| {{houseInfo.type}}</text>
 						<text>| 距我 {{houseInfo.distance}}km</text>
 					</view>
 					<view class="rent-desc-des">
-						<text class="rent-desc-des-text">{{houseInfo.description}}</text>
+						<view class="rent-desc-des-text">{{houseInfo.desc}}/{{houseInfo.intro}}</view>
 					</view>
 					<view class="rent-desc-label-bottom">
 						<view class="rent-desc-text" v-for="(item,index) in houseInfo.label" :key="index">
@@ -53,27 +51,27 @@
 						<view class="previewItem">
 							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/b941d24f1fa6aaa0.png"
 								mode=""></image>
-							1 间客厅
+							{{houseInfo.livingRoomAmount}} 间客厅
 						</view>
 						<view class="previewItem">
 							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/68d499ac8241be3b.png"
 								mode=""></image>
-							{{houseInfo.RoomInfo}} 间卧室
+							{{houseInfo.bedroomAmount}} 间卧室
 						</view>
 						<view class="previewItem">
 							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/072d265e15481414.png"
 								mode=""></image>
-							{{houseInfo.RoomInfo}} 张床
+							{{houseInfo.bedAmount}} 张床
 						</view>
 						<view class="previewItem">
 							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/ee2089ba216841af.png"
 								mode=""></image>
-							{{houseInfo.RoomInfo-1}} 间卫生间
+							{{houseInfo.toiletAmount}} 间卫生间
 						</view>
 						<view class="previewItem">
 							<image class="previewItem-Image" src="http://p1362.bvimg.com/10465/65a8df1a24a4d2b1.png"
 								mode=""></image>
-							{{houseInfo.RoomInfo*2-1}} 位房客
+							{{houseInfo.roomerAmount}} 位房客
 						</view>
 					</view>
 				</view>
@@ -100,15 +98,14 @@
 					</view>
 					<view class="rent-hostOwner-top">
 						<view class="rent-hostOwner-top-image">
-							<image class="rent-hostOwner-image" :src="additionalInfo.hostImage[houseInfo.index]"
-								mode="">
+							<image class="rent-hostOwner-image" :src="houseInfo.hostRoughVo.avatarUrl" mode="">
 							</image>
 						</view>
 						<view class="rent-hostOwner-top-right">
 							<view class="rent-hostOwner-top-right-left">
 								<view class="rent-hostOwner-top-right-top">
 									<view class="rent-hostOwner-top-right-nicekname">
-										{{additionalInfo.hostNickname[houseInfo.index]}}
+										{{houseInfo.hostRoughVo.name}}
 									</view>
 								</view>
 								<view class="rent-hostOwner-top-right-bottom">
@@ -120,7 +117,7 @@
 									<image class="contact-image" src="http://p1362.bvimg.com/10465/65a8df1a24a4d2b1.png"
 										mode=""></image>
 								</view>
-								<view class="contact-right">
+								<view class="contact-right" @click="callHost">
 									联系房东
 								</view>
 							</view>
@@ -310,7 +307,41 @@
 </template>
 
 <script>
+	import {
+		houseDetail
+	} from '@/common/api.js'
 	export default {
+		onLoad(options) {
+			let _this = this
+			uni.showLoading({
+				title: '加载民宿信息中...'
+			})
+			if (options.houseId != null) {
+				var houseId = options.houseId
+				houseDetail(houseId).then((res) => {
+					if (res.code == "200") {
+						_this.houseInfo = res.data
+						_this.houseInfo.pictureUrl = _this.houseInfo.pictureUrl.split(',')
+						_this.houseInfo.label = _this.houseInfo.tag.split(' ')
+						switch (_this.houseInfo.type) {
+							case 1:
+								_this.houseInfo.type = '整租'
+								break;
+							case 2:
+								_this.houseInfo.type = '合租'
+								break;
+							case 3:
+								_this.houseInfo.type = '长租'
+								break;
+							case 4:
+								_this.houseInfo.type = '短租'
+								break;
+						}
+						uni.hideLoading();
+					}
+				})
+			}
+		},
 		data() {
 			return {
 				swiperCurrent: 0,
@@ -337,24 +368,6 @@
 						"苛刻的卫生标准是我们一直以来所强调的，在这里，我们会有专业的保洁阿姨为房间提供【清洁】及【消毒】，您可以安心入住。",
 						"我们的房子麻雀虽小五脏俱全，希望能让您感受到家的温暖和舒适。"
 
-					],
-					hostNickname: [
-						'Lemon',
-						'游觅民宿',
-						'莫雨民宿',
-						'亦非',
-						'刘浩',
-						'管家',
-						'LittleLion',
-					],
-					hostImage: [
-						'http://p1362.bvimg.com/10465/f820643ce376c33c.jpg',
-						'http://p1362.bvimg.com/10465/33480984caf9342e.jpg',
-						'http://p1362.bvimg.com/10465/4dbcd200d3aa2d00.jpg',
-						'http://p1362.bvimg.com/10465/6de29a054bb84057.jpg',
-						'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
-						'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
-						'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'
 					],
 					readMe: [{
 						title: '房屋守则',
@@ -388,11 +401,11 @@
 			}
 		},
 		methods: {
-			// makeAnAppointment() {
-			// 	uni.makePhoneCall({
-			// 		phoneNumber: '0571-88628854' //仅为示例
-			// 	});
-			// },
+			callHost() {
+				uni.makePhoneCall({
+					phoneNumber: this.houseInfo.hostRoughVo.phone //仅为示例
+				});
+			},
 			toRentOrder() {
 				let _this = this;
 				var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
@@ -410,12 +423,6 @@
 				// console.log(this.swiperCurrent)
 			}
 
-		},
-		onLoad(options) {
-			let that = this;
-			var data = JSON.parse(options.houseInfo); // 字符串转对象
-			that.houseInfo = data;
-			console.log(that.houseInfo)
 		},
 
 	}

@@ -1,0 +1,103 @@
+
+page {
+	background-color: white;
+}
+.phone {
+	margin: 20rpx;
+	border-radius: 20rpx;
+	padding: 0 40rpx;
+}
+.phone-title {
+	padding: 20rpx 0;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-content: center;
+	        align-content: center;
+	font-size: 50rpx;
+	font-weight: 600;
+}
+.phone-input {
+	margin: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	padding: 10rpx;
+	border: #d4e0e7 2rpx solid;
+}
+.phone-input-title,
+.phone-input-input,
+.phone-input-sendCode {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	margin-right: 10rpx;
+}
+.phone-input-sendCode {
+	color: #3143e1;
+	font-weight: bold;
+}
+.input-tip {
+	margin-top: 100rpx;
+	color: #939493;
+	font-size: 26rpx;
+}
+.input-content {
+	margin-top: 40rpx;
+	font-size: 46rpx;
+	font-weight: bold;
+}
+.cross-line {
+	width: 90%;
+	height: 2rpx;
+	margin: 28rpx;
+	background: #EAE9E9;
+}
+.phone-button {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-content: center;
+	        align-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	font-size: 34rpx;
+	font-weight: bold;
+	color: white;
+	background: #4CD964;
+	width: 90%;
+	padding: 20rpx;
+}
+.checkPolicy {
+	margin: 30rpx 0;
+	font-size: 26rpx;
+}
+.radio text {
+	line-height: 50rpx;
+}
+.inputCode-codeContent {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.inputCode-codeTip {
+	margin-top: 20rpx;
+	position: relative;
+}
+.codeContent-phone {
+	margin-top: 10rpx;
+}
+.reSend {
+	position: absolute;
+	right: 40rpx;
+	font-size: 32rpx;
+}
+.reSend text:nth-child(1){
+	font-weight: bold;
+}
+
+

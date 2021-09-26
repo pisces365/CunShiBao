@@ -4,30 +4,6 @@
 		<view class="rent-top">
 			<view class="rent-title">
 				<image class="rent-title-image" src="http://p1362.bvimg.com/10465/3e9316ff79bf409e.png" mode=""></image>
-				<!-- <view class="rent-title-search">
-					<swiper class="swiper" autoplay="true" vertical="true" interval="3000" duration="400">
-						<swiper-item id="item1">
-							<view class="rent-title-search-content"><text class="iconfont icon-sousuo"></text>龙湖紫晶上城
-							</view>
-						</swiper-item>
-						<swiper-item id="item2">
-							<view class="rent-title-search-content"><text class="iconfont icon-sousuo"></text>圆梦亭民宿
-							</view>
-						</swiper-item>
-						<swiper-item id="item3">
-							<view class="rent-title-search-content"><text class="iconfont icon-sousuo"></text>安吉喜山民宿
-							</view>
-						</swiper-item>
-					</swiper>
-				</view>
-				<view class="rent-title-function">
-					<view class="functionPart" v-for="(item,index) in rent_function" :key="index">
-						<image class="functionPart-image" :src="item.imageUrl" mode=""></image>
-						<view class="functionPart-description">
-							{{item.description}}
-						</view>
-					</view>
-				</view> -->
 			</view>
 			<view class="rent-classify">
 				<view class="rent-classify-Area rent-classify-Part">
@@ -58,29 +34,30 @@
 			</view>
 		</view>
 		<scroll-view scroll-y="true" class="rent-bottom">
-			<view class="houseInfo" v-for="(item,index) in houseInfo" :key="index" @tap="handleToDetail(item)">
+			<view class="houseInfo" v-for="(item,index) in houseList" :key="index" @click="handleToDetail(item.id)">
 				<view class="houseInfo-top">
 					<view class="houseInfo-left">
-						<image class="houseInfo-left-image" :src="item.images[0]" mode=""></image>
+						<image class="houseInfo-left-image" :src="item.pictureUrl[0]" mode=""></image>
 					</view>
 					<view class="houseInfo-right">
 						<view class="houseInfo-right-type">
 							<text>{{item.type}}</text>
 							<text class=" iconfont icon-weibiaoti"></text>
-							<text>{{item.description}}</text>
+							<text>{{item.desc}}</text>
 						</view>
 						<view class="houseInfo-right-label">
-							<view class="houseInfo-label" v-for="(labelItem,labelIndex) in item.label" :key="labelIndex">
+							<view class="houseInfo-label" v-for="(labelItem,labelIndex) in item.label"
+								:key="labelIndex">
 								{{labelItem}}
 							</view>
 						</view>
 						<view class="houseInfo-right-location">
-							<text>{{item.locationStreet}}</text>
-							<text class=" iconfont icon-weibiaoti"></text>
-							<text>{{item.locationDetail}}</text>
+							<text>{{item.location}}</text>
+		<!-- 					<text class=" iconfont icon-weibiaoti"></text>
+							<text>{{item.locationDetail}}</text> -->
 							<text>，距我 {{item.distance}} km</text>
 						</view>
-					
+
 						<view class="houseInfo-right-info_Based">
 							<text class="price">￥{{item.price}}</text>
 							<text> /月</text>
@@ -88,7 +65,7 @@
 							<text v-else-if="item.RoomInfo==2">二室</text>
 							<text v-else-if="item.RoomInfo==3">三室</text>
 							<text v-else-if="item.RoomInfo==4">四室</text>
-							<text>{{item.hourseAream}}</text>
+							<text>{{item.area}}</text>
 							<text>m</text>
 							<text>2</text>
 						</view>
@@ -101,168 +78,55 @@
 </template>
 
 <script>
+	import {
+		houseList
+	} from '@/common/api.js'
 	export default {
+		onLoad() {
+			let _this = this
+			uni.showLoading({
+				title: '加载民宿列表..'
+			})
+			let data = {}
+			houseList(data).then((res) => {
+				if (res.code == "200") {
+					// 选择版本
+					_this.houseList = res.data;
+					for (var i = 0; i < _this.houseList.length; i++) {
+						_this.houseList[i].pictureUrl = _this.houseList[i].pictureUrl.split(',')
+						_this.houseList[i].label = _this.houseList[i].tag.split(' ');
+						switch (_this.houseList[i].type) {
+							case 1:
+								_this.houseList[i].type = '整租'
+								break;
+							case 2:
+								_this.houseList[i].type = '合租'
+								break;
+							case 3:
+								_this.houseList[i].type = '长租'
+								break;
+							case 4:
+								_this.houseList[i].type = '短租'
+								break;
+						}
+					}
+					uni.hideLoading();
+				}
+			})
+		},
 		data() {
 			return {
+				houseList: [],
 				info: {
 					AreaIndex: 0,
 					PriceIndex: 0,
 					rentTypeIndex: 0
 				},
-				rent_function: [{
-					imageUrl: 'http://p1362.bvimg.com/10465/50d2d8801b5312d3.png',
-					description: '整租'
-				}, {
-					imageUrl: 'http://p1362.bvimg.com/10465/d4b52b7dca101fb9.png',
-					description: '合租'
-				}, {
-					imageUrl: 'http://p1362.bvimg.com/10465/474e9d880e912623.png',
-					description: '民宿短租'
-				}, {
-					imageUrl: 'http://p1362.bvimg.com/10465/0cb1543ada346e6b.png',
-					description: '发房源'
-				}],
 				AreaArray: ['地区分类', '相国寺', '郭家村', '岑村', '塘屋里', '新西湖小镇', '黄婆庙', '金家塘村'],
 				PriceArray: ['价格区间', '1k以下', '1k-1.5k', '1.5k-2k', '2k-2.5k', '2.5k-3k', '3k-3.5k',
 					'3.5k-4k', '4k以上'
 				],
 				rentTypeArray: ['整租', '合租', '长租', '短租'],
-				houseInfo: [{
-						index: 0,
-						images: [
-							'http://p1362.bvimg.com/10465/dadb7710bab66b03.jpg',
-							'http://p1362.bvimg.com/10465/9311eaf0f8f5998c.jpg',
-							'http://p1362.bvimg.com/10465/b08a00e34fc03eb4.jpg',
-							'http://p1362.bvimg.com/10465/0926d8cf12e38c14.jpg',
-							'http://p1362.bvimg.com/10465/0926d8cf12e38c14.jpg'
-						],
-						type: '整租',
-						description: '暗黑工业风Loft投影双床房 / 步行至解放碑洪崖洞 / 下楼即达地铁站 / 免费寄存行李',
-						locationStreet: '解放碑洪崖洞',
-						locationDetail: '怡景花城',
-						label: ['南北', '近地铁', '精装修', '有电梯'],
-						price: 4500,
-						RoomInfo: '3',
-						hourseAream: '58.70',
-						distance:'2.4'
-					},
-					{
-						index: 1,
-						images: [
-							'http://p1362.bvimg.com/10465/d0f01d219711b656.jpg',
-							'http://p1362.bvimg.com/10465/1b14be816d32cd9b.jpg',
-							'http://p1362.bvimg.com/10465/fd08103b8d4128f2.jpg',
-							'http://p1362.bvimg.com/10465/a22b2c814cbb96e6.jpg',
-							'http://p1362.bvimg.com/10465/20d674b0f767f3d9.jpg'
-						],
-						type: '合租',
-						description: '高层 / 高空江景 / 落地窗 / 180度全江景 / 洪崖洞步行5分钟',
-						locationStreet: '崖街',
-						locationDetail: '彼岸花园',
-						label: ['可开发票', '提供接送', '自助入住'],
-						price: 2300,
-						RoomInfo: '1',
-						hourseAream: '20.36',
-						distance:'3.6'
-					},
-					{
-						index: 2,
-						images: [
-							'http://p1362.bvimg.com/10465/4a83cee2226f81b2.jpg',
-							'http://p1362.bvimg.com/10465/3d4d4bbd0a403adf.jpg',
-							'http://p1362.bvimg.com/10465/ce9781fc89074e8c.jpg',
-							'http://p1362.bvimg.com/10465/ae096b7ed7379d8f.jpg',
-							'http://p1362.bvimg.com/10465/53e77cccc3c830bc.jpg'
-						],
-						type: '整租',
-						description: '低风险地区无需核酸 - 【路寓·香草】 步行十分钟到洪崖洞 , 解放碑商圈 , 江景豪华大床房 A2',
-						locationStreet: '锦里',
-						locationDetail: '长者小镇',
-						label: ['南北', '近地铁', '精装修', '有电梯'],
-						price: 3400,
-						RoomInfo: '3',
-						hourseAream: '47.36',
-						distance:'3.7'
-					},
-					{
-						index: 3,
-						images: [
-							'http://p1362.bvimg.com/10465/65bebecfe84d37d1.jpg',
-							'http://p1362.bvimg.com/10465/97bf88170c900f16.jpg',
-							'http://p1362.bvimg.com/10465/fb4d64b59bdca475.jpg',
-							'http://p1362.bvimg.com/10465/b999d3188e56977b.jpg',
-							'http://p1362.bvimg.com/10465/756b9c4f8c848de1.jpg'
-						],
-						type: '整租',
-						description: '低风险地区无需核酸 - 【路寓·香草】 步行十分钟到洪崖洞 , 解放碑商圈 , 江景豪华大床房 A2',
-						locationStreet: '春熙路',
-						locationDetail: '江南摩卡',
-						label: ['景区', '近地铁', '拎包入住', '风景美'],
-						price: 2800,
-						RoomInfo: '2',
-						hourseAream: '28.9',
-						distance:'4.2'
-					},
-					{
-						index: 4,
-						images: [
-							'http://p1362.bvimg.com/10465/1e4b701092fd54fb.jpg',
-							'http://p1362.bvimg.com/10465/97bf88170c900f16.jpg',
-							'http://p1362.bvimg.com/10465/9583a1f5a6a5a926.jpg',
-							'http://p1362.bvimg.com/10465/f420e08483bcc0f3.jpg',
-							'http://p1362.bvimg.com/10465/d900d0e6c2396a8e.jpg'
-						],
-						type: '整租',
-						description: '< 100英寸超清 无屏电视 >解放碑 洪崖洞地铁口 后现代轻奢蓝大床影院 LOFT2⑦',
-						locationStreet: '人民公园',
-						locationDetail: '年华里',
-						label: ['投影仪', '近地铁', '可存行李', '四楼'],
-						price: 3400,
-						RoomInfo: '3',
-						hourseAream: '40.86',
-						distance:'2.5'
-					},
-					{
-
-						index: 5,
-						images: [
-							'http://p1362.bvimg.com/10465/2b98fad4a3460c42.jpg',
-							'http://p1362.bvimg.com/10465/78e189463a1a85da.jpg',
-							'http://p1362.bvimg.com/10465/1a41dcacf7fdd9b7.jpg',
-							'http://p1362.bvimg.com/10465/bf240930e5936a24.jpg',
-							'http://p1362.bvimg.com/10465/13e2c9ace6e3ddca.jpg'
-						],
-						type: '合租',
-						description: '《 一半 · 安迪晓屋 》 暗黑系日式禅意投影双床房 / 步行至解放碑 / 下楼即达地铁站洪崖洞/免费寄存行李',
-						locationStreet: '武侯祠',
-						locationDetail: '满庭芳',
-						label: ['向南', '超赞房东', '精装修', '有电梯'],
-						price: 3800,
-						RoomInfo: '3',
-						hourseAream: '50.36',
-						distance:'5.2'
-					},
-					{
-						index: 6,
-						images: [
-							'http://p1362.bvimg.com/10465/3e7370813864b03d.jpg',
-							'http://p1362.bvimg.com/10465/fb3a590008ac9d37.jpg',
-							'http://p1362.bvimg.com/10465/e8700774f5cf3dc1.jpg',
-							'http://p1362.bvimg.com/10465/4085a4ed998bcb58.jpg',
-							'http://p1362.bvimg.com/10465/3793f4d28e093137.jpg'
-						],
-						type: '整租',
-						description: '【日暮】 全屋消毒安心入住 ｜ 距七星岗轻轨站5分钟 ｜ 近解放碑 洪崖洞 长江索道 李子坝｜舒适居家一居',
-						locationStreet: '宽窄巷子',
-						locationDetail: '繁华里',
-						label: ['夜晚美', '超赞风景', '风格独特', '安全'],
-						price: 6700,
-						RoomInfo: '4',
-						hourseAream: '60.36',
-						distance:'2.9'
-					}
-				]
-
 			}
 		},
 		methods: {
@@ -275,11 +139,9 @@
 			rentTypePicker(e) {
 				this.info.rentTypeIndex = e.detail.value;
 			},
-			handleToDetail(houseInfo) {
-				let that = this;
-				var houseInfo = JSON.stringify(houseInfo); // 这里转换成 字符串
+			handleToDetail(id) {
 				uni.navigateTo({
-					url: '../rent_content/rent_content?houseInfo=' + houseInfo
+					url: '../rent_content/rent_content?houseId=' + id
 				})
 			}
 
@@ -401,15 +263,16 @@
 		height: 1100rpx;
 
 		.houseInfo {
-			margin: 10rpx 0 ;
+			margin: 10rpx 0;
 			// height: 260rpx;
-			
-			.houseInfo-top{
-				margin: 20rpx 0 ;
+
+			.houseInfo-top {
+				margin: 20rpx 0;
 				width: 100%;
 				display: flex;
 				flex-direction: row;
 			}
+
 			.houseInfo-left {
 				margin-left: 30rpx;
 				width: 230rpx;
@@ -539,7 +402,8 @@
 		font-size: 28rpx;
 		color: #5d5e5d;
 	}
-	.cross-line{
+
+	.cross-line {
 		width: 100%;
 		height: 2rpx;
 		background: #DCDDDC;

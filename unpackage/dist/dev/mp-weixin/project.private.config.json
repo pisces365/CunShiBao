@@ -43,20 +43,14 @@
           "query": ""
         },
         {
-          "name": "pagesBus/info/info",
-          "pathName": "pagesBus/info/info",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "我的工单",
           "pathName": "pagesB/myWorkOrder/myWorkOrder",
           "query": "",
           "scene": null
         },
         {
-          "name": "pagesBus/routeInfo/routeInfo",
-          "pathName": "pagesBus/routeInfo/routeInfo",
+          "name": "房屋出租列表",
+          "pathName": "pagesA/rent/rent_index/rent_index",
           "query": "",
           "scene": null
         }

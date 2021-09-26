@@ -1,0 +1,271 @@
+
+.topImage {
+		border-radius: 40rpx;
+		margin:30rpx;
+		margin-bottom: 0;
+		display: block;	
+		width: 690rpx;
+}
+.top {
+		 box-shadow: 0rpx 10rpx 30rpx #dcdddc;
+		 background-color: white;
+		 z-index: 100; 
+		 float: left; 
+		 width: 100%; 
+		 position: fixed;
+}
+page {
+		min-height: 100%;
+		background-color: #f3f2f2;
+}
+page {
+	min-height: 100%;
+	background-color: #f3f2f2;
+}
+.items-border {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	padding: 20rpx 0rpx;
+	margin: 0 30rpx;
+	background-color: white;
+	border-bottom: 0.24rpx solid #eae9e9;
+}
+.items {
+	background-color: white;
+}
+.repair-image {
+	height: 120rpx;
+	width: 120rpx;
+	border-radius: 30rpx !important;
+	border-radius: 12rpx;
+	padding: 10rpx;
+	font-size: 32rpx;
+	color: #A6A7A6;
+	line-height: 40rpx;
+}
+.intro-condition {
+	position: absolute;
+	font-size: 24rpx;
+	right: 0; 
+	color: rgba(78,207,104,1);
+	background-color: rgba(78,207,104,0.1);
+	padding: 5rpx;
+	margin: 10rpx 0;
+	border-radius: 10rpx;
+	box-shadow: 0 0 0 #000000;
+}
+.intro-yellow-condition {
+	color: rgba(252,189,3,1) !important;
+	background-color: rgba(252,189,3,0.1) !important;
+}
+.text-left {
+	padding: 10rpx;
+	margin-right: 30rpx;
+	font-size: 32rpx;
+	color: #A6A7A6;
+}
+.text-right {
+	padding: 10rpx;
+	font-size: 32rpx;
+}
+.items-image-box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.items-image {
+	margin-right: 20rpx;
+}
+.number-bar {
+	margin: 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	background: -webkit-linear-gradient(left,#4ecf68,#8dd3e1);
+	background: linear-gradient(to right,#4ecf68,#8dd3e1);		
+	border-radius: 30rpx;
+	color: white;
+	box-shadow: 10rpx 10rpx 30rpx #c2c3c2;
+}
+.number-bar-text {
+	padding: 30rpx;
+	-webkit-box-flex: 4;
+	-webkit-flex: 4;
+	        flex: 4;
+}
+.number-bar-bgi {
+	-webkit-box-flex: 4;
+	-webkit-flex: 4;
+	        flex: 4;		
+	background-image: url(http://p1362.bvimg.com/10465/018ca3ddc57ef953.png);
+	border-radius: 30rpx;
+	background-repeat: no-repeat;
+	background-position: 16rpx 40rpx;
+	background-size: 350rpx;
+	opacity: 0.12;
+}
+.number-bar .number-bar-1 {
+	font-size: 36rpx;
+	margin-bottom: 10rpx;
+}
+.number-bar .number-bar-2 {
+	font-size: 24rpx;
+	margin-bottom: 70rpx;
+}
+.number-bar .number-bar-3 {
+	padding: 16rpx 20rpx;
+	background: #fcb409;
+	border-radius: 20rpx;
+	color: white;
+	font-size: 26rpx;
+	display: inline-block;
+	box-shadow: 3rpx 3rpx 15rpx #A6A7A6;
+}
+	
+	/* 处理详情 */
+	
+	/* top */
+.handle-details {
+	margin: 30rpx;
+	border-radius: 30rpx;
+	box-shadow: 10rpx 10rpx 30rpx #c2c3c2;
+	/* background-color: white; */
+	background: -webkit-linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
+	background: linear-gradient(45deg, #ffffff 0%, #ffffff 100%);
+}
+.handle-details-background {
+}
+	
+	/* 进度 */
+.left-panel {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	background-image: url(http://p1362.bvimg.com/10465/6abfa9d7b0fedf10.png);
+	background-repeat: no-repeat;
+	background-size: 50rpx;
+	background-position: left top;
+	margin-top: 30rpx;
+}
+.right-panel {
+	-webkit-box-flex: 7;
+	-webkit-flex: 7;
+	        flex: 7;
+	font-size: 32rpx;
+	margin-left: -5rpx;
+}
+.process {
+	position: relative;
+	padding-top: 20rpx;
+	padding-left: 40rpx;
+	border-bottom: 0.24rpx solid #eae9e9;
+	border-left: 0.24rpx solid #eae9e9;
+}
+.process-border-point {
+	position: absolute;
+	background-repeat: no-repeat;
+	background-size: 20rpx;
+	background-position: 0 0;
+	width: 20rpx;
+	height: 20rpx;
+	border-radius: 12rpx;
+	bottom: -11rpx;
+	left: -11rpx;
+	z-index: 50;
+	background-color: #c5c6c5;
+}
+.process-top {
+	margin-top: 10rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+}
+.process-type {
+	padding: 10rpx 20rpx;
+	background-color: rgba(78,207,104,0.1);
+	color: rgba(78,207,104,1);
+	border-radius: 16rpx;
+	font-size: 24rpx;
+	text-align: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
+	/* box-shadow: 6rpx 6rpx 20rpx #c2c3c2; */
+}
+.process-date {
+	line-height: 54rpx;
+	font-size: 24rpx;
+	margin-left: 30rpx;
+	color: #A6A7A6;
+	-webkit-box-flex: 7;
+	-webkit-flex: 7;
+	        flex: 7;
+}
+.process-phone {
+	background-image: url(http://p1362.bvimg.com/10465/ab867bab013a07e6.png);
+	background-repeat: no-repeat;
+	background-size: 50rpx;
+	background-position: right top;
+	-webkit-box-flex: 2;
+	-webkit-flex: 2;
+	        flex: 2;
+	position: relative;
+	right: 0;
+}
+.process-item {
+	margin-top:40rpx;
+	margin-bottom:40rpx;
+	line-height: 50rpx;
+	padding-left: 90rpx;
+	font-size: 28rpx;
+}
+.right-panel .i-goods {
+	background-image: url(http://p1362.bvimg.com/10465/0ef6238b202847da.png);
+	background-repeat: no-repeat;
+	background-size: 45rpx;
+	background-position: 2rpx 0;
+}
+.right-panel .i-price {
+	background-image: url(http://p1362.bvimg.com/10465/1ba8677801c0731c.png);
+	background-repeat: no-repeat;
+	background-size: 50rpx;
+	background-position: 0rpx 0;
+}
+.right-panel .i-group {
+	background-image: url(http://p1362.bvimg.com/10465/0d41402b1def8839.png);
+	background-repeat: no-repeat;
+	background-size: 45rpx;
+	background-position: 2rpx 0;
+}
+.right-panel .i-people{
+	background-image: url(http://p1362.bvimg.com/10465/29a8357cf2ba4893.png);
+	background-repeat: no-repeat;
+	background-size: 50rpx;
+	background-position: 0rpx 0;
+}
+.right-panel .i-type{
+	background-image: url(http://p1362.bvimg.com/10465/3cc87bb8eff14191.png);
+	background-repeat: no-repeat;
+	background-size: 40rpx;
+	background-position: 6rpx 0;
+}
+.right-panel .i-address{
+	background-image: url(http://p1362.bvimg.com/10465/acbb3db4ae72b1f0.png);
+	background-repeat: no-repeat;
+	background-size: 50rpx;
+	background-position: left;
+}
+.right-panel .i-problem{
+	background-image: url(http://p1362.bvimg.com/10465/2171ee66bbc3815f.png);
+	background-repeat: no-repeat;
+	background-size: 60rpx;
+	background-position: left top;
+}
+.right-panel .i-photo{
+	background-image: url(http://p1362.bvimg.com/10465/9899f5992490668d.png);
+	background-repeat: no-repeat;
+	background-size: 50rpx;
+	background-position: left top;
+}
+
