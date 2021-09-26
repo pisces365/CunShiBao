@@ -30,7 +30,7 @@
 					<view class="me-vertical-line">
 						
 					</view>
-					<navigator class="me-info-realNameQulification">
+					<navigator class="me-info-realNameQulification" url="../../mine/moreInfo/moreInfo">
 						<image  class="info-img" src="http://p1362.bvimg.com/10465/2ca7f023ff869655.png" mode=""></image>实名认证
 					</navigator>
 				</view>

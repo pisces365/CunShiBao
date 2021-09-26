@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "家庭信息",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "region-picker": "/components/regionPicker"
+  }
 }
