@@ -2,6 +2,7 @@
 	<view class="index" v-show="ifLoading">
 		<swiper class="index-swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true"
 			indicator-active-color="#f7f7f7" indicator-color="rgba(145, 145, 145, 0.7)">
+			
 			<swiper-item v-for="(item , index) in homeSlide" :key="index">
 				<view class="index-swiper-image">
 					<image :src="item" mode="aspectFit" lazy-load="true"></image>
