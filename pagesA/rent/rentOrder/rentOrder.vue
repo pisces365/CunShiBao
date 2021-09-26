@@ -133,6 +133,7 @@
 		methods: {
 			//处理日期选择组件的日期数据
 			getDate(type) {
+				
 				const date = new Date();
 				let year = date.getFullYear();
 				let month = date.getMonth() + 1;
