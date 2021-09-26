@@ -31,7 +31,7 @@
 						{{userInfo.phone}}
 					</view>
 				</view>
-				<view class="baseInfo-item" v-else @click="toBindPhone" >
+				<view class="baseInfo-item" v-else @click="toBindPhone">
 					<view class="baseInfo-item-left">
 						手机号
 					</view>
@@ -41,7 +41,7 @@
 				</view>
 			</view>
 			<view class="otherInfo">
-				<view class="otherInfo-item">
+				<view class="otherInfo-item" @click="toPoliticStatus">
 					<view class="otherInfo-item-left">
 						政治面貌
 					</view>
@@ -51,7 +51,7 @@
 
 				</view>
 				<view class="cross-line"></view>
-				<view class="otherInfo-item">
+				<view class="otherInfo-item" @click="toMoreInfo">
 					<view class="otherInfo-item-left">
 						实名信息
 					</view>
@@ -61,7 +61,7 @@
 
 				</view>
 				<view class="cross-line"></view>
-				<view class="otherInfo-item">
+				<view class="otherInfo-item" @click="toFamilyInfo">
 					<view class="otherInfo-item-left">
 						家庭信息
 					</view>
@@ -71,7 +71,7 @@
 
 				</view>
 				<view class="cross-line"></view>
-				<view class="otherInfo-item">
+				<view class="otherInfo-item" @click="toWorkInfo">
 					<view class="otherInfo-item-left">
 						单位信息
 					</view>
@@ -105,6 +105,26 @@
 			toBindPhone() {
 				uni.navigateTo({
 					url: '../../pagesA/rent/phoneRegistration/phoneRegistration'
+				})
+			},
+			toWorkInfo() {
+				uni.navigateTo({
+					url: '../workInfo/workInfo'
+				})
+			},
+			toFamilyInfo() {
+				uni.navigateTo({
+					url: '../familyInfo/familyInfo'
+				})
+			},
+			toMoreInfo() {
+				uni.navigateTo({
+					url: '../moreInfo/moreInfo'
+				})
+			},
+			toPoliticStatus(){
+				uni.navigateTo({
+					url:'../politicStatus/politicStatus'
 				})
 			}
 		}

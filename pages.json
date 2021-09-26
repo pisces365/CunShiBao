@@ -103,7 +103,43 @@
 				    }
 				    
 				}
-			]
+			    ,{
+                    "path" : "politicStatus/politicStatus",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "政治面貌",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "moreInfo/moreInfo",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "实名信息",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "familyInfo/familyInfo",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "家庭信息",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "workInfo/workInfo",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "单位信息",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
 		},
 		{
 			"root": "pagesA",

@@ -238,6 +238,26 @@ var _default =
       uni.navigateTo({
         url: '../../pagesA/rent/phoneRegistration/phoneRegistration' });
 
+    },
+    toWorkInfo: function toWorkInfo() {
+      uni.navigateTo({
+        url: '../workInfo/workInfo' });
+
+    },
+    toFamilyInfo: function toFamilyInfo() {
+      uni.navigateTo({
+        url: '../familyInfo/familyInfo' });
+
+    },
+    toMoreInfo: function toMoreInfo() {
+      uni.navigateTo({
+        url: '../moreInfo/moreInfo' });
+
+    },
+    toPoliticStatus: function toPoliticStatus() {
+      uni.navigateTo({
+        url: '../politicStatus/politicStatus' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

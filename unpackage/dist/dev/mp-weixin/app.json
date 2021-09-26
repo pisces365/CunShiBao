@@ -17,7 +17,11 @@
     {
       "root": "mine",
       "pages": [
-        "personalInfo/personalInfo"
+        "personalInfo/personalInfo",
+        "politicStatus/politicStatus",
+        "moreInfo/moreInfo",
+        "familyInfo/familyInfo",
+        "workInfo/workInfo"
       ]
     },
     {
