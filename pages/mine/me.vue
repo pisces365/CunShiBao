@@ -24,15 +24,15 @@
 
 				</view>
 				<view class="me-info-bottom">
-					<view class="me-info-edit">
-						个人信息
-					</view>
+					<navigator class="me-info-edit" url="../../mine/personalInfo/personalInfo">
+						<image class="info-img" src="http://p1362.bvimg.com/10465/5eefbe51da38df66.png" mode=""></image>个人信息
+					</navigator>
 					<view class="me-vertical-line">
 						
 					</view>
-					<view class="me-info-realNameQulification">
-						实名认证
-					</view>
+					<navigator class="me-info-realNameQulification">
+						<image  class="info-img" src="http://p1362.bvimg.com/10465/2ca7f023ff869655.png" mode=""></image>实名认证
+					</navigator>
 				</view>
 			</view>
 			<view class="homePage-work">
@@ -197,7 +197,11 @@
 		align-items: center;
 		justify-content: center;
 	}
-
+	.info-img{
+		width: 30rpx;
+		height: 30rpx;
+		margin-right: 20rpx;
+	}
 	.me-info-img image {
 		width: 100%;
 		height: 100%;

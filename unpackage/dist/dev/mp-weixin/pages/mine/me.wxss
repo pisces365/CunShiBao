@@ -377,6 +377,11 @@ page {
 	-webkit-justify-content: center;
 	        justify-content: center;
 }
+.info-img{
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 20rpx;
+}
 .me-info-img image {
 	width: 100%;
 	height: 100%;

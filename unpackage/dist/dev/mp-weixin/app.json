@@ -15,6 +15,12 @@
   ],
   "subPackages": [
     {
+      "root": "mine",
+      "pages": [
+        "personalInfo/personalInfo"
+      ]
+    },
+    {
       "root": "pagesA",
       "pages": [
         "election/personalDetails/personalDetails",

@@ -59,6 +59,12 @@
           "pathName": "pages/mine/me",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "个人信息界面",
+          "pathName": "mine/personalInfo/personalInfo",
+          "query": "",
+          "scene": null
         }
       ]
     }

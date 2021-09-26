@@ -92,20 +92,34 @@
     ],
 	"subPackages": [
 		{
+			"root":"mine",
+			"pages":[
+				{
+				    "path" : "personalInfo/personalInfo",
+				    "style" :                                                                                    
+				    {
+				        "navigationBarTitleText": "个人信息",
+				        "enablePullDownRefresh": true
+				    }
+				    
+				}
+			]
+		},
+		{
 			"root": "pagesA",
 			"pages": [
 				{
 					"path": "election/personalDetails/personalDetails",
 					"style": {
 						"navigationBarTitleText": "个人详情",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": true
 					}
 				},
 				{
 					"path": "election/infoAndVote/infoAndVote",
 					"style": {
 						"navigationBarTitleText": "换届选举",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": true
 					}
 				},
 				{
@@ -140,7 +154,7 @@
 					"path": "VillageHead_Email/IWannaWrite/IWannaWrite",
 					"style": {
 						"navigationBarTitleText": "我要写信",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": true
 					}
 				},
 				{
@@ -154,7 +168,7 @@
 					"path": "rent/rent_content/rent_content",
 					"style": {
 						"navigationBarTitleText": "房源详情",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": true
 					}
 				},
 				{

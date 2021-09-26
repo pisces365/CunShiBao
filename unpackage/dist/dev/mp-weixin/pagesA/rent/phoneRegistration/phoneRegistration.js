@@ -143,7 +143,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 17));
 
 
 
@@ -197,63 +197,72 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _api = __webpack_require__(/*! ../../../common/api.js */ 20); //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default = { data: function data() {return { count: '', phone: '', code: '', checkRadio: false, ifSendCode: false };}, methods: { radioChanged: function radioChanged() {var _this = this;if (_this.checkRadio == false) {_this.checkRadio = true;} else {_this.checkRadio = false;}}, inputPhone: function inputPhone(e) {this.phone = e.detail.value; // console.log(this.phone);
-    }, inputCode: function inputCode(e) {var _this = this;_this.code = e.detail.value; // console.log(_this.code);
-      //输入验证码到达6位数 进行验证
-      if (_this.code.length == 6) {var data = { "code": _this.code, "phone": _this.phone };(0, _api.phoneBind)(data).then(function (res) {if (res.code == "200") {} else {_this.code = "";uni.showToast({ title: '动态密码错误或过期，请重新获取', icon: 'none' });}console.log(res);});}}, reSendCode: function reSendCode() {var _this = this;if (_this.count <= 0) {uni.showToast({ title: '发送验证码成功', icon: 'none' });
+var _api = __webpack_require__(/*! ../../../common/api.js */ 20);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
+
+
+
+{
+  data: function data() {
+    return {
+      count: '',
+      phone: '',
+      code: '',
+      checkRadio: false,
+      ifSendCode: false };
+
+  },
+  methods: {
+    radioChanged: function radioChanged() {
+      var _this = this;
+      if (_this.checkRadio == false) {
+        _this.checkRadio = true;
+      } else {
+        _this.checkRadio = false;
+      }
+    },
+    inputPhone: function inputPhone(e) {
+      this.phone = e.detail.value;
+      // console.log(this.phone);
+    },
+    inputCode: function inputCode(e) {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _this, data;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                _this = _this2;
+                _this.code = e.detail.value;if (!(
+                _this.code.length == 6)) {_context.next = 6;break;}
+                data = {
+                  "code": _this.code,
+                  "phone": _this.phone };_context.next = 6;return (
+
+                  (0, _api.phoneBind)(data).then(function (res) {
+                    if (res.code == "200") {
+                      uni.showToast({
+                        title: '手机账号绑定成功',
+                        icon: 'none',
+                        duration: 1000 });
+
+                      uni.setStorageSync('phone', _this.phone);
+                      setTimeout(function () {
+                        uni.navigateBack({
+                          delta: 2 });
+
+                      }, 1000);
+                    } else {
+                      _this.code = "";
+                      uni.showToast({
+                        title: res.msg,
+                        icon: 'none',
+                        duration: 1000 });
+
+                    }
+                    console.log(res);
+                  }));case 6:case "end":return _context.stop();}}}, _callee);}))();
+
+    },
+    reSendCode: function reSendCode() {
+      var _this = this;
+      if (_this.count <= 0) {
+        uni.showToast({
+          title: '发送验证码成功',
+          icon: 'none' });
 
         _this.ifSendCode = true;
         var data = {

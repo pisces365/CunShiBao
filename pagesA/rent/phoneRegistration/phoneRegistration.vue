@@ -79,33 +79,42 @@
 				this.phone = e.detail.value;
 				// console.log(this.phone);
 			},
-			inputCode(e) {
+			async inputCode(e) {
 				let _this = this
 				_this.code = e.detail.value;
-				// console.log(_this.code);
-				//输入验证码到达6位数 进行验证
 				if (_this.code.length == 6) {
 					let data = {
 						"code": _this.code,
 						"phone": _this.phone
 					}
-					phoneBind(data).then((res) => {
+					await phoneBind(data).then((res) => {
 						if (res.code == "200") {
-							
+							uni.showToast({
+								title: '手机账号绑定成功',
+								icon: 'none',
+								duration:1000
+							})
+							uni.setStorageSync('phone',_this.phone)
+							setTimeout(function() {
+								uni.navigateBack({
+									delta:2
+								})
+							}, 1000);
 						} else {
 							_this.code = ""
 							uni.showToast({
-								title: '动态密码错误或过期，请重新获取',
-								icon: 'none'
+								title: res.msg,
+								icon: 'none',
+								duration:1000
 							})
 						}
 						console.log(res);
 					})
 				}
 			},
-			reSendCode(){
+			reSendCode() {
 				let _this = this
-				if(_this.count<=0){
+				if (_this.count <= 0) {
 					uni.showToast({
 						title: '发送验证码成功',
 						icon: 'none'
@@ -276,8 +285,8 @@
 		right: 40rpx;
 		font-size: 32rpx;
 	}
-	.reSend text:nth-child(1){
+
+	.reSend text:nth-child(1) {
 		font-weight: bold;
 	}
-	
 </style>

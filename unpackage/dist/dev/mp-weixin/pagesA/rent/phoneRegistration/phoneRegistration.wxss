@@ -96,8 +96,7 @@ page {
 	right: 40rpx;
 	font-size: 32rpx;
 }
-.reSend text:nth-child(1){
+.reSend text:nth-child(1) {
 	font-weight: bold;
 }
-
 
