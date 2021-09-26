@@ -138,9 +138,201 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pagesA/rent/rentOrder/rentOrder.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js):\nSyntaxError: Unexpected token, expected \",\" (87:3)\n    at Object._raise (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:746:17)\n    at Object.raiseWithData (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:739:17)\n    at Object.raise (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:733:17)\n    at Object.unexpected (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8807:16)\n    at Object.expect (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:8793:28)\n    at Object.parseObj (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10439:14)\n    at Object.parseExprAtom (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:10055:28)\n    at Object.parseExprSubscripts (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9656:23)\n    at Object.parseMaybeUnary (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9636:21)\n    at Object.parseMaybeUnary (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6877:20)\n    at Object.parseExprOps (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9506:23)\n    at Object.parseMaybeConditional (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9479:23)\n    at Object.parseMaybeAssign (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9434:21)\n    at Object.parseMaybeAssign (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:6822:20)\n    at Object.parseExpression (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:9386:23)\n    at Object.parseReturnStatement (D:\\Download\\HBuilderX\\HBuilderX\\plugins\\uniapp-cli\\node_modules\\@babel\\parser\\lib\\index.js:11523:28)");
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default =
+{
+  data: function data() {
+    return {
+      houseInfo: {},
+      dateTime: '',
+      dateTimeToPost: '',
+      currentDate: new Date().toISOString().slice(0, 10),
+      currentIndex: -1,
+      detailList: [{
+        'title': '08:00-09:00',
+        'value': 't1' },
+
+      {
+        'title': '09:00-10:00',
+        'value': 't2' },
+
+      {
+        'title': '10:00-11:00',
+        'value': 't3' },
+
+      {
+        'title': '11:00-12:00',
+        'value': 't4' },
+
+      {
+        'title': '14:00-15:00',
+        'value': 't5' },
+
+      {
+        'title': '15:00-16:00',
+        'value': 't6' },
+
+      {
+        'title': '16:00-17:00',
+        'value': 't7' },
+
+      {
+        'title': '17:00-18:00',
+        'value': 't8' },
+      {
+        'title': '18:00-19:00',
+        'value': 't9' },
+      {
+        'title': '19:00-20:00',
+        'value': 't10' },
+      {
+        'title': '21:00-22:00',
+        'value': 't11' }] };
+
+
+
+  },
+  methods: {
+    //处理日期选择组件的日期数据
+    getDate: function getDate(type) {
+
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var day = date.getDate();
+
+      if (type == 'start') {
+        year = year - 5; //设置年份区间
+      } else if (type == 'end') {
+        year = year + 5;
+      }
+      month = month > 9 ? month : '0' + month;;
+      day = day > 9 ? day : '0' + day;
+      return "".concat(year, "-").concat(month, "-").concat(day);
+    },
+    timeSelect: function timeSelect(tindex) {
+      this.currentIndex = tindex;
+      // console.log(this.currentIndex);
+    },
+    //选择日期，获取选择结果
+    selectDate: function selectDate(e) {
+      var _this = this;
+      _this.dateTime = e.target.value;
+    },
+    submit: function submit() {
+      var _this = this;
+      var userId = uni.getStorageSync('userId');
+      if (_this.dateTime == '') {
+        uni.showToast({
+          title: '请选择看房时间',
+          icon: 'none',
+          duration: 2000 });
+
+      } else if (_this.currentIndex == -1) {
+        uni.showToast({
+          title: '请选择看房日期',
+          icon: 'none',
+          duration: 2000 });
+
+      } else {
+        console.log(_this.dateTime);
+        console.log(userId);
+        uni.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 2000 });
+
+      }
+    } },
+
+  onLoad: function onLoad(options) {
+    var that = this;
+    var data = JSON.parse(options.houseInfo); // 字符串转对象
+    that.houseInfo = data;
+    console.log(that.houseInfo);
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

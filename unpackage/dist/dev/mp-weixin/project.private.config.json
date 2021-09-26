@@ -53,6 +53,12 @@
           "pathName": "pagesA/rent/rent_index/rent_index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/mine/me",
+          "query": "",
+          "scene": null
         }
       ]
     }
