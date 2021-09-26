@@ -8911,7 +8911,7 @@ internalMixin(Vue);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;exports.wechatLogin = wechatLogin;exports.houseList = houseList;exports.houseDetail = houseDetail;var _config = __webpack_require__(/*! ./config.js */ 21);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.sendSmsCode = sendSmsCode;exports.phoneBind = phoneBind;exports.wechatLogin = wechatLogin;exports.houseList = houseList;exports.houseDetail = houseDetail;exports.houseOrderAdd = houseOrderAdd;var _config = __webpack_require__(/*! ./config.js */ 21);
 
 
 //发送手机验证码到对应手机上
@@ -8966,6 +8966,7 @@ function wechatLogin(data) {
         var result = res.data;
         console.log('微信用户登录', res);
         uni.setStorageSync('token', res.data.data.token);
+        uni.setStorageSync('userId', res.data.data.userVo.id);
         reslove(result);
       },
       fail: function fail() {},
@@ -9001,6 +9002,23 @@ function houseDetail(id) {
       success: function success(res) {
         var result = res.data;
         console.log('房屋具体信息', result);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+      } });
+
+  });
+}
+//添加房屋预约信息
+function houseOrderAdd(id) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/order/add"),
+      method: 'POST',
+      success: function success(res) {
+        var result = res.data;
+        console.log('增加预约信息', result);
         reslove(result);
       },
       fail: function fail() {},

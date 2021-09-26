@@ -53,6 +53,7 @@ export function wechatLogin(data) {
 				let result = res.data;
 				console.log('微信用户登录',res);
 				uni.setStorageSync('token',res.data.data.token)
+				uni.setStorageSync('userId',res.data.data.userVo.id)
 				reslove(result);
 			},
 			fail: () => {},
@@ -88,6 +89,23 @@ export function houseDetail(id) {
 			success: res => {
 				let result = res.data;
 				console.log('房屋具体信息',result);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {
+			}
+		})
+	})
+}
+//添加房屋预约信息
+export function houseOrderAdd(id) {
+	return new Promise(function(reslove, reject) {
+		uni.request({
+			url: `${baseUrl}/order/add`,
+			method: 'POST',
+			success: res => {
+				let result = res.data;
+				console.log('增加预约信息',result);
 				reslove(result);
 			},
 			fail: () => {},

@@ -4,16 +4,16 @@
 			<view class="top">
 				<view class="houseDes">
 					<view class="houseDes-left">
-						<image :src="houseInfo.images[0]" mode=""></image>
+						<image :src="houseInfo.pictureUrl[0]" mode=""></image>
 					</view>
 					<view class="houseDes-right">
 						<view class="houseDes-right-top">
 							<text>{{houseInfo.type}}</text>
 							<text>{{'|'}}</text>
-							<text class="noWarp">{{ houseInfo.description}}</text>
+							<text class="noWarp">{{ houseInfo.desc}}</text>
 						</view>
 						<view class="houseDes-right-center">
-							押一付三 {{' · '+houseInfo.RoomInfo+'室 '}}·{{houseInfo.hourseAream+'m · 南北'}}
+							押一付三 {{' · '+houseInfo.bedroomAmount+'室 '}}·{{houseInfo.area+'m · 南北'}}
 						</view>
 						<view class="houseDes-right-bottom">
 							{{houseInfo.price}}元/月
@@ -24,16 +24,15 @@
 				</view>
 				<view class="rentOwner">
 					<view class="rentOwner-image">
-						<image :src="hostImage[houseInfo.index]" mode=""></image>
+						<image :src="houseInfo.hostRoughVo.avatarUrl" mode=""></image>
 					</view>
 					<view class="rentOwner-info">
 						<view class="rentOwner-info-left">
 							<view class="rentOwner-info-name">
-								<text class="hostName">{{hostNickname[houseInfo.index]}}</text> <text class="hostDsc">优质房东</text>
+								<text class="hostName">{{houseInfo.hostRoughVo.name}}</text> <text class="hostDsc">优质房东</text>
 							</view>
 							<view class="rentOwner-info-address">
-								{{houseInfo.locationStreet+' '}}
-								{{houseInfo.locationDetail}}
+								{{houseInfo.location}}
 							</view>
 						</view>
 
@@ -60,7 +59,6 @@
 				</view>
 
 				<view class="cross-line">
-
 				</view>
 				<view class="time-select">
 					<view class="time-detail" v-for="(item,index) in detailList" :key="index" @click="timeSelect(index)"
@@ -84,25 +82,8 @@
 		data() {
 			return {
 				houseInfo: {},
-				hostNickname: [
-					'Lemon',
-					'游觅民宿',
-					'莫雨民宿',
-					'亦非',
-					'刘浩',
-					'管家',
-					'LittleLion',
-				],
-				hostImage: [
-					'http://p1362.bvimg.com/10465/f820643ce376c33c.jpg',
-					'http://p1362.bvimg.com/10465/33480984caf9342e.jpg',
-					'http://p1362.bvimg.com/10465/4dbcd200d3aa2d00.jpg',
-					'http://p1362.bvimg.com/10465/6de29a054bb84057.jpg',
-					'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
-					'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
-					'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'
-				],
 				dateTime: '',
+				dateTimeToPost:''
 				currentDate: new Date().toISOString().slice(0, 10),
 				currentIndex: -1,
 				detailList: [{
@@ -147,16 +128,6 @@
 						'value': 't11'
 					}
 				],
-
-				hostImage: [
-					'http://p1362.bvimg.com/10465/f820643ce376c33c.jpg',
-					'http://p1362.bvimg.com/10465/33480984caf9342e.jpg',
-					'http://p1362.bvimg.com/10465/4dbcd200d3aa2d00.jpg',
-					'http://p1362.bvimg.com/10465/6de29a054bb84057.jpg',
-					'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
-					'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
-					'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'
-				],
 			}
 		},
 		methods: {
@@ -184,23 +155,25 @@
 			selectDate(e) {
 				let _this = this
 				_this.dateTime = e.target.value
-				console.log(_this.dateTime)
 			},
 			submit() {
 				let _this = this
+				let userId = uni.getStorageSync('userId');
 				if (_this.dateTime == '') {
 					uni.showToast({
-						title: '请选择就诊时间',
+						title: '请选择看房时间',
 						icon: 'none',
 						duration: 2000
 					})
 				} else if (_this.currentIndex == -1) {
 					uni.showToast({
-						title: '请选择就诊日期',
+						title: '请选择看房日期',
 						icon: 'none',
 						duration: 2000
 					})
 				}else{
+					console.log(_this.dateTime);
+					console.log(userId);
 					uni.showToast({
 						title: '提交成功',
 						icon: 'success',
