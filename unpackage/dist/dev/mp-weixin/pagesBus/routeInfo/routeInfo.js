@@ -97,43 +97,6 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = _vm.isShow(0)
-  var m1 = _vm.isShow(0)
-  var m2 = _vm.isShow(0)
-  var m3 = _vm.isShow(0)
-  var m4 = _vm.isShow(0)
-
-  var l0 = _vm.__map(_vm.bus.allStation, function(item, index) {
-    var $orig = _vm.__get_orig(item)
-
-    var m5 = index >= 1 ? _vm.isShow(index) : null
-    var m6 = index >= 1 ? _vm.isShow(index) : null
-    var m7 = index >= 1 ? _vm.isShow(index) : null
-    var m8 = index >= 1 ? _vm.isShow(index) : null
-    var m9 = index >= 1 ? _vm.isShow(index) : null
-    return {
-      $orig: $orig,
-      m5: m5,
-      m6: m6,
-      m7: m7,
-      m8: m8,
-      m9: m9
-    }
-  })
-
-  _vm.$mp.data = Object.assign(
-    {},
-    {
-      $root: {
-        m0: m0,
-        m1: m1,
-        m2: m2,
-        m3: m3,
-        m4: m4,
-        l0: l0
-      }
-    }
-  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -268,6 +231,94 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -275,9 +326,9 @@ var _default =
       bus: {
         route: "102路",
         bond: "公交总站",
-        start: "营门口",
-        end: "金玉井",
-        aboard: "留下",
+        start: "洞山",
+        end: "留下",
+        aboard: "屏峰",
         distance_meter: "3",
         distance_station: "3",
         minute: "6",
@@ -285,20 +336,54 @@ var _default =
         accessible: "http://p1362.bvimg.com/10465/b693c9983d17943e.png",
         allStation: [
         {
-          station: "营门口",
-          selected: false },
+          station: "洞山",
+          selected: false,
+          isNear: false },
+
+        {
+          station: "清家坞",
+          selected: false,
+          isNear: false },
+
+        {
+          station: "午潮山",
+          selected: false,
+          isNear: false },
+
+        {
+          station: "四喜凉亭",
+          selected: false,
+          isNear: false },
+
+        {
+          station: "石马社区",
+          selected: false,
+          isNear: true },
+
+        {
+          station: "科技学院",
+          selected: false,
+          isNear: false },
 
         {
           station: "上埠",
-          selected: true },
+          selected: false,
+          isNear: false },
 
         {
-          station: "屏风",
-          selected: false },
+          station: "屏峰",
+          selected: false,
+          isNear: false },
 
         {
-          station: "西溪",
-          selected: false }] } };
+          station: "西溪医院·横街",
+          selected: false,
+          isNear: false },
+
+        {
+          station: "留下",
+          selected: false,
+          isNear: false }] } };
 
 
 
@@ -311,7 +396,11 @@ var _default =
   methods: {
     isShow: function isShow(num)
     {
-      return this.bus.allStation[num].selected;
+      for (var i = 0; i < this.bus.allStation.length; ++i)
+      {
+        this.bus.allStation[i].selected = false;
+      }
+      this.bus.allStation[num].selected = true;
     } } };exports.default = _default;
 
 /***/ }),

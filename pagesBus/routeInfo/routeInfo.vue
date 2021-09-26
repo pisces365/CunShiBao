@@ -19,13 +19,14 @@
 					border-top: 1px solid rgb(223, 223, 223);
 					border-bottom: 1px solid rgb(223, 223, 223);
 					padding: 20rpx 0;
-					margin: 20rpx 0;
+					margin-top: 20rpx;
 					color: rgba(142, 142, 147, 1);">
 				<view style="margin-bottom: 20rpx;">总里程:20km | 票价:3元</view>
 				<view>运营时间：04:10 - 23:30</view>
 			</view>
 			
-			<view>
+
+			<!-- <view>
 				<view style="position: relative;">
 					<text class="circle-start">始</text>
 					<text style="margin-left: 14rpx;">{{bus.start}}</text>
@@ -93,8 +94,95 @@
 					<text class="circle-end">终</text>
 					<text style="margin-left: 14rpx;">{{bus.end}}</text>
 				</view>
-			</view>
+			</view> -->
 
+		</view>
+		
+		<view class="bus-item" style="margin-top:20rpx; padding-left: 0; padding-right: 0;">
+			<view v-for="(item , index) in bus.allStation" :key="index" :style="item.selected?'padding: 0 36rpx; border-bottom:1px solid rgb(229,229,234); background-color: #f8f8f8;':'padding: 0 36rpx; border-bottom:1px solid rgb(229,229,234);'">
+				<view @click="isShow(index)" style="height: 100rpx;">
+					<view style="position: relative; float: left;">
+						<view style="height: 50rpx; width: 10rpx; background-color: rgb(229,229,234);">
+							
+						</view>
+						<view v-show="!item.selected" style="height: 20rpx; 
+						width: 20rpx; 
+						border-radius: 50rpx; 
+						background-color: #00CB95;
+						position: absolute;
+						left: -12rpx;
+						top:36rpx;
+						border:8rpx solid white">
+							
+						</view>
+						<view v-show="item.selected" style="height: 20rpx;
+						width: 20rpx; 
+						border-radius: 50rpx; 
+						background-color: white;
+						position: absolute;
+						left: -12rpx;
+						top:36rpx;
+						border:8rpx solid #007AFF">
+							
+						</view>
+						<view style="height: 50rpx; width: 10rpx; background-color: rgb(229,229,234);">
+							
+						</view>
+					</view>
+					<view style="margin-left: 30rpx; height: 100rpx;">
+						<view class="" style="display: inline-block; margin:30rpx 0;">
+							{{item.station}}
+						</view>
+						<view v-if="item.isNear" style="display: inline-block; margin:30rpx 20rpx; color: #007AFF;">
+							离我最近！
+						</view>
+						<view v-show="item.selected" class="like" style="margin-top: 20rpx">收藏站台</view>
+					</view>
+				</view>
+				<view v-show="item.selected" style="height: 320rpx;">
+					<view style="position: relative; float: left;">
+						<view style="height: 320rpx; width: 10rpx; background-color: rgb(229,229,234);">
+							
+						</view>
+						
+					</view>
+					<view style="margin-left: 30rpx; height: 100rpx;">
+						<view>
+							<view style="margin-bottom: 20rpx;">
+								<text style="vertical-align: top;">距您</text><text style="vertical-align: top;" class="num">{{bus.distance_meter}}</text><text style="vertical-align: top;">m</text>		
+							</view>
+						</view>
+						<view>
+							<view style="display: flex;">
+								<view class="next-bus-info" style="flex: 1;">下一班</view>
+								<view class="next-bus-info" style="flex: 2;">
+									<text>距离</text><text class="num">{{bus.distance_station}}</text><text>站</text> <text class="num">{{bus.minute}}</text><text>分钟</text>
+									<block>
+										<image class="icon-crowd" :src="bus.crowd" mode="aspectFit"></image>
+										<image class="icon-access" :src="bus.accessible" mode="aspectFit"></image>
+									</block>
+								</view>
+							</view>
+							<view style="display: flex;">
+								<view class="next-bus-info" style="flex: 1;">第二班</view>
+								<view class="next-bus-info" style="flex: 2;">
+									<text>距离</text><text class="num">{{bus.distance_station}}</text><text>站</text> <text class="num">{{bus.minute}}</text><text>分钟</text>
+									<image class="icon-crowd" :src="bus.crowd" mode="widthFix"></image>
+									<image class="icon-access" :src="bus.accessible" mode="widthFix"></image>
+								</view>
+							</view>
+							<view style="display: flex;">
+								<view class="next-bus-info" style="flex: 1;">第三班</view>
+								<view class="next-bus-info" style="flex: 2;">
+									<text>距离</text><text class="num">{{bus.distance_station}}</text><text>站</text> <text class="num">{{bus.minute}}</text><text>分钟</text>
+									<image class="icon-crowd" :src="bus.crowd" mode="widthFix"></image>
+									<image class="icon-access" :src="bus.accessible" mode="widthFix"></image>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -106,9 +194,9 @@
 				bus:{
 						route:"102路",
 						bond:"公交总站",
-						start:"营门口",
-						end:"金玉井",
-						aboard:"留下",
+						start:"洞山",
+						end:"留下",
+						aboard:"屏峰",
 						distance_meter:"3",
 						distance_station:"3",
 						minute:"6",
@@ -116,20 +204,54 @@
 						accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png",
 						allStation:[
 							{
-								station:"营门口",
-								selected:false
+								station:"洞山",
+								selected:false,
+								isNear:false
+							},
+							{
+								station:"清家坞",
+								selected:false,
+								isNear:false
+							},
+							{
+								station:"午潮山",
+								selected:false,
+								isNear:false
+							},
+							{
+								station:"四喜凉亭",
+								selected:false,
+								isNear:false
+							},
+							{
+								station:"石马社区",
+								selected:false,
+								isNear:true
+							},
+							{
+								station:"科技学院",
+								selected:false,
+								isNear:false
 							},
 							{
 								station:"上埠",
-								selected:true
+								selected:false,
+								isNear:false
 							},
 							{
-								station:"屏风",
-								selected:false
+								station:"屏峰",
+								selected:false,
+								isNear:false
 							},
 							{
-								station:"西溪",
-								selected:false
+								station:"西溪医院·横街",
+								selected:false,
+								isNear:false
+							},
+							{
+								station:"留下",
+								selected:false,
+								isNear:false
 							}
 						]
 					}
@@ -142,7 +264,11 @@
 		methods: {
 			isShow(num)
 			{
-				return this.bus.allStation[num].selected;
+				for(var i=0;i<this.bus.allStation.length;++i)
+				{
+					this.bus.allStation[i].selected = false;
+				}
+				this.bus.allStation[num].selected = true;
 			}
 		}
 	}
@@ -156,6 +282,13 @@
 		font-size: 28rpx;
 	}
 	
+	.next-bus-info {
+		padding:20rpx 30rpx;
+		background-color: white;
+		border: 1px solid #f7f7f7;
+		text-align: center;
+	}
+	
 	.num {
 		display: inline-block;
 		margin:0rpx 8rpx;
@@ -163,12 +296,6 @@
 		font-weight: bold;
 	}
 	
-	.icon-crowd{
-		width: 30rpx;
-		height: 30rpx;
-		margin-right: 30rpx;
-		margin-top: 30rpx;
-	}
 	
 	.circle-start {
 		display: inline-block;
@@ -266,8 +393,9 @@
 	}
 	.bus-item {
 		padding:24rpx 36rpx;
+		/* padding-bottom: 0; */
 		background-color: #fff;
-		 border-bottom: 1px solid rgb(223, 223, 223);
+		 /* border-bottom: 1px solid rgb(223, 223, 223); */
 	}
 	.station {
 		font-size: 28rpx;
@@ -280,14 +408,18 @@
 	}
 	
 	.icon-crowd{
+		display: inline-block;
 		width: 34rpx;
 		height: 34rpx;
-		margin-right: 26rpx;
+		margin: 0rpx 26rpx ;
+		vertical-align: bottom;
 	}
 	
 	.icon-access {
+		display: inline-block;
 		width: 30rpx;
 		height: 30rpx;
+		vertical-align: bottom;
 	}
 	
 	.num {
