@@ -130,6 +130,7 @@
 
 	.me {
 		margin: 20rpx;
+		margin-top: 40rpx;
 		padding: 20rpx 30rpx;
 		display: flex;
 		flex-direction: column;
@@ -240,7 +241,7 @@
 		/*  阴影 */
 		box-shadow: 0 0 10rpx rgba(0, 0, 0, 0.10);
 		width: 100%;
-		margin-top: 40rpx;
+		margin-top: 50rpx;
 		margin-bottom: 40rpx;
 		border-radius: 10rpx;
 		overflow: hidden;
@@ -262,7 +263,7 @@
 
 	.homePage-work-part {
 		margin-left: 30rpx;
-		height: 110rpx;
+		height: 120rpx;
 		display: flex;
 		align-items: center;
 		position: relative;
