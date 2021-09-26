@@ -249,6 +249,7 @@
 	}
 
 	.homePage-work-part-title {
+		
 		font-size: 34rpx;
 		font-weight: 500;
 		margin-left: 20rpx;
