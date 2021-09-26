@@ -53,6 +53,12 @@
           "pathName": "pagesB/myWorkOrder/myWorkOrder",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pagesBus/routeInfo/routeInfo",
+          "pathName": "pagesBus/routeInfo/routeInfo",
+          "query": "",
+          "scene": null
         }
       ]
     }
