@@ -258,7 +258,7 @@
 				switch (_this.info.PriceIndex) {
 					case '0':
 						_this.minPrice = ''
-						_this.minPrice = ''
+						_this.maxPrice = ''
 						break;
 					case '1':
 						_this.minPrice = 0
