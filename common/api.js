@@ -10,12 +10,12 @@ export function sendSmsCode(data) {
 			data: data,
 			success: res => {
 				let result = res.data;
-				console.log('发送手机验证码',res);
+				console.log('发送手机验证码', res);
 				reslove(result);
 			},
 			fail: () => {},
 			complete: () => {
-			
+
 			}
 		})
 	})
@@ -26,19 +26,18 @@ export function phoneBind(data) {
 		var token = uni.getStorageSync('token');
 		uni.request({
 			url: `${baseUrl}/bind/phone`,
-			header:{
-				"authorization":token
+			header: {
+				"authorization": token
 			},
 			method: 'POST',
 			data: data,
 			success: res => {
 				let result = res.data;
-				console.log('手机绑定验证',res);
+				console.log('手机绑定验证', res);
 				reslove(result);
 			},
 			fail: () => {},
-			complete: () => {
-			}
+			complete: () => {}
 		})
 	})
 }
@@ -51,14 +50,13 @@ export function wechatLogin(data) {
 			data: data,
 			success: res => {
 				let result = res.data;
-				console.log('微信用户登录',res);
-				uni.setStorageSync('token',res.data.data.token)
-				uni.setStorageSync('userId',res.data.data.userVo.id)
+				console.log('微信用户登录', res);
+				uni.setStorageSync('token', res.data.data.token)
+				uni.setStorageSync('userId', res.data.data.userVo.id)
 				reslove(result);
 			},
 			fail: () => {},
-			complete: () => {
-			}
+			complete: () => {}
 		})
 	})
 }
@@ -71,29 +69,27 @@ export function houseList(data) {
 			data: data,
 			success: res => {
 				let result = res.data;
-				console.log('房屋信息列表',result);
+				console.log('房屋信息列表', result);
 				reslove(result);
 			},
 			fail: () => {},
-			complete: () => {
-			}
+			complete: () => {}
 		})
 	})
 }
-//根据可选条件获取房屋出租粗略信息列表
+//根据id获取房屋详细信息
 export function houseDetail(id) {
 	return new Promise(function(reslove, reject) {
 		uni.request({
-			url: `${baseUrl}/houseRent/detail/`+id,
+			url: `${baseUrl}/houseRent/detail/` + id,
 			method: 'GET',
 			success: res => {
 				let result = res.data;
-				console.log('房屋具体信息',result);
+				console.log('房屋具体信息', result);
 				reslove(result);
 			},
 			fail: () => {},
-			complete: () => {
-			}
+			complete: () => {}
 		})
 	})
 }
@@ -101,16 +97,32 @@ export function houseDetail(id) {
 export function houseOrderAdd(id) {
 	return new Promise(function(reslove, reject) {
 		uni.request({
-			url: `${baseUrl}/order/add`,
+			url: `${baseUrl}/houseRent/order/add`,
 			method: 'POST',
 			success: res => {
 				let result = res.data;
-				console.log('增加预约信息',result);
+				console.log('增加预约信息', result);
 				reslove(result);
 			},
 			fail: () => {},
-			complete: () => {
-			}
+			complete: () => {}
+		})
+	})
+}
+//获取所有村庄信息
+export function allVillegeInfo(data) {
+	return new Promise(function(reslove, reject) {
+		uni.request({
+			url: `${baseUrl}/api/getVillageInfoFuzzySearch`,
+			method: 'POST',
+			data: data,
+			success: res => {
+				let result = res.data;
+				console.log('获取所有村庄信息', result);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {}
 		})
 	})
 }
