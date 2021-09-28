@@ -299,12 +299,13 @@ page {
 	margin-left: 10rpx;
 }
 .sh-image {
-	width: 120rpx;
-	height: 120rpx;
-	display: inline-block;
+	width: 100rpx;
+	height: 100rpx;
+	display: block;
 	margin: 0 auto;
 }
 .title {
+	margin-top: 14rpx;
 	font-size: 30rpx;
 	text-align: center;
 }

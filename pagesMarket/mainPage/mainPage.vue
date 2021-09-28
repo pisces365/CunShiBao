@@ -3,7 +3,7 @@
 		<view>
 			<view class="top" style="background-color: white;">
 				<view>
-					<image class="topImage" src="http://p1362.bvimg.com/10465/5981e6676b65372d.png" mode="widthFix"></image>
+					<image class="topImage" src="http://p1362.bvimg.com/10465/654f6a22fc75c3ba.png" mode="widthFix"></image>
 				</view>
 				<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 				<view style="padding: 10rpx 0;"></view>
@@ -295,12 +295,13 @@
 	}
 	
 	.sh-image {
-		width: 120rpx;
-		height: 120rpx;
-		display: inline-block;
+		width: 100rpx;
+		height: 100rpx;
+		display: block;
 		margin: 0 auto;
 	}
 	.title {
+		margin-top: 14rpx;
 		font-size: 30rpx;
 		text-align: center;
 	}
