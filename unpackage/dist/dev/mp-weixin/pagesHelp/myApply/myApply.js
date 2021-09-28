@@ -139,131 +139,136 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;} //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 456));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
+  components: {
+    RegionPicker: RegionPicker },
+
   data: function data() {var _ref;
     return _ref = {
       price: "0.00",
@@ -308,6 +313,13 @@ var _default =
     });
   },
   methods: {
+    onChangeRegion: function onChangeRegion(region) {
+      // console.log('选择的省市区数据：', region);
+      var _this = this;
+      _this.province = region[0].name;
+      _this.city = region[1].name;
+      _this.district = region[2].name;
+    },
     get_imgArrLength: function get_imgArrLength() {
       // console.log(this.imgArr.length);
       if (this.imgArr.length >= 4)
@@ -319,11 +331,11 @@ var _default =
         return true;
       }
     },
-    chooseImg: function chooseImg() {var _this = this;
+    chooseImg: function chooseImg() {var _this2 = this;
       uni.chooseImage({
         count: 4 - this.imgArr.length,
         success: function success(res) {
-          _this.imgArr = _this.imgArr.concat(res.tempFilePaths);
+          _this2.imgArr = _this2.imgArr.concat(res.tempFilePaths);
         } });
 
     },
