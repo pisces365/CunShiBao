@@ -145,7 +145,7 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[6]" lazy-load="true" mode=""></image>
 						</view>
 					</view>
-					<view class="index-VillageParty-content-onePart-left">
+					<navigator url="../../pagesHelp/helpIndex/helpIndex" class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[7]}}</text>
 						</view>
@@ -155,7 +155,7 @@
 						<view class="function-image">
 							<image :src="VillageParty.VillagePartyTitleImageUrl[7]" lazy-load="true" mode=""></image>
 						</view>
-					</view>
+					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
 					<navigator class="index-VillageParty-content-onePart-left" url="../../pagesBus/info/info">

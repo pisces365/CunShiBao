@@ -61,85 +61,159 @@
 				"navigationBarTitleText": "隐私政策",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/message/announcementPush",
+			"style": {
+				"navigationBarTitleText": "公告推送",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/message/businessPush/businessPush",
+			"style": {
+				"navigationBarTitleText": "业务推送",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/mine/me",
+			"style": {
+				"navigationBarTitleText": "个人主页",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pagesHelp/helpIndex/helpIndex",
+			"style": {
+				"navigationBarTitleText": "精准帮扶",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#5f7bf9",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "精准帮扶"
+					}
+				}
+			}
+		},
+		{
+			"path": "pagesHelp/myHelp/myHelp",
+			"style": {
+				"navigationBarTitleText": "我的帮扶",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#5f7bf9",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "我的帮扶"
+					}
+				}
+			}
+		},
+		{
+			"path": "pagesHelp/myApply/myApply",
+			"style": {
+				"navigationBarTitleText": "帮扶申报",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#5f7bf9",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "帮扶申报"
+					}
+				}
+			}
+		},
+		{
+			"path": "pagesHelp/surveyIndex/surveyIndex",
+			"style": {
+				"navigationBarTitleText": "走访列表",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#5f7bf9",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "走访列表"
+					}
+				}
+			}
+		},
+		{
+			"path": "pagesHelp/surveyRecord/surveyRecord",
+			"style": {
+				"navigationBarTitleText": "入户调查",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#5f7bf9",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "入户调查"
+					}
+				}
+			}
+		},
+		{
+			"path": "pagesHelp/staffLogin/staffLogin",
+			"style": {
+				"navigationBarTitleText": "走访人员登录",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#5f7bf9",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "走访人员登录"
+					}
+				}
+			}
 		}
-	    ,{
-            "path" : "pages/message/announcementPush",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "公告推送",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/message/businessPush/businessPush",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "业务推送",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/mine/me",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "个人主页",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"subPackages": [
 		{
-			"root":"mine",
-			"pages":[
+			"root": "mine",
+			"pages": [
 				{
-				    "path" : "personalInfo/personalInfo",
-				    "style" :                                                                                    
-				    {
-				        "navigationBarTitleText": "个人信息",
-				        "enablePullDownRefresh": true
-				    }
-				    
+					"path": "personalInfo/personalInfo",
+					"style": {
+						"navigationBarTitleText": "个人信息",
+						"enablePullDownRefresh": true
+					}
+				},
+				{
+					"path": "politicStatus/politicStatus",
+					"style": {
+						"navigationBarTitleText": "政治面貌",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "moreInfo/moreInfo",
+					"style": {
+						"navigationBarTitleText": "实名信息",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "familyInfo/familyInfo",
+					"style": {
+						"navigationBarTitleText": "家庭信息",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "workInfo/workInfo",
+					"style": {
+						"navigationBarTitleText": "单位信息",
+						"enablePullDownRefresh": false
+					}
 				}
-			    ,{
-                    "path" : "politicStatus/politicStatus",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "政治面貌",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "moreInfo/moreInfo",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "实名信息",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "familyInfo/familyInfo",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "家庭信息",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "workInfo/workInfo",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "单位信息",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-            ]
+			]
 		},
 		{
 			"root": "pagesA",
@@ -274,26 +348,22 @@
 						"navigationBarTitleText": "土地承包",
 						"enablePullDownRefresh": false
 					}
+				},
+				{
+					"path": "MaintenanceWarning/MaintenanceWarning",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "myWorkOrder/myWorkOrder",
+					"style": {
+						"navigationBarTitleText": "我的工单",
+						"enablePullDownRefresh": false
+					}
 				}
-			    ,{
-                    "path" : "MaintenanceWarning/MaintenanceWarning",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
-                    "path" : "myWorkOrder/myWorkOrder",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "我的工单",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-            ]
+			]
 		},
 		{
 			"root": "pagesBus",

@@ -8904,9 +8904,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!*************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/api.js ***!
-  \*************************************************************************************/
+/*!*************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9044,9 +9044,9 @@ function allVillegeInfo(data) {
 /***/ }),
 
 /***/ 21:
-/*!****************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/config.js ***!
-  \****************************************************************************************/
+/*!****************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/config.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9055,10 +9055,41 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = 
 
 /***/ }),
 
-/***/ 264:
-/*!*********************************************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pagesA/rent/host_qualification/citys/citys.js ***!
-  \*********************************************************************************************************************/
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 312:
+/*!*********************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10089,41 +10120,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 327:
-/*!***********************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/amap-uni.js ***!
-  \***********************************************************************************/
+/***/ 375:
+/*!***********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10564,9 +10564,9 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 /***/ }),
 
 /***/ 4:
-/*!**********************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pages.json ***!
-  \**********************************************************************************/
+/*!**********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pages.json ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -10574,10 +10574,10 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 413:
-/*!**********************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/components/region.json ***!
-  \**********************************************************************************************/
+/***/ 461:
+/*!**********************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/region.json ***!
+  \**********************************************************************/
 /*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, default */
 /***/ (function(module) {
 
@@ -10585,10 +10585,10 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
-/***/ 470:
-/*!************************************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/components/city-select/citySelect.js ***!
-  \************************************************************************************************************/
+/***/ 518:
+/*!************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10632,10 +10632,10 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
-/***/ 506:
-/*!***************************************************************************************************************************!*\
-  !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \***************************************************************************************************************************/
+/***/ 554:
+/*!***************************************************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

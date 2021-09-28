@@ -11,7 +11,13 @@
     "pages/mine/user/privacy",
     "pages/message/announcementPush",
     "pages/message/businessPush/businessPush",
-    "pages/mine/me"
+    "pages/mine/me",
+    "pagesHelp/helpIndex/helpIndex",
+    "pagesHelp/myHelp/myHelp",
+    "pagesHelp/myApply/myApply",
+    "pagesHelp/surveyIndex/surveyIndex",
+    "pagesHelp/surveyRecord/surveyRecord",
+    "pagesHelp/staffLogin/staffLogin"
   ],
   "subPackages": [
     {
