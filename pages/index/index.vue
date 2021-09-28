@@ -225,10 +225,10 @@
 						"政策解读", "换届选举", "土地承包", "村长信箱", "房屋租赁", "二手市场", "村务监督", "精准帮扶","实时公交", "我要报修"
 					],
 					VillagePartyDescripetion: [
-						"最新的乡村政策资讯",
-						"选举新一届乡村干部",
+						"最新乡村资讯",
+						"换届选举",
 						"乡村土地承包事务",
-						"村长信箱倾听心声",
+						"村长信箱",
 						"乡村民宿宾至如归",
 						"你所爱的都在这里",
 						"权力透明制度公开",
@@ -237,16 +237,16 @@
 						"有事我来帮",
 					],
 					VillagePartyTitleImageUrl: [
-						"http://p1362.bvimg.com/10465/7f4763358d4dada6.png",
-						"http://p1362.bvimg.com/10465/71814c662f242be1.png",
-						"http://p1362.bvimg.com/10465/4cc0018e009ece23.png",
-						"http://p1362.bvimg.com/10465/950715978bdf8348.png",
-						"http://p1362.bvimg.com/10465/7672bfb364fcb889.png",
-						"http://p1362.bvimg.com/10465/470d5a8fd3df6ad2.png",
+						"http://p1362.bvimg.com/10465/ee1c90f838c78faa.png",
+						"http://p1362.bvimg.com/10465/0ba66bdeed40ec01.png",
+						"http://p1362.bvimg.com/10465/dff0a5837c5d2e0f.png",
+						"http://p1362.bvimg.com/10465/e6942aad527c8000.png",
+						"http://p1362.bvimg.com/10465/6f82f53acc79f294.png",
+						"http://p1362.bvimg.com/10465/2c59396b12ab0c41.png",
 						// "http://p1362.bvimg.com/10465/796400e28e3cbab2.png",
-						"http://p1362.bvimg.com/10465/3c309d7aa4bac16e.png",
-						"http://p1362.bvimg.com/10465/ffdf9a711b41a235.png",
-						"http://p1362.bvimg.com/10465/91b1c80e585e5cd2.png",//实时公交
+						"http://p1362.bvimg.com/10465/c7ae9deebb088bd8.png",
+						"http://p1362.bvimg.com/10465/71cd950d37ec010d.png",
+						"http://p1362.bvimg.com/10465/7a61c9d5a12a4580.png",//实时公交
 						// "http://p1362.bvimg.com/10465/fe79bc86a6854375.png",乡村快递
 						"http://p1362.bvimg.com/10465/b3d8800d3950de8a.png",
 					]
@@ -284,11 +284,12 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 20rpx 30rpx;
 	}
 
 	.index-swiper {
 		height: 360rpx;
-		width: 670rpx;
+		width: 100%;
 		margin: 24rpx 0 16rpx 0;
 		border-radius: 20rpx;
 		overflow: hidden;
@@ -296,7 +297,7 @@
 
 	.index-swiper-image image {
 		height: 360rpx;
-		width: 670rpx;
+		width: 100%;
 	}
 
 	.index-blog {
@@ -304,7 +305,7 @@
 		border-radius: 20rpx;
 		margin: 10rpx 10rpx;
 		margin-bottom: 10rpx;
-		width: 670rpx;
+		width: 100%;
 		height: 120rpx;
 		display: flex;
 		flex-direction: row;
@@ -376,7 +377,6 @@
 	}
 
 	.index-VillageParty {
-		width: 670rpx;
 		/* height: 500rpx; */
 		margin: 10rpx;
 		/* background: green; */
@@ -384,7 +384,6 @@
 
 	.index-ServieceToPeople {
 		margin-top: 10rpx;
-		width: 670rpx;
 		height: 480;
 	}
 
@@ -418,19 +417,19 @@
 	}
 
 	.index-VillageParty-content-onePart-left {
-		width: 300rpx;
+		width: 310rpx;
 		height: 114rpx;
 		background: white;
 		border-radius: 20rpx;
-		margin: 0 16rpx;
+		margin: 0 10rpx;
 		position: relative;
 	}
 	.index-VillageParty-content-onePart-noShow {
-		width: 300rpx;
+		width: 310rpx;
 		height: 114rpx;
 		/* background: white; */
 		border-radius: 20rpx;
-		margin: 0 16rpx;
+		margin: 0 10rpx;
 		position: relative;
 	}
 

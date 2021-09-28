@@ -189,7 +189,7 @@ export default {
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 1;
 	overflow: hidden;
-	font-size: 28rpx;
+	font-size: 32rpx;
 }
 
 .placeholder {

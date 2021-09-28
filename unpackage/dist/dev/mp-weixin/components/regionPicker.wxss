@@ -29,7 +29,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   overflow: hidden;
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 .placeholder.data-v-68e85e5d {
   color: #949596;

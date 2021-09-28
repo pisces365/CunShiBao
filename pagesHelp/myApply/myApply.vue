@@ -26,9 +26,10 @@
 					户籍
 				</view>
 				<view class="repair-input">
-					<picker mode="multiSelector" class="uni-input" @change="bindPickerChange" @columnchange="bindIndexChange" :range="problemType" style="position: relative;">
+					<!-- <picker mode="multiSelector" class="uni-input" @change="bindPickerChange" @columnchange="bindIndexChange" :range="problemType" style="position: relative;">
 						<label class="">{{problemType[0][typeIndex]}}-{{problemItems1[typeIndex][typeItems1]}}-{{problemItems2[typeIndex][typeItems2]}}</label>
-					</picker>
+					</picker> -->
+					<RegionPicker class="uni-input2" @change="onChangeRegion"></RegionPicker>
 				</view>
 			</view>
 		</view>
@@ -122,7 +123,11 @@
 </template>
 
 <script>
+	import RegionPicker from '@/components/regionPicker.vue'
 	export default {
+		components: {
+			RegionPicker
+		},
 		data() {
 			return {
 				price:"0.00",
@@ -167,6 +172,13 @@
 						})
 		},
 		methods: {
+			onChangeRegion(region) {
+				// console.log('选择的省市区数据：', region);
+				var _this = this;
+				_this.province = region[0].name;
+				_this.city = region[1].name;
+				_this.district = region[2].name;
+			},
 			get_imgArrLength() {
 				// console.log(this.imgArr.length);
 				if(this.imgArr.length >= 4) 
@@ -419,6 +431,17 @@
 		font-size: 32rpx;
 		color: #A6A7A6;
 		line-height: 40rpx;
+		/* margin-right: 20rpx; */
+	}
+	
+	.uni-input2 {
+		/* border: 0.5px solid #A6A7A6; */
+		border-radius: 12rpx;
+		padding: 1rpx;
+		/* padding-bottom: 2rpx; */
+		font-size: 32rpx;
+		color: #A6A7A6;
+		/* line-height: 44rpx; */
 		/* margin-right: 20rpx; */
 	}
 	
