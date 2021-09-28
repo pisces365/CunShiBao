@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "村事宝",
+  "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#FEF0D2",
   "usingComponents": {}
 }

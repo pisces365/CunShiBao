@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "出租",
+  "navigationBarTitleText": "民宿出租",
   "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#CBE3FB",
   "usingComponents": {}
 }

@@ -129,9 +129,8 @@
 	}
 
 	.me {
-		margin: 20rpx;
-		margin-top: 40rpx;
-		padding: 20rpx 30rpx;
+		margin: 10rpx;
+		padding: 20rpx 40rpx;
 		display: flex;
 		flex-direction: column;
 		align-items: center;

@@ -2,5 +2,6 @@
   "navigationBarTitleText": "我的帮扶",
   "enablePullDownRefresh": false,
   "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#5f7bf9"
+  "navigationBarBackgroundColor": "#5f7bf9",
+  "usingComponents": {}
 }

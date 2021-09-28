@@ -2,12 +2,8 @@
   "navigationBarTitleText": "帮扶申报",
   "enablePullDownRefresh": false,
   "navigationBarTextStyle": "white",
-<<<<<<< HEAD
-  "navigationBarBackgroundColor": "#5f7bf9"
-=======
   "navigationBarBackgroundColor": "#5f7bf9",
   "usingComponents": {
     "region-picker": "/components/regionPicker"
   }
->>>>>>> 361bf3dd60943dca26db3dec129d301e760dbf08
 }

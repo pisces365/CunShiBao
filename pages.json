@@ -10,7 +10,16 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "村事宝"
+				"navigationBarTitleText": "村事宝",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#FEF0D2",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "村事宝"
+					}
+				}
 			}
 		},
 		{
@@ -80,7 +89,15 @@
 			"path": "pages/mine/me",
 			"style": {
 				"navigationBarTitleText": "个人主页",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#FEF0D2",
+				"app-plus": {
+					"titleNView": {
+						"type": "float",
+						"titleText": "个人主页"
+					}
+				}
 			}
 		},
 		{
@@ -270,8 +287,16 @@
 				{
 					"path": "rent/rent_index/rent_index",
 					"style": {
-						"navigationBarTitleText": "出租",
-						"enablePullDownRefresh": false
+						"navigationBarTitleText": "民宿出租",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "black",
+						"navigationBarBackgroundColor": "#CBE3FB",
+						"app-plus": {
+							"titleNView": {
+								"type": "float",
+								"titleText": "民宿出租"
+							}
+						}
 					}
 				},
 				{

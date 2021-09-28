@@ -274,9 +274,8 @@ page {
 	background-size: 100% 100%;
 }
 .me {
-	margin: 20rpx;
-	margin-top: 40rpx;
-	padding: 20rpx 30rpx;
+	margin: 10rpx;
+	padding: 20rpx 40rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
