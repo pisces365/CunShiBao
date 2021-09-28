@@ -422,6 +422,7 @@
 	
 	.repair-input {
 		flex: 4;
+		position: relative;
 	}
 	
 	.repair-input .uni-input {
@@ -435,9 +436,11 @@
 	}
 	
 	.uni-input2 {
+		position: absolute;
+		top:10rpx;
 		/* border: 0.5px solid #A6A7A6; */
 		border-radius: 12rpx;
-		padding: 1rpx;
+		/* padding: 1rpx; */
 		/* padding-bottom: 2rpx; */
 		font-size: 32rpx;
 		color: #A6A7A6;
