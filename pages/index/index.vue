@@ -9,6 +9,7 @@
 				</view>
 			</swiper-item>
 		</swiper>
+		
 		<view class="index-blog">
 			<view class="index-blog-left">
 				<image src="http://p1362.bvimg.com/10465/7d1de6bb8f0e7dfd.png" lazy-load="true" mode=""></image>
