@@ -94,7 +94,7 @@ var components
 try {
   components = {
     citySelect: function() {
-      return Promise.all(/*! import() | components/city-select/city-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/city-select/city-select")]).then(__webpack_require__.bind(null, /*! @/components/city-select/city-select.vue */ 513))
+      return Promise.all(/*! import() | components/city-select/city-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/city-select/city-select")]).then(__webpack_require__.bind(null, /*! @/components/city-select/city-select.vue */ 519))
     }
   }
 } catch (e) {
@@ -166,7 +166,7 @@ var _citys = _interopRequireDefault(__webpack_require__(/*! ./citys.js */ 312));
 //
 //
 //
-console.log(_citys.default.length);var citySelect = function citySelect() {Promise.all(/*! require.ensure | components/city-select/city-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/city-select/city-select")]).then((function () {return resolve(__webpack_require__(/*! @/components/city-select/city-select.vue */ 513));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { data: function data() {return { //需要构建索引参数的名称（注意：传递的对象里面必须要有这个名称的参数）
+console.log(_citys.default.length);var citySelect = function citySelect() {Promise.all(/*! require.ensure | components/city-select/city-select */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/city-select/city-select")]).then((function () {return resolve(__webpack_require__(/*! @/components/city-select/city-select.vue */ 519));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { data: function data() {return { //需要构建索引参数的名称（注意：传递的对象里面必须要有这个名称的参数）
       formatName: 'title', //当前城市
       activeCity: {
         id: 1,

@@ -141,168 +141,172 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      houseInfo: {},
-      dateTime: '',
-      dateTimeToPost: '',
-      currentDate: new Date().toISOString().slice(0, 10),
-      currentIndex: -1,
-      detailList: [{
-        'title': '08:00-09:00',
-        'value': 't1' },
-
-      {
-        'title': '09:00-10:00',
-        'value': 't2' },
-
-      {
-        'title': '10:00-11:00',
-        'value': 't3' },
-
-      {
-        'title': '11:00-12:00',
-        'value': 't4' },
-
-      {
-        'title': '14:00-15:00',
-        'value': 't5' },
-
-      {
-        'title': '15:00-16:00',
-        'value': 't6' },
-
-      {
-        'title': '16:00-17:00',
-        'value': 't7' },
-
-      {
-        'title': '17:00-18:00',
-        'value': 't8' },
-      {
-        'title': '18:00-19:00',
-        'value': 't9' },
-      {
-        'title': '19:00-20:00',
-        'value': 't10' },
-      {
-        'title': '21:00-22:00',
-        'value': 't11' }] };
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
-  },
-  methods: {
-    //处理日期选择组件的日期数据
-    getDate: function getDate(type) {
 
-      var date = new Date();
-      var year = date.getFullYear();
-      var month = date.getMonth() + 1;
-      var day = date.getDate();
 
-      if (type == 'start') {
-        year = year - 5; //设置年份区间
-      } else if (type == 'end') {
-        year = year + 5;
-      }
-      month = month > 9 ? month : '0' + month;;
-      day = day > 9 ? day : '0' + day;
-      return "".concat(year, "-").concat(month, "-").concat(day);
-    },
-    timeSelect: function timeSelect(tindex) {
-      this.currentIndex = tindex;
-      // console.log(this.currentIndex);
-    },
-    //选择日期，获取选择结果
-    selectDate: function selectDate(e) {
-      var _this = this;
-      _this.dateTime = e.target.value;
-    },
-    submit: function submit() {
-      var _this = this;
-      var userId = uni.getStorageSync('userId');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _api = __webpack_require__(/*! ../../../common/api.js */ 20); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { houseInfo: {}, dateTime: '', dateTimeToPost: '', currentDate: new Date().toISOString().slice(0, 10), currentIndex: -1, detailList: [{ 'title': '08:00-09:00', 'value': 't1' }, { 'title': '09:00-10:00', 'value': 't2' }, { 'title': '10:00-11:00', 'value': 't3' }, { 'title': '11:00-12:00', 'value': 't4' }, { 'title': '14:00-15:00', 'value': 't5' }, { 'title': '15:00-16:00', 'value': 't6' }, { 'title': '16:00-17:00', 'value': 't7' }, { 'title': '17:00-18:00', 'value': 't8' }, { 'title': '18:00-19:00', 'value': 't9' }, { 'title': '19:00-20:00', 'value': 't10' }, { 'title': '21:00-22:00', 'value': 't11' }] };}, methods: { //处理日期选择组件的日期数据
+    getDate: function getDate(type) {var date = new Date();var year = date.getFullYear();var month = date.getMonth() + 1;var day = date.getDate();if (type == 'start') {year = year - 5; //设置年份区间
+      } else if (type == 'end') {year = year + 5;}month = month > 9 ? month : '0' + month;;day = day > 9 ? day : '0' + day;return "".concat(year, "-").concat(month, "-").concat(day);}, timeSelect: function timeSelect(tindex) {this.currentIndex = tindex; // console.log(this.currentIndex);
+    }, //选择日期，获取选择结果
+    selectDate: function selectDate(e) {var _this = this;_this.dateTime = e.target.value;}, submit: function submit() {var _this2 = this;var _this = this;var userId = uni.getStorageSync('userId');
       if (_this.dateTime == '') {
         uni.showToast({
           title: '请选择看房时间',
@@ -316,13 +320,35 @@ var _default =
           duration: 2000 });
 
       } else {
-        console.log(_this.dateTime);
-        console.log(userId);
-        uni.showToast({
-          title: '提交成功',
-          icon: 'success',
-          duration: 2000 });
+        var data = {
+          "hostId": _this.houseInfo.id,
+          "orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title,
+          "rentId": userId };
 
+        console.log(data);
+        (0, _api.houseOrderAdd)(data).then(function (res) {
+          if (res.code == "200") {
+            uni.showToast({
+              title: '预约成功',
+              icon: 'success',
+              duration: 2000 });
+
+            _this2.timer = setInterval(function () {
+              var _this = _this2;
+              var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
+              uni.redirectTo({
+                url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo });
+
+            }, 1000);
+          }
+        });
+        // this.timer = setInterval(() => {
+        // 	let _this = this;
+        // 	var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
+        // 	uni.redirectTo({
+        // 		url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo
+        // 	})
+        // }, 1000)
       }
     } },
 
@@ -331,6 +357,11 @@ var _default =
     var data = JSON.parse(options.houseInfo); // 字符串转对象
     that.houseInfo = data;
     console.log(that.houseInfo);
+  },
+  beforeDestroy: function beforeDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+    }
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

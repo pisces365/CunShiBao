@@ -29,7 +29,8 @@
 					<view class="rentOwner-info">
 						<view class="rentOwner-info-left">
 							<view class="rentOwner-info-name">
-								<text class="hostName">{{houseInfo.hostRoughVo.name}}</text> <text class="hostDsc">优质房东</text>
+								<text class="hostName">{{houseInfo.hostRoughVo.name}}</text> <text
+									class="hostDsc">优质房东</text>
 							</view>
 							<view class="rentOwner-info-address">
 								{{houseInfo.location}}
@@ -62,7 +63,7 @@
 				</view>
 				<view class="time-select">
 					<view class="time-detail" v-for="(item,index) in detailList" :key="index" @click="timeSelect(index)"
-						:style="currentIndex==index?'background-color: #3dd032;':''">
+						:style="currentIndex==index?'background-color: #2abffe;':''">
 						<text class="time-text" :style="currentIndex==index?'color: #fff;':''">{{item.title}}</text>
 					</view>
 				</view>
@@ -78,12 +79,15 @@
 </template>
 
 <script>
+	import {
+		houseOrderAdd
+	} from '../../../common/api.js'
 	export default {
 		data() {
 			return {
 				houseInfo: {},
 				dateTime: '',
-				dateTimeToPost:'',
+				dateTimeToPost: '',
 				currentDate: new Date().toISOString().slice(0, 10),
 				currentIndex: -1,
 				detailList: [{
@@ -133,7 +137,7 @@
 		methods: {
 			//处理日期选择组件的日期数据
 			getDate(type) {
-				
+
 				const date = new Date();
 				let year = date.getFullYear();
 				let month = date.getMonth() + 1;
@@ -172,14 +176,36 @@
 						icon: 'none',
 						duration: 2000
 					})
-				}else{
-					console.log(_this.dateTime);
-					console.log(userId);
-					uni.showToast({
-						title: '提交成功',
-						icon: 'success',
-						duration: 2000
+				} else {
+					var data = {
+						"hostId": _this.houseInfo.id,
+						"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title,
+						"rentId": userId
+					}
+					console.log(data);
+					houseOrderAdd(data).then((res) => {
+						if (res.code == "200") {
+							uni.showToast({
+								title: '预约成功',
+								icon: 'success',
+								duration: 2000
+							})
+							this.timer = setInterval(() => {
+								let _this = this;
+								var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
+								uni.redirectTo({
+									url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo
+								})
+							}, 1000)
+						}
 					})
+					// this.timer = setInterval(() => {
+					// 	let _this = this;
+					// 	var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
+					// 	uni.redirectTo({
+					// 		url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo
+					// 	})
+					// }, 1000)
 				}
 			}
 		},
@@ -188,6 +214,11 @@
 			var data = JSON.parse(options.houseInfo); // 字符串转对象
 			that.houseInfo = data;
 			console.log(that.houseInfo)
+		},
+		beforeDestroy() {
+			if (this.timer) {
+				clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+			}
 		}
 	}
 </script>
@@ -398,7 +429,7 @@
 		padding: 20rpx;
 		font-size: 44rpx;
 		color: white;
-		background: #4CD964;
+		background: #2abffe;
 		font-weight: bold;
 	}
 </style>

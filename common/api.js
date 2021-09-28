@@ -94,11 +94,16 @@ export function houseDetail(id) {
 	})
 }
 //添加房屋预约信息
-export function houseOrderAdd(id) {
+export function houseOrderAdd(data) {
 	return new Promise(function(reslove, reject) {
+		var token = uni.getStorageSync('token');
 		uni.request({
 			url: `${baseUrl}/houseRent/order/add`,
 			method: 'POST',
+			data: data,
+			header: {
+				"authorization": token
+			},
 			success: res => {
 				let result = res.data;
 				console.log('增加预约信息', result);

@@ -13,27 +13,9 @@
     "miniprogram": {
       "list": [
         {
-          "id": 0,
-          "name": "我的",
-          "pathName": "pages/mine/mine",
-          "query": ""
-        },
-        {
           "id": 1,
           "name": "民宿详情",
           "pathName": "pagesA/rent/rentType/rentType",
-          "query": ""
-        },
-        {
-          "id": 2,
-          "name": "手机号注册",
-          "pathName": "pagesA/rent/phoneRegistration/phoneRegistration",
-          "query": ""
-        },
-        {
-          "id": 3,
-          "name": "预定房源",
-          "pathName": "pagesA/rent/rentOrder/rentOrder",
           "query": ""
         },
         {
@@ -41,12 +23,6 @@
           "name": "信息填写",
           "pathName": "pagesA/rent/host_qualification/host_qualification",
           "query": ""
-        },
-        {
-          "name": "我的工单",
-          "pathName": "pagesB/myWorkOrder/myWorkOrder",
-          "query": "",
-          "scene": null
         },
         {
           "name": "房屋出租列表",
@@ -67,8 +43,9 @@
           "scene": null
         },
         {
-          "name": "首页",
-          "pathName": "pages/index/index",
+          "name": "pagesA/rent/rent_orderDetail/rent_orderDetail",
+          "pathName": "pagesA/rent/rent_orderDetail/rent_orderDetail",
+          "query": "",
           "scene": null
         }
       ]

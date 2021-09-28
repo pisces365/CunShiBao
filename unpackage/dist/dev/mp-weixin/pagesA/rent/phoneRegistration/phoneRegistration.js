@@ -327,7 +327,13 @@ var _api = __webpack_require__(/*! ../../../common/api.js */ 20);function _inter
           }
         }, 1000);
       }
-    } } };exports.default = _default;
+    } },
+
+  beforeDestroy: function beforeDestroy() {
+    if (this.timer) {
+      clearInterval(this.timer); // 在Vue实例销毁前，清除我们的定时器
+    }
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

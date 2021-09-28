@@ -47,7 +47,9 @@
         "rent/rentOrder/rentOrder",
         "rent/rentType/rentType",
         "rent/host_qualification/host_qualification",
-        "rent/host_qualification/citys/citys"
+        "rent/host_qualification/citys/citys",
+        "rent/rent_orderDetail/rent_orderDetail",
+        "rent/rent_orderDetail/rent_orderCancel"
       ]
     },
     {
@@ -142,6 +144,5 @@
       ]
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

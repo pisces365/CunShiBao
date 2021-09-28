@@ -191,11 +191,9 @@
 			}
 		}
 	],
-	"subPackages": [
-		{
+	"subPackages": [{
 			"root": "mine",
-			"pages": [
-				{
+			"pages": [{
 					"path": "personalInfo/personalInfo",
 					"style": {
 						"navigationBarTitleText": "个人信息",
@@ -234,8 +232,7 @@
 		},
 		{
 			"root": "pagesA",
-			"pages": [
-				{
+			"pages": [{
 					"path": "election/personalDetails/personalDetails",
 					"style": {
 						"navigationBarTitleText": "个人详情",
@@ -347,13 +344,42 @@
 						"navigationBarTitleText": "城市选择",
 						"enablePullDownRefresh": false
 					}
+				}, {
+					"path": "rent/rent_orderDetail/rent_orderDetail",
+					"style": {
+						"navigationBarTitleText": "预约详情",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "white",
+						"navigationBarBackgroundColor": "#2F9BFE",
+						"app-plus": {
+							"titleNView": {
+								"type": "float",
+								"titleText": "预约详情"
+							}
+						}
+					}
+
+				}, {
+					"path": "rent/rent_orderDetail/rent_orderCancel",
+					"style": {
+						"navigationBarTitleText": "预约详情",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "white",
+						"navigationBarBackgroundColor": "#a8a8a8",
+						"app-plus": {
+							"titleNView": {
+								"type": "float",
+								"titleText": "预约详情"
+							}
+						}
+					}
+
 				}
 			]
 		},
 		{
 			"root": "pagesB",
-			"pages": [
-				{
+			"pages": [{
 					"path": "maintenanceDetails/maintenanceDetails",
 					"style": {
 						"navigationBarTitleText": "维修详情",
@@ -392,8 +418,7 @@
 		},
 		{
 			"root": "pagesBus",
-			"pages": [
-				{
+			"pages": [{
 					"path": "info/info",
 					"style": {
 						"navigationBarTitleText": "实时公交",
@@ -425,8 +450,7 @@
 		},
 		{
 			"root": "pagesMarket",
-			"pages": [
-				{
+			"pages": [{
 					"path": "buy/buy",
 					"style": {
 						"navigationBarTitleText": "商品详情",
@@ -503,8 +527,7 @@
 		"selectedColor": "#3cc51f",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
-		"list": [
-			{
+		"list": [{
 				"pagePath": "pages/index/index",
 				"iconPath": "static/image/home.png",
 				"selectedIconPath": "static/image/home-acitve.png",
@@ -532,8 +555,7 @@
 	},
 	"condition": { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式（list 的索引项）
-		"list": [
-			{
+		"list": [{
 				"name": "我的",
 				"path": "pages/mine/mine"
 			},

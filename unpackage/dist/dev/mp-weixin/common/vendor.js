@@ -9007,11 +9007,16 @@ function houseDetail(id) {
   });
 }
 //添加房屋预约信息
-function houseOrderAdd(id) {
+function houseOrderAdd(data) {
   return new Promise(function (reslove, reject) {
+    var token = uni.getStorageSync('token');
     uni.request({
       url: "".concat(_config.baseUrl, "/houseRent/order/add"),
       method: 'POST',
+      data: data,
+      header: {
+        "authorization": token },
+
       success: function success(res) {
         var result = res.data;
         console.log('增加预约信息', result);
@@ -10120,7 +10125,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 375:
+/***/ 381:
 /*!***********************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/amap-uni.js ***!
   \***********************************************************************************/
@@ -10574,7 +10579,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 461:
+/***/ 467:
 /*!**********************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/components/region.json ***!
   \**********************************************************************************************/
@@ -10585,7 +10590,7 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
-/***/ 518:
+/***/ 524:
 /*!************************************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/components/city-select/citySelect.js ***!
   \************************************************************************************************************/
@@ -10632,7 +10637,7 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
-/***/ 554:
+/***/ 560:
 /*!***************************************************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************************************/
