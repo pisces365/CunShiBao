@@ -160,17 +160,19 @@
 			AreaPicker(e) {
 				let _this = this;
 				_this.info.AreaIndex = e.detail.value
-				_this.AreaArray[0] = '全部村庄'
+				
 				//表示选择全部
 				if (_this.info.AreaIndex == 0) {
 					let data = {}
 					if (_this.info.rentTypeIndex == 0) {
+						_this.AreaArray[0] = '地区分类'
 						data = {
 							maxPrice: _this.maxPrice,
 							minPrice: _this.minPrice,
 							closest: _this.ifNestest,
 						}
 					} else {
+						_this.AreaArray[0] = '全部村庄'
 						data = {
 							maxPrice: _this.maxPrice,
 							minPrice: _this.minPrice,

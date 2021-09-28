@@ -310,8 +310,10 @@ var _default = { onLoad: function onLoad() {var _this = this;uni.showLoading({ t
       maxPrice: '', //最高价格
       minPrice: '', //最低价格
       ifNestest: 0, //是否选择最近距离排序 0:不就近排序 1就近排序
-      info: { AreaIndex: 0, PriceIndex: 0, rentTypeIndex: 0 }, villegeInfo: [], AreaArray: ['地区分类'], PriceArray: ['价格区间', '1k以下', '1k-1.5k', '1.5k-2k', '2k-2.5k', '2.5k-3k', '3k-3.5k', '3.5k-4k', '4k以上'], rentTypeArray: ['出租类型', '整租', '合租', '长租', '短租'] };}, methods: { AreaPicker: function AreaPicker(e) {var _this = this;_this.info.AreaIndex = e.detail.value;_this.AreaArray[0] = '全部村庄'; //表示选择全部
-      if (_this.info.AreaIndex == 0) {var data = {};if (_this.info.rentTypeIndex == 0) {data = { maxPrice: _this.maxPrice, minPrice: _this.minPrice, closest: _this.ifNestest };} else {data = { maxPrice: _this.maxPrice, minPrice: _this.minPrice, closest: _this.ifNestest, type: _this.rentTypeArray[_this.info.rentTypeIndex] };}(0, _api.houseList)(data).then(function (res) {if (res.code == "200") {
+      info: { AreaIndex: 0, PriceIndex: 0, rentTypeIndex: 0 }, villegeInfo: [], AreaArray: ['地区分类'], PriceArray: ['价格区间', '1k以下', '1k-1.5k', '1.5k-2k', '2k-2.5k', '2.5k-3k', '3k-3.5k', '3.5k-4k', '4k以上'], rentTypeArray: ['出租类型', '整租', '合租', '长租', '短租'] };}, methods: { AreaPicker: function AreaPicker(e) {var _this = this;_this.info.AreaIndex = e.detail.value; //表示选择全部
+      if (_this.info.AreaIndex == 0) {var data = {};if (_this.info.rentTypeIndex == 0) {_this.AreaArray[0] = '地区分类';data = { maxPrice: _this.maxPrice, minPrice: _this.minPrice, closest: _this.ifNestest };} else {_this.AreaArray[0] = '全部村庄';data = { maxPrice: _this.maxPrice, minPrice: _this.minPrice, closest: _this.ifNestest, type: _this.rentTypeArray[_this.info.rentTypeIndex] };}
+        (0, _api.houseList)(data).then(function (res) {
+          if (res.code == "200") {
             // 选择版本
             _this.houseList = res.data;
             for (var i = 0; i < _this.houseList.length; i++) {
