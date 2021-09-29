@@ -231,10 +231,11 @@ var _amapUni = _interopRequireDefault(__webpack_require__(/*! ../../amap-uni.js 
 //
 //
 //
-var _default = { data: function data() {return { scale: 14, pageHeight: 0, currentY: 0, ty: 0, mapHeight: 720, lastY: 720, bottomHeight: 400, bus: [{ route: "102路", bond: "公交总站" }, { route: "193路", bond: "公交总站" }, { route: "7476路", bond: "公交总站" }, { route: "310B路高峰线", bond: "公交总站" }, { route: "310B路高峰线", bond: "公交总站" }], station: ["水口", "屏风", "留下"], // markers:[] 这个数组一定要有两个 代表起点和终点的样式和位置
+var _default = { data: function data() {return { scale: 14, pageHeight: 0, currentY: 0, ty: 0, mapHeight: 720, lastY: 720, bottomHeight: 400, bus: [{ route: "236M路", bond: "文三路" }, { route: "193路", bond: "环北新村" }, { route: "7467路", bond: "午潮山公交站" }, { route: "310路", bond: "午潮山公交站" }, { route: "382路", bond: "梦想小镇" }], station: ["水口", "屏峰", "留下", "西溪医院·横街"], // markers:[] 这个数组一定要有两个 代表起点和终点的样式和位置
       markers: [{ iconPath: "http://p1362.bvimg.com/10465/b27c2fbdf44267d7.png", // 起点
         id: 0, latitude: '30.241823', longitude: '120.035148', width: 24, height: 24 }, { iconPath: "http://p1362.bvimg.com/10465/1c41610ad5093738.png", // 中间点
-        id: 1, latitude: '30.24956', longitude: '120.190088', width: 24,
+        id: 1, latitude: '30.24956', longitude: '120.190088',
+        width: 24,
         height: 24 },
 
       {

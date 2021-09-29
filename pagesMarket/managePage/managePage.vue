@@ -4,77 +4,77 @@
 			<view class="index" v-show="ifLoading">
 				<view class="secondHandItems">
 					<navigator url="../../pagesMarket/secondHandDetails/secondHandDetails" class="secondHandItem">
+						<viewx>
+							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/16896eec50403428.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+						</viewx>
 						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
+							<text class="goods-name">足力健老人鞋</text>
 						</view>
 						<view class="">
-							<text class="brand-and-condition">品质</text>
+							<text class="brand-and-condition">运动风 运动鞋</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
+							<text class="brand-and-condition">足力健老人鞋</text>
 						</view>
 						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
+							<text class="price-now">￥329</text>
+							<text class="price-before">￥400</text>
+							<text class="discount">已减￥71</text>
 						</view>
 					</navigator>
 					<navigator url="../../pagesMarket/secondHandDetails/secondHandDetails" class="secondHandItem">
+						<viewx>
+							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+						</viewx>
 						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
+							<text class="goods-name">价值为纲-华为内训精选图书</text>
 						</view>
 						<view class="">
-							<text class="brand-and-condition">品质</text>
+							<text class="brand-and-condition">正版</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
+							<text class="brand-and-condition">华为</text>
 						</view>
 						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
+							<text class="price-now">￥102</text>
+							<text class="price-before">￥118</text>
+							<text class="discount">已减￥16</text>
 						</view>
 					</navigator>
 				</view>
 				<view class="secondHandItems">
 					<navigator url="../../pagesMarket/secondHandDetails/secondHandDetails" class="secondHandItem">
+						<viewx>
+							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png"  style="width: 340rpx;" mode="aspectFill"></image>
+						</viewx>
 						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
+							<text class="goods-name">索爱 SA-L28 电脑麦克风</text>
 						</view>
 						<view class="">
-							<text class="brand-and-condition">品质</text>
+							<text class="brand-and-condition">无线 内置电池</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
+							<text class="brand-and-condition">意创生活</text>
 						</view>
 						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
+							<text class="price-now">￥239</text>
+							<text class="price-before">￥260</text>
+							<text class="discount">已减￥21</text>
 						</view>
 					</navigator>
 					<navigator url="../../pagesMarket/secondHandDetails/secondHandDetails" class="secondHandItem">
+						<viewx>
+							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/1f1f04d7af08b655.png"  style="width: 340rpx;" mode="aspectFill"></image>
+						</viewx>
 						<view>
-							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;"></image>
-						</view>
-						<view>
-							<text class="goods-name">二手商品名称</text>
+							<text class="goods-name">华为 Mate40 5G 手机</text>
 						</view>
 						<view class="">
-							<text class="brand-and-condition">品质</text>
+							<text class="brand-and-condition">8GB运存 256GB</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
+							<text class="brand-and-condition">华为</text>
 						</view>
 						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
+							<text class="price-now">￥4999</text>
+							<text class="price-before">￥6569</text>
+							<text class="discount">已减￥1570</text>
 						</view>
 					</navigator>
 				</view>

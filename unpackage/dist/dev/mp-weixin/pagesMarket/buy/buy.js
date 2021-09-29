@@ -218,7 +218,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 var _default =
 {
   data: function data() {
@@ -244,7 +243,7 @@ var _default =
         description: '暗黑工业风Loft投影双床房 / 步行至解放碑洪崖洞 / 下楼即达地铁站 / 免费寄存行李',
         locationStreet: '解放碑洪崖洞',
         locationDetail: '怡景花城',
-        label: ['南北', '近地铁', '精装修', '有电梯'],
+        label: ['轻薄', '软弹', '透气', '防滑'],
         price: 4500,
         RoomInfo: '3',
         hourseAream: '58.70',
