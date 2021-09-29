@@ -258,7 +258,7 @@
 		position: fixed;
 	} */
 
-	.back-img {
+	.back-img { 
 		background-image: url(http://p1362.bvimg.com/10465/71891679f8612389.png);
 		background-position: 40rpx -0rpx;
 		background-size: 120rpx;
