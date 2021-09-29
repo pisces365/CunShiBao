@@ -22,7 +22,7 @@
 							<image class="hostImage" :src="houseInfo.hostRoughVo.avatarUrl" mode=""></image>
 						</view>
 						<view class="rentDetail_center-top-name">
-							{{houseInfo.hostRoughVo.name}} 
+							{{houseInfo.hostRoughVo.name}}
 						</view>
 					</view>
 					<view class="rentDetail_center-top-right">
@@ -35,7 +35,7 @@
 				<view class="cross-line"></view>
 				<view class="rentDetail_center-bottom">
 					<text>预约</text>
-					<text>{{'10月4日'+' '+'星期一'+' '+'下午10:00'}}</text>
+					<text>{{watchHouse_date+' '+watchHouse_time}}</text>
 					<text>看房</text>
 				</view>
 			</view>
@@ -74,7 +74,7 @@
 			<view class="cancelOrder" @click="cancelOrder()">
 				取消看房
 			</view>
-			<view class="reminder">
+			<view class="reminder" @click="cuidan()">
 				催单
 			</view>
 		</view>
@@ -88,11 +88,15 @@
 			let that = this;
 			var data = JSON.parse(options.houseInfo); // 字符串转对象
 			that.houseInfo = data;
+			that.watchHouse_date = options.watchHouse_date;
+			that.watchHouse_time = options.watchHouse_time;
 			console.log(that.houseInfo)
 		},
 		data() {
 			return {
-				houseInfo: {}
+				houseInfo: {},
+				watchHouse_date: '',
+				watchHouse_time: ''
 			}
 		},
 		methods: {
@@ -100,14 +104,22 @@
 				let _this = this;
 				var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
 				uni.redirectTo({
-					url: './rent_orderCancel?houseInfo=' + houseInfo
+					url: './rent_orderCancel?houseInfo=' + houseInfo + '&&watchHouse_date=' + _this.watchHouse_date +
+						'&&watchHouse_time' + _this.watchHouse_time
 				})
 			},
-			chat(){
+			cuidan(){
 				uni.showToast({
-					title:'聊天咨询未开通',
-					icon:'none',
-					duration:2000
+					title: '催单成功',
+					icon: 'none',
+					duration: 2000
+				})
+			},
+			chat() {
+				uni.showToast({
+					title: '聊天咨询未开通',
+					icon: 'none',
+					duration: 2000
 				})
 			},
 			callHost() {

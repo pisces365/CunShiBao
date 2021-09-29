@@ -231,16 +231,22 @@
 						"beginTime": _this.date_begin,
 						"endTime": _this.date_end
 					}
-					if (Date.parse(_this.date_begin) < Date.parse(_this.date_end)) {
+					if (Date.parse(_this.dateTime) >= Date.parse(_this.date_end)) {
+						uni.showToast({
+							title: '预约看房时间不应晚于入住时间哦',
+							icon: 'none',
+							duration: 2000
+						})
+					}
+					else if (Date.parse(_this.date_begin) < Date.parse(_this.date_end)) {
 						addRenterInfo(addRenterData).then((res) => {
 							if (res.code == "200") {
 								console.log('租客信息添加成功', res);
 								_this.houseInfo.inviteTime = res.time;
 								var data = {
-									"hostId": _this.houseInfo.id,
-									"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex]
-										.title + ":00",
-									"rentId": userId
+									"hostId": _this.houseInfo.hostRoughVo.id,
+									"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title.substr(0,5) + ":00",
+									"rentId": _this.houseInfo.id
 								}
 								houseOrderAdd(data).then((res) => {
 									if (res.code == "200") {
@@ -251,11 +257,11 @@
 										})
 										this.timer = setInterval(() => {
 											let _this = this;
-											var houseInfo = JSON.stringify(_this
-											.houseInfo); // 这里转换成 字符串
+											var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
+											console.log(_this.detailList[_this.currentIndex].title);
 											uni.redirectTo({
 												url: '../rent_orderDetail/rent_orderDetail?houseInfo=' +
-													houseInfo
+													houseInfo+'&&watchHouse_date='+_this.dateTime+'&&watchHouse_time='+_this.detailList[_this.currentIndex].title
 											})
 										}, 1000)
 									}

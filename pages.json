@@ -192,6 +192,18 @@
 		}
 	],
 	"subPackages": [{
+		//村务监督分包
+			"root": "pagesSupervision",
+			"pages": [{
+				//村务监督进入首页
+				"path": "pagesSupervision/superviseIndex/superviseIndex",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false
+				}
+
+			}]
+		}, {
 			"root": "mine",
 			"pages": [{
 					"path": "personalInfo/personalInfo",

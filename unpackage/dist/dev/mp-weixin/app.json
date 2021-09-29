@@ -21,6 +21,12 @@
   ],
   "subPackages": [
     {
+      "root": "pagesSupervision",
+      "pages": [
+        "pagesSupervision/superviseIndex/superviseIndex"
+      ]
+    },
+    {
       "root": "mine",
       "pages": [
         "personalInfo/personalInfo",

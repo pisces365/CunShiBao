@@ -30,7 +30,7 @@
 				<view class="cross-line"></view>
 				<view class="rentDetail_center-bottom">
 					<text>预约</text>
-					<text>{{'10月4日'+' '+'星期一'+' '+'下午10:00'}}</text>
+					<text>{{watchHouse_date+' '+watchHouse_time}}</text>
 					<text>看房</text>
 				</view>
 			</view>
@@ -59,7 +59,7 @@
 
 			</view>
 			<view class="rentDetail_content-orderTime">
-				邀请时间 : <text>2021-9-28 20:04:43</text>
+				邀请时间 : <text>{{houseInfo.inviteTime}}</text>
 			</view>
 			<view class="rentDetail_content-orderId">
 				订单编号 : <text>18620059</text>
@@ -75,11 +75,15 @@
 			let that = this;
 			var data = JSON.parse(options.houseInfo); // 字符串转对象
 			that.houseInfo = data;
+			that.watchHouse_date = options.watchHouse_date;
+			that.watchHouse_time = options.watchHouse_time;
 			console.log(that.houseInfo)
 		},
 		data() {
 			return {
-				houseInfo:{}
+				houseInfo:{},
+				watchHouse_date: '',
+				watchHouse_time: ''
 			}
 		},
 		methods: {
