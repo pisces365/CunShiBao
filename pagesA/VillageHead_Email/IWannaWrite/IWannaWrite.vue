@@ -12,10 +12,11 @@
 		<view class="IWanna-write" v-show="getTitle1()">
 			<view class="IWanna-write-myLetter" v-if="!ifClickWriting" @click="clickMail">
 				<MyLetter :info="LetterOfMine"></MyLetter>
-				<view class="IWanna-write-myLetter-click">
-					<text class="iconfont icon-shuxin"></text>
-					<view class="IWanna-write-myLetter-click-text">我要写信</view>
+				<view class="IWanna-write-myLetter-click back-img">
+					<!-- <text class="iconfont icon-shuxin"></text> -->
+					<view class="IWanna-write-myLetter-click-text back-img-text">我要写信</view>
 				</view>
+				
 			</view>
 			<view class="IWanna-write-WriteLetter" v-if="ifClickWriting">
 				<view class="IWanna-write-ifOpen">
@@ -240,8 +241,9 @@
 
 <style>
 	@import url("../../../common/iconfont.css");
+	@import url("../../../common/common_layout.css"); 
 
-	.topImage {
+	/* .topImage {
 		width: 100%;
 		height: 100%;
 
@@ -254,6 +256,19 @@
 		float: left;
 		width: 100%;
 		position: fixed;
+	} */
+
+	.back-img {
+		background-image: url(http://p1362.bvimg.com/10465/71891679f8612389.png);
+		background-position: 40rpx -0rpx;
+		background-size: 120rpx;
+		background-repeat: no-repeat;
+		/* box-shadow: 0rpx 10rpx 30rpx #dcdddc; */
+	}
+	
+	.back-img-text {
+		display: block;
+		margin-top: 120rpx !important;
 	}
 
 	.cross-line {

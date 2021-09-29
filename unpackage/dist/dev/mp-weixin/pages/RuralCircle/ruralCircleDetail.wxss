@@ -15,8 +15,6 @@ page{
 	padding: 30rpx 20rpx;
 }
 .content-item {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 }
 .cross-line{
@@ -27,12 +25,8 @@ page{
 }
 .tip{
 	width: 170rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	/* justify-content: center; */
 }
 .text{

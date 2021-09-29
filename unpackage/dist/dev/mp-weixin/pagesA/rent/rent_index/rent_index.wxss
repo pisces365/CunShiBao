@@ -296,28 +296,14 @@
   content: "\e6b3";
 }
 .rent {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 .rent-top {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
 }
 .rent-top .rent-title {
@@ -334,60 +320,32 @@
 }
 .rent-top .rent-title .rent-title-search .swiper {
   height: 70rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .rent-top .rent-title .rent-title-search .swiper .rent-title-search-content {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .rent-top .rent-title .rent-title-search .swiper .rent-title-search-content .iconfont {
   margin-right: 16rpx;
   font-size: 40rpx;
 }
 .rent-top .rent-title .rent-title-function {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   margin-top: 20rpx;
 }
 .rent-top .rent-title .rent-title-function .functionPart {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .rent-top .rent-title .rent-title-function .functionPart .functionPart-image {
   width: 130rpx;
@@ -396,42 +354,23 @@
 .rent-top .rent-classify {
   margin: 20rpx 0;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 .rent-top .rent-classify .vertical-line {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 2rpx;
   margin-top: 10rpx;
   height: 30rpx;
   background: #C6C7C6;
 }
 .rent-top .rent-classify .rent-classify-Part {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
 }
 .rent-top .rent-classify .rent-classify-Part .uni-input {
   display: inline-block;
@@ -450,26 +389,15 @@
 .rent-bottom .houseInfo .houseInfo-top {
   margin: 20rpx 0;
   width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 .rent-bottom .houseInfo .houseInfo-left {
   margin-left: 30rpx;
   width: 230rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .rent-bottom .houseInfo .houseInfo-left .houseInfo-left-image {
   width: 230rpx;
@@ -480,16 +408,9 @@
 .rent-bottom .houseInfo .houseInfo-right {
   margin: 0 28rpx;
   width: 500rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 .rent-bottom .houseInfo .houseInfo-right .houseInfo-right-type {
   color: #343534;
@@ -514,23 +435,15 @@
   white-space: nowrap;
 }
 .rent-bottom .houseInfo .houseInfo-right .houseInfo-right-label {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .rent-bottom .houseInfo .houseInfo-right .houseInfo-right-label .houseInfo-label {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 4rpx 12rpx;
   padding: 0rpx 6rpx;
   margin-left: 0;
@@ -551,12 +464,8 @@
   width: 100%;
   height: 100%;
   line-height: 70rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
   vertical-align: center;
 }
 .houseInfo-right-info_Based text:nth-child(1) {
@@ -600,19 +509,10 @@
   width: 100%;
   margin-top: 100rpx;
   height: 600rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .noHouse-image {
   width: 140rpx;

@@ -63,30 +63,31 @@
 				bottomHeight:400, 
 				bus:[
 					{
-						route:"102路",
-						bond:"公交总站"
+						route:"236M路",
+						bond:"文三路"
 					},
 					{
 						route:"193路",
-						bond:"公交总站"
+						bond:"环北新村"
 					},
 					{
-						route:"7476路",
-						bond:"公交总站"
+						route:"7467路",
+						bond:"午潮山公交站"
 					},
 					{
-						route:"310B路高峰线",
-						bond:"公交总站"
+						route:"310路",
+						bond:"午潮山公交站"
 					},
 					{
-						route:"310B路高峰线",
-						bond:"公交总站"
+						route:"382路",
+						bond:"梦想小镇"
 					}
 				],
 				station:[
 					"水口",
-					"屏风",
-					"留下"
+					"屏峰",
+					"留下",
+					"西溪医院·横街"
 				],
 				// markers:[] 这个数组一定要有两个 代表起点和终点的样式和位置
 				markers: [{

@@ -121,8 +121,6 @@ view {
   right: 0;
   top: 0;
   z-index: 999;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   width: 40rpx;
   height: 100%;
@@ -132,8 +130,7 @@ view {
   width: 40rpx;
   text-align: center;
   vertical-align: middle;
-  -webkit-align-self: center;
-          align-self: center;
+  align-self: center;
 }
 .city-select .city-indexs-view .city-indexs .city-indexs-text {
   margin-bottom: 20rpx;

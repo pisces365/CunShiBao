@@ -322,9 +322,7 @@ page {
 	background-color: rgba(255,255,255,0.9);
 }
 .nav navigator {
-	-webkit-box-flex:1;
-	-webkit-flex:1;
-	        flex:1;
+	flex:1;
 }
 .nav navigator .sh-image {
 	width: 60rpx;

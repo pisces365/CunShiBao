@@ -323,31 +323,23 @@
 	margin: 50rpx 70rpx;
 }
 .detail {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 	font-size: 14px;
 }
 .personal-picture {
-	-webkit-box-flex: 2;
-	-webkit-flex: 2;
-	        flex: 2;
+	flex: 2;
 	width: 200rpx;
 	box-shadow: 0 0 20rpx #A6A7A6;
 }
 .main {
-	-webkit-box-flex: 3;
-	-webkit-flex: 3;
-	        flex: 3;
+	flex: 3;
 	margin-left: 40rpx;
 }
 .main .personal-item {
 	margin:6px 0;
 }
 .vote {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	        flex: 1;
+	flex: 1;
 	color: #b14900;
 	font-weight: bold;
 	font-size: 18px;

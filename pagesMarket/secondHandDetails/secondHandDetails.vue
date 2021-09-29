@@ -23,7 +23,7 @@
 						</view>
 						<view class="" style="flex:3; font-size: 28rpx; vertical-align: middle;">
 							<view class="" style="font-size: 28rpx;">
-								马大姐
+								马晓峰
 							</view>
 							<view class="" style="font-size: 24rpx; margin-top: 10rpx; color: #A6A6A6;">
 								发布于杭州
@@ -32,15 +32,15 @@
 					</view>
 					<view>
 						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥1288</text>
-							<text class="price-before">￥1500</text>
-							<text class="discount">已减￥375</text>
+							<text class="price-now">￥329</text>
+							<text class="price-before">￥400</text>
+							<text class="discount">已减￥71</text>
 						</view>
 						<view class="">
-							<text class="goods-name">二手商品名称</text>
-							<text class="brand-and-condition">品质</text>
+							<text class="goods-name">足力健老人鞋</text>
+							<text class="brand-and-condition">运动风</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">品牌</text>
+							<text class="brand-and-condition">运动鞋</text>
 						</view>
 						
 					</view>
@@ -58,10 +58,10 @@
 					</view>
 					<view class="introduce-to-goods">
 						<view class="text">
-							-这里有一些文字这里有一些文字这里有一些文字这里有一些文字这里有一些文字这里有一些文字这里有一些文字
+							-足力健老人鞋男鞋节气休闲鞋爸爸健步鞋中老年耐磨休闲运动鞋
 						</view>
 						<view class="text">
-							-这里有一些文字
+							-黑色（男款） 42
 						</view>
 					</view>
 				</view>
