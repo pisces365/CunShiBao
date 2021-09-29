@@ -131,3 +131,26 @@ export function allVillegeInfo(data) {
 		})
 	})
 }
+//添加租客租房信息
+export function addRenterInfo(data) {
+	return new Promise(function(reslove, reject) {
+		var token = uni.getStorageSync('token');
+		uni.request({
+			url: `${baseUrl}/tenant/add`,
+			method: 'POST',
+			data: data,
+			// "beginTime": 租房开始时间,
+			// "endTime": "租房结束时间
+			header: {
+				"authorization": token
+			},
+			success: res => {
+				let result = res.data;
+				console.log('增加预约信息', result);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {}
+		})
+	})
+}

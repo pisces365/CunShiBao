@@ -28,7 +28,7 @@
 					<view class="rentDetail_center-top-right">
 						<text class="iconfont icon-pinglun1" @click="chat"></text>
 						<view class="vertical-line"></view>
-						<text class="iconfont icon-dianhua1"></text>
+						<text class="iconfont icon-dianhua1" @click="callHost"></text>
 					</view>
 
 				</view>
@@ -109,7 +109,12 @@
 					icon:'none',
 					duration:2000
 				})
-			}
+			},
+			callHost() {
+				uni.makePhoneCall({
+					phoneNumber: this.houseInfo.hostRoughVo.phone //仅为示例
+				});
+			},
 		}
 	}
 </script>

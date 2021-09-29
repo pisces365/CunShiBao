@@ -47,6 +47,12 @@
           "pathName": "pagesA/rent/rent_orderDetail/rent_orderDetail",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "预约房间",
+          "pathName": "pagesA/rent/rentOrder/rentOrder",
+          "query": "",
+          "scene": null
         }
       ]
     }

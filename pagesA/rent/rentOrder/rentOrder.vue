@@ -49,9 +49,6 @@
 					选择看房时间
 				</view>
 				<view class="date">
-					<view class="date-title">
-						日期选择
-					</view>
 					<view class="datePicker">
 						<picker mode="date" :start="getDate('start')" :end="getDate('end')" @change="selectDate">
 							<view class="date-screen">{{dateTime==''?'日期选择':dateTime}}</view>
@@ -68,9 +65,33 @@
 					</view>
 				</view>
 			</view>
+			<view class="date-info">
+				<view class="item">
+					<view class="item-title">入住时间</view>
+					<view class="date">
+						<picker class="picker date" mode="date" :value="date" :start="startDate_begin" :end="endDate_begin"
+							@change="bindDateChange">
+							<view class="dateTime">{{ date }}</view>
+						</picker>
+					</view>
+				</view>
+				<view class="cross-newline">
+					
+				</view>
+				<view class="item">
+					<view class="item-title">离开时间</view>
+					<view class="date">
+						<picker class="picker date" mode="date" :value="date" :start="startDate_begin" :end="endDate_begin"
+							@change="bindDateChange">
+							<view class="dateTime">{{ date }}</view>
+						</picker>
+					</view>
+				</view>
+
+			</view>
 
 		</view>
-		<view class="button" @click="submit">
+		<view class="button" @click="submit" v-show="false">
 			<view class="button-content">
 				立即预约
 			</view>
@@ -80,58 +101,73 @@
 
 <script>
 	import {
-		houseOrderAdd
+		houseOrderAdd,
+		addRenterInfo
 	} from '../../../common/api.js'
 	export default {
 		data() {
+			const currentDate = this.getDate({
+				format: true
+			});
 			return {
+				date: currentDate,
 				houseInfo: {},
 				dateTime: '',
 				dateTimeToPost: '',
 				currentDate: new Date().toISOString().slice(0, 10),
 				currentIndex: -1,
+				beginTime: '',
+				endTime: '',
 				detailList: [{
-						'title': '08:00-09:00',
+						'title': '08:00',
 						'value': 't1'
 					},
 					{
-						'title': '09:00-10:00',
+						'title': '09:00',
 						'value': 't2'
 					},
 					{
-						'title': '10:00-11:00',
+						'title': '10:00',
 						'value': 't3'
 					},
 					{
-						'title': '11:00-12:00',
+						'title': '11:00',
 						'value': 't4'
 					},
 					{
-						'title': '14:00-15:00',
+						'title': '14:00',
 						'value': 't5'
 					},
 					{
-						'title': '15:00-16:00',
+						'title': '15:00',
 						'value': 't6'
 					},
 					{
-						'title': '16:00-17:00',
+						'title': '16:00',
 						'value': 't7'
 					},
 					{
-						'title': '17:00-18:00',
+						'title': '17:00',
 						'value': 't8'
 					}, {
-						'title': '18:00-19:00',
+						'title': '18:00',
 						'value': 't9'
 					}, {
-						'title': '19:00-20:00',
+						'title': '19:00',
 						'value': 't10'
 					}, {
-						'title': '21:00-22:00',
+						'title': '21:00',
 						'value': 't11'
 					}
 				],
+			}
+		},
+		computed: {
+			startDate_begin() {
+				return this.getDate('start');
+			},
+			endDate_begin() {
+				return this.getDate('end');
 			}
 		},
 		methods: {
@@ -179,7 +215,7 @@
 				} else {
 					var data = {
 						"hostId": _this.houseInfo.id,
-						"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title,
+						"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title +":00",
 						"rentId": userId
 					}
 					console.log(data);
@@ -194,7 +230,8 @@
 								let _this = this;
 								var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
 								uni.redirectTo({
-									url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo
+									url: '../rent_orderDetail/rent_orderDetail?houseInfo=' +
+										houseInfo
 								})
 							}, 1000)
 						}
@@ -207,7 +244,11 @@
 					// 	})
 					// }, 1000)
 				}
-			}
+			},
+			// 选择时间 日期
+			bindDateChange: function(e) {
+				this.date = e.target.value;
+			},
 		},
 		onLoad(options) {
 			let that = this;
@@ -281,8 +322,14 @@
 		margin: 10rpx 0;
 		width: 100%;
 		background: #e4e5e4;
-		height: 1rpx;
+		height: 2rpx;
 
+	}
+	.cross-newline{
+		margin: 20rpx 0;
+		width: 100%;
+		background: #e4e5e4;
+		height: 2rpx;
 	}
 
 	.rentOwner {
@@ -345,7 +392,7 @@
 	}
 
 	.time-text {
-		padding: 15rpx 15rpx 15rpx 15rpx;
+		padding: 14rpx 24rpx;
 		width: 100%;
 		height: 100%;
 		text-align: center;
@@ -431,5 +478,13 @@
 		color: white;
 		background: #2abffe;
 		font-weight: bold;
+	}
+	.item{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.dateTime{
+		color: #8C8D8C;
 	}
 </style>
