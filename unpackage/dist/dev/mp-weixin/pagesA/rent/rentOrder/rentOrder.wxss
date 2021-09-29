@@ -3,16 +3,15 @@ page {
 	background: #f0f1f0;
 }
 .rentOrder {
-	padding: 0 20rpx;
+	padding: 0 10rpx;
 }
 .top {
 	padding: 10rpx;
-	padding-top: 20rpx;
 	background: white;
 	border-radius: 20rpx;
 }
 .bottom {
-	margin-top: 20rpx;
+	margin-top: 10rpx;
 	padding: 10rpx;
 	background: white;
 }
@@ -48,7 +47,7 @@ page {
 	background: #e4e5e4;
 	height: 2rpx;
 }
-.cross-newline{
+.cross-newline {
 	margin: 20rpx 0;
 	width: 100%;
 	background: #e4e5e4;
@@ -58,7 +57,7 @@ page {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
-	padding: 20rpx;
+	padding: 10rpx;
 }
 .rentOwner-image {
 	border-radius: 50rpx;
@@ -97,9 +96,6 @@ page {
 }
 .date {
 	font-size: 34rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: flex;
 }
 .cover-view {
 	display: -webkit-box;
@@ -109,7 +105,7 @@ page {
 	/* padding-bottom: 14rpx; */
 }
 .time-text {
-	padding: 14rpx 24rpx;
+	padding: 18rpx;
 	width: 100%;
 	height: 100%;
 	text-align: center;
@@ -141,6 +137,17 @@ page {
 	border-radius: 16rpx;
 	margin-bottom: 16rpx;
 }
+.date-info-top{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
 .time-select {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -158,12 +165,8 @@ page {
 	width: 100%;
 }
 .datePicker {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	        flex: 1;
 	margin: 10rpx 20rpx;
 	color: #8A8E93;
-	text-align: right;
 }
 .date-title {
 	margin: 10rpx 20rpx;
@@ -216,7 +219,7 @@ page {
 	background: #2abffe;
 	font-weight: bold;
 }
-.item{
+.item {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
@@ -227,7 +230,7 @@ page {
 	-webkit-align-items: center;
 	        align-items: center;
 }
-.dateTime{
+.dateTime {
 	color: #8C8D8C;
 }
 

@@ -53,6 +53,11 @@
           "pathName": "pagesA/rent/rentOrder/rentOrder",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "rentType",
+          "pathName": "pagesA/rent/rentType/rentType",
+          "scene": null
         }
       ]
     }

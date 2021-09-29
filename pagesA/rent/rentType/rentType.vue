@@ -23,7 +23,8 @@
 </script>
 
 <style>
-	.IAmRenter{
+
+	.IAmRenter {
 		margin: 30rpx;
 		margin-top: 50rpx;
 		border-radius: 20rpx;
@@ -36,7 +37,8 @@
 		justify-content: center;
 		font-weight: bold;
 	}
-	.IAmHost{
+
+	.IAmHost {
 		margin: 30rpx;
 		border-radius: 20rpx;
 		height: 130rpx;

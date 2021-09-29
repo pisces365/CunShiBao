@@ -45,16 +45,19 @@
 
 			</view>
 			<view class="date-info">
-				<view class="address">
-					选择看房时间
-				</view>
-				<view class="date">
-					<view class="datePicker">
-						<picker mode="date" :start="getDate('start')" :end="getDate('end')" @change="selectDate">
-							<view class="date-screen">{{dateTime==''?'日期选择':dateTime}}</view>
-						</picker>
+				<view class="date-info-top">
+					<view class="address">
+						选择看房时间
+					</view>
+					<view class="date">
+						<view class="datePicker">
+							<picker mode="date" :start="getDate('start')" :end="getDate('end')" @change="selectDate">
+								<view class="date-screen">{{dateTime==''?'日期选择':dateTime}}</view>
+							</picker>
+						</view>
 					</view>
 				</view>
+				
 
 				<view class="cross-line">
 				</view>
@@ -69,21 +72,21 @@
 				<view class="item">
 					<view class="item-title">入住时间</view>
 					<view class="date">
-						<picker class="picker date" mode="date" :value="date" :start="startDate_begin" :end="endDate_begin"
-							@change="bindDateChange">
-							<view class="dateTime">{{ date }}</view>
+						<picker class="picker date" mode="date" :value="date_begin" :start="startDate_begin"
+							:end="endDate_begin" @change="bindDateChange_begin">
+							<view class="dateTime">{{ date_begin }}</view>
 						</picker>
 					</view>
 				</view>
 				<view class="cross-newline">
-					
+
 				</view>
 				<view class="item">
 					<view class="item-title">离开时间</view>
 					<view class="date">
-						<picker class="picker date" mode="date" :value="date" :start="startDate_begin" :end="endDate_begin"
-							@change="bindDateChange">
-							<view class="dateTime">{{ date }}</view>
+						<picker class="picker date" mode="date" :value="date_end" :start="startDate_end"
+							:end="endDate_end" @change="bindDateChange_end">
+							<view class="dateTime">{{ date_end }}</view>
 						</picker>
 					</view>
 				</view>
@@ -91,7 +94,7 @@
 			</view>
 
 		</view>
-		<view class="button" @click="submit" v-show="false">
+		<view class="button" @click="submit">
 			<view class="button-content">
 				立即预约
 			</view>
@@ -109,57 +112,63 @@
 			const currentDate = this.getDate({
 				format: true
 			});
+			const endDate = this.getDate({
+				format: true
+			});
 			return {
-				date: currentDate,
-				houseInfo: {},
+				date_begin: currentDate,
+				date_end: endDate,
+				houseInfo: {
+					inviteTime: '',
+				},
 				dateTime: '',
-				dateTimeToPost: '',
 				currentDate: new Date().toISOString().slice(0, 10),
 				currentIndex: -1,
 				beginTime: '',
 				endTime: '',
 				detailList: [{
-						'title': '08:00',
+						'title': '08:00-09:00',
 						'value': 't1'
 					},
 					{
-						'title': '09:00',
+						'title': '09:00-10:00',
 						'value': 't2'
 					},
 					{
-						'title': '10:00',
+						'title': '10:00-11:00',
 						'value': 't3'
 					},
 					{
-						'title': '11:00',
+						'title': '11:00-12:00',
 						'value': 't4'
 					},
 					{
-						'title': '14:00',
+						'title': '14:00-15:00',
 						'value': 't5'
 					},
 					{
-						'title': '15:00',
+						'title': '15:00-16:00',
 						'value': 't6'
 					},
 					{
-						'title': '16:00',
+						'title': '16:00-17:00',
 						'value': 't7'
 					},
 					{
-						'title': '17:00',
+						'title': '17:00-18:00',
 						'value': 't8'
 					}, {
-						'title': '18:00',
+						'title': '18:00-19:00',
 						'value': 't9'
 					}, {
-						'title': '19:00',
+						'title': '19:00-20:00',
 						'value': 't10'
 					}, {
-						'title': '21:00',
+						'title': '21:00-22:00',
 						'value': 't11'
 					}
 				],
+
 			}
 		},
 		computed: {
@@ -168,12 +177,17 @@
 			},
 			endDate_begin() {
 				return this.getDate('end');
+			},
+			startDate_end() {
+				return this.getDate('start');
+			},
+			endDate_end() {
+				return this.getDate('end');
 			}
 		},
 		methods: {
 			//处理日期选择组件的日期数据
 			getDate(type) {
-
 				const date = new Date();
 				let year = date.getFullYear();
 				let month = date.getMonth() + 1;
@@ -213,42 +227,60 @@
 						duration: 2000
 					})
 				} else {
-					var data = {
-						"hostId": _this.houseInfo.id,
-						"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title +":00",
-						"rentId": userId
+					var addRenterData = {
+						"beginTime": _this.date_begin,
+						"endTime": _this.date_end
 					}
-					console.log(data);
-					houseOrderAdd(data).then((res) => {
-						if (res.code == "200") {
-							uni.showToast({
-								title: '预约成功',
-								icon: 'success',
-								duration: 2000
-							})
-							this.timer = setInterval(() => {
-								let _this = this;
-								var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
-								uni.redirectTo({
-									url: '../rent_orderDetail/rent_orderDetail?houseInfo=' +
-										houseInfo
+					if (Date.parse(_this.date_begin) < Date.parse(_this.date_end)) {
+						addRenterInfo(addRenterData).then((res) => {
+							if (res.code == "200") {
+								console.log('租客信息添加成功', res);
+								_this.houseInfo.inviteTime = res.time;
+								var data = {
+									"hostId": _this.houseInfo.id,
+									"orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex]
+										.title + ":00",
+									"rentId": userId
+								}
+								houseOrderAdd(data).then((res) => {
+									if (res.code == "200") {
+										uni.showToast({
+											title: '预约成功',
+											icon: 'success',
+											duration: 2000
+										})
+										this.timer = setInterval(() => {
+											let _this = this;
+											var houseInfo = JSON.stringify(_this
+											.houseInfo); // 这里转换成 字符串
+											uni.redirectTo({
+												url: '../rent_orderDetail/rent_orderDetail?houseInfo=' +
+													houseInfo
+											})
+										}, 1000)
+									}
 								})
-							}, 1000)
-						}
-					})
-					// this.timer = setInterval(() => {
-					// 	let _this = this;
-					// 	var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
-					// 	uni.redirectTo({
-					// 		url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo
-					// 	})
-					// }, 1000)
+							}
+						})
+
+					} else {
+						uni.showToast({
+							title: '离开时间请至少迟于入住时间一至两天',
+							icon: 'none',
+							duration: 2000
+						})
+					}
+
 				}
 			},
 			// 选择时间 日期
-			bindDateChange: function(e) {
-				this.date = e.target.value;
+			bindDateChange_begin: function(e) {
+				this.date_begin = e.target.value;
 			},
+			bindDateChange_end: function(e) {
+				this.date_end = e.target.value;
+			},
+
 		},
 		onLoad(options) {
 			let that = this;
@@ -270,19 +302,18 @@
 	}
 
 	.rentOrder {
-		padding: 0 20rpx;
+		padding: 0 10rpx;
 
 	}
 
 	.top {
 		padding: 10rpx;
-		padding-top: 20rpx;
 		background: white;
 		border-radius: 20rpx;
 	}
 
 	.bottom {
-		margin-top: 20rpx;
+		margin-top: 10rpx;
 		padding: 10rpx;
 		background: white;
 	}
@@ -325,7 +356,8 @@
 		height: 2rpx;
 
 	}
-	.cross-newline{
+
+	.cross-newline {
 		margin: 20rpx 0;
 		width: 100%;
 		background: #e4e5e4;
@@ -334,7 +366,7 @@
 
 	.rentOwner {
 		display: flex;
-		padding: 20rpx;
+		padding: 10rpx;
 	}
 
 	.rentOwner-image {
@@ -382,7 +414,6 @@
 
 	.date {
 		font-size: 34rpx;
-		display: flex;
 	}
 
 	.cover-view {
@@ -392,7 +423,7 @@
 	}
 
 	.time-text {
-		padding: 14rpx 24rpx;
+		padding: 18rpx;
 		width: 100%;
 		height: 100%;
 		text-align: center;
@@ -416,6 +447,12 @@
 		background-color: #fff;
 		border-radius: 16rpx;
 		margin-bottom: 16rpx;
+		
+	}
+	.date-info-top{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 
 	.time-select {
@@ -428,10 +465,8 @@
 	}
 
 	.datePicker {
-		flex: 1;
 		margin: 10rpx 20rpx;
 		color: #8A8E93;
-		text-align: right;
 	}
 
 	.date-title {
@@ -479,12 +514,14 @@
 		background: #2abffe;
 		font-weight: bold;
 	}
-	.item{
+
+	.item {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
-	.dateTime{
+
+	.dateTime {
 		color: #8C8D8C;
 	}
 </style>

@@ -64,7 +64,7 @@
 
 			</view>
 			<view class="rentDetail_content-orderTime">
-				邀请时间 : <text>2021-9-28 20:04:43</text>
+				邀请时间 : <text>{{houseInfo.inviteTime}}</text>
 			</view>
 			<view class="rentDetail_content-orderId">
 				订单编号 : <text>18620059</text>

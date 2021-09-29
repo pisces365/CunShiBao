@@ -243,6 +243,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _api = __webpack_require__(/*! ../../../common/api.js */ 20); //
 //
 //
@@ -344,11 +347,22 @@ var _api = __webpack_require__(/*! ../../../common/api.js */ 20); //
 //
 //
 //
-var _default = { data: function data() {var currentDate = this.getDate({ format: true });return { date: currentDate, houseInfo: {}, dateTime: '', dateTimeToPost: '', currentDate: new Date().toISOString().slice(0, 10), currentIndex: -1, beginTime: '', endTime: '', detailList: [{ 'title': '08:00', 'value': 't1' }, { 'title': '09:00', 'value': 't2' }, { 'title': '10:00', 'value': 't3' }, { 'title': '11:00', 'value': 't4' }, { 'title': '14:00', 'value': 't5' }, { 'title': '15:00', 'value': 't6' }, { 'title': '16:00', 'value': 't7' }, { 'title': '17:00', 'value': 't8' }, { 'title': '18:00', 'value': 't9' }, { 'title': '19:00', 'value': 't10' }, { 'title': '21:00', 'value': 't11' }] };}, computed: { startDate_begin: function startDate_begin() {return this.getDate('start');}, endDate_begin: function endDate_begin() {return this.getDate('end');} }, methods: { //处理日期选择组件的日期数据
+//
+//
+//
+var _default = { data: function data() {var currentDate = this.getDate({ format: true });var endDate = this.getDate({ format: true });return { date_begin: currentDate, date_end: endDate, houseInfo: { inviteTime: '' }, dateTime: '', currentDate: new Date().toISOString().slice(0, 10), currentIndex: -1, beginTime: '', endTime: '', detailList: [{ 'title': '08:00-09:00', 'value': 't1' }, { 'title': '09:00-10:00', 'value': 't2' }, { 'title': '10:00-11:00', 'value': 't3' }, { 'title': '11:00-12:00', 'value': 't4' }, { 'title': '14:00-15:00', 'value': 't5' }, { 'title': '15:00-16:00', 'value': 't6' }, { 'title': '16:00-17:00', 'value': 't7' }, { 'title': '17:00-18:00', 'value': 't8' }, { 'title': '18:00-19:00', 'value': 't9' }, { 'title': '19:00-20:00', 'value': 't10' }, { 'title': '21:00-22:00', 'value': 't11' }] };}, computed: { startDate_begin: function startDate_begin() {return this.getDate('start');}, endDate_begin: function endDate_begin() {return this.getDate('end');}, startDate_end: function startDate_end() {return this.getDate('start');}, endDate_end: function endDate_end() {return this.getDate('end');} }, methods: { //处理日期选择组件的日期数据
     getDate: function getDate(type) {var date = new Date();var year = date.getFullYear();var month = date.getMonth() + 1;var day = date.getDate();if (type == 'start') {year = year - 5; //设置年份区间
       } else if (type == 'end') {year = year + 5;}month = month > 9 ? month : '0' + month;;day = day > 9 ? day : '0' + day;return "".concat(year, "-").concat(month, "-").concat(day);}, timeSelect: function timeSelect(tindex) {this.currentIndex = tindex; // console.log(this.currentIndex);
     }, //选择日期，获取选择结果
-    selectDate: function selectDate(e) {var _this = this;_this.dateTime = e.target.value;}, submit: function submit() {var _this2 = this;var _this = this;var userId = uni.getStorageSync('userId');if (_this.dateTime == '') {uni.showToast({ title: '请选择看房时间', icon: 'none', duration: 2000 });
+    selectDate: function selectDate(e) {var _this = this;_this.dateTime = e.target.value;}, submit: function submit() {var _this2 = this;
+      var _this = this;
+      var userId = uni.getStorageSync('userId');
+      if (_this.dateTime == '') {
+        uni.showToast({
+          title: '请选择看房时间',
+          icon: 'none',
+          duration: 2000 });
+
       } else if (_this.currentIndex == -1) {
         uni.showToast({
           title: '请选择看房日期',
@@ -356,42 +370,60 @@ var _default = { data: function data() {var currentDate = this.getDate({ format:
           duration: 2000 });
 
       } else {
-        var data = {
-          "hostId": _this.houseInfo.id,
-          "orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].title + ":00",
-          "rentId": userId };
+        var addRenterData = {
+          "beginTime": _this.date_begin,
+          "endTime": _this.date_end };
 
-        console.log(data);
-        (0, _api.houseOrderAdd)(data).then(function (res) {
-          if (res.code == "200") {
-            uni.showToast({
-              title: '预约成功',
-              icon: 'success',
-              duration: 2000 });
+        if (Date.parse(_this.date_begin) < Date.parse(_this.date_end)) {
+          (0, _api.addRenterInfo)(addRenterData).then(function (res) {
+            if (res.code == "200") {
+              console.log('租客信息添加成功', res);
+              _this.houseInfo.inviteTime = res.time;
+              var data = {
+                "hostId": _this.houseInfo.id,
+                "orderTime": _this.dateTime + " " + _this.detailList[_this.currentIndex].
+                title + ":00",
+                "rentId": userId };
 
-            _this2.timer = setInterval(function () {
-              var _this = _this2;
-              var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
-              uni.redirectTo({
-                url: '../rent_orderDetail/rent_orderDetail?houseInfo=' +
-                houseInfo });
+              (0, _api.houseOrderAdd)(data).then(function (res) {
+                if (res.code == "200") {
+                  uni.showToast({
+                    title: '预约成功',
+                    icon: 'success',
+                    duration: 2000 });
 
-            }, 1000);
-          }
-        });
-        // this.timer = setInterval(() => {
-        // 	let _this = this;
-        // 	var houseInfo = JSON.stringify(_this.houseInfo); // 这里转换成 字符串
-        // 	uni.redirectTo({
-        // 		url: '../rent_orderDetail/rent_orderDetail?houseInfo=' + houseInfo
-        // 	})
-        // }, 1000)
+                  _this2.timer = setInterval(function () {
+                    var _this = _this2;
+                    var houseInfo = JSON.stringify(_this.
+                    houseInfo); // 这里转换成 字符串
+                    uni.redirectTo({
+                      url: '../rent_orderDetail/rent_orderDetail?houseInfo=' +
+                      houseInfo });
+
+                  }, 1000);
+                }
+              });
+            }
+          });
+
+        } else {
+          uni.showToast({
+            title: '离开时间请至少迟于入住时间一至两天',
+            icon: 'none',
+            duration: 2000 });
+
+        }
+
       }
     },
     // 选择时间 日期
-    bindDateChange: function bindDateChange(e) {
-      this.date = e.target.value;
+    bindDateChange_begin: function bindDateChange_begin(e) {
+      this.date_begin = e.target.value;
+    },
+    bindDateChange_end: function bindDateChange_end(e) {
+      this.date_end = e.target.value;
     } },
+
 
   onLoad: function onLoad(options) {
     var that = this;
