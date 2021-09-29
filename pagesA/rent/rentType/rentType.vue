@@ -5,6 +5,7 @@
 		</navigator>
 		<navigator class="IAmHost" url="../host_qualification/host_qualification">
 			我是户主
+			
 		</navigator>
 	</view>
 </template>
