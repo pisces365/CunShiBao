@@ -201,7 +201,7 @@
 					"navigationBarTitleText": "村务监督",
 					"enablePullDownRefresh": false,
 					"navigationBarTextStyle": "white",
-					"navigationBarBackgroundColor": "#40c270",
+					"navigationBarBackgroundColor": "#6AA0F8",
 					"app-plus": {
 						"titleNView": {
 							"type": "float",
@@ -216,7 +216,7 @@
 					"navigationBarTitleText": "问题反馈",
 					"enablePullDownRefresh": false,
 					"navigationBarTextStyle": "white",
-					"navigationBarBackgroundColor": "#40c270",
+					"navigationBarBackgroundColor": "#6AA0F8",
 					"app-plus": {
 						"titleNView": {
 							"type": "float",
@@ -231,7 +231,7 @@
 					"navigationBarTitleText": "人居环境",
 					"enablePullDownRefresh": false,
 					"navigationBarTextStyle": "white",
-					"navigationBarBackgroundColor": "#40c270",
+					"navigationBarBackgroundColor": "#6AA0F8",
 					"app-plus": {
 						"titleNView": {
 							"type": "float",
@@ -246,7 +246,7 @@
 					"navigationBarTitleText": "疫情防控",
 					"enablePullDownRefresh": false,
 					"navigationBarTextStyle": "white",
-					"navigationBarBackgroundColor": "#40c270",
+					"navigationBarBackgroundColor": "#6AA0F8",
 					"app-plus": {
 						"titleNView": {
 							"type": "float",
@@ -261,7 +261,7 @@
 					"navigationBarTitleText": "村庄建设",
 					"enablePullDownRefresh": false,
 					"navigationBarTextStyle": "white",
-					"navigationBarBackgroundColor": "#40c270",
+					"navigationBarBackgroundColor": "#6AA0F8",
 					"app-plus": {
 						"titleNView": {
 							"type": "float",
@@ -270,7 +270,24 @@
 					}
 				}
 
-			}]
+			}    ,{
+                    "path" : "addQuestion/addQuestion",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "新增问题",
+                    "enablePullDownRefresh": false,
+                    "navigationBarTextStyle": "white",
+                    "navigationBarBackgroundColor": "#6AA0F8",
+                    "app-plus": {
+                    	"titleNView": {
+                    		"type": "float",
+                    		"titleText": "新增问题"
+                    	}
+                    }
+                }
+                
+                }
+            ]
 		}, {
 			"root": "mine",
 			"pages": [{

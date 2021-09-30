@@ -47,6 +47,18 @@
           "pathName": "pagesSupervision/superviseIndex/superviseIndex",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "问题反馈",
+          "pathName": "pagesSupervision/supervise-feedback/supervise-feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "新增问题",
+          "pathName": "pagesSupervision/addQuestion/addQuestion",
+          "query": "",
+          "scene": null
         }
       ]
     }

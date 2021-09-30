@@ -311,29 +311,29 @@
 .supervise-feedback {
 	background-image: url('http://p1362.bvimg.com/10465/71f76d543133e4d7.jpg');
 	background-repeat: no-repeat;
-	background-size:100% 100%;
+	background-size: 100% 100%;
 }
 .supervise-environment {
 	background-image: url('http://p1362.bvimg.com/10465/f9a57f06ab4fab75.jpg');
 	background-repeat: no-repeat;
-	background-size:100% 100%;
+	background-size: 100% 100%;
 }
-.supervise-epidemic{
+.supervise-epidemic {
 	background-image: url('http://p1362.bvimg.com/10465/11f7eb63a68118e3.jpg');
 	background-repeat: no-repeat;
-	background-size:100% 100%;
+	background-size: 100% 100%;
 }
-.supervise-construction{
+.supervise-construction {
 	background-image: url('http://p1362.bvimg.com/10465/5bc2bd2471d6ad30.jpg');
 	background-repeat: no-repeat;
-	background-size:100% 100%;
+	background-size: 100% 100%;
 }
 .title {
 	margin-top: 30rpx;
 	margin-left: 40rpx;
 	font-size: 36rpx;
 }
-.enter{
+.enter {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
@@ -352,7 +352,7 @@
 	height: 50rpx;
 	margin-left: 20rpx;
 }
-.enterImg{
+.enterImg {
 	margin-left: 40rpx;
 	width: 50rpx;
 	height: 50rpx;

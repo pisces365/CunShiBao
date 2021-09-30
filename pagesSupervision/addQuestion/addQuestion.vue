@@ -20,7 +20,7 @@
 					<text>标题</text>
 				</view>
 				<view class="title-input">
-					<input type="text" value="" placeholder="请填写标题" />
+					<input type="text" :value="quesInfo.title" placeholder="请填写标题" @input="inputTitle" />
 				</view>
 			</view>
 			<view class="cross-line">
@@ -38,7 +38,7 @@
 				</view>
 
 				<view class="title-textarea">
-					<textarea type="text" value="" />
+					<textarea v-model="quesInfo.content" @input="inputContent" />
 				</view>
 			</view>
 			<view class="uploadImg">
@@ -76,7 +76,7 @@
 						<text>联系人</text>
 					</view>
 					<view class="title-input">
-						<input type="number" value="" placeholder="联系人姓名" />
+						<input type="number" :value="quesInfo.name" placeholder="联系人姓名" @input="inputName" />
 					</view>
 
 				</view>
@@ -88,7 +88,8 @@
 						<text>联系方式</text>
 					</view>
 					<view class="title-input">
-						<input type="number" value="" placeholder="联系方式" />
+						<input type="number" :value="quesInfo.phone" placeholder="联系方式" @input="inputPhone"
+							maxlength="11" />
 					</view>
 				</view>
 			</view>
@@ -100,16 +101,39 @@
 </template>
 
 <script>
+	import util from '@/common/util.js';
 	export default {
 		data() {
 			return {
-				imageList: [],
-				tempImgList: [],
+				quesInfo: {
+					title: '',
+					content: '',
+					name: '',
+					phone: ''
+				},
+				imageList: [], //显示的图片路径
+				tempImgList: [], //本地的图片缓存路径
 				typeIndex: 0,
 				typeArray: ['环境卫生', '宅基地', '农房翻建', '道路规划', '土地征用', '纠纷调解']
 			}
 		},
 		methods: {
+			inputTitle(e) {
+				this.quesInfo.title = e.detail.value
+				// console.log(this.quesInfo.title);
+			},
+			inputContent(e) {
+				this.quesInfo.content = e.detail.value;
+				// console.log(this.quesInfo.content);
+			},
+			inputName(e) {
+				this.quesInfo.name = e.detail.value;
+				// console.log(this.quesInfo.name);
+			},
+			inputPhone(e) {
+				this.quesInfo.phone = e.detail.value;
+				// console.log(this.quesInfo.phone);
+			},
 			quesTypeChange(index) {
 				this.typeIndex = index
 			},
@@ -171,17 +195,41 @@
 					}
 				});
 			},
-			submit(){
+			submit() {
+				let _this = this
 				uni.showModal({
 					title: "提交提示",
 					content: "是否确认提交",
 					success(res) {
 						if (res.confirm) { //删除
-							uni.showToast({
-								title:'请将信息填写完整',
-								icon:'none',
-								duration:2000
-							})
+							if (_this.quesInfo.title == '' || _this.quesInfo.phone == '' || _this.quesInfo
+								.content == '' || _this.quesInfo.name == '') {
+								uni.showToast({
+									title: '请您将信息填写完整',
+									icon: 'none',
+									duration: 2000
+								})
+							} else if (!util.isMobile(_this.quesInfo.phone)) {
+								uni.showToast({
+									title: '填写联系方式不正确',
+									icon: 'none',
+									duration: 2000
+								})
+							} else {
+								uni.showToast({
+									title: '提交信息成功',
+									icon: 'success',
+									duration: 2000
+								})
+								setTimeout(function() {
+									uni.navigateBack({
+										delta: 1
+									})
+
+								}, 100);
+
+							}
+
 						}
 					}
 				})
@@ -203,6 +251,7 @@
 		margin-top: 20rpx;
 		display: flex;
 		flex-wrap: wrap;
+		margin-left: 20rpx;
 	}
 
 	.quesType-item {
@@ -212,9 +261,9 @@
 		margin: 10rpx;
 		padding: 6rpx 24rpx;
 		width: 160rpx;
-		height: 60rpx;
+		height: 70rpx;
 		color: white;
-		border-radius: 30rpx;
+		border-radius: 50rpx;
 	}
 
 	.cross-line {
@@ -227,7 +276,7 @@
 	.quesContent,
 	.Con-contact {
 		margin: 20rpx;
-		margin-top: 30rpx;
+		margin-top: 50rpx;
 	}
 
 	.submit {
@@ -264,7 +313,7 @@
 	}
 
 	.title-textarea {
-		margin-top: 20rpx;
+		margin-top: 40rpx;
 		padding: 20rpx;
 		height: 400rpx;
 		width: 630rpx;
@@ -301,6 +350,6 @@
 
 	.uploadImg,
 	.ImageSquares {
-		margin-top: 20rpx;
+		margin-top: 30rpx;
 	}
 </style>
