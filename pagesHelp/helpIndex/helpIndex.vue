@@ -6,9 +6,9 @@
 				<view>
 					<image class="topImage" src="http://p1362.bvimg.com/10465/07713b8f67cb3807.png" mode="widthFix"></image>
 				</view>
-				<view style="padding: 24rpx 0;"></view>
+				<view style="padding: 28rpx 0;"></view>
 				<view>
-					<input class="search" type="text" placeholder="搜索"/>
+					<input class="search" style="height: 50rpx;" type="text" placeholder="搜索"/>
 				</view>
 				<view style="padding: 20rpx 0;"></view>
 				<view class="nav" style="display: flex;">
