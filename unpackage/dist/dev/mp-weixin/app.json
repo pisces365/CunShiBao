@@ -23,7 +23,7 @@
     {
       "root": "pagesSupervision",
       "pages": [
-        "pagesSupervision/superviseIndex/superviseIndex"
+        "superviseIndex/superviseIndex"
       ]
     },
     {

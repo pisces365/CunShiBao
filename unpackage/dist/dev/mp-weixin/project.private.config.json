@@ -37,26 +37,15 @@
           "scene": null
         },
         {
-          "name": "个人信息界面",
-          "pathName": "mine/personalInfo/personalInfo",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pagesA/rent/rent_orderDetail/rent_orderDetail",
-          "pathName": "pagesA/rent/rent_orderDetail/rent_orderDetail",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "预约房间",
           "pathName": "pagesA/rent/rentOrder/rentOrder",
           "query": "",
           "scene": null
         },
         {
-          "name": "rentType",
-          "pathName": "pagesA/rent/rentType/rentType",
+          "name": "村务监督",
+          "pathName": "pagesSupervision/superviseIndex/superviseIndex",
+          "query": "",
           "scene": null
         }
       ]

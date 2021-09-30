@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'iconfont';  /* Project id 2698742 */
-  src: url('//at.alicdn.com/t/font_2698742_j074k25s4to.woff2?t=1630383932727') format('woff2'),
-       url('//at.alicdn.com/t/font_2698742_j074k25s4to.woff?t=1630383932727') format('woff'),
-       url('//at.alicdn.com/t/font_2698742_j074k25s4to.ttf?t=1630383932727') format('truetype');
+  font-family: "iconfont"; /* Project id 2698742 */
+  src: url('//at.alicdn.com/t/font_2698742_bev5mgfzei4.woff2?t=1632988152484') format('woff2'),
+       url('//at.alicdn.com/t/font_2698742_bev5mgfzei4.woff?t=1632988152484') format('woff'),
+       url('//at.alicdn.com/t/font_2698742_bev5mgfzei4.ttf?t=1632988152484') format('truetype');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -10,6 +10,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-tianchongxing-:before {
+  content: "\e631";
+}
+.icon-bangzhu:before {
+  content: "\e61a";
+}
+.icon-tubiaozhizuomoban_yuefenheyewuleixing:before {
+  content: "\e618";
+}
+.icon-gongsigonggao:before {
+  content: "\f8c6";
 }
 .icon-dui:before {
   content: "\e683";

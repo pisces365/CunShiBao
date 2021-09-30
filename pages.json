@@ -196,10 +196,18 @@
 			"root": "pagesSupervision",
 			"pages": [{
 				//村务监督进入首页
-				"path": "pagesSupervision/superviseIndex/superviseIndex",
+				"path": "superviseIndex/superviseIndex",
 				"style": {
-					"navigationBarTitleText": "",
-					"enablePullDownRefresh": false
+					"navigationBarTitleText": "村务监督",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#40c270",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "村务监督"
+						}
+					}
 				}
 
 			}]
