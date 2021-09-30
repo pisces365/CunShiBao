@@ -23,7 +23,11 @@
     {
       "root": "pagesSupervision",
       "pages": [
-        "superviseIndex/superviseIndex"
+        "superviseIndex/superviseIndex",
+        "supervise-feedback/supervise-feedback",
+        "supervise-environment/supervise-environment",
+        "supervise-epidemic/supervise-epidemic",
+        "supervise-construction/supervise-construction"
       ]
     },
     {

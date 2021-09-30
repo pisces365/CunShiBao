@@ -192,7 +192,7 @@
 		}
 	],
 	"subPackages": [{
-		//村务监督分包
+			//村务监督分包
 			"root": "pagesSupervision",
 			"pages": [{
 				//村务监督进入首页
@@ -206,6 +206,66 @@
 						"titleNView": {
 							"type": "float",
 							"titleText": "村务监督"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-feedback/supervise-feedback",
+				"style": {
+					"navigationBarTitleText": "问题反馈",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#40c270",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "问题反馈"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-environment/supervise-environment",
+				"style": {
+					"navigationBarTitleText": "人居环境",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#40c270",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "人居环境"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-epidemic/supervise-epidemic",
+				"style": {
+					"navigationBarTitleText": "疫情防控",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#40c270",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "疫情防控"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-construction/supervise-construction",
+				"style": {
+					"navigationBarTitleText": "村庄建设",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#40c270",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "村庄建设"
 						}
 					}
 				}
