@@ -105,7 +105,6 @@
 		width: 100%;
 		margin: 0 10rpx;
 	}
-
 	.content {
 		height: 800rpx;
 		display: flex;
