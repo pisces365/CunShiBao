@@ -270,24 +270,82 @@
 					}
 				}
 
-			}    ,{
-                    "path" : "addQuestion/addQuestion",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "新增问题",
-                    "enablePullDownRefresh": false,
-                    "navigationBarTextStyle": "white",
-                    "navigationBarBackgroundColor": "#6AA0F8",
-                    "app-plus": {
-                    	"titleNView": {
-                    		"type": "float",
-                    		"titleText": "新增问题"
-                    	}
-                    }
-                }
-                
-                }
-            ]
+			}, {
+				"path": "addQuestion/addQuestion",
+				"style": {
+					"navigationBarTitleText": "新增问题",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#6AA0F8",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "新增问题"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-environment/achievementExhibition",
+				"style": {
+					"navigationBarTitleText": "成果展示",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#6AA0F8",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "成果展示"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-environment/workmates",
+				"style": {
+					"navigationBarTitleText": "工作人员",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#6AA0F8",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "工作人员"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-environment/Family-demonstration-household",
+				"style": {
+					"navigationBarTitleText": "文明党员家庭示范户",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#6AA0F8",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "文明党员家庭示范户"
+						}
+					}
+				}
+
+			}, {
+				"path": "supervise-environment/envrionment-policy",
+				"style": {
+					"navigationBarTitleText": "政策标准",
+					"enablePullDownRefresh": false,
+					"navigationBarTextStyle": "white",
+					"navigationBarBackgroundColor": "#6AA0F8",
+					"app-plus": {
+						"titleNView": {
+							"type": "float",
+							"titleText": "政策标准"
+						}
+					}
+				}
+
+			}]
 		}, {
 			"root": "mine",
 			"pages": [{

@@ -59,6 +59,11 @@
           "pathName": "pagesSupervision/addQuestion/addQuestion",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "人居环境",
+          "pathName": "pagesSupervision/supervise-environment/supervise-environment",
+          "scene": null
         }
       ]
     }

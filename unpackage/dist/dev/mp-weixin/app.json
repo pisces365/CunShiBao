@@ -28,7 +28,11 @@
         "supervise-environment/supervise-environment",
         "supervise-epidemic/supervise-epidemic",
         "supervise-construction/supervise-construction",
-        "addQuestion/addQuestion"
+        "addQuestion/addQuestion",
+        "supervise-environment/achievementExhibition",
+        "supervise-environment/workmates",
+        "supervise-environment/Family-demonstration-household",
+        "supervise-environment/envrionment-policy"
       ]
     },
     {
