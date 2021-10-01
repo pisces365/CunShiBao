@@ -4,7 +4,7 @@
 			<view class="topBar-item" :style="{color:topbarIndex==0?'#6AA0F8':'black'}" @click="toBeSolved()">
 				<text class="iconfont icon-wj-wjxg"></text>
 				<text class="topBar-item-text">政策文件</text>
-			</view>
+			</view> 
 			<view class="topBar-item" :style="{color:topbarIndex==1?'#6AA0F8':'black'}" @click="reSolved()">
 				<text class="iconfont icon-wenjian1"></text>
 				<text class="topBar-item-text">宣传文件</text>
