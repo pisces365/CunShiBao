@@ -25,6 +25,7 @@ page {
 	font-size: 28rpx;
 }
 .none {
+	color: #A6A6A6;
 	font-size: 28rpx;
 	text-align: center;
 	padding-bottom: 30rpx;

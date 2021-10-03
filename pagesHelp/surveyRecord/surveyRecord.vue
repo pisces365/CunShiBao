@@ -6,7 +6,7 @@
 					<text>姓名</text>
 				</view>
 				<view class="repair-input">
-					<input class="uni-input" name="name" placeholder="姓名" value="华强" disabled=""/>
+					<input class="uni-input" name="name" placeholder="姓名" :value="data.name" disabled=""/>
 				</view>
 			</view>
 		</view>
@@ -16,7 +16,7 @@
 					电话
 				</view>
 				<view class="repair-input">
-					<input class="uni-input" name="phone" placeholder="电话" value="17817881778" disabled=""/>
+					<input class="uni-input" name="phone" placeholder="电话" :value="data.name" disabled=""/>
 				</view>
 			</view>
 		</view>
@@ -26,7 +26,7 @@
 					村组
 				</view>
 				<view class="repair-input ">
-					<input class="uni-input" name="roomNum" placeholder="分配帮扶小组" />					
+					<input class="uni-input" @blur="onGroupChange" name="roomNum" placeholder="分配帮扶小组" />					
 				</view>
 			</view>
 		</view>
@@ -36,7 +36,7 @@
 					家庭人数
 				</view>
 				<view class="repair-input ">
-					<input type="number" class="uni-input" name="roomNum" placeholder="成员数量" value="3" disabled=""/>					
+					<input type="number" class="uni-input" name="roomNum" placeholder="成员数量" :value="data.familyMemberAcount" disabled=""/>					
 				</view>
 			</view>
 		</view>
@@ -46,7 +46,7 @@
 					村户属性
 				</view>
 				<view class="repair-input ">
-					<input type="text" class="uni-input" name="roomNum" placeholder="" value="一般贫困户" disabled=""/>					
+					<input type="text" class="uni-input" name="roomNum" placeholder="" :value="CountryType[id]" disabled=""/>					
 				</view>
 			</view>
 		</view>
@@ -56,7 +56,7 @@
 					<text>致贫原因</text>
 				</view>
 				<view class="repair-input">
-					<input class="uni-input" name="name" placeholder="原因" value="身体缺陷" disabled=""/>
+					<input class="uni-input" name="name" placeholder="原因" :value="data.reason" disabled=""/>
 				</view>
 			</view>
 		</view>
@@ -68,7 +68,7 @@
 			</view>
 			<view class="repair-item r7" >
 				<view class="repair-input" style="margin-left: 100rpx">
-					<textarea class="uni-input"  placeholder="详细描述遇到的问题" style="float: right; width: 100%;"/>
+					<textarea class="uni-input" @blur="onRecordChange" placeholder="记录走访村民情况" style="float: right; width: 100%;"/>
 				</view>
 			</view>
 		</view>
@@ -100,7 +100,7 @@
 			</view>
 			<view class="release-button">
 				<button class="r-button1" @click="goBack">取 消</button>
-				<button class="r-button2" @click="goBack">提 交</button>
+				<button class="r-button2" @click="onSubmit">提 交</button>
 			</view>	
 			
 		</view>
@@ -108,42 +108,50 @@
 </template>
 
 <script>
+	import {
+		getApply,
+		postVisitReport
+	} from '@/common/accurate-support-api.js'
 	export default {
 		data() {
 			return {
-				price:"0.00",
-				repair_address_main:"地点：请选择",
-				goods_name: "点击选择商品",
+				applyId:0,
+				data:{},
+				upload:{},
 				imgArr:[],
-				donateType:["图书","衣服"],
-				donateIndex:0,
-				repair_address_main:"请选择",
-				problemType:[
-					['请选择 省份','天津','浙江','江苏','北京'],
-					['市'],
-					['区']
-				],
-				problemItems1:[
-					['市'],
-					['市','xx1','xx2','xx3'],
-					['市','xx4','xx7','xx32'],
-					['市','xx5','xx头','xx22'],
-					['市','xx6','xx9','xx23']
-				],
-				problemItems2:[
-					['区'],
-					['区','水龙头','洁具','照明'],
-					['区','瓷砖','床柜','门窗'],
-					['区','固定电话','摄像头','网线'],
-					['区','绿化养护','花卉布置','园林工程']
-				],
-				typeIndex:0,
-				typeItems1:0,
-				typeItems2:0,
 				CountryType:
 					['一般贫困户','特别贫困户','低保家庭'],
 				id:0,
 			}
+		},
+		onLoad(options) {
+			console.log(options.applyId);
+			this.applyId = options.applyId;
+			let _this = this;
+			this.upload.pictureUrl = "";
+			uni.showLoading({
+				title: '加载帮扶信息..'
+			})
+			let data = options.applyId;
+			getApply(data).then((res) => {
+				if (res.code == "200") {
+					console.log(res.data);
+					_this.data = res.data;
+					_this.data.applyTime = _this.data.applyTime.replace("T"," ").substr(0,18);
+					_this.id = res.data.property;
+					console.log(_this.data.applyTime);
+
+					uni.hideLoading();
+				}
+				else{
+					uni.hideLoading();
+					uni.showToast({
+					title: '获取失败',
+					duration: 2000,
+					icon: 'error'
+					});
+				}
+			})
 		},
 		onShow() {
 			var that = this
@@ -153,6 +161,54 @@
 						})
 		},
 		methods: {
+			onSubmit:function(e) {
+				// this.upload.applyId = this.data.userId;
+				this.upload.applyId = this.applyId;
+				console.log('form发生了submit事件，携带数据为：' + JSON.stringify(this.upload))
+				let data = this.upload;
+				let that = this;
+				uni.showModal({
+				    title: '提示',
+				    content: '是否要提交走访记录？',
+				    success: function (res) {
+				        if (res.confirm) {
+				            console.log('用户点击确定');
+							uni.showLoading({
+								title: '申报提交中..'
+							})
+							postVisitReport(data).then((res) => {
+								if (res.code == "200") {
+									uni.hideLoading();
+									console.log(res.data);
+									uni.showToast({
+									title: '提交成功',
+									duration: 2000
+									});
+									that.goBack();
+								}
+								else {
+									console.log("fail");
+									uni.hideLoading();
+									uni.showToast({
+									title: '提交失败',
+									duration: 2000,
+									icon: 'error'
+									});
+								}
+							})
+				        } else if (res.cancel) {
+				            console.log('用户点击取消');
+				        }
+						
+				    }
+				});
+			},
+			onGroupChange: function(e) {
+				this.upload.team = e.detail.value
+			},
+			onRecordChange: function(e) {
+				this.upload.report = e.detail.value
+			},
 			get_imgArrLength() {
 				// console.log(this.imgArr.length);
 				if(this.imgArr.length >= 4) 
@@ -169,6 +225,7 @@
 					count: 4-this.imgArr.length,
 					success:res=>{
 						this.imgArr = this.imgArr.concat(res.tempFilePaths);
+						this.upload.pictureUrl = this.upload.pictureUrl.concat(","+res.tempFilePaths);
 					}
 				})
 			},

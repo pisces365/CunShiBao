@@ -32,9 +32,7 @@
 	/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
 }
 .like {
-	-webkit-box-flex: 0.6;
-	-webkit-flex: 0.6;
-	        flex: 0.6;
+	flex: 0.6;
 }
 .like text {
 	color: rgba(255,69,91,1);

@@ -309,15 +309,9 @@
 	color: #999999;
 }
 .environment-part {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	        justify-content: space-between;
+	align-items: center;
+	justify-content: space-between;
 }
 .environment-part-item {
 	width: 332rpx;
@@ -347,19 +341,10 @@
 	height: 2rpx;
 }
 .floatText {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	        flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	z-index: 99999;
 	position: absolute;
 	top: 0rpx;
@@ -383,15 +368,9 @@
 	left: 0;
 	width: 100%;
 	height: 110%;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 .icon-xiangji{
 	opacity: 0.7;
@@ -402,19 +381,10 @@
 	margin-top: 30rpx;
 	width: 100%;
 	height: 320rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	        flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	border-radius: 20rpx;
 	overflow: hidden;
 }

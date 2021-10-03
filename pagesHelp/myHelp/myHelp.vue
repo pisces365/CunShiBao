@@ -1,105 +1,19 @@
 <template>
 	<view>
 		<view class="main">
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
-			<navigator url="../../pagesA/News?newsID=0" class="my-item">
-				<view class="my-item-title">
-					致贫原因-一般贫困户
-				</view>
-				<view class="my-item-time">
-					2021-06-16 18：20
-				</view>
-				<view class="my-item-text">
-					一些问题描述一些问题描述一些问题描述
-				</view>
-			</navigator>
+			<block v-for="(item , index) in data" :key="index">
+				<navigator url="../../pagesA/News?newsID=0" class="my-item">
+					<view class="my-item-title">
+						{{item.reason}}-{{item.property}}
+					</view>
+					<view class="my-item-time">
+						{{item.applyTime}}
+					</view>
+					<view class="my-item-text">
+						{{item.problemDesc}}
+					</view>
+				</navigator>
+			</block>
 			<view class="none">
 				再多也木有咯……
 			</view>
@@ -109,11 +23,41 @@
 </template>
 
 <script>
+	import {
+		getList
+	} from '@/common/accurate-support-api.js'
 	export default {
 		data() {
 			return {
-				
+				data:{}
 			}
+		},
+		onLoad() {
+			let _this = this
+			uni.showLoading({
+				title: '加载帮扶信息..'
+			})
+			let data = {}
+			getList(data).then((res) => {
+				if (res.code == "200") {
+					// console.log(res.data);
+					_this.data = res.data;
+					for(var i=0;i<_this.data.length;++i)
+					{
+						_this.data[i].applyTime = _this.data[i].applyTime.replace("T"," ").substr(0,19);
+						// console.log(_this.data[i].applyTime);
+					}
+					uni.hideLoading();
+				}
+				else{
+					uni.hideLoading();
+					uni.showToast({
+					title: '获取失败',
+					duration: 2000,
+					icon: 'error'
+					});
+				}
+			})
 		},
 		methods: {
 			
@@ -152,6 +96,7 @@
 	}
 	
 	.none {
+		color: #A6A6A6;
 		font-size: 28rpx;
 		text-align: center;
 		padding-bottom: 30rpx;

@@ -318,51 +318,33 @@ button::after { border: none
 }
 .repair-item {
 	
-	display: -webkit-box;
-	
-	display: -webkit-flex;
-	
 	display: flex;
 	padding: 20rpx 0rpx;
 	margin: 0 30rpx;
 	background-color: white;
 }
 .repair-text {
-	-webkit-box-flex: 2;
-	-webkit-flex: 2;
-	        flex: 2;
+	flex: 2;
 	font-size: 32rpx !important;
 	line-height: 60rpx;
 	padding-left: 90rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 }
 .release-category {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 }
 .category-text {		
 	font-size: 32rpx !important;
 	line-height: 60rpx;
 	/* flex: 1; */
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	/* padding-left: 30rpx; */
 	width: 100rpx;
 }
 .release-scroll {
-	-webkit-box-flex: 6;
-	-webkit-flex: 6;
-	        flex: 6;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
+	flex: 6;
+	align-items: center;
 	line-height: 60rpx;
 	white-space: nowrap;
 	overflow: hidden;
@@ -379,9 +361,7 @@ button::after { border: none
 	font-size: 32rpx !important;
 }
 .repair-input {
-	-webkit-box-flex: 4;
-	-webkit-flex: 4;
-	        flex: 4;
+	flex: 4;
 }
 .repair-input .uni-input {
 	/* border: 0.5px solid #A6A7A6; */
@@ -445,8 +425,6 @@ button::after { border: none
 	background-position: 0 center;
 }
 .release-button {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 }
 .release-button button {

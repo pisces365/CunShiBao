@@ -303,21 +303,12 @@
   content: "\e6b3";
 }
 .supervise {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 	padding: 30rpx;
 	padding-top: 10rpx;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 .supervise-part {
 	background: white;
@@ -355,21 +346,13 @@
 	font-size: 36rpx;
 }
 .enter {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 	margin-top: 20rpx;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 }
 .enterText {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
+	align-items: center;
 	height: 50rpx;
 	margin-left: 20rpx;
 }

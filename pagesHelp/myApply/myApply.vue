@@ -6,7 +6,7 @@
 					<text>姓名</text>
 				</view>
 				<view class="repair-input">
-					<input class="uni-input" name="name" placeholder="姓名" />
+					<input class="uni-input" name="name" placeholder="姓名" @blur="onNameChange"/>
 				</view>
 			</view>
 		</view>
@@ -16,7 +16,7 @@
 					电话
 				</view>
 				<view class="repair-input">
-					<input class="uni-input" name="phone" placeholder="电话" />
+					<input class="uni-input" name="phone" placeholder="电话" @blur="onPhoneChange"/>
 				</view>
 			</view>
 		</view>
@@ -39,7 +39,7 @@
 					
 				</view>
 				<view class="repair-input ">
-					<input class="uni-input" name="roomNum" placeholder="详细地址,如:1号楼1单元101" />					
+					<input class="uni-input" name="roomNum" placeholder="详细地址,如:1号楼1单元101" @blur="onPlaceDetailsChange"/>					
 				</view>
 			</view>
 		</view>
@@ -49,7 +49,7 @@
 					家庭人数
 				</view>
 				<view class="repair-input ">
-					<input type="number" class="uni-input" name="roomNum" placeholder="成员数量" />					
+					<input type="number" class="uni-input" name="roomNum" placeholder="成员数量" @blur="onFamilyNumChange"/>					
 				</view>
 			</view>
 		</view>
@@ -71,7 +71,7 @@
 					<text>致贫原因</text>
 				</view>
 				<view class="repair-input">
-					<input class="uni-input" name="name" placeholder="原因" />
+					<input class="uni-input" name="name" placeholder="原因" @blur="onProblemReasonChange"/>
 				</view>
 			</view>
 		</view>
@@ -83,7 +83,7 @@
 			</view>
 			<view class="repair-item r7" >
 				<view class="repair-input" style="margin-left: 100rpx">
-					<textarea class="uni-input"  placeholder="详细描述遇到的问题" style="float: right; width: 100%;"/>
+					<textarea class="uni-input" @blur="onProblemDiscribeChange" placeholder="详细描述遇到的问题" style="float: right; width: 100%;"/>
 				</view>
 			</view>
 		</view>
@@ -115,7 +115,7 @@
 			</view>
 			<view class="release-button">
 				<button class="r-button1" @click="goBack">取 消</button>
-				<button class="r-button2" @click="goBack">提 交</button>
+				<button class="r-button2" @click="onSubmit">提 交</button>
 			</view>	
 			
 		</view>
@@ -123,6 +123,9 @@
 </template>
 
 <script>
+	import {
+		postApply
+	} from '@/common/accurate-support-api.js'
 	import RegionPicker from '@/components/regionPicker.vue'
 	export default {
 		components: {
@@ -130,35 +133,19 @@
 		},
 		data() {
 			return {
-				price:"0.00",
+				data:{
+					censusRegister: "",//户籍
+  					detailAddress: "",//详细住址
+  					familyMemberAcount: 0,//家庭成员数量
+  					name: "",//申请者姓名
+  					pictureUrl: "",//图片url
+  					problemDesc: "",//问题描述
+  					property: 0,//村户属性(1,2,3)
+  					reason: ""//致贫原因
+				},
 				repair_address_main:"地点：请选择",
-				goods_name: "点击选择商品",
 				imgArr:[],
-				donateType:["图书","衣服"],
-				donateIndex:0,
 				repair_address_main:"请选择",
-				problemType:[
-					['请选择 省份','天津','浙江','江苏','北京'],
-					['市'],
-					['区']
-				],
-				problemItems1:[
-					['市'],
-					['市','xx1','xx2','xx3'],
-					['市','xx4','xx7','xx32'],
-					['市','xx5','xx头','xx22'],
-					['市','xx6','xx9','xx23']
-				],
-				problemItems2:[
-					['区'],
-					['区','水龙头','洁具','照明'],
-					['区','瓷砖','床柜','门窗'],
-					['区','固定电话','摄像头','网线'],
-					['区','绿化养护','花卉布置','园林工程']
-				],
-				typeIndex:0,
-				typeItems1:0,
-				typeItems2:0,
 				CountryType:
 					['一般贫困户','特别贫困户','低保家庭'],
 				id:0,
@@ -172,12 +159,71 @@
 						})
 		},
 		methods: {
+			onNameChange: function(e) {
+				this.data.name = e.detail.value
+			},
+			onPhoneChange: function(e) {
+				
+			},
+			onPlaceDetailsChange: function(e) {
+				this.data.detailAddress = e.detail.value
+			},
+			onFamilyNumChange: function(e) {
+				this.data.familyMemberAcount = e.detail.value
+			},
+			onProblemReasonChange: function(e) {
+				this.data.reason = e.detail.value
+			},
+			onProblemDiscribeChange: function(e) {
+				this.data.problemDesc = e.detail.value
+			},
+			onSubmit:function(e) {
+				console.log('form发生了submit事件，携带数据为：' + JSON.stringify(this.data))
+				let data = this.data;
+				let that = this;
+				uni.showModal({
+				    title: '提示',
+				    content: '是否要提交申报信息？',
+				    success: function (res) {
+				        if (res.confirm) {
+				            console.log('用户点击确定');
+							uni.showLoading({
+								title: '申报提交中..'
+							})
+							postApply(data).then((res) => {
+								if (res.code == "200") {
+									uni.hideLoading();
+									console.log(res.data);
+									uni.showToast({
+									title: '提交成功',
+									duration: 2000
+									});
+									that.goBack();
+								}
+								else {
+									console.log("fail");
+									uni.hideLoading();
+									uni.showToast({
+									title: '提交失败',
+									duration: 2000,
+									icon: 'error'
+									});
+								}
+							})
+				        } else if (res.cancel) {
+				            console.log('用户点击取消');
+				        }
+						
+				    }
+				});
+			},
 			onChangeRegion(region) {
 				// console.log('选择的省市区数据：', region);
 				var _this = this;
-				_this.province = region[0].name;
-				_this.city = region[1].name;
-				_this.district = region[2].name;
+				this.data.censusRegister = region[0].name + "-" + region[1].name + "-" + region[2].name;
+				// _this.province = region[0].name;
+				// _this.city = region[1].name;
+				// _this.district = region[2].name;
 			},
 			get_imgArrLength() {
 				// console.log(this.imgArr.length);
@@ -195,6 +241,9 @@
 					count: 4-this.imgArr.length,
 					success:res=>{
 						this.imgArr = this.imgArr.concat(res.tempFilePaths);
+						// console.log(this.imgArr);
+						this.data.pictureUrl = this.data.pictureUrl.concat(","+res.tempFilePaths);
+						// console.log(this.data.pictureUrl);
 					}
 				})
 			},
@@ -216,6 +265,7 @@
 			},
 			Change(e) {
 				this.id = e.detail.value;
+				this.data.property = e.detail.value;
 			},
 			bindIndexChange(e) {
 				if(e.detail.column == 0)
