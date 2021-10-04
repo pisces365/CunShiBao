@@ -10,91 +10,11 @@
 		<view style="height: 420rpx;margin-bottom: 10rpx;"></view>
 		<information v-show="getTitle0()" :info="EmailOutline"></information>
 		<view class="IWanna-write" v-show="getTitle1()">
-			<view class="IWanna-write-myLetter" v-if="!ifClickWriting" @click="clickMail">
+			<view class="IWanna-write-myLetter" >
 				<MyLetter :info="LetterOfMine"></MyLetter>
-				<view class="IWanna-write-myLetter-click back-img">
+				<view class="IWanna-write-myLetter-click back-img" @click="clickMail">
 					<!-- <text class="iconfont icon-shuxin"></text> -->
 					<view class="IWanna-write-myLetter-click-text back-img-text">我要写信</view>
-				</view>
-				
-			</view>
-			<view class="IWanna-write-WriteLetter" v-if="ifClickWriting">
-				<view class="IWanna-write-ifOpen">
-					<view class="IWanna-write-ifOpen-left">
-						<image v-if="ifOpened==true" src="http://p1362.bvimg.com/10465/39ea698296ea4db0.png" mode="">
-						</image>
-						<image v-else src="http://p1362.bvimg.com/10465/f1313d8804ca1e09.png" mode=""></image>
-						<text>是否公开</text>
-					</view>
-					<view class="IWanna-write-ifOpen-right">
-						<text>公开</text>
-						<radio class="radio" value="1" :checked="ifOpened==='1'" color="#FE7837"
-							@click="changeIfOpen('1')">
-						</radio>
-						<text>不公开</text>
-						<radio class="radio" value="2" :checked="ifOpened==='2'" color="#FE7837"
-							@click="changeIfOpen('2')">
-						</radio>
-					</view>
-				</view>
-				<view class="cross-line"></view>
-				<view class="IWanna-write-ifAnonymity">
-					<view class="IWanna-write-ifAnonymity-top">
-						<view class="IWanna-write-ifAnonymity-left">
-							<image src="http://p1362.bvimg.com/10465/a910089553e1af85.png" mode="">
-							</image>
-							<text>是否匿名</text>
-						</view>
-						<view class="IWanna-write-ifAnonymity-right">
-							<text>匿名</text>
-							<radio class="radio" value="1" :checked="ifAnonymity==='1'" color="#FE7837"
-								@click="changeIfAnonymity('1')">
-							</radio>
-							<text>不匿名</text>
-							<radio class="radio" value="2" :checked="ifAnonymity==='2'" color="#FE7837"
-								@click="changeIfAnonymity('2')">
-							</radio>
-						</view>
-					</view>
-					<view class="IWanna-write-ifAnonymity-bottom">
-						<view class="IWanna-write-linkman" v-if="ifAnonymity=='2'">
-							联系人姓名：
-							<input type="text" value="" placeholder="请填写您的姓名" maxlength="7" style="color: #606160;" />
-						</view>
-						<view class="IWanna-write-phone" v-if="ifAnonymity=='2'">
-							联系人电话：
-							<input type="text" value="" placeholder="请填写您的电话号码" maxlength="11"
-								style="color: #606160;" />
-						</view>
-					</view>
-				</view>
-
-				<view class="cross-line"></view>
-				<view class="IWanna-write-letter">
-					<view class="IWanna-write-letter-title">
-						<image src="http://p1362.bvimg.com/10465/88eba4332b79c8b8.png" mode="">
-						</image>
-						<text>信件内容</text>
-					</view>
-					<view class="IWanna-write-letter-headline">
-						<input type="text" value="" placeholder="标题" v-model="ArticleTitle" />
-						<view class="cross-line">
-
-						</view>
-					</view>
-					<view class="IWanna-write-letter-content">
-						<textarea @input="inputTextArea" v-model="ArticleBody" placeholder="请输入您的信件内容"
-							:maxlength="MaxLen" />
-						<view class="IWanna-write-letter-NumberTip">
-							{{existingNumber}}/{{MaxLen}}
-						</view>
-					</view>
-				</view>
-				<view class="IWanna-write-submit">
-					<view class="IWanna-write-letter-content-back" @click="clickBackToMyLetter">
-						<text class="iconfont icon-zuojiantou">返回</text>
-					</view>
-					<button type="default" @click="submitMail">提交信件</button>
 				</view>
 			</view>
 		</view>
@@ -199,36 +119,12 @@
 			changeIfAnonymity(e) {
 				this.ifAnonymity = e;
 			},
-			submitMail() {
-				let that = this;
-				uni.showModal({
-					title: '提示',
-					content: '您确定要提交信件给村长书记吗',
-					success: function(res) {
-						if (res.confirm) {
-							console.log('用户点击确定');
-							that.ArticleBody = '';
-							that.ArticleTitle = '';
-							that.existingNumber = 0;
-							uni.showToast({
-								title: '寄信成功',
-								duration: 1000
-							});
-							//延迟1秒回到我的信箱
-							setTimeout(that.clickBackToMyLetter, 1000)
-						} else if (res.cancel) {
-							console.log('用户点击取消');
-						}
-					}
-				});
-
-			},
 			clickMail() {
+				console.log(111);
 				this.ifClickWriting = true;
-			},
-			clickBackToMyLetter() {
-				this.ifClickWriting = false;
-				console.log(this.ifClickWriting)
+				uni.navigateTo({
+				    url: '../write_mail/write_mail'
+				});
 			},
 			//字数改变触发事件 
 			inputTextArea(e) {

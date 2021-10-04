@@ -432,9 +432,18 @@
 				{
 					"path": "VillageHead_Email/IWannaWrite/IWannaWrite",
 					"style": {
-						"navigationBarTitleText": "我要写信",
+						"navigationBarTitleText": "村长信箱",
 						"enablePullDownRefresh": true
 					}
+				},
+				{
+				    "path" : "VillageHead_Email/write_mail/write_mail",
+				    "style" :                                                                                    
+							{
+				    "navigationBarTitleText": "我要写信",
+				    "enablePullDownRefresh": false
+							}
+				
 				},
 				{
 					"path": "rent/rent_index/rent_index",
@@ -530,7 +539,8 @@
 					}
 
 				}
-			]
+			    
+            ]
 		},
 		{
 			"root": "pagesB",

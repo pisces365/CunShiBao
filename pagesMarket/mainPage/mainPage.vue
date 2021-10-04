@@ -78,7 +78,7 @@
 					<view class="secondHandItem" >
 							<navigator url="../../pagesMarket/buy/buy" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
 									<text class="goods-name">HLA海澜之家毛衣</text>
@@ -96,7 +96,7 @@
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy">
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/16896eec50403428.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/16896eec50403428.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
 									<text class="goods-name">足力健老人鞋</text>
@@ -114,7 +114,7 @@
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy">
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
 									<text class="goods-name">价值为纲-华为内训精选图书</text>
@@ -133,11 +133,11 @@
 						</view>
 						<view class="secondHandItem">
 							<viewx>
-								<image src="http://p1362.bvimg.com/10465/515b3af70f8568ab.png"  style="width: 340rpx; height: 200rpx; border-radius: 20rpx; margin-bottom: 10rpx;"></image>
+								<image src="http://p1362.bvimg.com/10465/515b3af70f8568ab.png"  style="width: 100%; height: 200rpx; border-radius: 20rpx; margin-bottom: 10rpx;"></image>
 							</viewx>
 							<navigator url="../../pagesMarket/buy/buy" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png"  style="width: 340rpx;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
 									<text class="goods-name">索爱 SA-L28 电脑麦克风</text>
@@ -155,7 +155,7 @@
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/1f1f04d7af08b655.png"  style="width: 340rpx;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/1f1f04d7af08b655.png"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
 									<text class="goods-name">华为 Mate40 5G 手机</text>
@@ -173,7 +173,7 @@
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
 									<text class="goods-name">珞玲珑电视柜茶几组合</text>
@@ -331,11 +331,12 @@
 	.secondHandItem {
 		flex: 1;
 		margin: 10rpx;
+		/* display: flex; */
 	}
 	.secondHandImage {
+		/* flex: 1; */
 		border-top-left-radius: 20rpx;
 		border-top-right-radius: 20rpx;
-		width: 100%;
 	}
 	.price-now {
 		font-size: 30rpx;

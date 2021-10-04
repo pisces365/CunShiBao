@@ -141,87 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 559));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 573));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MyLetter = function MyLetter() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information_noLike */ "component/policyInterpretation/information/information_noLike").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information_noLike.vue */ 580));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 567));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 581));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var MyLetter = function MyLetter() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information_noLike */ "component/policyInterpretation/information/information_noLike").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information_noLike.vue */ 588));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -342,36 +262,12 @@ __webpack_require__.r(__webpack_exports__);
     changeIfAnonymity: function changeIfAnonymity(e) {
       this.ifAnonymity = e;
     },
-    submitMail: function submitMail() {
-      var that = this;
-      uni.showModal({
-        title: '提示',
-        content: '您确定要提交信件给村长书记吗',
-        success: function success(res) {
-          if (res.confirm) {
-            console.log('用户点击确定');
-            that.ArticleBody = '';
-            that.ArticleTitle = '';
-            that.existingNumber = 0;
-            uni.showToast({
-              title: '寄信成功',
-              duration: 1000 });
-
-            //延迟1秒回到我的信箱
-            setTimeout(that.clickBackToMyLetter, 1000);
-          } else if (res.cancel) {
-            console.log('用户点击取消');
-          }
-        } });
-
-
-    },
     clickMail: function clickMail() {
+      console.log(111);
       this.ifClickWriting = true;
-    },
-    clickBackToMyLetter: function clickBackToMyLetter() {
-      this.ifClickWriting = false;
-      console.log(this.ifClickWriting);
+      uni.navigateTo({
+        url: '../write_mail/write_mail' });
+
     },
     //字数改变触发事件 
     inputTextArea: function inputTextArea(e) {

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "我要写信",
+  "navigationBarTitleText": "村长信箱",
   "enablePullDownRefresh": true,
   "usingComponents": {
     "navigation": "/component/policyInterpretation/navigation/navigation",

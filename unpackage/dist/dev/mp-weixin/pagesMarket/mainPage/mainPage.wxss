@@ -365,11 +365,12 @@ page {
 .secondHandItem {
 	flex: 1;
 	margin: 10rpx;
+	/* display: flex; */
 }
 .secondHandImage {
+	/* flex: 1; */
 	border-top-left-radius: 20rpx;
 	border-top-right-radius: 20rpx;
-	width: 100%;
 }
 .price-now {
 	font-size: 30rpx;

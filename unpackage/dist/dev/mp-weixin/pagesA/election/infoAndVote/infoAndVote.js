@@ -141,7 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 559));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var personalProfile = function personalProfile() {__webpack_require__.e(/*! require.ensure | component/election/personalProfile/personalProfile */ "component/election/personalProfile/personalProfile").then((function () {return resolve(__webpack_require__(/*! @/component/election/personalProfile/personalProfile.vue */ 566));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 573));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 567));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var personalProfile = function personalProfile() {__webpack_require__.e(/*! require.ensure | component/election/personalProfile/personalProfile */ "component/election/personalProfile/personalProfile").then((function () {return resolve(__webpack_require__(/*! @/component/election/personalProfile/personalProfile.vue */ 574));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 581));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -183,20 +183,20 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
       latestInfo: [//具体信息
       {
-        title: "马尾区召开村级组织换届选举工作推进会",
-        source: "中国政府门户网",
-        date: "9" + "月" + "24" + "日",
+        title: "精心做好换届选举“后半篇”",
+        source: "村换届选举委员会",
+        date: "12" + "月" + "23" + "日",
         reading: "13.5" + "万",
         like: "105",
-        url: "../../policy/policyDetails/policyDetails" },
+        url: "../../policy/policyDetails/policyDetails?id=0" },
 
       {
-        title: "大地乡多搓并举做好村级换届选举工作",
-        source: "中国政府门户网",
-        date: "9" + "月" + "24" + "日",
+        title: "“三心”聚力 做好换届选举",
+        source: "村换届选举委员会",
+        date: "3" + "月" + "14" + "日",
         reading: "13.5" + "万",
         like: "105",
-        url: "../../policy/policyDetails/policyDetails" }],
+        url: "../../policy/policyDetails/policyDetails?id=1" }],
 
 
 
