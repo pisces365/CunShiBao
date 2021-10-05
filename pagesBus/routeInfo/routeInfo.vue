@@ -225,7 +225,7 @@
 							},
 							{
 								station:"石马社区",
-								selected:false,
+								selected:true,
 								isNear:true
 							},
 							{

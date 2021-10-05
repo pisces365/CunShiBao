@@ -2,7 +2,7 @@
 	<view class="release">
 		<view class="repair-border ">
 			<view class="repair-item">
-				<view class="repair-text r-name iconfont repair_after iconfont">
+				<view class="repair-text r-name repair_after iconfont">
 					名称 
 				</view>
 				<view class="repair-input ">
@@ -331,7 +331,7 @@
 	}
 	
 	.repair-text {
-		flex: 2;
+		flex: 1;
 		font-size: 32rpx !important;
 		line-height: 60rpx;
 		padding-left: 90rpx;

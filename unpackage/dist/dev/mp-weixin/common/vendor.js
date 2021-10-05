@@ -914,7 +914,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -2151,7 +2151,7 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 123:
+/***/ 115:
 /*!******************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/accurate-support-api.js ***!
   \******************************************************************************/
@@ -2304,6 +2304,133 @@ if (hadRuntime) {
   }
 }
 
+
+/***/ }),
+
+/***/ 198:
+/*!**************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/util.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _baseUrl$nowTime$calc;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseUrl = '';
+var nowTime = Date.now || function () {
+  return new Date().getTime();
+};
+var app = getApp();var _default = (_baseUrl$nowTime$calc = {
+
+  baseUrl: baseUrl,
+  nowTime: nowTime,
+  //获取openID
+  calculateTimeDiff: function calculateTimeDiff(endTime) {
+    var _this = this;
+    endTime = Date.parse(endTime);
+    var currentTime = Date.now();
+    // console.log(currentTime)
+    // console.log(endTime);
+    var timeDiff = endTime - currentTime;
+    // console.log(timeDiff);
+    var secondDiff = Math.floor((endTime - currentTime) / 1000);
+    var minuteDiff = Math.floor(secondDiff / 60);
+    var hourDiff = Math.floor(minuteDiff / 60);
+    var dayDiff = Math.floor(hourDiff / 24);
+    hourDiff = Math.floor(hourDiff % 24);
+    minuteDiff = Math.floor(minuteDiff % 60);
+    secondDiff = Math.floor(secondDiff % 60);
+    var timeLag = {
+      dayDiff: dayDiff,
+      hourDiff: hourDiff,
+      minuteDiff: minuteDiff,
+      secondDiff: secondDiff };
+
+    return timeLag;
+  },
+
+  //是否为空
+  isNullOrEmpty: function isNullOrEmpty(value) {
+    return value === null || value === '' || value === undefined ? true : false;
+  },
+
+  //是否为手机号	
+  isMobile: function isMobile(value) {
+    return /^(?:13\d|14\d|15\d|16\d|17\d|18\d|19\d)\d{5}(\d{3}|\*{3})$/.test(value);
+  },
+  //是否包含座机地址
+  isLandline: function isLandline(value) {
+    return /0\d{2,3}-\d{7,8}|\(?0\d{2,3}[)-]?\d{7,8}|\(?0\d{2,3}[)-]*\d{7,8}/.test(value);
+  },
+  //金额，只允许保留两位小数
+  isFloat: function isFloat(value) {
+    return /^([0-9]*[.]?[0-9])[0-9]{0,1}$/.test(value);
+  },
+  //是否全为数字
+  isNum: function isNum(value) {
+    return /^[0-9]+$/.test(value);
+  },
+  //是否包含中文字符
+  isCharacter: function isCharacter(value) {
+    return /[\u4e00-\u9fa5]/.test(value);
+  },
+  //是否包含Url地址
+  isUrl: function isUrl(value) {
+    return /^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+/.test(value);
+  } }, _defineProperty(_baseUrl$nowTime$calc, "isUrl",
+
+function isUrl(value) {
+  return /\s/.test(value);
+}), _defineProperty(_baseUrl$nowTime$calc, "isEmail",
+
+function isEmail(value) {
+  return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(value);
+}), _defineProperty(_baseUrl$nowTime$calc, "trim",
+
+function trim(value) {
+  return value.replace(/(^\s*)|(\s*$)/g, "");
+}), _defineProperty(_baseUrl$nowTime$calc, "checkPwd",
+
+function checkPwd(value) {
+  return /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(value);
+}), _defineProperty(_baseUrl$nowTime$calc, "formatNum",
+
+function formatNum(num) {
+  if (regextool.isMobile(num)) {
+    num = num.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
+  }
+  return num;
+}), _defineProperty(_baseUrl$nowTime$calc, "isCardNo",
+function isCardNo(num) {
+  if (isNaN(num)) {
+    // alert("输入的身份证号不是数字！");
+    return false;
+  }
+  var len = num.length;
+  if (len < 15 || len > 18) {
+    // alert("输入的身份证号码长度不正确定！应为15位或18位");
+    return false;
+  }
+  var re15 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
+  var re18 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;
+  var res = re15.test(num) || re18.test(num);
+  if (res == false) {
+    // alert("输入的身份证号格式不正确！");
+    return false;
+  }
+  return true;
+}), _defineProperty(_baseUrl$nowTime$calc, "isChines",
+function isChines(source) {
+  var regex = /^[\u4E00-\u9FA5]+$/;
+  return regex.test(source);
+}), _defineProperty(_baseUrl$nowTime$calc, "handleOptions", function handleOptions(
+options) {
+  console.log(options);
+  if (options.query) {
+    return options.query;
+  } else {
+    return {};
+  }
+}), _baseUrl$nowTime$calc);exports.default = _default;
 
 /***/ }),
 
@@ -7834,7 +7961,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7855,14 +7982,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7948,7 +8075,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9088,133 +9215,6 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 200:
-/*!**************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/util.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _baseUrl$nowTime$calc;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseUrl = '';
-var nowTime = Date.now || function () {
-  return new Date().getTime();
-};
-var app = getApp();var _default = (_baseUrl$nowTime$calc = {
-
-  baseUrl: baseUrl,
-  nowTime: nowTime,
-  //获取openID
-  calculateTimeDiff: function calculateTimeDiff(endTime) {
-    var _this = this;
-    endTime = Date.parse(endTime);
-    var currentTime = Date.now();
-    // console.log(currentTime)
-    // console.log(endTime);
-    var timeDiff = endTime - currentTime;
-    // console.log(timeDiff);
-    var secondDiff = Math.floor((endTime - currentTime) / 1000);
-    var minuteDiff = Math.floor(secondDiff / 60);
-    var hourDiff = Math.floor(minuteDiff / 60);
-    var dayDiff = Math.floor(hourDiff / 24);
-    hourDiff = Math.floor(hourDiff % 24);
-    minuteDiff = Math.floor(minuteDiff % 60);
-    secondDiff = Math.floor(secondDiff % 60);
-    var timeLag = {
-      dayDiff: dayDiff,
-      hourDiff: hourDiff,
-      minuteDiff: minuteDiff,
-      secondDiff: secondDiff };
-
-    return timeLag;
-  },
-
-  //是否为空
-  isNullOrEmpty: function isNullOrEmpty(value) {
-    return value === null || value === '' || value === undefined ? true : false;
-  },
-
-  //是否为手机号	
-  isMobile: function isMobile(value) {
-    return /^(?:13\d|14\d|15\d|16\d|17\d|18\d|19\d)\d{5}(\d{3}|\*{3})$/.test(value);
-  },
-  //是否包含座机地址
-  isLandline: function isLandline(value) {
-    return /0\d{2,3}-\d{7,8}|\(?0\d{2,3}[)-]?\d{7,8}|\(?0\d{2,3}[)-]*\d{7,8}/.test(value);
-  },
-  //金额，只允许保留两位小数
-  isFloat: function isFloat(value) {
-    return /^([0-9]*[.]?[0-9])[0-9]{0,1}$/.test(value);
-  },
-  //是否全为数字
-  isNum: function isNum(value) {
-    return /^[0-9]+$/.test(value);
-  },
-  //是否包含中文字符
-  isCharacter: function isCharacter(value) {
-    return /[\u4e00-\u9fa5]/.test(value);
-  },
-  //是否包含Url地址
-  isUrl: function isUrl(value) {
-    return /^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+/.test(value);
-  } }, _defineProperty(_baseUrl$nowTime$calc, "isUrl",
-
-function isUrl(value) {
-  return /\s/.test(value);
-}), _defineProperty(_baseUrl$nowTime$calc, "isEmail",
-
-function isEmail(value) {
-  return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(value);
-}), _defineProperty(_baseUrl$nowTime$calc, "trim",
-
-function trim(value) {
-  return value.replace(/(^\s*)|(\s*$)/g, "");
-}), _defineProperty(_baseUrl$nowTime$calc, "checkPwd",
-
-function checkPwd(value) {
-  return /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(value);
-}), _defineProperty(_baseUrl$nowTime$calc, "formatNum",
-
-function formatNum(num) {
-  if (regextool.isMobile(num)) {
-    num = num.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
-  }
-  return num;
-}), _defineProperty(_baseUrl$nowTime$calc, "isCardNo",
-function isCardNo(num) {
-  if (isNaN(num)) {
-    // alert("输入的身份证号不是数字！");
-    return false;
-  }
-  var len = num.length;
-  if (len < 15 || len > 18) {
-    // alert("输入的身份证号码长度不正确定！应为15位或18位");
-    return false;
-  }
-  var re15 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
-  var re18 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;
-  var res = re15.test(num) || re18.test(num);
-  if (res == false) {
-    // alert("输入的身份证号格式不正确！");
-    return false;
-  }
-  return true;
-}), _defineProperty(_baseUrl$nowTime$calc, "isChines",
-function isChines(source) {
-  var regex = /^[\u4E00-\u9FA5]+$/;
-  return regex.test(source);
-}), _defineProperty(_baseUrl$nowTime$calc, "handleOptions", function handleOptions(
-options) {
-  console.log(options);
-  if (options.query) {
-    return options.query;
-  } else {
-    return {};
-  }
-}), _baseUrl$nowTime$calc);exports.default = _default;
-
-/***/ }),
-
 /***/ 21:
 /*!*************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
@@ -9426,7 +9426,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 399:
+/***/ 397:
 /*!*********************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
   \*********************************************************************************************/
@@ -10889,7 +10889,7 @@ function walkJsonObj(jsonObj, walk) {
 
 /***/ }),
 
-/***/ 478:
+/***/ 476:
 /*!***********************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
   \***********************************************************/
@@ -11343,7 +11343,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 564:
+/***/ 562:
 /*!**********************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/region.json ***!
   \**********************************************************************/
@@ -11354,7 +11354,7 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
-/***/ 621:
+/***/ 633:
 /*!************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
   \************************************************************************************/
@@ -11401,7 +11401,7 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
-/***/ 657:
+/***/ 669:
 /*!***************************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************/

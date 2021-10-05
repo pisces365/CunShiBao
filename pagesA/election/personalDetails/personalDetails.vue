@@ -202,11 +202,11 @@
 	}
 	
 	.more #brief_introduction {
-		background-image: url(http://b1137.bvimg.com/10453/4fb1f0f8543fb300.png);
+		background-image: url(http://p1362.bvimg.com/10465/06736be0da7b5eb0.png);
 	}
 	
 	.more #plan {
-		background-image: url(http://b1137.bvimg.com/10453/d81dddb9d782d65c.png);
+		background-image: url(http://p1362.bvimg.com/10465/8c46633b76748889.png);
 	}
 	
 	.more .more-detail {
@@ -234,7 +234,7 @@
 	
 	.I-Wanna-Vote {
 		
-		background-image: url(http://b1137.bvimg.com/10453/cb9e47eb1f91b834.png);
+		background-image: url(http://p1362.bvimg.com/10465/e7504363296a9c9f.png);
 		background-size: contain;
 		background-repeat: no-repeat;
 		

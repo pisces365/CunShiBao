@@ -205,6 +205,7 @@ var _api = __webpack_require__(/*! ../../common/api.js */ 21);function _interopR
                         uni.setStorageSync('securityStatus', 1);
                         uni.setStorageSync('userInfo', infoRes.
                         userInfo);
+                        uni.setStorageSync('mainPage', 1);
                         //微信用户登录接口
                         wx.login({
                           success: function success(res) {
@@ -234,7 +235,7 @@ var _api = __webpack_require__(/*! ../../common/api.js */ 21);function _interopR
                                 if (res.code == "200") {
                                   // 选择版本
                                   uni.switchTab({
-                                    url: "../index/index" });
+                                    url: "../main_page/main_page" });
 
 
                                 }
@@ -272,7 +273,7 @@ var _api = __webpack_require__(/*! ../../common/api.js */ 21);function _interopR
 
 
                 uni.switchTab({
-                  url: "../index/index" });case 9:case "end":return _context.stop();}}}, _callee, this);}));function goLogin() {return _goLogin.apply(this, arguments);}return goLogin;}() } };exports.default = _default;
+                  url: "../main_page/main_page" });case 9:case "end":return _context.stop();}}}, _callee, this);}));function goLogin() {return _goLogin.apply(this, arguments);}return goLogin;}() } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

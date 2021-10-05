@@ -25,7 +25,7 @@
 				</view>
 				<view class="me-info-bottom">
 					<navigator class="me-info-edit" url="../../mine/personalInfo/personalInfo">
-						<image class="info-img" src="http://p1362.bvimg.com/10465/5eefbe51da38df66.png" mode=""></image>个人信息
+						<image class="info-img" src="http://p1362.bvimg.com/10465/5eefbe51da38df66.png" mode=""></image>个人设置
 					</navigator>
 					<view class="me-vertical-line">
 						

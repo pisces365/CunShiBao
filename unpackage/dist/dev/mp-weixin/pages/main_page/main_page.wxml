@@ -1,0 +1,1 @@
+<view><block wx:if="{{mainPage==1}}"><index-common vue-id="4280aa94-1" bind:__l="__l"></index-common></block><block wx:if="{{mainPage==2}}"><index-old vue-id="4280aa94-2" bind:__l="__l"></index-old></block></view>

@@ -1,4 +1,4 @@
-<template>
+<template name="indexCommon">
 	<view class="index" v-show="ifLoading">
 		<swiper class="index-swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true"
 			indicator-active-color="#f7f7f7" indicator-color="rgba(145, 145, 145, 0.7)">
@@ -68,18 +68,6 @@
 					</navigator>
 				</view>
 				<view class="index-VillageParty-content-onePart">
-					<navigator url="../../pagesB/landContract/landContract"
-						class="index-VillageParty-content-onePart-left">
-						<view class="funcion-top">
-							<text>{{VillageParty.VillagePartyTitle[2]}}</text>
-						</view>
-						<view class="funcion-bottom">
-							<text>{{VillageParty.VillagePartyDescripetion[2]}}</text>
-						</view>
-						<view class="function-image">
-							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
-						</view>
-					</navigator>
 					<navigator url="../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite"
 						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
@@ -92,6 +80,26 @@
 							<image :src="VillageParty.VillagePartyTitleImageUrl[3]" lazy-load="true" mode=""></image>
 						</view>
 					</navigator>
+					<!-- <navigator url="../../pagesB/landContract/landContract"
+						class="index-VillageParty-content-onePart-left">
+						<view class="funcion-top">
+							<text>{{VillageParty.VillagePartyTitle[2]}}</text>
+						</view>
+						<view class="funcion-bottom">
+							<text>{{VillageParty.VillagePartyDescripetion[2]}}</text>
+						</view>
+						<view class="function-image">
+							<image :src="VillageParty.VillagePartyTitleImageUrl[2]" lazy-load="true" mode=""></image>
+						</view>
+					</navigator> -->
+					<view class="index-VillageParty-content-onePart-noShow">
+						<view class="funcion-top">
+						</view>
+						<view class="funcion-bottom">
+						</view>
+						<view class="function-image">
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -214,7 +222,7 @@
 		data() {
 			return {
 				title: 'Hello',
-				ifLoading: false,
+				ifLoading: true,
 				homeSlide: [
 					'http://p1362.bvimg.com/10465/ebe9ee53eacd9d82.png',
 					'http://p1362.bvimg.com/10465/df28479dd7b9666a.png',
@@ -254,9 +262,9 @@
 
 			}
 		},
-		onLoad() {
-			this.ifLoading = true;
-		},
+		// onLoad() {
+		// 	this.ifLoading = true;
+		// },
 		methods: {
 			toDetails() {
 				uni.navigateTo({

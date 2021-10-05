@@ -2,6 +2,11 @@
 page {
 	background: #f7f8f7;
 }
+.personInfo-title {
+	margin: 30rpx 40rpx;
+	font-size: 32rpx;
+	font-weight: bolder;
+}
 .personInfo {}
 .baseInfo {
 	padding: 20rpx;

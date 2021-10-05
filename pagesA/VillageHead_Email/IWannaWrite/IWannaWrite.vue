@@ -54,49 +54,40 @@
 				],
 				EmailOutline: [ //具体信息
 					{
-						title: "老沈村长给村头小刚娃的一封回信",
+						title: "关于新变户籍问题",
 						source: "村事宝",
-						date: "2021 年08 月 24 日",
+						date: "2021年09月16日",
 						reading: "14,603",
 						like: "6,318",
 						url: "../../News?newsID=9"
+					},
+					{
+						title: "副村长是否享有随意处置村民私有财产的特权？",
+						source: "村事宝",
+						date: "2021年9月15日",
+						reading: "14,603",
+						like: "6,318",
+						url: "../../News?newsID=10"
+					},
+					{
+						title: "农村居住环境急待改善",
+						source: "村事宝",
+						date: "2021年9月13日",
+						reading: "14,603",
+						like: "6,318",
+						url: "../../News?newsID=11"
 					}
 				],
 				LetterOfMine: [{
-					title: "村长爷爷，您好！",
+					title: "关于老人坐公交车要扫码",
 					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
+					date: "2021年09月13日",
+					url: "../../News?newsID=12"
 				}, {
-					title: "村长爷爷，您好！",
+					title: "甘北沿河班车何时再开",
 					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
-				}, {
-					title: "村长爷爷，您好！",
-					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
-				}, {
-					title: "村长爷爷，您好！",
-					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
-				}, {
-					title: "村长爷爷，您好！",
-					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
-				}, {
-					title: "村长爷爷，您好！",
-					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
-				}, {
-					title: "村长爷爷，您好！",
-					source: "村事宝",
-					date: "2021 年08 月 24 日",
-					url: "../../News?newsID=9"
+					date: "2021年08月24日",
+					url: "../../News?newsID=13"
 				}]
 			}
 		},

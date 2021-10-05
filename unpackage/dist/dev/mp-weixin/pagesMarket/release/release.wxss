@@ -324,7 +324,7 @@ button::after { border: none
 	background-color: white;
 }
 .repair-text {
-	flex: 2;
+	flex: 1;
 	font-size: 32rpx !important;
 	line-height: 60rpx;
 	padding-left: 90rpx;

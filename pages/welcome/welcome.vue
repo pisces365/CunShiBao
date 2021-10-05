@@ -67,6 +67,7 @@
 								uni.setStorageSync('securityStatus', 1);
 								uni.setStorageSync('userInfo', infoRes
 									.userInfo);
+								uni.setStorageSync('mainPage', 1);
 								//微信用户登录接口
 								wx.login({
 									success: function(res) {
@@ -96,7 +97,7 @@
 												if (res.code == "200") {
 													// 选择版本
 													uni.switchTab({
-														url: "../index/index"
+														url: "../main_page/main_page"
 													});
 
 												}
@@ -134,7 +135,7 @@
 					})
 
 					uni.switchTab({
-						url: "../index/index"
+						url: "../main_page/main_page"
 					});
 				}
 			}

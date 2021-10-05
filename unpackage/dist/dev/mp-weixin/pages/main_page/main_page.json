@@ -3,5 +3,8 @@
   "enablePullDownRefresh": false,
   "navigationBarTextStyle": "black",
   "navigationBarBackgroundColor": "#FEF0D2",
-  "usingComponents": {}
+  "usingComponents": {
+    "index-common": "/component/index/index",
+    "index-old": "/component/index_old/index_old"
+  }
 }

@@ -1,6 +1,10 @@
 <template>
 	<view>
 		<view class="personInfo">
+			
+			<view class="personInfo-title">
+				个人信息
+			</view>
 			<view class="baseInfo">
 				<view class="baseInfo-item">
 					<view class="baseInfo-item-left">
@@ -81,6 +85,22 @@
 
 				</view>
 			</view>
+			
+			
+			<view class="personInfo-title">
+				偏好配置
+			</view>
+			<view class="baseInfo">
+				<view class="baseInfo-item">
+					<view class="baseInfo-item-left">
+						首页风格
+					</view>
+					<navigator url="../select_main_page/select_main_page" class="baseInfo-item-right gray">
+						去设置 >
+					</navigator>
+				</view>
+			</view>
+			
 		</view>
 	</view>
 </template>
@@ -134,6 +154,12 @@
 <style>
 	page {
 		background: #f7f8f7;
+	}
+
+	.personInfo-title {
+		margin: 30rpx 40rpx;
+		font-size: 32rpx;
+		font-weight: bolder;
 	}
 
 	.personInfo {}
