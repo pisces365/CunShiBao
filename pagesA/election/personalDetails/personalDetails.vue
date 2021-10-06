@@ -77,15 +77,29 @@
 			}
 		},
 		methods: {
+			// toVote() {
+			// 	this.showFloatWindow = !this.showFloatWindow;
+			// }
+			// ,
 			toVote() {
-				this.showFloatWindow = !this.showFloatWindow;
-			}
-			,
+				let that = this;
+				uni.showModal({
+				    title: '提示',
+				    content: '是否进行投票？',
+				    success: function (res) {
+						if(res.confirm)
+				        uni.navigateBack();
+				    },
+					fail: function (res) {
+						
+					}
+				});
+			},
 			submit() {
 				// 上传数据（待写）
 				
 				// 退回上一页
-				uni.navigateBack();
+				// uni.navigateBack();
 			}
 		},
 		onLoad(option) {
@@ -159,7 +173,7 @@
 	
 	.detail {
 		display: flex;
-		font-size: 14px;
+		font-size: 28rpx;
 	}
 	
 	.personal-picture {
@@ -179,7 +193,7 @@
 	
 	.vote {
 		flex: 1;
-		color: #b14900;
+		color: rgb(158, 65, 46);
 		font-weight: bold;
 		font-size: 18px;
 	}
@@ -195,7 +209,7 @@
 		
 		background-size: contain;
 		background-repeat: no-repeat;
-		font-size: 14px;
+		font-size: 28rpx;
 		height: 50rpx;
 		padding-left: 60rpx;
 		line-height: 50rpx;
@@ -211,7 +225,7 @@
 	
 	.more .more-detail {
 		margin-top: 10rpx;
-		font-size: 12px;
+		font-size: 28rpx;
 		color: #A6A7A6;
 	}
 	
@@ -229,7 +243,7 @@
 		padding: 10rpx;
 		
 		border-radius: 20rpx;
-		background-color: #a1bf56;
+		background-color: rgb(161, 191, 86);
 	}
 	
 	.I-Wanna-Vote {

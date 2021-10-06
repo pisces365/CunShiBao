@@ -193,6 +193,7 @@
 
 	page {
 		background-image: url('http://p1362.bvimg.com/10465/cec1b7d96cf7acf2.png');
+		background-attachment: fixed;
 	}
 
 	.index {

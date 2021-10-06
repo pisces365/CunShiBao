@@ -567,7 +567,7 @@
 
 		.rent-hostOwner-contact {
 			font-size: 30rpx;
-			color: #4CD964;
+			color: rgba(161,191,86,1);
 			margin: 20rpx;
 		}
 	}
@@ -800,12 +800,12 @@
 	.release-button .r-button2 {
 		position: absolute;
 		right: 0;
-		background-color: rgba(78,207,104,1);
+		background-color: rgba(161,191,86,1);
 		color: white;
 	}
 	
 	.release-button .r-button2:active {
-		background-color: rgba(78,207,104,0.8);
+		background-color: rgba(161,191,86,0.8);
 	} 
 	 
 	.bottom-bar {

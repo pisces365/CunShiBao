@@ -43,7 +43,8 @@
         "moreInfo/moreInfo",
         "familyInfo/familyInfo",
         "workInfo/workInfo",
-        "select_main_page/select_main_page"
+        "select_main_page/select_main_page",
+        "my_collection/my_collection"
       ]
     },
     {
@@ -111,7 +112,7 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#A1BF56",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [

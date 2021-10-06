@@ -10,11 +10,11 @@
 					</view>
 					<view class="IWanna-write-ifOpen-right">
 						<text>公开</text>
-						<radio class="radio" value="1" :checked="ifOpened==='1'" color="rgba(255,167,106,1)"
+						<radio class="radio" value="1" :checked="ifOpened==='1'" color="rgba(161,191,86,1)"
 							@click="changeIfOpen('1')">
 						</radio>
 						<text>不公开</text>
-						<radio class="radio" value="2" :checked="ifOpened==='2'" color="rgba(255,167,106,1)"
+						<radio class="radio" value="2" :checked="ifOpened==='2'" color="rgba(161,191,86,1)"
 							@click="changeIfOpen('2')">
 						</radio>
 					</view>
@@ -29,11 +29,11 @@
 						</view>
 						<view class="IWanna-write-ifAnonymity-right">
 							<text>匿名</text>
-							<radio class="radio" value="1" :checked="ifAnonymity==='1'" color="rgba(255,167,106,1)"
+							<radio class="radio" value="1" :checked="ifAnonymity==='1'" color="rgba(161,191,86,1)"
 								@click="changeIfAnonymity('1')">
 							</radio>
 							<text>不匿名</text>
-							<radio class="radio" value="2" :checked="ifAnonymity==='2'" color="rgba(255,167,106,1)"
+							<radio class="radio" value="2" :checked="ifAnonymity==='2'" color="rgba(161,191,86,1)"
 								@click="changeIfAnonymity('2')">
 							</radio>
 						</view>
@@ -351,7 +351,7 @@
 	.IWanna-write-myLetter-click text {
 		font-size: 80rpx;
 		font-weight: 600;
-		color: #ea9400;
+		color: #A1BF56;
 	}
 
 	.IWanna-write-myLetter-click-text {
@@ -384,7 +384,7 @@
 	}
 	
 	.release-button .r-button2 {
-		background-color: rgba(255,167,106,1);
+		background-color: rgba(161,191,86,1);
 		color: white;
 	}
 	
@@ -393,7 +393,7 @@
 	}
 	
 	.release-button .r-button2:active {
-		background-color: rgba(255,167,106,0.8);
+		background-color: rgba(161,191,86,0.8);
 	}  
 	
 	.bottom-bar {

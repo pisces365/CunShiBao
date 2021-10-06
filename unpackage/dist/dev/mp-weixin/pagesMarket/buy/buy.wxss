@@ -704,7 +704,7 @@ page {
 }
 .rent-hostOwner .rent-hostOwner-contact {
   font-size: 30rpx;
-  color: #4CD964;
+  color: #a1bf56;
   margin: 20rpx;
 }
 .rent-infrastructure {
@@ -891,11 +891,11 @@ button::after {
 .release-button .r-button2 {
   position: absolute;
   right: 0;
-  background-color: #4ecf68;
+  background-color: #a1bf56;
   color: white;
 }
 .release-button .r-button2:active {
-  background-color: rgba(78, 207, 104, 0.8);
+  background-color: rgba(161, 191, 86, 0.8);
 }
 .bottom-bar {
   position: fixed;

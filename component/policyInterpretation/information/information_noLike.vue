@@ -51,7 +51,7 @@
 	.bottom-infomation {
 		margin-top: 30rpx;
 		margin-left: 10rpx;
-		font-size: 20rpx;
+		font-size: 26rpx;
 	}
 	.source,.date{
 		color: #939493;

@@ -424,7 +424,7 @@
 	}
 	
 	.release-button .r-button2 {
-		background-color: rgba(78,207,104,1);
+		background-color: rgba(161,191,86,1);
 		color: white;
 	}
 	
@@ -433,7 +433,7 @@
 	}
 	
 	.release-button .r-button2:active {
-		background-color: rgba(78,207,104,0.8);
+		background-color: rgba(161,191,86,0.8);
 	}  
 	
 	.bottom-bar {

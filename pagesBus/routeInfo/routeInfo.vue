@@ -108,7 +108,7 @@
 						<view v-show="!item.selected" style="height: 20rpx; 
 						width: 20rpx; 
 						border-radius: 50rpx; 
-						background-color: #00CB95;
+						background-color: rgba(161,191,86,1);
 						position: absolute;
 						left: -12rpx;
 						top:36rpx;
@@ -122,7 +122,7 @@
 						position: absolute;
 						left: -12rpx;
 						top:36rpx;
-						border:8rpx solid #007AFF">
+						border:8rpx solid rgb(109, 141, 173)">
 							
 						</view>
 						<view style="height: 50rpx; width: 10rpx; background-color: rgb(229,229,234);">
@@ -133,7 +133,7 @@
 						<view class="" style="display: inline-block; margin:30rpx 0;">
 							{{item.station}}
 						</view>
-						<view v-if="item.isNear" style="display: inline-block; margin:30rpx 20rpx; color: #007AFF;">
+						<view v-if="item.isNear" style="display: inline-block; margin:30rpx 20rpx; color: rgb(109, 141, 173);">
 							离我最近！
 						</view>
 						<view v-show="item.selected" class="like" style="margin-top: 20rpx">收藏站台</view>

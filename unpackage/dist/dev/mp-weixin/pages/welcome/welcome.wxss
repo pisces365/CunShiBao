@@ -42,7 +42,7 @@ page {
 .welcome-button {
 	width: 100%;
 	height: 100%;
-	background: #4ecf68;
+	background: rgba(161,191,86,1);
 	color: white;
 	font-size: 34rpx;
 	font-weight: bold;

@@ -45,14 +45,14 @@
 					<text class="homePage-iconRight iconfont icon-a-LeftArrow-copy"></text>
 				</view>
 				<view class="cross-line"></view>
-				<view class="homePage-work-part ">
+				<navigator url="../../mine/my_collection/my_collection" class="homePage-work-part ">
 					<view class="homePage-image">
 						<image class="homePage-imageSelf" src="http://p1362.bvimg.com/10465/cfef562ceaee8e47.png"
 							mode=""></image>
 					</view>
 					<text class="homePage-work-part-title">我的收藏</text>
 					<text class="homePage-iconRight iconfont icon-a-LeftArrow-copy"></text>
-				</view>
+				</navigator>
 				<view class="cross-line"></view>
 				<view class="homePage-work-part ">
 					<view class="homePage-image">

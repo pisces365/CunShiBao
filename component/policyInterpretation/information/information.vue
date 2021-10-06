@@ -57,7 +57,7 @@
 	.bottom-infomation {
 		margin-top: 30rpx;
 		margin-left: 10rpx;
-		font-size: 20rpx;
+		font-size: 26rpx;
 	}
 	.source,.date{
 		color: #939493;
@@ -67,21 +67,39 @@
 		float: right;
 		margin-right: 20rpx;
 	}
-	.reading text {
+	/* .reading text {
 		color: rgba(86,120,243,1);
 		background-color: rgba(86,120,243,0.1);
 		padding: 5rpx;
 		border-radius: 5rpx;
 		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
-	}
+	/* } 
+	 */
 	.like {
 		flex: 0.6;
 	}
-	.like text {
+	/* .like text {
 		color: rgba(255,69,91,1);
 		background-color: rgba(255,69,91,0.1);
 		padding: 5rpx;
 		border-radius: 5rpx;
 		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+	/* } 
+	*/
+	.reading text {
+		color: rgb(109, 141, 173);
+		background-color: rgba(109, 141, 173, 0.1);
+		padding: 5rpx;
+		border-radius: 5rpx;
+		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+		font-weight: 600;
+	}
+	.like text {
+		color: rgb(158, 65, 46);
+		background-color: rgba(158, 65, 46, 0.1);
+		padding: 5rpx;
+		border-radius: 5rpx;
+		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+		font-weight: 600;
 	}
 </style>

@@ -1,5 +1,5 @@
 <template name="indexCommon">
-	<view class="index" v-show="ifLoading">
+	<view class="index">
 		<swiper class="index-swiper" indicator-dots="true" autoplay="true" interval="3000" circular="true"
 			indicator-active-color="#f7f7f7" indicator-color="rgba(145, 145, 145, 0.7)">
 			
@@ -16,7 +16,7 @@
 			</view>
 			<view class="index-blog-center">
 				<view class="index-blog-center-line">
-
+		
 				</view>
 			</view>
 			<view class="index-blog-right" @click="toDetails()">
@@ -140,7 +140,7 @@
 						</view>
 					</navigator>
 				</view>
-
+		
 				<view class="index-VillageParty-content-onePart">
 					<navigator class="index-VillageParty-content-onePart-left" url="../../pagesSupervision/superviseIndex/superviseIndex">
 						<view class="funcion-top">
@@ -215,6 +215,8 @@
 			</view>
 		</view>
 	</view>
+		
+	</scroll-view>
 </template>
 
 <script>
@@ -285,6 +287,7 @@
 
 	page {
 		background-image: url('http://p1362.bvimg.com/10465/cec1b7d96cf7acf2.png');
+		background-attachment: fixed;
 	}
 
 	.index {

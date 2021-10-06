@@ -1,0 +1,126 @@
+
+page {
+	background-color: rgb(243, 243, 243);
+	overflow: hidden;
+	position:fixed;
+}
+.main {
+	padding-left: 20rpx;
+	padding-right: 20rpx;
+	/* padding-top: 30rpx; */
+}
+.my-item {
+	background-color: white;
+	padding: 20rpx 30rpx;
+	margin: 30rpx 0;
+	border-radius: 20rpx;
+}
+.my-item-title {
+	font-size: 30rpx;
+}
+.my-item-time {
+	font-size: 26rpx;
+	color: #A6A6A6;
+	margin: 20rpx 0;
+}
+.my-item-text {
+	font-size: 28rpx;
+}
+.none {
+	color: #A6A6A6;
+	font-size: 28rpx;
+	text-align: center;
+	margin-top: 30rpx;
+	margin-bottom: 30rpx;
+}
+page {
+	min-height: 100%;
+	background-color: #f3f2f2;
+	font-size: 28rpx;
+}
+.bus-stop {
+	border: 2rpx solid rgb(161,191,86);
+	border-bottom: 10rpx  solid rgb(161,191,86);
+	border-radius: 10rpx 10rpx 0 0;
+	font-weight: bold;
+	/* font-size: 24rpx; */
+	color: rgb(161,191,86);
+	margin-right: 8rpx;
+}
+.bus-item {
+	margin-bottom: 20rpx;
+	border-radius: 20rpx;
+	padding:24rpx 36rpx;
+	background-color: #fff;
+	/* border-bottom: 1px solid rgb(223, 223, 223); */
+}
+.station {
+	font-size: 28rpx;
+	margin-left: 10rpx;
+	color: rgba(142, 142, 147, 1);
+}
+.icon {
+	float: right;
+}
+.icon-crowd{
+	width: 34rpx;
+	height: 34rpx;
+	margin-right: 26rpx;
+}
+.icon-access {
+	width: 30rpx;
+	height: 30rpx;
+}
+.num {
+	display: inline-block;
+	margin:0rpx 8rpx;
+	color: rgb(161,191,86);
+	font-weight: bold;
+}
+.route {
+	border: 1px solid rgb(161,191,86);
+	border-radius: 10rpx; 
+	font-size: 26rpx; 
+	color: rgb(161,191,86);
+	margin-right: 12rpx;
+	margin-top: 10rpx;
+	display: inline-block;
+}
+.personInfo-title {
+	margin: 30rpx 40rpx;
+	font-size: 32rpx;
+	font-weight: bolder;
+}
+.price-now {
+	font-size: 30rpx;
+	color: rgb(243, 153, 18);
+}
+.price-before {
+	margin-left: 8rpx;
+	color: rgb(243, 153, 18);
+	font-size: 24rpx;
+	text-decoration: line-through;
+}
+.discount {
+	margin-left: 8rpx;
+	color: rgb(243, 153, 18);
+	background-color: rgba(243, 153, 18,0.1);
+	font-size: 24rpx;
+	padding: 6rpx;
+	margin-right: 10rpx;
+}
+.goods-name {
+	font-weight: bold;
+	margin-right: 14rpx;
+	font-size: 30rpx;
+}
+.brand-and-condition {
+	font-size: 24rpx;
+	color: #A6A6A6;
+	margin-right: 8rpx;
+}
+.secondHandImage {
+	height: 240rpx;
+	border-radius: 20rpx;
+}
+

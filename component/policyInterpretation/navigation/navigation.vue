@@ -88,8 +88,8 @@
 
 	.active {
 		color: #101010;
-		border-bottom: 8rpx solid #4ecf68;
-		color: #4ecf68;
+		border-bottom: 8rpx solid rgb(161, 191, 86);
+		color: rgb(161, 191, 86);
 		/* font-weight: bold; */
 	}
 

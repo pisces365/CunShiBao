@@ -26,7 +26,7 @@
 							<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 340rpx;" mode="aspectFill"></image>
 						</viewx>
 						<view>
-							<text class="goods-name">价值为纲-华为内训精选图书</text>
+							<text class="goods-name">价值为纲-华为精选图书</text>
 						</view>
 						<view class="">
 							<text class="brand-and-condition">正版</text>

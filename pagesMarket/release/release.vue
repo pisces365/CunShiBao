@@ -87,9 +87,9 @@
 					<view class="repair-input " >
 						<input  type="number" class="uni-input" name="roomNum" placeholder="运输宝贝花费" />					
 						<radio-group class="uni-input">
-							<label><radio value="r1" checked="true" />包邮</label>
+							<label><radio value="r1" checked="true" color="rgba(161,191,86,1)"/>包邮</label>
 							<label style="margin: 0 8rpx;"></label>
-							<label><radio value="r2" />以实际距离估算</label>
+							<label><radio value="r2" color="rgba(161,191,86,1)"/>以实际距离估算</label>
 						</radio-group>
 					</view>
 				</view>
@@ -307,7 +307,7 @@
 	button::after { border: none }
 	
 	.buttonSelected {
-		background-color: #4ECF68 !important;
+		background-color: rgba(161,191,86,1) !important;
 		color: white !important;
 	}
 	
@@ -464,7 +464,7 @@
 	}
 	
 	.release-button .r-button2 {
-		background-color: rgba(78,207,104,1);
+		background-color: rgba(161,191,86,1);
 		color: white;
 	}
 	
@@ -473,7 +473,7 @@
 	}
 	
 	.release-button .r-button2:active {
-		background-color: rgba(78,207,104,0.8);
+		background-color: rgba(161,191,86,0.8);
 	}  
 	
 	.bottom-bar {

@@ -71,6 +71,24 @@
           "pathName": "pages/index_old/index_old",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "二手管理",
+          "pathName": "pagesMarket/managePage/managePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "mine/my_collection/my_collection",
+          "pathName": "mine/my_collection/my_collection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我要捐赠",
+          "pathName": "pagesMarket/donate/donate",
+          "query": "",
+          "scene": null
         }
       ]
     }

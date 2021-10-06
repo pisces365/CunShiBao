@@ -270,7 +270,7 @@
 	button::after { border: none }
 	
 	.buttonSelected {
-		background-color: #4ECF68 !important;
+		background-color: rgba(161,191,86,1) !important;
 		color: white !important;
 	}
 	
@@ -294,7 +294,7 @@
 	}
 	
 	.repair-text {
-		flex: 2;
+		flex: 1;
 		font-size: 32rpx !important;
 		line-height: 60rpx;
 		padding-left: 90rpx;
@@ -427,7 +427,7 @@
 	}
 	
 	.release-button .r-button2 {
-		background-color: rgba(78,207,104,1);
+		background-color: rgba(161,191,86,1);
 		color: white;
 	}
 	
@@ -436,7 +436,7 @@
 	}
 	
 	.release-button .r-button2:active {
-		background-color: rgba(78,207,104,0.8);
+		background-color: rgba(161,191,86,0.8);
 	} 
 	 
 	.bottom-bar {
