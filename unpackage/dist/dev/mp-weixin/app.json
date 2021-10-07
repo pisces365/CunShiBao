@@ -82,6 +82,16 @@
       ]
     },
     {
+      "root": "pagesRepairCenter",
+      "pages": [
+        "maintenanceDetails/maintenanceDetails",
+        "maintenanceCenter/maintenanceCenter",
+        "repairApply/repairApply",
+        "myRepair/myRepair",
+        "staffLogin/staffLogin"
+      ]
+    },
+    {
       "root": "pagesBus",
       "pages": [
         "info/info",
@@ -163,5 +173,6 @@
       ]
     }
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

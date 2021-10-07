@@ -617,6 +617,52 @@
 			]
 		},
 		{
+			"root": "pagesRepairCenter",
+			"pages": [{
+					"path": "maintenanceDetails/maintenanceDetails",
+					"style": {
+						"navigationBarTitleText": "维修详情",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "maintenanceCenter/maintenanceCenter",
+					"style": {
+						"navigationBarTitleText": "维修中心",
+						"enablePullDownRefresh": false
+					}
+				}
+			    ,{
+                    "path" : "repairApply/repairApply",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我要报修",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                
+                ,{
+                    "path" : "myRepair/myRepair",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我的报修",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "staffLogin/staffLogin",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "维修人员登录",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		},
+		{
 			"root": "pagesBus",
 			"pages": [{
 					"path": "info/info",

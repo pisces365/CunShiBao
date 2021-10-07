@@ -264,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 115);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 573));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 115);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 621));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

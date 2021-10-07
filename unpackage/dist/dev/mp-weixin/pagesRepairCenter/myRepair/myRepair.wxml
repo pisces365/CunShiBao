@@ -1,0 +1,1 @@
+<view><view style="margin:0 30rpx;"><work-order-introduce vue-id="1675a37e-1" intro="{{myIntro}}" bind:__l="__l"></work-order-introduce></view></view>

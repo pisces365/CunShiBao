@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "维修中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "work-order-introduce": "/componentB/maintenanceCenter/workOrderIntroduce/workOrderIntroduce"
+  }
+}
