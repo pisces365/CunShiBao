@@ -168,7 +168,7 @@ var _default =
       distance: "123",
       bus: [
       {
-        route: "236M路", //
+        route: "236M路",
         bond: "文三路",
         start: "西溪源公交站",
         end: "文三路",

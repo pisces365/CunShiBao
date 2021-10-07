@@ -254,6 +254,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 {
   components: {
     navigation: navigation,
@@ -265,39 +276,56 @@ __webpack_require__.r(__webpack_exports__);
     if (news == "")
     {
       this.latestPolicy = [];
-      this.titles[0].isActive = false;
+      this.ItemSetFunc(0);
       this.$nextTick(function () {
         _this.titles[0].isActive = true;
       });
+    } else
+    {
+      var news_array = news.split('#%%#');
+      // console.log(news_array);
+      this.latestPolicy = [];
+      for (var i = 0; i < news_array.length; ++i)
+      {
+        var temp = JSON.parse(news_array[i]);
+        // console.log(temp);
+        var obj = { title: temp.title.titleContent,
+          source: temp.title.artileSource,
+          date: temp.title.releaseTime,
+          reading: temp.data_reading,
+          like: temp.data_like,
+          url: "../../pagesA/News?newsID=" + temp.NewsID + '&doyoulike=true' };
+
+        this.latestPolicy[i] = obj;
+        // title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
+        // source: "康平融媒号",
+        // date: "2021年08月24日",
+        // reading: "8,496",
+        // like: "6,318",
+        // url: "../../News?newsID=2"
+      }
+      this.ItemSetFunc(0);
+      this.$nextTick(function () {
+        _this.titles[0].isActive = true;
+      });
+      // console.log(456);
+    }
+
+    /////////////////////////////////////////公交
+    var buses = uni.getStorageSync('bus_route');
+    if (buses == "")
+    {
+      this.bus = [];
       return;
     }
-    var news_array = news.split('#%%#');
-    // console.log(news_array);
-    this.latestPolicy = [];
-    for (var i = 0; i < news_array.length; ++i)
+    var buses_array = buses.split("#%%#");
+    var buses_obj_array = [];
+    for (var i = 0; i < buses_array.length; ++i)
     {
-      var temp = JSON.parse(news_array[i]);
-      // console.log(temp);
-      var obj = { title: temp.title.titleContent,
-        source: temp.title.artileSource,
-        date: temp.title.releaseTime,
-        reading: temp.data_reading,
-        like: temp.data_like,
-        url: "../../pagesA/News?newsID=" + temp.NewsID + '&doyoulike=true' };
-
-      this.latestPolicy[i] = obj;
-      // title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
-      // source: "康平融媒号",
-      // date: "2021年08月24日",
-      // reading: "8,496",
-      // like: "6,318",
-      // url: "../../News?newsID=2"
+      buses_obj_array[i] = JSON.parse(buses_array[i]);
     }
-    this.titles[0].isActive = false;
-    this.$nextTick(function () {
-      _this.titles[0].isActive = true;
-    });
-    // console.log(456);
+    this.bus = buses_obj_array;
+    console.log(this.bus);
   },
   data: function data() {
     return {
@@ -325,51 +353,51 @@ __webpack_require__.r(__webpack_exports__);
 
       latestPolicy: [],
       bus: [
-      {
-        route: "236M路", //
-        bond: "文三路",
-        start: "西溪源公交站",
-        end: "文三路",
-        aboard: "西溪医院·横街",
-        distance: "4",
-        minute: "8",
-        crowd: "http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-        accessible: "http://p1362.bvimg.com/10465/b693c9983d17943e.png" },
-
-      {
-        route: "193路",
-        bond: "环北新村",
-        start: "西溪源公交站",
-        end: "环北新村",
-        aboard: "西溪医院·横街",
-        distance: "3",
-        minute: "6",
-        crowd: "http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-        accessible: "http://p1362.bvimg.com/10465/b693c9983d17943e.png" },
-
-      {
-        route: "7467路",
-        bond: "午潮山公交站",
-        start: "梦想小镇",
-        end: "午潮山公交站",
-        aboard: "留下",
-        distance: "5",
-        minute: "5",
-        crowd: "http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-        accessible: "http://p1362.bvimg.com/10465/b693c9983d17943e.png" },
-
-      {
-        route: "136路",
-        bond: "金莲桥",
-        start: "留下南",
-        end: "金莲桥",
-        aboard: "留下",
-        distance: "2",
-        minute: "3",
-        crowd: "http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-        accessible: "http://p1362.bvimg.com/10465/b693c9983d17943e.png" }],
-
-
+        // {
+        // 	route:"236M路", //
+        // 	bond:"文三路",
+        // 	start:"西溪源公交站",
+        // 	end:"文三路",
+        // 	aboard:"西溪医院·横街",
+        // 	distance:"4",
+        // 	minute:"8",
+        // 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+        // 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+        // },
+        // {
+        // 	route:"193路",
+        // 	bond:"环北新村",
+        // 	start:"西溪源公交站",
+        // 	end:"环北新村",
+        // 	aboard:"西溪医院·横街",
+        // 	distance:"3",
+        // 	minute:"6",
+        // 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+        // 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+        // },
+        // {
+        // 	route:"7467路",
+        // 	bond:"午潮山公交站",
+        // 	start:"梦想小镇",
+        // 	end:"午潮山公交站",
+        // 	aboard:"留下",
+        // 	distance:"5",
+        // 	minute:"5",
+        // 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+        // 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+        // },
+        // {
+        // 	route:"136路",
+        // 	bond:"金莲桥",
+        // 	start:"留下南",
+        // 	end:"金莲桥",
+        // 	aboard:"留下",
+        // 	distance:"2",
+        // 	minute:"3",
+        // 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+        // 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+        // }
+      ],
       station: [
       {
         station: "西溪医院·横街",

@@ -69,6 +69,7 @@
 									.userInfo);
 								uni.setStorageSync('mainPage', 1);
 								uni.setStorageSync('news', "");
+								uni.setStorageSync('bus_route', "");
 								//微信用户登录接口
 								wx.login({
 									success: function(res) {

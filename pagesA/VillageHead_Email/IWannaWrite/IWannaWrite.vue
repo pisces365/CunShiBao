@@ -31,6 +31,86 @@
 			information,
 			MyLetter
 		},
+		onShow() {
+			this.EmailOutline= [ //具体信息
+				{
+					title: "关于新变户籍问题",
+					source: "村事宝",
+					date: "2021年09月16日",
+					reading: "14,603",
+					like: "6,318",
+					url: "../../News?newsID=9"
+				},
+				{
+					title: "副村长是否享有随意处置村民私有财产的特权？",
+					source: "村事宝",
+					date: "2021年9月15日",
+					reading: "14,603",
+					like: "6,318",
+					url: "../../News?newsID=10"
+				},
+				{
+					title: "农村居住环境急待改善",
+					source: "村事宝",
+					date: "2021年9月13日",
+					reading: "14,603",
+					like: "6,318",
+					url: "../../News?newsID=11"
+				}
+			],
+			this.LetterOfMine= [{
+				title: "关于老人坐公交车要扫码",
+				source: "村事宝",
+				date: "2021年09月13日",
+				url: "../../News?newsID=12"
+			}, {
+				title: "甘北沿河班车何时再开",
+				source: "村事宝",
+				date: "2021年08月24日",
+				url: "../../News?newsID=13"
+			}];
+			let news = uni.getStorageSync('news');
+			for(var j=0;j<this.EmailOutline.length;++j)
+			{
+				
+				this.EmailOutline[j].url += '&doyoulike=false';
+				if(j<this.LetterOfMine.length)
+				this.LetterOfMine[j].url += '&doyoulike=false';
+			}
+			if(news == "")
+			{
+				
+				return;
+			}
+			let news_array = news.split('#%%#');
+			for(var i=0;i<news_array.length;++i)
+			{
+				let temp = JSON.parse(news_array[i]);
+				// console.log(temp);
+				for(var j=0;j<news_array.length;++j)
+				{
+					if(temp.title.titleContent == this.EmailOutline[j].title)
+					{
+						this.EmailOutline[j].url += '&doyoulike=true';
+						
+						continue;
+					}
+					if(temp.title.titleContent == this.LetterOfMine[j].title)
+					{
+						
+						this.LetterOfMine[j].url += '&doyoulike=true'
+						continue;
+					}
+				}
+				// title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
+				// source: "康平融媒号",
+				// date: "2021年08月24日",
+				// reading: "8,496",
+				// like: "6,318",
+				// url: "../../News?newsID=2"
+			}
+		},
+		
 		data() {
 			return {
 				ifOpened: '1',

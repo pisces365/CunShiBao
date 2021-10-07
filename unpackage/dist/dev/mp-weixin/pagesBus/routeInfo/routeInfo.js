@@ -130,7 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -323,6 +323,7 @@ var _default =
 {
   data: function data() {
     return {
+      route_like: false,
       bus: {
         route: "102路",
         bond: "公交总站",
@@ -392,6 +393,28 @@ var _default =
   onLoad: function onLoad(options) {
     // console.log(options);
     this.bus.route = options.carNum;
+    this.bus.start = options.start;
+    this.bus.end = options.end;
+
+    var buses = uni.getStorageSync('bus_route');
+    if (buses == "")
+    {
+      return;
+    }
+    var buses_array = buses.split("#%%#");
+    var buses_obj_array = [];
+    for (var i = 0; i < buses_array.length; ++i)
+    {
+      if (JSON.parse(buses_array[i]).route != this.bus.route)
+      {
+        console.log(JSON.parse(buses_array[i]).route);
+        console.log(this.bus.route);
+        this.route_like = false;
+      } else
+      {
+        this.route_like = true;
+      }
+    }
   },
   methods: {
     isShow: function isShow(num)
@@ -401,7 +424,66 @@ var _default =
         this.bus.allStation[i].selected = false;
       }
       this.bus.allStation[num].selected = true;
+    },
+    like_bus: function like_bus() {
+      if (this.route_like == false)
+      {
+        this.route_like = true;
+        var bus = new Object();
+        bus.route = this.bus.route;
+        bus.bond = this.bus.bond;
+        bus.start = this.bus.start;
+        bus.end = this.bus.end;
+        var old_bus = uni.getStorageSync('bus_route');
+        var new_bus;
+        if (old_bus != "")
+        {
+          new_bus = old_bus + "#%%#" + JSON.stringify(bus);
+        } else
+
+        {
+          new_bus = JSON.stringify(bus);
+        }
+        uni.setStorageSync('bus_route', new_bus);
+      } else
+
+      {
+        console.log("down");
+        this.route_like = false;
+        var buses = uni.getStorageSync('bus_route');
+        var buses_array = buses.split("#%%#");
+        console.log(buses_array);
+        var buses_obj_array = [];
+        for (var i = 0; i < buses_array.length; ++i)
+        {
+          console.log(JSON.parse(buses_array[i]).route);
+          console.log(this.bus.route);
+          if (JSON.parse(buses_array[i]).route === this.bus.route)
+          {
+            console.log("in");
+
+          } else
+
+          {
+            buses_obj_array.push(JSON.parse(buses_array[i]));
+          }
+        }
+
+        if (buses_obj_array != null)
+        {var _new_bus = JSON.stringify(buses_obj_array[0]);
+          for (var i = 1; i < buses_obj_array.length; ++i)
+          {
+            _new_bus += "#%%#" + JSON.stringify(buses_obj_array[i]);
+          }
+          uni.setStorageSync('bus_route', _new_bus);
+        } else
+
+        {
+          uni.setStorageSync('bus_route', "");
+        }
+      }
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

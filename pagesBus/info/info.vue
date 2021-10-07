@@ -11,7 +11,7 @@
 				<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 			</view>
 			<view style="height: 530rpx;"></view>
-			<navigator :url="'../routeInfo/routeInfo?carNum='+item.route" v-show="getTitle0()" class="bus-item" v-for="(item , index) in bus" :key="index">
+			<navigator :url="'../routeInfo/routeInfo?carNum='+item.route+'&start='+item.start+'&end='+item.end" v-show="getTitle0()" class="bus-item" v-for="(item , index) in bus" :key="index">
 				<view>
 					<text class="bus-stop">{{item.route}}</text>
 					<text class="station">开往</text>
