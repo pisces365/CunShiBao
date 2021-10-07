@@ -6,6 +6,7 @@
 					<image :src="userInfo.avatarUrl==''?'http://p1362.bvimg.com/10465/f055218fcab03c86.jpg'
 					:userInfo.avatarUrl" mode=""></image>
 				</view>
+				
 				<view class="me-info-content">
 					<view class="me-info-name">
 						{{userInfo.nickName==''?'村事宝游客':userInfo.nickName}}
