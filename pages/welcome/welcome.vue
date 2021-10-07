@@ -68,6 +68,7 @@
 								uni.setStorageSync('userInfo', infoRes
 									.userInfo);
 								uni.setStorageSync('mainPage', 1);
+								uni.setStorageSync('news', "");
 								//微信用户登录接口
 								wx.login({
 									success: function(res) {

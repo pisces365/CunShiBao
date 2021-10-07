@@ -191,6 +191,22 @@
             }
             
         }
+        ,{
+            "path" : "pagesHelp/myHelpDetails/myHelpDetails",
+            "style": {
+            	"navigationBarTitleText": "帮扶详情",
+            	"enablePullDownRefresh": false,
+            	"navigationBarTextStyle": "white",
+            	"navigationBarBackgroundColor": "#5f7bf9",
+            	"app-plus": {
+            		"titleNView": {
+            			"type": "float",
+            			"titleText": "帮扶详情"
+            		}
+            	}
+            }
+            
+        }
     ],
 	"subPackages": [{
 			//村务监督分包

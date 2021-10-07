@@ -179,7 +179,7 @@ var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.
 //
 //
 //
-var _default = { data: function data() {return { data: {} };}, onLoad: function onLoad() {var _this = this;uni.showLoading({ title: '加载帮扶信息..' });var data = {};(0, _accurateSupportApi.getList)(data).then(function (res) {if (res.code == "200") {// console.log(res.data);
+var _default = { data: function data() {return { data: {} };}, onLoad: function onLoad() {var _this = this;uni.showLoading({ title: '加载帮扶信息..' });var data = {};(0, _accurateSupportApi.getApplyByUserID)(10014).then(function (res) {if (res.code == "200") {// console.log(res.data);
         _this.data = res.data;for (var i = 0; i < _this.data.length; ++i) {_this.data[i].applyTime = _this.data[i].applyTime.replace("T", " ").substr(0, 19); // console.log(_this.data[i].applyTime);
         }uni.hideLoading();} else {
         uni.hideLoading();
