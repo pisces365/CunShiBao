@@ -93,8 +93,8 @@
 					<view class="footer-commit" @click="ToSpecifiedLocation()">
 						<text class="iconfont icon-pinglun1 footerIcon"></text>
 					</view>
-					<view class="footer-shoucang">
-						<text class="iconfont icon-shoucang11 footerIcon"></text>
+					<view class="footer-shoucang" @click="collection">
+						<text :class="!articleElement[NewsID].doyoulike?'iconfont icon-shoucang11 footerIcon':'iconfont footerIcon icon-bg-collection'"></text>
 					</view>
 					<view class="footer-zhuanfa">
 						<text class="iconfont icon-zhuanfa footerIcon"></text>
@@ -146,7 +146,8 @@
 					],
 					editorCharge: '贾勤缘',
 					data_reading: '80211',
-					data_like: '3982'
+					data_like: '3982',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '农业农村部要求分区分类精准施策确保秋粮丰收',
@@ -183,11 +184,12 @@
 					],
 					editorCharge: '汪霁月',
 					data_reading: '54047',
-					data_like: '2215'
+					data_like: '2215',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '辽宁省康平县：稻蟹共生促发展 一田两用助增收',
-						artileSource: '康平县融媒体中心',
+						artileSource: '康平融媒号',
 						releaseTime: '2021年08月24日'
 					},
 					content: [{
@@ -211,7 +213,8 @@
 					],
 					editorCharge: '唐可',
 					data_reading: '149603',
-					data_like: '6318'
+					data_like: '6318',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '以乡村全面振兴助力农业农村现代化',
@@ -245,7 +248,8 @@
 					],
 					editorCharge: '刘文涛',
 					data_reading: '20182',
-					data_like: '175'
+					data_like: '175',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '关于公开征集国家“十四五”文化改革发展规划意见建议的公告',
@@ -267,7 +271,8 @@
 					],
 					editorCharge: '贺艳花',
 					data_reading: '7996672',
-					data_like: '322006'
+					data_like: '322006',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '关于公开征集文化强国建设意见建议的公告',
@@ -292,7 +297,8 @@
 					],
 					editorCharge: '张玙蕗',
 					data_reading: '32,423,156',
-					data_like: '808737'
+					data_like: '808737',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '以乡村全面振兴助力农业农村现代化',
@@ -326,7 +332,8 @@
 					],
 					editorCharge: '刘文涛',
 					data_reading: '20182',
-					data_like: '175'
+					data_like: '175',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '2月5日，新华社受权对外发布《中共中央 国务院关于抓好“三农”领域重点工作确保如期实现全面小康的意见》',
@@ -366,7 +373,8 @@
 					],
 					editorCharge: '王珂园 常雪梅',
 					data_reading: '32313',
-					data_like: '1571'
+					data_like: '1571',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '“城乡发展协调省份”浙江是如何炼成的——“三农”专家顾益康访谈录',
@@ -418,7 +426,8 @@
 					],
 					editorCharge: '方燕',
 					data_reading: '1,457',
-					data_like: '175'
+					data_like: '175',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '关于新变户籍问题',
@@ -450,7 +459,8 @@
 					],
 					editorCharge: '马晓峰',
 					data_reading: '14,603',
-					data_like: '6318'
+					data_like: '6318',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '农村居住环境急待改善',
@@ -466,7 +476,8 @@
 					],
 					editorCharge: '马晓峰',
 					data_reading: '14,603',
-					data_like: '6318'
+					data_like: '6318',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '关于老人坐公交车要扫码',
@@ -482,7 +493,8 @@
 					],
 					editorCharge: '马晓峰',
 					data_reading: '14,603',
-					data_like: '6318'
+					data_like: '6318',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '甘北沿河班车何时再开',
@@ -495,7 +507,8 @@
 					],
 					editorCharge: '马晓峰',
 					data_reading: '14,603',
-					data_like: '6318'
+					data_like: '6318',
+					doyoulike: false
 				}],
 
 			}
@@ -569,7 +582,56 @@
 				}
 				this.inputContext = '';
 				this.publishColor = '#b8b8b8'
+			},
+			collection()
+			{
+				console.log(this.articleElement[this.NewsID].doyoulike);
+				if(this.articleElement[this.NewsID].doyoulike == false)
+				{
+					console.log("up");
+					this.articleElement[this.NewsID].doyoulike = true;
+					let news = uni.getStorageSync('news');
+					this.articleElement[this.NewsID].NewsID = this.NewsID;
+					let next = JSON.stringify(this.articleElement[this.NewsID]);
+					if(news == "")
+					{
+						uni.setStorageSync('news', next);
+					}
+					else{
+						uni.setStorageSync('news', news+'#%%#'+next);
+					}
+					console.log(news+','+next);
+				}
+				else{
+					console.log("down");
+					this.articleElement[this.NewsID].doyoulike = false;
+					let news = uni.getStorageSync('news');
+					if(news == "")
+					{
+						return;
+					}
+					let news_array = news.split('#%%#');
+					let new_news = "";
+					for(var i=0;i<news_array.length;++i)
+					{
+						let temp = JSON.parse(news_array[i]);
+						
+						if(temp.NewsID != this.NewsID)
+						{
+							if(new_news == "")
+							{
+								new_news = news_array[i];
+							}
+							else
+							{
+								new_news = new_news + '#%%#' + news_array[i];
+							}
+						}
+					}
+					uni.setStorageSync('news', new_news);
+				}
 			}
+			
 
 		},
 		onLoad(options) {
@@ -578,9 +640,13 @@
 				title: '加载中...'
 			})
 			this.NewsID = options.newsID;
+			if(options.doyoulike == 'false')
+			{this.articleElement[this.NewsID].doyoulike = false;}
+			else
+			{this.articleElement[this.NewsID].doyoulike = true;}
+			console.log(this.articleElement[this.NewsID].doyoulike)
 			uni.hideLoading()
-		},
-
+		}
 	};
 </script>
 
@@ -590,6 +656,10 @@
 	page {
 		width: 100%;
 		height: 100%;
+	}
+
+	.icon-bg-collection:before {
+	  content: "\e647";
 	}
 
 	.footer {

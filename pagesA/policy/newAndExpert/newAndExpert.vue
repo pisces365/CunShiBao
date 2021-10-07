@@ -21,6 +21,83 @@
 			navigation,
 			information
 		},
+		onShow() {
+			this.latestPolicy = [ //具体信息
+					{
+						title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
+						source: "康平融媒号",
+						date: "2021年08月24日",
+						reading: "8,496",
+						like: "6,318",
+						url: "../../News?newsID=2"
+					},
+					{
+						title: "农业农村部要求分区分类精准施策确保秋粮丰收",
+						source: "新华网",
+						date: "2021年08月19日",
+						reading: "54,047",
+						like: "2,215",
+						url: "../../News?newsID=1"
+					},
+
+					{
+						title: "关于公开征集文化强国建设意见建议的公告",
+						source: "学习强国",
+						date: "2021年08月03日",
+						reading: "7,672",
+						like: "6,006",
+						url: "../../News?newsID=4"
+					},
+					{
+						title: "关于公开征集文化强国建设意见建议的公告",
+						source: "人民日报",
+						date: "2021年08月03日",
+						reading: "32万",
+						like: "808,737",
+						url: "../../News?newsID=5"
+					},
+					{
+						title: "以乡村全面振兴助力农业农村现代化",
+						source: "经济日报",
+						date: "2021年05月12日",
+						reading: "21,567",
+						like: "1,754",
+						url: "../../News?newsID=3"
+					}
+				];
+			let news = uni.getStorageSync('news');
+			for(var j=0;j<this.latestPolicy.length;++j)
+			{
+				
+				this.latestPolicy[j].url += '&doyoulike=false'
+			
+			}
+			if(news == "")
+			{
+				
+				return;
+			}
+			let news_array = news.split('#%%#');
+			for(var i=0;i<news_array.length;++i)
+			{
+				let temp = JSON.parse(news_array[i]);
+				// console.log(temp);
+				for(var j=0;j<news_array.length;++j)
+				{
+					if(temp.title.titleContent == this.latestPolicy[j].title)
+					{
+						this.latestPolicy[j].url += '&doyoulike=true'
+						continue;
+					}
+				}
+				// title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
+				// source: "康平融媒号",
+				// date: "2021年08月24日",
+				// reading: "8,496",
+				// like: "6,318",
+				// url: "../../News?newsID=2"
+			}
+		},
 		data() {
 			return {
 				titles: [{

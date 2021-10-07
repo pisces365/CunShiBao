@@ -264,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 115);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 565));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 115);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 573));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -331,6 +331,11 @@ var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.
             uni.showLoading({
               title: '申报提交中..' });
 
+            // postImage(that.imgArr[0]).then((res) => {
+            // 	if (res.code == "200") {
+            // 		console.log(res.data);
+            // 	}
+            // })
             (0, _accurateSupportApi.postApply)(data).then(function (res) {
               if (res.code == "200") {
                 uni.hideLoading();
@@ -382,8 +387,14 @@ var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.
         count: 4 - this.imgArr.length,
         success: function success(res) {
           _this2.imgArr = _this2.imgArr.concat(res.tempFilePaths);
-          // console.log(this.imgArr);
-          _this2.data.pictureUrl = _this2.data.pictureUrl.concat("," + res.tempFilePaths);
+          console.log(res);
+          if (_this2.data.pictureUrl == "")
+          {
+            _this2.data.pictureUrl = res.tempFilePaths + "";
+          } else
+          {
+            _this2.data.pictureUrl = _this2.data.pictureUrl.concat("," + res.tempFilePaths);
+          }
           // console.log(this.data.pictureUrl);
         } });
 

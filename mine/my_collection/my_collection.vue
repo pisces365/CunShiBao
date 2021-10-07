@@ -4,10 +4,32 @@
 			<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 		</view>
 		
-		<scroll-view v-show="getTitle(0)" scroll-y="true" show-scrollbar="10" style="height: 1380rpx;">
+		<scroll-view v-show="titles[0].isActive" scroll-y="true" show-scrollbar="10" style="height: 1380rpx;">
 			<view  style="margin-top: 30rpx;">
 				<view style="margin-bottom: 20rpx; padding: 6rpx; border-radius: 20rpx; background-color: white;" v-for="(item,index) in latestPolicy" :key="index">
-					<information  :info="latestPolicy[index].latestPolicy"></information>
+					<view>
+						<view class="news">
+							<navigator :url="item.url" class="nav">
+								<view class="title">
+									{{item.title}}
+								</view>
+								<view class="bottom-infomation">
+									<text class="source">
+										{{item.source}}
+									</text>
+									<text class="date">
+										{{item.date}}
+									</text>
+									<text class="reading">
+										<text>阅读 {{item.reading}}</text>
+									</text>
+									<text class="like"> 
+										<text>赞 {{item.like}}</text>						
+									</text>
+								</view>
+							</navigator>
+						</view>
+					</view>
 				</view>
 			</view>
 			<view class="none">
@@ -94,13 +116,53 @@
 			navigation,
 			information
 		},
+		onShow() {
+			// console.log(123);
+			let news = uni.getStorageSync('news');
+			if(news == "")
+			{
+				this.latestPolicy = [];
+				this.titles[0].isActive = false;
+				    this.$nextTick(() => {
+				        this.titles[0].isActive = true;
+				    })
+				return;
+			}
+			let news_array = news.split('#%%#');
+			// console.log(news_array);
+			this.latestPolicy = [];
+			for(var i=0;i<news_array.length;++i)
+			{
+				let temp = JSON.parse(news_array[i]);
+				// console.log(temp);
+				let obj = {title:temp.title.titleContent,
+							source:temp.title.artileSource,
+							date:temp.title.releaseTime,
+							reading:temp.data_reading,
+							like:temp.data_like,
+							url:"../../pagesA/News?newsID="+temp.NewsID +'&doyoulike=true'}
+							
+				this.latestPolicy[i] = obj;
+				// title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
+				// source: "康平融媒号",
+				// date: "2021年08月24日",
+				// reading: "8,496",
+				// like: "6,318",
+				// url: "../../News?newsID=2"
+			}
+			this.titles[0].isActive = false;
+			    this.$nextTick(() => {
+			        this.titles[0].isActive = true;
+			    })
+			// console.log(456);
+		},
 		data() {
 			return {
 				titles:[
 						  {
 						  	id:0,
 						  	name:"政策资讯",
-						  	isActive:true
+						  	isActive:false
 						  },
 						  {
 							id:1,
@@ -118,29 +180,7 @@
 						  	isActive:false
 						  }
 					   ],
-					   latestPolicy: [ //具体信息
-					   	{
-					   		latestPolicy: [ //具体信息
-					   			{
-					   				title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
-					   				source: "康平融媒号",
-					   				date: "2021年08月24日",
-					   				reading: "8,496",
-					   				like: "6,318",
-					   				url: "../../News?newsID=2"
-					   			}]
-					   	},
-					   	{
-							latestPolicy: [ //具体信息
-								{
-					   		title: "农业农村部要求分区分类精准施策确保秋粮丰收",
-					   		source: "新华网",
-					   		date: "2021年08月19日",
-					   		reading: "54,047",
-					   		like: "2,215",
-					   		url: "../../News?newsID=1"
-							}]
-					   	}],
+					   latestPolicy: [],
 					   bus:[
 					   	{
 					   		route:"236M路", //
@@ -223,6 +263,7 @@
 				
 			}
 		},
+		
 		methods: {
 			ItemSetFunc(index){
 				for(var i=0;i<this.titles.length;++i)
@@ -244,6 +285,71 @@
 		background-color: rgb(243, 243, 243);
 		overflow: hidden;
 		position:fixed;
+	}
+	
+	
+	
+	.news {
+		background-color: white;		
+	}
+	
+	.nav {
+		padding: 30rpx 0;
+		margin: 0 30rpx;
+		/* border-bottom: 0.24rpx solid #eae9e9; */
+	}
+	
+	.title {
+		margin:0 10rpx 10rpx 10rpx;
+		font-size: 36rpx;
+	}
+	.bottom-infomation {
+		margin-top: 30rpx;
+		margin-left: 10rpx;
+		font-size: 26rpx;
+	}
+	.source,.date{
+		color: #939493;
+		margin-right: 20rpx;
+	}
+	.reading,.like {
+		float: right;
+		margin-right: 20rpx;
+	}
+	/* .reading text {
+		color: rgba(86,120,243,1);
+		background-color: rgba(86,120,243,0.1);
+		padding: 5rpx;
+		border-radius: 5rpx;
+		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+	/* } 
+	 */
+	.like {
+		flex: 0.6;
+	}
+	/* .like text {
+		color: rgba(255,69,91,1);
+		background-color: rgba(255,69,91,0.1);
+		padding: 5rpx;
+		border-radius: 5rpx;
+		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+	/* } 
+	*/
+	.reading text {
+		color: rgb(109, 141, 173);
+		background-color: rgba(109, 141, 173, 0.1);
+		padding: 5rpx;
+		border-radius: 5rpx;
+		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+		font-weight: 600;
+	}
+	.like text {
+		color: rgb(158, 65, 46);
+		background-color: rgba(158, 65, 46, 0.1);
+		padding: 5rpx;
+		border-radius: 5rpx;
+		/* box-shadow: 10rpx 10rpx 20rpx #dbdcdb; */
+		font-weight: 600;
 	}
 	
 	.main {

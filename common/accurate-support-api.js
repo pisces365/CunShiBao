@@ -83,3 +83,44 @@ export function postVisitReport(data) {
 		})
 	})
 }
+
+//根据申请表id获取精准帮扶申请详细信息
+export function getApplyByUserID(userId) {
+	return new Promise(function(reslove, reject) {
+		uni.request({
+			url: `${baseUrl}/accurateSupport/history/apply/` + userId,
+			method: 'GET',
+			success: res => {
+				let result = res.data;
+				console.log('精准帮扶村民id结果', result);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {}
+		})
+	})
+}
+
+//上传图片
+export function postImage(data) {
+	return new Promise(function(reslove, reject) {
+		var token = uni.getStorageSync('token');
+		uni.request({
+			url: `${baseUrl}/api/imgUpload`,
+			header: {
+				"authorization": token
+			},
+			method: 'POST',
+			data: data,
+			success: res => {
+				let result = res.data;
+				console.log('图片上传', res);
+				reslove(result);
+			},
+			fail: () => {},
+			complete: () => {
+
+			}
+		})
+	})
+}

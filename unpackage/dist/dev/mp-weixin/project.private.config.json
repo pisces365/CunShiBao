@@ -89,6 +89,12 @@
           "pathName": "pagesMarket/donate/donate",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "我的帮扶",
+          "pathName": "pagesHelp/myHelp/myHelp",
+          "query": "",
+          "scene": null
         }
       ]
     }

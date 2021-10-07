@@ -124,7 +124,7 @@
 
 <script>
 	import {
-		postApply
+		postApply,postImage
 	} from '@/common/accurate-support-api.js'
 	import RegionPicker from '@/components/regionPicker.vue'
 	export default {
@@ -190,6 +190,11 @@
 							uni.showLoading({
 								title: '申报提交中..'
 							})
+							// postImage(that.imgArr[0]).then((res) => {
+							// 	if (res.code == "200") {
+							// 		console.log(res.data);
+							// 	}
+							// })
 							postApply(data).then((res) => {
 								if (res.code == "200") {
 									uni.hideLoading();
@@ -241,8 +246,14 @@
 					count: 4-this.imgArr.length,
 					success:res=>{
 						this.imgArr = this.imgArr.concat(res.tempFilePaths);
-						// console.log(this.imgArr);
-						this.data.pictureUrl = this.data.pictureUrl.concat(","+res.tempFilePaths);
+						console.log(res);
+						if(this.data.pictureUrl=="")
+						{
+							this.data.pictureUrl = res.tempFilePaths+"";
+						}
+						else{
+							this.data.pictureUrl = this.data.pictureUrl.concat(","+res.tempFilePaths);
+						}
 						// console.log(this.data.pictureUrl);
 					}
 				})

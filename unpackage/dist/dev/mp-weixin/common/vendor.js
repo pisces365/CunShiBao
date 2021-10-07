@@ -914,7 +914,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -2159,7 +2159,7 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.postApply = postApply;exports.getApply = getApply;exports.getList = getList;exports.postVisitReport = postVisitReport;var _config = __webpack_require__(/*! ./config.js */ 22);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.postApply = postApply;exports.getApply = getApply;exports.getList = getList;exports.postVisitReport = postVisitReport;exports.getApplyByUserID = getApplyByUserID;exports.postImage = postImage;var _config = __webpack_require__(/*! ./config.js */ 22);
 
 
 //村民精准帮扶申报
@@ -2235,6 +2235,47 @@ function postVisitReport(data) {
       success: function success(res) {
         var result = res.data;
         console.log('走访报告', res);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {
+
+      } });
+
+  });
+}
+
+//根据申请表id获取精准帮扶申请详细信息
+function getApplyByUserID(userId) {
+  return new Promise(function (reslove, reject) {
+    uni.request({
+      url: "".concat(_config.baseUrl, "/accurateSupport/history/apply/") + userId,
+      method: 'GET',
+      success: function success(res) {
+        var result = res.data;
+        console.log('精准帮扶村民id结果', result);
+        reslove(result);
+      },
+      fail: function fail() {},
+      complete: function complete() {} });
+
+  });
+}
+
+//上传图片
+function postImage(data) {
+  return new Promise(function (reslove, reject) {
+    var token = uni.getStorageSync('token');
+    uni.request({
+      url: "".concat(_config.baseUrl, "/api/imgUpload"),
+      header: {
+        "authorization": token },
+
+      method: 'POST',
+      data: data,
+      success: function success(res) {
+        var result = res.data;
+        console.log('图片上传', res);
         reslove(result);
       },
       fail: function fail() {},
@@ -7961,7 +8002,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7982,14 +8023,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8075,7 +8116,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"CunShiBao","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9855,7 +9896,7 @@ function walkJsonObj(jsonObj, walk) {
 
 /***/ }),
 
-/***/ 405:
+/***/ 413:
 /*!*********************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
   \*********************************************************************************************/
@@ -10889,7 +10930,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 484:
+/***/ 492:
 /*!***********************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
   \***********************************************************/
@@ -11343,7 +11384,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 570:
+/***/ 578:
 /*!**********************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/region.json ***!
   \**********************************************************************/
@@ -11354,7 +11395,7 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
-/***/ 641:
+/***/ 649:
 /*!************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
   \************************************************************************************/
@@ -11401,7 +11442,7 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
-/***/ 677:
+/***/ 685:
 /*!***************************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************/

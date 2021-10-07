@@ -2,7 +2,7 @@
 	<view>
 		<view class="main">
 			<block v-for="(item , index) in data" :key="index">
-				<navigator url="../../pagesA/News?newsID=0" class="my-item">
+				<navigator :url="'../myHelpDetails/myHelpDetails?applyId='+item.id" class="my-item">
 					<view class="my-item-title">
 						{{item.reason}}-{{item.property}}
 					</view>
@@ -24,7 +24,7 @@
 
 <script>
 	import {
-		getList
+		getApplyByUserID
 	} from '@/common/accurate-support-api.js'
 	export default {
 		data() {
@@ -38,7 +38,7 @@
 				title: '加载帮扶信息..'
 			})
 			let data = {}
-			getList(data).then((res) => {
+			getApplyByUserID(10014).then((res) => {
 				if (res.code == "200") {
 					// console.log(res.data);
 					_this.data = res.data;
