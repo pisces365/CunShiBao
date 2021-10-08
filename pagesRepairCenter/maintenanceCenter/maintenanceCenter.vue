@@ -2,7 +2,7 @@
 <template>
 	<view>
 		<view class="top">
-			<view style="padding: 46rpx 0;"></view>
+			<view style="padding: 40rpx 0;"></view>
 			<view>
 				<image class="topImage" src="http://p1362.bvimg.com/10465/518d95f0952dc833.png" mode="widthFix"></image>
 			</view>
@@ -10,21 +10,27 @@
 		</view>
 		
 		<view style="padding: 20rpx 0;"></view>
+		<view style="padding-top: 30rpx; margin:0 30rpx; background-color: #fefefe;">
+			<view class="new-info" style="background-image: url(http://p1362.bvimg.com/10465/d1347580d914d745.png);">
+				<text>报修</text>
+				<text style="color: rgba(252,183,108,1);">服务</text>
+			</view>
+		</view>
 		<view class="nav" style="display: flex;">
 			<navigator url="../repairApply/repairApply" class="icon">
-				<image class="sh-image" src="http://p1362.bvimg.com/10465/b84af5bceaf0ce0a.png" style="background-color: rgba(182,101,237,0.1)" mode="aspectFill"></image>
+				<image class="sh-image" src="http://p1362.bvimg.com/10465/09aae7a693857728.png" style="background-color: rgba(250,208,196,0.1)" mode="aspectFill"></image>
 				<view class="title">
 					我要报修
 				</view>
 			</navigator>
 			<navigator url="../myRepair/myRepair" class="icon">
-				<image class="sh-image" src="http://p1362.bvimg.com/10465/b0f7fc3234f17f85.png" style="background-color: rgba(115,37,255,0.1)" mode="aspectFill"></image>
+				<image class="sh-image" src="http://p1362.bvimg.com/10465/b880dafd16148410.png" style="background-color: rgba(252,182,159,0.1)" mode="aspectFill"></image>
 				<view class="title">
 					我的报修
 				</view>
 			</navigator>
 			<navigator url="../staffLogin/staffLogin" class="icon">
-				<image class="sh-image" src="http://p1362.bvimg.com/10465/d681147ad272afcd.png" style="background-color: rgba(249,91,123,0.1)" mode="aspectFill"></image>
+				<image class="sh-image" src="http://p1362.bvimg.com/10465/3d76de5a031eb483.png" style="background-color: rgba(253,160,133,0.1)" mode="aspectFill"></image>
 				<view class="title">
 					我的工单
 				</view>
@@ -32,10 +38,10 @@
 		</view>
 		<view style="padding: 20rpx 0;"></view>
 		
-		<view style="margin:0 30rpx;">
-			<view class="new-info">
+		<view style="padding-top: 30rpx; margin:0 30rpx; background-color: white;">
+			<view class="new-info" style="background-image: url(http://p1362.bvimg.com/10465/c620bb6595ae91aa.png);">
 				<text>报修</text>
-				<text style="color: #5f7bf9;">广场</text>
+				<text style="color: rgba(252,183,108,1);">广场</text>
 			</view>
 			<workOrderIntroduce :intro="allIntro"></workOrderIntroduce>
 
@@ -111,7 +117,8 @@
 	
 	@import url("../../common/iconfont.css");
 	page {
-		background-color: rgb(243, 243, 243);
+		 background: rgb(243,243,243);
+		background: linear-gradient(0deg, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%); 
 	}
 	
 	.back-image {
@@ -129,7 +136,7 @@
 		margin-bottom: 0;
 		display: block;	
 		width: 690rpx;
-		box-shadow: 0rpx 4rpx 30rpx #4e504e;
+		box-shadow: 0rpx 4rpx 20rpx #9da19d;
 	}
 	
 	.top {
@@ -179,16 +186,20 @@
 	}
 	
 	.new-info {
-		background-image: url(http://p1362.bvimg.com/10465/d8a0cc03abaf5a4d.png);
+		
 		background-size: 40rpx;
 		background-repeat: no-repeat;
-		background-position: left center;
+		background-position: left top;
 		padding-left: 60rpx;
 		margin-left: 30rpx;
 		font-weight: bolder;
-		margin-bottom: 30rpx;
+		border-bottom: 4px solid #ffde59;
+		display: inline-block;
+		padding-bottom: 10rpx;
+		/* margin-bottom: 30rpx; */
 		
 	}
+	
 	
 	.info-list {
 		font-size: 30rpx;

@@ -1,5 +1,5 @@
 <template>
-	<view style="background-color: rgb(243, 243, 243);">
+	<view>
 		<view class="back-image">
 			<view class="login-back">
 				<view class="item">
@@ -49,16 +49,17 @@
 <style>
 	@import url("../../common/iconfont.css");
 	page {
-		background-color: rgb(243, 243, 243);
+		 background: rgb(243,243,243);
+		background: linear-gradient(0deg, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%); 
 	}
 	
-	.back-image {
+	/* .back-image {
 		background-image: url(http://p1362.bvimg.com/10465/bb05365f0f6427ec.png);
 		background-size: 800rpx;
 		background-repeat: no-repeat;
 		background-position: center top;
 		height: 1000rpx;
-	}
+	} */
 	
 	.login-back {
 		width: 600rpx;
@@ -97,11 +98,11 @@
 	}
 	
 	 .r-button2 {
-		background-color: rgba(95,123,249,1);
+		background-color: rgba(252,183,108,1);
 		color: white;
 	}
 	
 	 .r-button2:active {
-		background-color: rgba(95,123,249,0.8);
+		background-color: rgba(252,183,108,0.8);
 	}  
 </style>

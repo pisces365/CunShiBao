@@ -102,6 +102,12 @@
 
 
 
+
+
+
+
+
+
 /* @import url("../../common/common_layout.css");
 
 page {
@@ -413,7 +419,8 @@ page {
   content: "\e6b3";
 }
 page {
-	background-color: rgb(243, 243, 243);
+	 background: rgb(243,243,243);
+	background: linear-gradient(0deg, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%);
 }
 .back-image {
 	background-image: url(http://p1362.bvimg.com/10465/bb05365f0f6427ec.png);
@@ -429,7 +436,7 @@ page {
 	margin-bottom: 0;
 	display: block;	
 	width: 690rpx;
-	box-shadow: 0rpx 4rpx 30rpx #4e504e;
+	box-shadow: 0rpx 4rpx 20rpx #9da19d;
 }
 .top {
 	/* margin-top: 30rpx; */
@@ -476,14 +483,17 @@ page {
 	border-radius: 20rpx;
 }
 .new-info {
-	background-image: url(http://p1362.bvimg.com/10465/d8a0cc03abaf5a4d.png);
+	
 	background-size: 40rpx;
 	background-repeat: no-repeat;
-	background-position: left center;
+	background-position: left top;
 	padding-left: 60rpx;
 	margin-left: 30rpx;
 	font-weight: bolder;
-	margin-bottom: 30rpx;
+	border-bottom: 4px solid #ffde59;
+	display: inline-block;
+	padding-bottom: 10rpx;
+	/* margin-bottom: 30rpx; */
 }
 .info-list {
 	font-size: 30rpx;

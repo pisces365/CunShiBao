@@ -1,7 +1,7 @@
 <template name="workOrderIntroduce">
 	<view>
 		<view class="news" v-for="(item , index) in intro" :key="index">
-			<navigator url="../../pagesB/maintenanceDetails/maintenanceDetails" class="navw">
+			<navigator url="../../pagesRepairCenter/maintenanceDetails/maintenanceDetails" class="navw">
 				<view class="main">
 					<view class="intro-main">
 						<text class="intro-information">[{{item.date}}] {{item.num}} {{item.person}}</text> 
@@ -79,7 +79,7 @@
 		font-size: 24rpx;
 		right: 0;
 		color: white;
-		background-color: #4ecf68;
+		background-color: #A1BF56;
 		padding: 5rpx;
 		border-radius: 10rpx;
 		box-shadow: 10rpx 10rpx 20rpx #dbdcdb;

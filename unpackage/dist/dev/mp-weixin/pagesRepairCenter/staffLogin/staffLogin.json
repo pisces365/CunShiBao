@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "维修人员登录",
   "enablePullDownRefresh": false,
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#fcb76c",
   "usingComponents": {}
 }

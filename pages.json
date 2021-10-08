@@ -629,7 +629,15 @@
 					"path": "maintenanceCenter/maintenanceCenter",
 					"style": {
 						"navigationBarTitleText": "维修中心",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "white",
+						"navigationBarBackgroundColor": "#fcb76c",
+						"app-plus": {
+							"titleNView": {
+								"type": "default",
+								"titleText": "维修中心"
+							}
+						}
 					}
 				}
 			    ,{
@@ -656,7 +664,15 @@
                     "style" :                                                                                    
                 {
                     "navigationBarTitleText": "维修人员登录",
-                    "enablePullDownRefresh": false
+                    "enablePullDownRefresh": false,
+                    "navigationBarTextStyle": "white",
+                    "navigationBarBackgroundColor": "#fcb76c",
+                    "app-plus": {
+                    	"titleNView": {
+                    		"type": "default",
+                    		"titleText": "维修人员登录"
+                    	}
+                    }
                 }
                 
                 }
