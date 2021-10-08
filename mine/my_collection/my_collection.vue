@@ -89,24 +89,24 @@
 			</view>
 		</scroll-view>
 		<scroll-view v-show="getTitle(2)" scroll-y="true" show-scrollbar="10" style="height: 1380rpx;">
-			<view  >
-				<navigator url="../../pagesMarket/buy/buy" class="my-item" style="display: flex;">
+			<view v-for="(item , index) in goodsInfo" :key="index">
+				<navigator :url="'../../pagesMarket/buy/buy?id='+item.id" class="my-item" style="display: flex;">
 					<view style="flex: 5;">
-						<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 100%;" mode="aspectFill"></image>
+						<image class="secondHandImage" :src="item.img"  style="width: 100%;" mode="aspectFill"></image>
 					</view>
 					<view style="flex: 7; margin: 30rpx 0 20rpx 30rpx; position: relative;">
 						<view>
-							<text class="goods-name">珞玲珑电视柜茶几组合</text>
+							<text class="goods-name">{{item.name}}</text>
 						</view>
 						<view class="" style="margin:20rpx 0">
-							<text class="brand-and-condition">钢化玻璃 人造板</text>
+							<text class="brand-and-condition">{{item.condition}}</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">珞玲珑</text>
+							<text class="brand-and-condition">{{item.brand}}</text>
 						</view>
 						<view class="" style="position: absolute; bottom: 10rpx;">
-							<text class="price-now">￥899</text>
-							<text class="price-before">￥999</text>
-							<text class="discount">已减￥100</text>
+							<text class="price-now">￥{{item.price_now}}</text>
+							<text class="price-before">￥{{item.price_before}}</text>
+							<text class="discount">已减￥{{item.discount}}</text>
 						</view>
 					</view>
 				</navigator>
@@ -120,6 +120,7 @@
 </template>
 
 <script>
+	import {goodsInfoItems} from "@/common/Market.js"
 	import information from '@/component/policyInterpretation/information/information.vue'
 	import navigation from '@/component/policyInterpretation/navigation/navigation.vue'
 	export default {
@@ -128,6 +129,8 @@
 			information
 		},
 		onShow() {
+			//以下代码运行的非常好（确信）（五毛一条）
+			/////////////////////////////////////////资讯
 			// console.log(123);
 			let news = uni.getStorageSync('news');
 			if(news == "")
@@ -173,16 +176,44 @@
 			if(buses == "")
 			{
 				this.bus = [];
-				return;
+
 			}
-			let buses_array = buses.split("#%%#");
-			let buses_obj_array = [];
-			for(var i=0;i<buses_array.length;++i)
+			else{
+				let buses_array = buses.split("#%%#");
+				let buses_obj_array = [];
+				for(var i=0;i<buses_array.length;++i)
+				{
+					buses_obj_array[i] = JSON.parse(buses_array[i]);
+				}
+				this.bus = buses_obj_array;
+				console.log(this.bus);
+			}
+			
+			
+			
+			////////////////////////////////////////市场
+			this.goodsInfo = [];
+			let goods_list = uni.getStorageSync('market_goods');
+			console.log(goods_list);
+			let goods_array = goods_list.split(",");
+			for(var i=0;i<goods_array.length;++i)
 			{
-				buses_obj_array[i] = JSON.parse(buses_array[i]);
+				for(var j=0;j<goodsInfoItems.globalRoaming.length;j++)
+				{
+					if(j != parseInt(goods_array[i]))
+					{
+						
+					}
+					else
+					{
+						goodsInfoItems.globalRoaming[j].id = j;
+						this.goodsInfo.push(goodsInfoItems.globalRoaming[j]);
+					}
+				}
 			}
-			this.bus = buses_obj_array;
-			console.log(this.bus);
+			
+			/////////////////////////////////////////租房
+			
 		},
 		data() {
 			return {
@@ -287,7 +318,8 @@
 					   			"279H路"
 					   		]
 					   	}
-					   ]
+					   ],
+					   goodsInfo:[]
 				
 			}
 		},

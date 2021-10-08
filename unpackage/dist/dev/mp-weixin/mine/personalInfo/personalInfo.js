@@ -254,6 +254,11 @@ var _default =
 
   },
   methods: {
+    toChangeStyle: function toChangeStyle() {
+      uni.navigateTo({
+        url: '../select_main_page/select_main_page' });
+
+    },
     toBindPhone: function toBindPhone() {
       uni.navigateTo({
         url: '../../pagesA/rent/phoneRegistration/phoneRegistration' });

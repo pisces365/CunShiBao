@@ -141,7 +141,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 643));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 650));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -263,97 +263,143 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-{
-  components: {
-    navigation: navigation,
-    information: information },
-
-  onShow: function onShow() {var _this = this;
+var _Market = __webpack_require__(/*! @/common/Market.js */ 822); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var information = function information() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/information/information */ "component/policyInterpretation/information/information").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/information/information.vue */ 643));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var navigation = function navigation() {__webpack_require__.e(/*! require.ensure | component/policyInterpretation/navigation/navigation */ "component/policyInterpretation/navigation/navigation").then((function () {return resolve(__webpack_require__(/*! @/component/policyInterpretation/navigation/navigation.vue */ 650));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { navigation: navigation, information: information }, onShow: function onShow() {var _this = this; //以下代码运行的非常好（确信）（五毛一条）
+    /////////////////////////////////////////资讯
     // console.log(123);
-    var news = uni.getStorageSync('news');
-    if (news == "")
-    {
-      this.latestPolicy = [];
-      this.ItemSetFunc(0);
-      this.$nextTick(function () {
-        _this.titles[0].isActive = true;
-      });
-    } else
-    {
-      var news_array = news.split('#%%#');
-      // console.log(news_array);
-      this.latestPolicy = [];
-      for (var i = 0; i < news_array.length; ++i)
-      {
-        var temp = JSON.parse(news_array[i]);
-        // console.log(temp);
-        var obj = { title: temp.title.titleContent,
-          source: temp.title.artileSource,
-          date: temp.title.releaseTime,
-          reading: temp.data_reading,
-          like: temp.data_like,
-          url: "../../pagesA/News?newsID=" + temp.NewsID + '&doyoulike=true' };
-
-        this.latestPolicy[i] = obj;
-        // title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
+    var news = uni.getStorageSync('news');if (news == "") {this.latestPolicy = [];this.ItemSetFunc(0);this.$nextTick(function () {_this.titles[0].isActive = true;});} else {var news_array = news.split('#%%#'); // console.log(news_array);
+      this.latestPolicy = [];for (var i = 0; i < news_array.length; ++i) {var temp = JSON.parse(news_array[i]); // console.log(temp);
+        var obj = { title: temp.title.titleContent, source: temp.title.artileSource, date: temp.title.releaseTime, reading: temp.data_reading, like: temp.data_like, url: "../../pagesA/News?newsID=" + temp.NewsID + '&doyoulike=true' };this.latestPolicy[i] = obj; // title: "辽宁省康平县：稻蟹共生促发展 一田两用助增收",
         // source: "康平融媒号",
         // date: "2021年08月24日",
         // reading: "8,496",
         // like: "6,318",
         // url: "../../News?newsID=2"
-      }
-      this.ItemSetFunc(0);
-      this.$nextTick(function () {
-        _this.titles[0].isActive = true;
-      });
-      // console.log(456);
-    }
-
-    /////////////////////////////////////////公交
-    var buses = uni.getStorageSync('bus_route');
-    if (buses == "")
-    {
-      this.bus = [];
-      return;
-    }
-    var buses_array = buses.split("#%%#");
-    var buses_obj_array = [];
-    for (var i = 0; i < buses_array.length; ++i)
-    {
-      buses_obj_array[i] = JSON.parse(buses_array[i]);
-    }
-    this.bus = buses_obj_array;
-    console.log(this.bus);
-  },
-  data: function data() {
-    return {
-      titles: [
-      {
-        id: 0,
-        name: "政策资讯",
-        isActive: false },
-
-      {
-        id: 1,
-        name: "公交出行",
-        isActive: false },
-
-      {
-        id: 2,
-        name: "二手商品",
-        isActive: false },
-
-      {
-        id: 3,
-        name: "房屋租赁",
-        isActive: false }],
-
-
-      latestPolicy: [],
-      bus: [
-        // {
+      }this.ItemSetFunc(0);this.$nextTick(function () {_this.titles[0].isActive = true;}); // console.log(456);
+    } /////////////////////////////////////////公交
+    var buses = uni.getStorageSync('bus_route');if (buses == "") {this.bus = [];} else {var buses_array = buses.split("#%%#");var buses_obj_array = [];for (var i = 0; i < buses_array.length; ++i) {buses_obj_array[i] = JSON.parse(buses_array[i]);}this.bus = buses_obj_array;console.log(this.bus);} ////////////////////////////////////////市场
+    this.goodsInfo = [];var goods_list = uni.getStorageSync('market_goods');console.log(goods_list);var goods_array = goods_list.split(",");for (var i = 0; i < goods_array.length; ++i) {for (var j = 0; j < _Market.goodsInfoItems.globalRoaming.length; j++) {if (j != parseInt(goods_array[i])) {} else {_Market.goodsInfoItems.globalRoaming[j].id = j;this.goodsInfo.push(_Market.goodsInfoItems.globalRoaming[j]);}}} /////////////////////////////////////////租房
+  }, data: function data() {return { titles: [{ id: 0, name: "政策资讯", isActive: false }, { id: 1, name: "公交出行", isActive: false }, { id: 2, name: "二手商品", isActive: false }, { id: 3, name: "房屋租赁", isActive: false }], latestPolicy: [], bus: [// {
         // 	route:"236M路", //
         // 	bond:"文三路",
         // 	start:"西溪源公交站",
@@ -397,22 +443,7 @@ __webpack_require__.r(__webpack_exports__);
         // 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
         // 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
         // }
-      ],
-      station: [
-      {
-        station: "西溪医院·横街",
-        distance: "847",
-        route: [
-        "236M路",
-        "193路",
-        "526路",
-        "310路"] },
-
-
-      {
-        station: "屏峰",
-        distance: "439",
-        route: [
+      ], station: [{ station: "西溪医院·横街", distance: "847", route: ["236M路", "193路", "526路", "310路"] }, { station: "屏峰", distance: "439", route: [
         "236M路",
         "193路",
         "596路",
@@ -427,10 +458,11 @@ __webpack_require__.r(__webpack_exports__);
         "382路",
         "367路",
         "193路",
-        "279H路"] }] };
+        "279H路"] }],
 
 
 
+      goodsInfo: [] };
 
 
   },
