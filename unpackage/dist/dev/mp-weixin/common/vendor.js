@@ -9436,6 +9436,71 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = 
 
 /***/ }),
 
+/***/ 295:
+/*!****************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/Market.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.goodsInfoItems = void 0;var goodsInfoItems = { globalRoaming: [
+  {
+    "img": "http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg",
+    "name": "HLA海澜之家毛衣",
+    "condition": "长袖 标准型",
+    "brand": "海澜之家",
+    "price_now": "139",
+    "price_before": "150",
+    "discount": "11" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/16896eec50403428.jpg",
+    "name": "足力健老人鞋",
+    "condition": "运动风 运动鞋",
+    "brand": "足力健老人鞋",
+    "price_now": "329",
+    "price_before": "400",
+    "discount": "71" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg",
+    "name": "价值为纲-华为内训精选图书",
+    "condition": "正版",
+    "brand": "华为",
+    "price_now": "102",
+    "price_before": "118",
+    "discount": "16" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png",
+    "name": "索爱 SA-L28 电脑麦克风",
+    "condition": "无线 内置电池",
+    "brand": "意创生活",
+    "price_now": "239",
+    "price_before": "260",
+    "discount": "21" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/1f1f04d7af08b655.png",
+    "name": "华为 Mate40 5G 手机",
+    "condition": "8GB运存 256GB",
+    "brand": "华为",
+    "price_now": "4999",
+    "price_before": "6569",
+    "discount": "1570" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg",
+    "name": "珞玲珑电视柜茶几组合",
+    "condition": "钢化玻璃 人造板",
+    "brand": "珞玲珑",
+    "price_now": "899",
+    "price_before": "999",
+    "discount": "100" }] };exports.goodsInfoItems = goodsInfoItems;
+
+/***/ }),
+
 /***/ 3:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -9896,7 +9961,7 @@ function walkJsonObj(jsonObj, walk) {
 
 /***/ }),
 
-/***/ 421:
+/***/ 422:
 /*!*********************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
   \*********************************************************************************************/
@@ -10941,7 +11006,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 540:
+/***/ 541:
 /*!***********************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
   \***********************************************************/
@@ -11384,7 +11449,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 626:
+/***/ 627:
 /*!**********************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/region.json ***!
   \**********************************************************************/
@@ -11395,7 +11460,7 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
-/***/ 697:
+/***/ 698:
 /*!************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
   \************************************************************************************/
@@ -11442,7 +11507,7 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
-/***/ 733:
+/***/ 734:
 /*!***************************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************/
@@ -11581,71 +11646,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   "cloud-download-filled": "\uE8E9",
   "headphones": "\uE8BF",
   "shop": "\uE609" };exports.default = _default;
-
-/***/ }),
-
-/***/ 822:
-/*!****************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/Market.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.goodsInfoItems = void 0;var goodsInfoItems = { globalRoaming: [
-  {
-    "img": "http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg",
-    "name": "HLA海澜之家毛衣",
-    "condition": "长袖 标准型",
-    "brand": "海澜之家",
-    "price_now": "139",
-    "price_before": "150",
-    "discount": "11" },
-
-  {
-    "img": "http://p1362.bvimg.com/10465/16896eec50403428.jpg",
-    "name": "足力健老人鞋",
-    "condition": "运动风 运动鞋",
-    "brand": "足力健老人鞋",
-    "price_now": "329",
-    "price_before": "400",
-    "discount": "71" },
-
-  {
-    "img": "http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg",
-    "name": "价值为纲-华为内训精选图书",
-    "condition": "正版",
-    "brand": "华为",
-    "price_now": "102",
-    "price_before": "118",
-    "discount": "16" },
-
-  {
-    "img": "http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png",
-    "name": "索爱 SA-L28 电脑麦克风",
-    "condition": "无线 内置电池",
-    "brand": "意创生活",
-    "price_now": "239",
-    "price_before": "260",
-    "discount": "21" },
-
-  {
-    "img": "http://p1362.bvimg.com/10465/1f1f04d7af08b655.png",
-    "name": "华为 Mate40 5G 手机",
-    "condition": "8GB运存 256GB",
-    "brand": "华为",
-    "price_now": "4999",
-    "price_before": "6569",
-    "discount": "1570" },
-
-  {
-    "img": "http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg",
-    "name": "珞玲珑电视柜茶几组合",
-    "condition": "钢化玻璃 人造板",
-    "brand": "珞玲珑",
-    "price_now": "899",
-    "price_before": "999",
-    "discount": "100" }] };exports.goodsInfoItems = goodsInfoItems;
 
 /***/ })
 

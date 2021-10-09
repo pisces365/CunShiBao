@@ -10,7 +10,7 @@
 		</view>
 		
 		<view style="padding: 20rpx 0;"></view>
-		<view style="padding-top: 30rpx; margin:0 30rpx; background-color: #fefefe;">
+		<view class="nav" style="padding-top: 30rpx; margin:0 30rpx;">
 			<view class="new-info" style="background-image: url(http://p1362.bvimg.com/10465/d1347580d914d745.png);">
 				<text>报修</text>
 				<text style="color: rgba(252,183,108,1);">服务</text>
