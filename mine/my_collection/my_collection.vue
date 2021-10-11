@@ -41,19 +41,30 @@
 				<view class="personInfo-title">
 					我的线路
 				</view>
-				<navigator :url="'../../pagesBus/routeInfo/routeInfo?carNum='+item.route"  class="bus-item" v-for="(item , index) in bus" :key="index">
+				<view class="none" v-if="bus.length==0">
+					空空如也，快去收藏吧！
+				</view>
+				<navigator v-for="(item , index) in bus" :key="index" :url="'../../pagesBus/routeInfo/routeInfo?carNum='+item.route+'&start='+item.start+'&end='+item.end"  class="bus-item" >
 					<view>
 						<text class="bus-stop">{{item.route}}</text>
 						<text class="station">开往</text>
-						<text class="station">{{item.bond}}</text>
+						<text class="station">{{item.end}}</text>
 						<text style="font-size: 28rpx;float: right;margin-top: 2rpx;">{{item.start}}-{{item.end}}</text>
 					</view>
-					<view style="font-size: 28rpx; margin-top: 40rpx;">
+					<!-- <view style="font-size: 28rpx; margin-top: 40rpx;">
 						<text style="margin-right: 30rpx;">上车站：{{item.aboard}}</text>
 						<text>距离</text><text class="num">{{item.distance}}</text><text>站</text> <text class="num">{{item.minute}}</text><text>分钟</text>
 						<view class="icon">
 							<image class="icon-crowd" :src="item.crowd" mode="widthFix"></image>
 							<image class="icon-access" :src="item.accessible" mode="widthFix"></image>
+						</view>
+					</view> -->
+					<view style="font-size: 28rpx; margin-top: 40rpx;">
+						<text style="margin-right: 30rpx;">上车站：西溪医院·横街</text>
+						<text>距离</text><text class="num">4</text><text>站</text> <text class="num">8</text><text>分钟</text>
+						<view class="icon">
+							<image class="icon-crowd" src="http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png" mode="widthFix"></image>
+							<image class="icon-access" src="http://p1362.bvimg.com/10465/b693c9983d17943e.png" mode="widthFix"></image>
 						</view>
 					</view>
 				</navigator>
@@ -78,24 +89,24 @@
 			</view>
 		</scroll-view>
 		<scroll-view v-show="getTitle(2)" scroll-y="true" show-scrollbar="10" style="height: 1380rpx;">
-			<view  >
-				<navigator url="../../pagesMarket/buy/buy" class="my-item" style="display: flex;">
+			<view v-for="(item , index) in goodsInfo" :key="index">
+				<navigator :url="'../../pagesMarket/buy/buy?id='+item.id" class="my-item" style="display: flex;">
 					<view style="flex: 5;">
-						<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 100%;" mode="aspectFill"></image>
+						<image class="secondHandImage" :src="item.img"  style="width: 100%;" mode="aspectFill"></image>
 					</view>
 					<view style="flex: 7; margin: 30rpx 0 20rpx 30rpx; position: relative;">
 						<view>
-							<text class="goods-name">珞玲珑电视柜茶几组合</text>
+							<text class="goods-name">{{item.name}}</text>
 						</view>
 						<view class="" style="margin:20rpx 0">
-							<text class="brand-and-condition">钢化玻璃 人造板</text>
+							<text class="brand-and-condition">{{item.condition}}</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">珞玲珑</text>
+							<text class="brand-and-condition">{{item.brand}}</text>
 						</view>
 						<view class="" style="position: absolute; bottom: 10rpx;">
-							<text class="price-now">￥899</text>
-							<text class="price-before">￥999</text>
-							<text class="discount">已减￥100</text>
+							<text class="price-now">￥{{item.price_now}}</text>
+							<text class="price-before">￥{{item.price_before}}</text>
+							<text class="discount">已减￥{{item.discount}}</text>
 						</view>
 					</view>
 				</navigator>
@@ -109,6 +120,7 @@
 </template>
 
 <script>
+	import {goodsInfoItems} from "@/common/Market.js"
 	import information from '@/component/policyInterpretation/information/information.vue'
 	import navigation from '@/component/policyInterpretation/navigation/navigation.vue'
 	export default {
@@ -117,17 +129,19 @@
 			information
 		},
 		onShow() {
+			//以下代码运行的非常好（确信）（五毛一条）
+			/////////////////////////////////////////资讯
 			// console.log(123);
 			let news = uni.getStorageSync('news');
 			if(news == "")
 			{
 				this.latestPolicy = [];
-				this.titles[0].isActive = false;
+				this.ItemSetFunc(0);
 				    this.$nextTick(() => {
 				        this.titles[0].isActive = true;
 				    })
-				return;
 			}
+			else{
 			let news_array = news.split('#%%#');
 			// console.log(news_array);
 			this.latestPolicy = [];
@@ -150,11 +164,56 @@
 				// like: "6,318",
 				// url: "../../News?newsID=2"
 			}
-			this.titles[0].isActive = false;
+			this.ItemSetFunc(0);
 			    this.$nextTick(() => {
 			        this.titles[0].isActive = true;
 			    })
 			// console.log(456);
+			}
+			
+			/////////////////////////////////////////公交
+			let buses = uni.getStorageSync('bus_route');
+			if(buses == "")
+			{
+				this.bus = [];
+
+			}
+			else{
+				let buses_array = buses.split("#%%#");
+				let buses_obj_array = [];
+				for(var i=0;i<buses_array.length;++i)
+				{
+					buses_obj_array[i] = JSON.parse(buses_array[i]);
+				}
+				this.bus = buses_obj_array;
+				console.log(this.bus);
+			}
+			
+			
+			
+			////////////////////////////////////////市场
+			this.goodsInfo = [];
+			let goods_list = uni.getStorageSync('market_goods');
+			console.log(goods_list);
+			let goods_array = goods_list.split(",");
+			for(var i=0;i<goods_array.length;++i)
+			{
+				for(var j=0;j<goodsInfoItems.globalRoaming.length;j++)
+				{
+					if(j != parseInt(goods_array[i]))
+					{
+						
+					}
+					else
+					{
+						goodsInfoItems.globalRoaming[j].id = j;
+						this.goodsInfo.push(goodsInfoItems.globalRoaming[j]);
+					}
+				}
+			}
+			
+			/////////////////////////////////////////租房
+			
 		},
 		data() {
 			return {
@@ -182,50 +241,50 @@
 					   ],
 					   latestPolicy: [],
 					   bus:[
-					   	{
-					   		route:"236M路", //
-					   		bond:"文三路",
-					   		start:"西溪源公交站",
-					   		end:"文三路",
-					   		aboard:"西溪医院·横街",
-					   		distance:"4",
-					   		minute:"8",
-					   		crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-					   		accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
-					   	},
-					   	{
-					   		route:"193路",
-					   		bond:"环北新村",
-					   		start:"西溪源公交站",
-					   		end:"环北新村",
-					   		aboard:"西溪医院·横街",
-					   		distance:"3",
-					   		minute:"6",
-					   		crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-					   		accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
-					   	},
-					   	{
-					   		route:"7467路",
-					   		bond:"午潮山公交站",
-					   		start:"梦想小镇",
-					   		end:"午潮山公交站",
-					   		aboard:"留下",
-					   		distance:"5",
-					   		minute:"5",
-					   		crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-					   		accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
-					   	},
-					   	{
-					   		route:"136路",
-					   		bond:"金莲桥",
-					   		start:"留下南",
-					   		end:"金莲桥",
-					   		aboard:"留下",
-					   		distance:"2",
-					   		minute:"3",
-					   		crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-					   		accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
-					   	}
+					   	// {
+					   	// 	route:"236M路", //
+					   	// 	bond:"文三路",
+					   	// 	start:"西溪源公交站",
+					   	// 	end:"文三路",
+					   	// 	aboard:"西溪医院·横街",
+					   	// 	distance:"4",
+					   	// 	minute:"8",
+					   	// 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+					   	// 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+					   	// },
+					   	// {
+					   	// 	route:"193路",
+					   	// 	bond:"环北新村",
+					   	// 	start:"西溪源公交站",
+					   	// 	end:"环北新村",
+					   	// 	aboard:"西溪医院·横街",
+					   	// 	distance:"3",
+					   	// 	minute:"6",
+					   	// 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+					   	// 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+					   	// },
+					   	// {
+					   	// 	route:"7467路",
+					   	// 	bond:"午潮山公交站",
+					   	// 	start:"梦想小镇",
+					   	// 	end:"午潮山公交站",
+					   	// 	aboard:"留下",
+					   	// 	distance:"5",
+					   	// 	minute:"5",
+					   	// 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+					   	// 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+					   	// },
+					   	// {
+					   	// 	route:"136路",
+					   	// 	bond:"金莲桥",
+					   	// 	start:"留下南",
+					   	// 	end:"金莲桥",
+					   	// 	aboard:"留下",
+					   	// 	distance:"2",
+					   	// 	minute:"3",
+					   	// 	crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+					   	// 	accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+					   	// }
 					   ],
 					   station:[
 					   	{
@@ -259,7 +318,8 @@
 					   			"279H路"
 					   		]
 					   	}
-					   ]
+					   ],
+					   goodsInfo:[]
 				
 			}
 		},

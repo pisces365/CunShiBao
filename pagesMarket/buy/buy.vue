@@ -32,15 +32,15 @@
 					</view>
 					<view>
 						<view class="" style="margin-bottom: 10rpx;">
-							<text class="price-now">￥329</text>
-							<text class="price-before">￥400</text>
-							<text class="discount">已减￥71</text>
+							<text class="price-now">￥{{goodsInfo.price_now}}</text>
+							<text class="price-before">￥{{goodsInfo.price_before}}</text>
+							<text class="discount">已减￥{{goodsInfo.discount}}</text>
 						</view>
 						<view class="">
-							<text class="goods-name">足力健老人鞋</text>
-							<text class="brand-and-condition">运动风</text>
+							<text class="goods-name">{{goodsInfo.name}}</text><br>
+							<text class="brand-and-condition" style="margin-left: 0 !important;">{{goodsInfo.condition}}</text>
 							<text class="brand-and-condition">|</text>
-							<text class="brand-and-condition">运动鞋</text>
+							<text class="brand-and-condition">{{goodsInfo.brand}}</text>
 						</view>
 					</view>
 					<view class="rent-desc-label-bottom">
@@ -72,7 +72,8 @@
 				<view class="release-button">
 					<view class="operation">
 						<button>评论</button>
-						<button>收藏</button>
+						<button v-if="!isLike" @click="like">收藏</button>
+						<button v-if="isLike" @click="like">已收藏</button>
 						<button open-type="share">分享</button>
 					</view>
 					<button class="r-button2" @click="toVote">我要购买</button>
@@ -87,9 +88,22 @@
 </template>
 
 <script>
+	import {goodsInfoItems} from "@/common/Market.js"
 	export default {
 		data() {
 			return {
+				id:0,
+				isLike:false,
+				goodsInfo:
+					{
+						img:"http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg",
+						name:"HLA海澜之家毛衣",
+						condition:"长袖 标准型",
+						brand:"海澜之家",
+						price_now:"139",
+						price_before:"150",
+						discount:"11",
+					},
 				share:{
 				    title:'二手商品详情',
 				    path:'/pagesMarket/secondHandDetails/secondHandDetails',
@@ -117,78 +131,9 @@
 						hourseAream: '58.70',
 						distance:'2.4'
 					},
-				additionalInfo: {
-					label1: '超赞房东',
-					label2: '5.0分 · 11条评论',
-					description: [
-						"Hello，你所浏览的房源是一套一室一厨一卫的精装公寓我们有一张1.8x2m大床，可供2人居住",
-						"这是一套以轻奢的现代装修风格为主的温馨小屋",
-						"在这里，享受高速WIFI带给您的一路畅通无阻。",
-						"房源地理位置非常优越：",
-						"我们的房子紧靠「人民北路」地铁站，",
-						"离「金牛万达商圈、文殊院景区」步行10分钟内，",
-						"离「春熙路」地铁4个站，",
-						"离「火车北站」地铁1个站，",
-						"离「机场专线」步行两分钟，",
-						"可方便快捷的到达各个景点。",
-						"房间设备：",
-						"『高速WIFI、高清投影、空调、冰箱、洗衣机、电梯、电热水器、门禁、电热水壶、沙发、衣架』",
-						"卫浴配置：",
-						"『手纸、淋浴、盥洗池、一次性牙刷、毛巾、浴巾、电吹风、洗发水、沐浴露、漱口杯、凉拖』",
-						"房门配有智能密码锁，方便您进出；",
-						"苛刻的卫生标准是我们一直以来所强调的，在这里，我们会有专业的保洁阿姨为房间提供【清洁】及【消毒】，您可以安心入住。",
-						"我们的房子麻雀虽小五脏俱全，希望能让您感受到家的温暖和舒适。"
-
-					],
-					hostNickname: [
-						'Lemon',
-						'游觅民宿',
-						'莫雨民宿',
-						'亦非',
-						'刘浩',
-						'管家',
-						'LittleLion',
-					],
-					hostImage: [
-						'http://p1362.bvimg.com/10465/f820643ce376c33c.jpg',
-						'http://p1362.bvimg.com/10465/33480984caf9342e.jpg',
-						'http://p1362.bvimg.com/10465/4dbcd200d3aa2d00.jpg',
-						'http://p1362.bvimg.com/10465/6de29a054bb84057.jpg',
-						'http://p1362.bvimg.com/10465/a0d047f5de7fceef.jpg',
-						'http://p1362.bvimg.com/10465/69f88aa3c11fcbee.jpg',
-						'http://p1362.bvimg.com/10465/b33328f09b1f4618.jpg'
-					],
-					readMe: [{
-						title: '房屋守则',
-						content: [
-							'不允许举办派对和活动', '不允许携带宠物'
-						]
-					}, {
-						title: '取消政策',
-						content: [
-							'添加入住退房日期后，可查看取消政策详情'
-						]
-					}, {
-						title: '安全须知',
-						content: [
-							'在新冠肺炎疫情期间，我们要求所有房东和房客查看并遵守爱彼迎的社交距离准则和其他新冠肺炎疫情相关准则。',
-							'未报告装有一氧化碳报警器', '已配备烟雾报警器'
-
-						]
-					}, {
-						title: '安全预订',
-						content: [
-							'为了保护您的账号隐私及付款安全，请勿妄信第三方预订代理提供的折扣或礼金券，也不要在爱彼迎网站或App之外汇款或沟通。 查看详情'
-						]
-					}, {
-						title: '发票须知',
-						content: [
-							'房东将自行提供发票（非爱彼迎提供的发票），请让房东开具发票。'
-						]
-					}]
-				},
 			}
 		},
+		
 		onShareAppMessage(res) {
 		        return {
 		            title:this.share.title,
@@ -210,6 +155,36 @@
 		        }
 		    },
 		methods: {
+			like() {
+				if(this.isLike == false)
+				{
+					this.isLike = true;
+					let goods_list = uni.getStorageSync('market_goods');
+					goods_list += ","+this.id;
+					uni.setStorageSync('market_goods',goods_list);
+					console.log(goods_list);
+				}
+				else
+				{
+					this.isLike = false;
+					let goods_list = uni.getStorageSync('market_goods');
+					let goods_array = goods_list.split(",");
+					for(var i=0;i<goods_array.length;++i)
+					{
+						if(this.id != goods_array[i])
+						{
+							
+						}
+						else
+						{
+							goods_list = goods_list.replace(","+this.id, "")
+							break;
+						}
+					}
+					uni.setStorageSync('market_goods',goods_list);
+					console.log(goods_list);
+				}
+			},
 			makeAnAppointment() {
 				uni.makePhoneCall({
 					phoneNumber: '0571-88628854' //仅为示例
@@ -225,6 +200,28 @@
 				// console.log(this.swiperCurrent)
 			}
 
+		},
+		onLoad(options) {
+			this.id = options.id;
+			console.log(options.id);
+			this.goodsInfo = goodsInfoItems.globalRoaming[this.id];
+			console.log(goodsInfoItems.globalRoaming[this.id]);
+			
+			this.isLike = false;
+			let goods_list = uni.getStorageSync('market_goods');
+			let goods_array = goods_list.split(",");
+			for(var i=0;i<goods_array.length;++i)
+			{
+				if(this.id != goods_array[i])
+				{
+					
+				}
+				else
+				{
+					this.isLike = true;
+					break;
+				}
+			}
 		}
 		
 

@@ -65,12 +65,30 @@
 						url: "../../News?newsID=3"
 					}
 				];
+			this.expertInterpretation=[ //具体信息
+				{
+					title: "打赢脱贫攻坚战  稳住“三农”压舱石——专家解读2020年中央一号文件",
+					source: "人民网",
+					date: "2020年02月07日",
+					reading: "32,313",
+					like: "1,571",
+					url: "../../News?newsID=6"
+				},
+				{
+					title: "三农专家顾益康：坚持统筹城乡发展是浙江经济发展的重要经验",
+					source: "新华社",
+					date: "2018年11月18日",
+					reading: "1,457",
+					like: "343",
+					url: "../../News?newsID=7"
+				}
+			];
 			let news = uni.getStorageSync('news');
 			for(var j=0;j<this.latestPolicy.length;++j)
 			{
 				
-				this.latestPolicy[j].url += '&doyoulike=false'
-			
+				this.latestPolicy[j].url += '&doyoulike=false';
+				this.expertInterpretation[j].url += '&doyoulike=false';
 			}
 			if(news == "")
 			{
@@ -86,7 +104,14 @@
 				{
 					if(temp.title.titleContent == this.latestPolicy[j].title)
 					{
-						this.latestPolicy[j].url += '&doyoulike=true'
+						this.latestPolicy[j].url += '&doyoulike=true';
+						
+						continue;
+					}
+					if(temp.title.titleContent == this.expertInterpretation[j].title)
+					{
+						
+						this.expertInterpretation[j].url += '&doyoulike=true'
 						continue;
 					}
 				}

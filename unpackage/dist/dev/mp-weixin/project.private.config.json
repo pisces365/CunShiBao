@@ -95,6 +95,18 @@
           "pathName": "pagesHelp/myHelp/myHelp",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pagesMarket/buy/buy",
+          "query": "id=0",
+          "scene": null
+        },
+        {
+          "name": "我的收藏",
+          "pathName": "mine/my_collection/my_collection",
+          "query": "",
+          "scene": null
         }
       ]
     }

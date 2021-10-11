@@ -84,6 +84,9 @@ page {
 	border-radius: 12rpx;
 	float: right;
 }
+.like-click {
+	background-color: rgb(158, 65, 46);
+}
 .to {
 	background-image: url(http://p1362.bvimg.com/10465/614b4750108d095b.png);
 	background-repeat: no-repeat;

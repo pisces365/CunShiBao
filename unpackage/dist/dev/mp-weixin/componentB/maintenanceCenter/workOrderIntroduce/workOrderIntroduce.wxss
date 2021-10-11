@@ -330,7 +330,7 @@
 	font-size: 24rpx;
 	right: 0;
 	color: white;
-	background-color: #4ecf68;
+	background-color: #A1BF56;
 	padding: 5rpx;
 	border-radius: 10rpx;
 	box-shadow: 10rpx 10rpx 20rpx #dbdcdb;

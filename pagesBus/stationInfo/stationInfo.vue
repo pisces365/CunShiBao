@@ -36,15 +36,15 @@
 				distance:"123",
 				bus:[
 					{
-						route:"236M路", //
+						route:"236M路", 
 						bond:"文三路",
-											start:"西溪源公交站",
-											end:"文三路",
-											aboard:"西溪医院·横街",
-											distance:"4",
-											minute:"8",
-											crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
-											accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
+						start:"西溪源公交站",
+						end:"文三路",
+						aboard:"西溪医院·横街",
+						distance:"4",
+						minute:"8",
+						crowd:"http://p1362.bvimg.com/10465/4e30996c5dee8fb1.png",
+						accessible:"http://p1362.bvimg.com/10465/b693c9983d17943e.png"
 					},
 					{
 						route:"193路",

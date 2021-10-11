@@ -2,24 +2,24 @@
 	<view >
 		<radio-group name="">
 			<view class="otherInfo">
-				<view class="otherInfo-item" >
+				<view class="otherInfo-item" @click="change(1)">
 					<view class="otherInfo-item-left">
 						标准风格
 					</view>
 					<view class="otherInfo-item-right">
 						<label>
-							<radio :checked="mainPage==1" @click="change(1)"/>
+							<radio :checked="mainPage==1" />
 						</label>
 					</view>
 				</view>
 				<view class="cross-line"></view>
-				<view class="otherInfo-item" >
+				<view class="otherInfo-item" @click="change(2)">
 					<view class="otherInfo-item-left">
 						老年风格
 					</view>
 					<view class="otherInfo-item-right">
 						<label>
-							<radio :checked="mainPage==2"  @click="change(2)"/>
+							<radio :checked="mainPage==2"  />
 						</label>
 					</view>
 				</view>
@@ -42,6 +42,7 @@
 			change(num) {
 				console.log(num);
 				uni.setStorageSync('mainPage', num);
+				this.mainPage = num;
 			}
 		}
 	}

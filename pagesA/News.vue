@@ -440,7 +440,8 @@
 					],
 					editorCharge: '马晓峰',
 					data_reading: '14,603',
-					data_like: '6318'
+					data_like: '6318',
+					doyoulike: false
 				}, {
 					title: {
 						titleContent: '副村长是否享有随意处置村民私有财产的特权？',

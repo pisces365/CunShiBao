@@ -163,7 +163,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="bottom">
+		<view class="bottom" style="z-index:1000">
 			<label class="radio">
 				<radio value="" class="radio-style" />
 				<text class="bottom-tip">

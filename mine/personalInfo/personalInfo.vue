@@ -91,13 +91,13 @@
 				偏好配置
 			</view>
 			<view class="baseInfo">
-				<view class="baseInfo-item">
+				<view @click="toChangeStyle" class="baseInfo-item" >
 					<view class="baseInfo-item-left">
 						首页风格
 					</view>
-					<navigator url="../select_main_page/select_main_page" class="baseInfo-item-right gray">
+					<view class="baseInfo-item-right gray">
 						去设置 >
-					</navigator>
+					</view>
 				</view>
 			</view>
 			
@@ -122,6 +122,11 @@
 			}
 		},
 		methods: {
+			toChangeStyle() {
+				uni.navigateTo({
+					url: '../select_main_page/select_main_page'
+				})
+			},
 			toBindPhone() {
 				uni.navigateTo({
 					url: '../../pagesA/rent/phoneRegistration/phoneRegistration'

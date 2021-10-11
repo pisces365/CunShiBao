@@ -76,7 +76,7 @@
 				</view>
 				<view class="secondHandItems">
 					<view class="secondHandItem" >
-							<navigator url="../../pagesMarket/buy/buy" >
+							<navigator url="../../pagesMarket/buy/buy?id=0" >
 								<viewx>
 									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
@@ -94,7 +94,7 @@
 									<text class="discount">已减￥11</text>
 								</view>
 							</navigator>
-							<navigator url="../../pagesMarket/buy/buy">
+							<navigator url="../../pagesMarket/buy/buy?id=1">
 								<viewx>
 									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/16896eec50403428.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
@@ -112,7 +112,7 @@
 									<text class="discount">已减￥71</text>
 								</view>
 							</navigator>
-							<navigator url="../../pagesMarket/buy/buy">
+							<navigator url="../../pagesMarket/buy/buy?id=2">
 								<viewx>
 									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
@@ -135,7 +135,7 @@
 							<viewx>
 								<image src="http://p1362.bvimg.com/10465/515b3af70f8568ab.png"  style="width: 100%; height: 200rpx; border-radius: 20rpx; margin-bottom: 10rpx;"></image>
 							</viewx>
-							<navigator url="../../pagesMarket/buy/buy" >
+							<navigator url="../../pagesMarket/buy/buy?id=3" >
 								<viewx>
 									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
@@ -153,7 +153,7 @@
 									<text class="discount">已减￥21</text>
 								</view>
 							</navigator>
-							<navigator url="../../pagesMarket/buy/buy" >
+							<navigator url="../../pagesMarket/buy/buy?id=4" >
 								<viewx>
 									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/1f1f04d7af08b655.png"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
@@ -171,7 +171,7 @@
 									<text class="discount">已减￥1570</text>
 								</view>
 							</navigator>
-							<navigator url="../../pagesMarket/buy/buy" >
+							<navigator url="../../pagesMarket/buy/buy?id=5" >
 								<viewx>
 									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>

@@ -2348,133 +2348,6 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 198:
-/*!**************************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/util.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _baseUrl$nowTime$calc;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseUrl = '';
-var nowTime = Date.now || function () {
-  return new Date().getTime();
-};
-var app = getApp();var _default = (_baseUrl$nowTime$calc = {
-
-  baseUrl: baseUrl,
-  nowTime: nowTime,
-  //获取openID
-  calculateTimeDiff: function calculateTimeDiff(endTime) {
-    var _this = this;
-    endTime = Date.parse(endTime);
-    var currentTime = Date.now();
-    // console.log(currentTime)
-    // console.log(endTime);
-    var timeDiff = endTime - currentTime;
-    // console.log(timeDiff);
-    var secondDiff = Math.floor((endTime - currentTime) / 1000);
-    var minuteDiff = Math.floor(secondDiff / 60);
-    var hourDiff = Math.floor(minuteDiff / 60);
-    var dayDiff = Math.floor(hourDiff / 24);
-    hourDiff = Math.floor(hourDiff % 24);
-    minuteDiff = Math.floor(minuteDiff % 60);
-    secondDiff = Math.floor(secondDiff % 60);
-    var timeLag = {
-      dayDiff: dayDiff,
-      hourDiff: hourDiff,
-      minuteDiff: minuteDiff,
-      secondDiff: secondDiff };
-
-    return timeLag;
-  },
-
-  //是否为空
-  isNullOrEmpty: function isNullOrEmpty(value) {
-    return value === null || value === '' || value === undefined ? true : false;
-  },
-
-  //是否为手机号	
-  isMobile: function isMobile(value) {
-    return /^(?:13\d|14\d|15\d|16\d|17\d|18\d|19\d)\d{5}(\d{3}|\*{3})$/.test(value);
-  },
-  //是否包含座机地址
-  isLandline: function isLandline(value) {
-    return /0\d{2,3}-\d{7,8}|\(?0\d{2,3}[)-]?\d{7,8}|\(?0\d{2,3}[)-]*\d{7,8}/.test(value);
-  },
-  //金额，只允许保留两位小数
-  isFloat: function isFloat(value) {
-    return /^([0-9]*[.]?[0-9])[0-9]{0,1}$/.test(value);
-  },
-  //是否全为数字
-  isNum: function isNum(value) {
-    return /^[0-9]+$/.test(value);
-  },
-  //是否包含中文字符
-  isCharacter: function isCharacter(value) {
-    return /[\u4e00-\u9fa5]/.test(value);
-  },
-  //是否包含Url地址
-  isUrl: function isUrl(value) {
-    return /^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+/.test(value);
-  } }, _defineProperty(_baseUrl$nowTime$calc, "isUrl",
-
-function isUrl(value) {
-  return /\s/.test(value);
-}), _defineProperty(_baseUrl$nowTime$calc, "isEmail",
-
-function isEmail(value) {
-  return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(value);
-}), _defineProperty(_baseUrl$nowTime$calc, "trim",
-
-function trim(value) {
-  return value.replace(/(^\s*)|(\s*$)/g, "");
-}), _defineProperty(_baseUrl$nowTime$calc, "checkPwd",
-
-function checkPwd(value) {
-  return /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(value);
-}), _defineProperty(_baseUrl$nowTime$calc, "formatNum",
-
-function formatNum(num) {
-  if (regextool.isMobile(num)) {
-    num = num.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
-  }
-  return num;
-}), _defineProperty(_baseUrl$nowTime$calc, "isCardNo",
-function isCardNo(num) {
-  if (isNaN(num)) {
-    // alert("输入的身份证号不是数字！");
-    return false;
-  }
-  var len = num.length;
-  if (len < 15 || len > 18) {
-    // alert("输入的身份证号码长度不正确定！应为15位或18位");
-    return false;
-  }
-  var re15 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
-  var re18 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;
-  var res = re15.test(num) || re18.test(num);
-  if (res == false) {
-    // alert("输入的身份证号格式不正确！");
-    return false;
-  }
-  return true;
-}), _defineProperty(_baseUrl$nowTime$calc, "isChines",
-function isChines(source) {
-  var regex = /^[\u4E00-\u9FA5]+$/;
-  return regex.test(source);
-}), _defineProperty(_baseUrl$nowTime$calc, "handleOptions", function handleOptions(
-options) {
-  console.log(options);
-  if (options.query) {
-    return options.query;
-  } else {
-    return {};
-  }
-}), _baseUrl$nowTime$calc);exports.default = _default;
-
-/***/ }),
-
 /***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
@@ -9256,6 +9129,133 @@ internalMixin(Vue);
 
 /***/ }),
 
+/***/ 206:
+/*!**************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/util.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _baseUrl$nowTime$calc;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var baseUrl = '';
+var nowTime = Date.now || function () {
+  return new Date().getTime();
+};
+var app = getApp();var _default = (_baseUrl$nowTime$calc = {
+
+  baseUrl: baseUrl,
+  nowTime: nowTime,
+  //获取openID
+  calculateTimeDiff: function calculateTimeDiff(endTime) {
+    var _this = this;
+    endTime = Date.parse(endTime);
+    var currentTime = Date.now();
+    // console.log(currentTime)
+    // console.log(endTime);
+    var timeDiff = endTime - currentTime;
+    // console.log(timeDiff);
+    var secondDiff = Math.floor((endTime - currentTime) / 1000);
+    var minuteDiff = Math.floor(secondDiff / 60);
+    var hourDiff = Math.floor(minuteDiff / 60);
+    var dayDiff = Math.floor(hourDiff / 24);
+    hourDiff = Math.floor(hourDiff % 24);
+    minuteDiff = Math.floor(minuteDiff % 60);
+    secondDiff = Math.floor(secondDiff % 60);
+    var timeLag = {
+      dayDiff: dayDiff,
+      hourDiff: hourDiff,
+      minuteDiff: minuteDiff,
+      secondDiff: secondDiff };
+
+    return timeLag;
+  },
+
+  //是否为空
+  isNullOrEmpty: function isNullOrEmpty(value) {
+    return value === null || value === '' || value === undefined ? true : false;
+  },
+
+  //是否为手机号	
+  isMobile: function isMobile(value) {
+    return /^(?:13\d|14\d|15\d|16\d|17\d|18\d|19\d)\d{5}(\d{3}|\*{3})$/.test(value);
+  },
+  //是否包含座机地址
+  isLandline: function isLandline(value) {
+    return /0\d{2,3}-\d{7,8}|\(?0\d{2,3}[)-]?\d{7,8}|\(?0\d{2,3}[)-]*\d{7,8}/.test(value);
+  },
+  //金额，只允许保留两位小数
+  isFloat: function isFloat(value) {
+    return /^([0-9]*[.]?[0-9])[0-9]{0,1}$/.test(value);
+  },
+  //是否全为数字
+  isNum: function isNum(value) {
+    return /^[0-9]+$/.test(value);
+  },
+  //是否包含中文字符
+  isCharacter: function isCharacter(value) {
+    return /[\u4e00-\u9fa5]/.test(value);
+  },
+  //是否包含Url地址
+  isUrl: function isUrl(value) {
+    return /^((https|http|ftp|rtsp|mms)?:\/\/)[^\s]+/.test(value);
+  } }, _defineProperty(_baseUrl$nowTime$calc, "isUrl",
+
+function isUrl(value) {
+  return /\s/.test(value);
+}), _defineProperty(_baseUrl$nowTime$calc, "isEmail",
+
+function isEmail(value) {
+  return /\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/.test(value);
+}), _defineProperty(_baseUrl$nowTime$calc, "trim",
+
+function trim(value) {
+  return value.replace(/(^\s*)|(\s*$)/g, "");
+}), _defineProperty(_baseUrl$nowTime$calc, "checkPwd",
+
+function checkPwd(value) {
+  return /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,20}$/.test(value);
+}), _defineProperty(_baseUrl$nowTime$calc, "formatNum",
+
+function formatNum(num) {
+  if (regextool.isMobile(num)) {
+    num = num.replace(/^(\d{3})\d{4}(\d{4})$/, '$1****$2');
+  }
+  return num;
+}), _defineProperty(_baseUrl$nowTime$calc, "isCardNo",
+function isCardNo(num) {
+  if (isNaN(num)) {
+    // alert("输入的身份证号不是数字！");
+    return false;
+  }
+  var len = num.length;
+  if (len < 15 || len > 18) {
+    // alert("输入的身份证号码长度不正确定！应为15位或18位");
+    return false;
+  }
+  var re15 = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/;
+  var re18 = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$/;
+  var res = re15.test(num) || re18.test(num);
+  if (res == false) {
+    // alert("输入的身份证号格式不正确！");
+    return false;
+  }
+  return true;
+}), _defineProperty(_baseUrl$nowTime$calc, "isChines",
+function isChines(source) {
+  var regex = /^[\u4E00-\u9FA5]+$/;
+  return regex.test(source);
+}), _defineProperty(_baseUrl$nowTime$calc, "handleOptions", function handleOptions(
+options) {
+  console.log(options);
+  if (options.query) {
+    return options.query;
+  } else {
+    return {};
+  }
+}), _baseUrl$nowTime$calc);exports.default = _default;
+
+/***/ }),
+
 /***/ 21:
 /*!*************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
@@ -9433,6 +9433,71 @@ function addRenterInfo(data) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = void 0;var baseUrl = "https://www.zjutleo.cn/village";exports.baseUrl = baseUrl;
+
+/***/ }),
+
+/***/ 295:
+/*!****************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/Market.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.goodsInfoItems = void 0;var goodsInfoItems = { globalRoaming: [
+  {
+    "img": "http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg",
+    "name": "HLA海澜之家毛衣",
+    "condition": "长袖 标准型",
+    "brand": "海澜之家",
+    "price_now": "139",
+    "price_before": "150",
+    "discount": "11" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/16896eec50403428.jpg",
+    "name": "足力健老人鞋",
+    "condition": "运动风 运动鞋",
+    "brand": "足力健老人鞋",
+    "price_now": "329",
+    "price_before": "400",
+    "discount": "71" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg",
+    "name": "价值为纲-华为内训精选图书",
+    "condition": "正版",
+    "brand": "华为",
+    "price_now": "102",
+    "price_before": "118",
+    "discount": "16" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png",
+    "name": "索爱 SA-L28 电脑麦克风",
+    "condition": "无线 内置电池",
+    "brand": "意创生活",
+    "price_now": "239",
+    "price_before": "260",
+    "discount": "21" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/1f1f04d7af08b655.png",
+    "name": "华为 Mate40 5G 手机",
+    "condition": "8GB运存 256GB",
+    "brand": "华为",
+    "price_now": "4999",
+    "price_before": "6569",
+    "discount": "1570" },
+
+  {
+    "img": "http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg",
+    "name": "珞玲珑电视柜茶几组合",
+    "condition": "钢化玻璃 人造板",
+    "brand": "珞玲珑",
+    "price_now": "899",
+    "price_before": "999",
+    "discount": "100" }] };exports.goodsInfoItems = goodsInfoItems;
 
 /***/ }),
 
@@ -9896,7 +9961,7 @@ function walkJsonObj(jsonObj, walk) {
 
 /***/ }),
 
-/***/ 413:
+/***/ 422:
 /*!*********************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
   \*********************************************************************************************/
@@ -10930,7 +10995,18 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 492:
+/***/ 5:
+/*!**********************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pages.json ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 541:
 /*!***********************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
   \***********************************************************/
@@ -11373,18 +11449,7 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
-/***/ 5:
-/*!**********************************************************!*\
-  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pages.json ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 578:
+/***/ 627:
 /*!**********************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/region.json ***!
   \**********************************************************************/
@@ -11395,7 +11460,7 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
-/***/ 649:
+/***/ 698:
 /*!************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
   \************************************************************************************/
@@ -11442,7 +11507,7 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
-/***/ 685:
+/***/ 734:
 /*!***************************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************/

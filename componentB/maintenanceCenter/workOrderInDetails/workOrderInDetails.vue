@@ -80,7 +80,7 @@
 		font-size: 24rpx;
 		right: 0;
 		color: white;
-		background-color: #4ecf68;
+		background-color: rgba(161,191,86,1);
 		padding: 5rpx;
 		border-radius: 10rpx;
 		box-shadow: 10rpx 10rpx 25rpx #c6c7c6;

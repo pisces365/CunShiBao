@@ -207,6 +207,8 @@ var _api = __webpack_require__(/*! ../../common/api.js */ 21);function _interopR
                         userInfo);
                         uni.setStorageSync('mainPage', 1);
                         uni.setStorageSync('news', "");
+                        uni.setStorageSync('bus_route', "");
+                        uni.setStorageSync('market_goods', "-1");
                         //微信用户登录接口
                         wx.login({
                           success: function success(res) {

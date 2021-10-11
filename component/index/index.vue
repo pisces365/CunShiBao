@@ -198,11 +198,24 @@
 				</view>
 			</view>
 			<view class="index-polling-content">
-				<view class="index-polling-content-onePart">
+				<view class="index-VillageParty-content-onePart">
 					<navigator url="../../pagesB/maintenanceCenter/maintenanceCenter"
 						class="index-VillageParty-content-onePart-left">
 						<view class="funcion-top">
 							<text>{{VillageParty.VillagePartyTitle[9]}}</text>
+						</view>
+						<view class="funcion-bottom">
+							<text>{{VillageParty.VillagePartyDescripetion[9]}}</text>
+						</view>
+						<view class="function-image">
+							<image :src="VillageParty.VillagePartyTitleImageUrl[9]" lazy-load="true" mode=""></image>
+						</view>
+					</navigator>
+					
+					<navigator url="../../pagesRepairCenter/maintenanceCenter/maintenanceCenter"
+						class="index-VillageParty-content-onePart-left">
+						<view class="funcion-top">
+							<text>{{VillageParty.VillagePartyTitle[9]}}(新版)</text>
 						</view>
 						<view class="funcion-bottom">
 							<text>{{VillageParty.VillagePartyDescripetion[9]}}</text>
@@ -236,9 +249,9 @@
 					],
 					VillagePartyDescripetion: [
 						"最新乡村资讯",
-						"换届选举",
+						"人民当家作主",
 						"乡村土地承包事务",
-						"村长信箱",
+						"有疑难找村长",
 						"乡村民宿宾至如归",
 						"你所爱的都在这里",
 						"权力透明制度公开",

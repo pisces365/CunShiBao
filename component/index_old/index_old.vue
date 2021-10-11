@@ -131,8 +131,11 @@
 						</view>
 						维修中心
 					</navigator>
-					<navigator class="function-item function-hidden">
-						占位
+					<navigator url="../../pagesRepairCenter/maintenanceCenter/maintenanceCenter" class="function-item">
+						<view class="function-image">
+							<image src="http://p1362.bvimg.com/10465/aed8e654d372d7e5.png" lazy-load="true" mode=""></image>
+						</view>
+						维修中心(新版)
 					</navigator>
 					<navigator class="function-item function-hidden">
 						占位
