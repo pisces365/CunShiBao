@@ -5,9 +5,15 @@ page {
 .warning-top {
 	margin-top: 20rpx;
 	width: 100vw;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 }
 .warning-top image {
 	width: 340rpx;
@@ -15,9 +21,15 @@ page {
 }
 .warning-center {
 	margin: 20rpx 0;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 }
 .button {
 	margin-top: 20rpx;

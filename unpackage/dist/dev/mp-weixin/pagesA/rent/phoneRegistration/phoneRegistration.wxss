@@ -9,13 +9,18 @@ page {
 }
 .phone-title {
 	padding: 20rpx 0;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	align-content: center;
+	-webkit-align-content: center;
+	        align-content: center;
 	font-size: 50rpx;
 	font-weight: 600;
 }
 .phone-input {
 	margin: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
 	padding: 10rpx;
 	border: #d4e0e7 2rpx solid;
@@ -23,8 +28,12 @@ page {
 .phone-input-title,
 .phone-input-input,
 .phone-input-sendCode {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	justify-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 	margin-right: 10rpx;
 }
 .phone-input-sendCode {
@@ -48,9 +57,14 @@ page {
 	background: #EAE9E9;
 }
 .phone-button {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	align-content: center;
-	justify-content: center;
+	-webkit-align-content: center;
+	        align-content: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 	font-size: 34rpx;
 	font-weight: bold;
 	color: white;
@@ -66,6 +80,8 @@ page {
 	line-height: 50rpx;
 }
 .inputCode-codeContent {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
 }
 .inputCode-codeTip {

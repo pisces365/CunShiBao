@@ -35,7 +35,9 @@
 /* } 
  */
 .like {
-	flex: 0.6;
+	-webkit-box-flex: 0.6;
+	-webkit-flex: 0.6;
+	        flex: 0.6;
 }
 
 /* .like text {

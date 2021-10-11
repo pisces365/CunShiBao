@@ -307,10 +307,19 @@ page {
 	background-attachment: fixed;
 }
 .index {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 	padding: 20rpx 30rpx;
 }
 .index-swiper {
@@ -323,9 +332,16 @@ page {
 }
 .index-polling-title {
 	margin-top:20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
 }
 .index-polling-title-image image {
 	height: 100rpx;
@@ -335,10 +351,14 @@ page {
 	width: 670rpx;
 }
 .functions {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
 }
 .function-item {
-	flex: 1;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
 	background-color: #FFFFFF;
 	padding: 20rpx 10rpx;
 	margin-right: 20rpx;

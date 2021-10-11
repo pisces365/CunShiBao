@@ -303,10 +303,14 @@
   content: "\e6b3";
 }
 .secondHandItems {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
 }
 .secondHandItem {
-	flex: 1;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
 	margin: 10rpx;
 }
 .secondHandImage {
@@ -355,10 +359,19 @@
 	 /* position: fixed; */
 }
 .index {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 }
 .index-swiper {
 	height: 360rpx;
@@ -378,8 +391,13 @@
 	margin-bottom: 10rpx;
 	width: 670rpx;
 	height: 120rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: row;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
 }
 .index-blog-left {
 	margin-left: 20rpx;
@@ -397,18 +415,31 @@
 .index-blog-center {
 	height: 100%;
 	width: 4rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 	margin-left: 10rpx;
 }
 .index-blog-right {
 	margin: 14rpx 16rpx 14rpx 14rpx;
 	margin-left: 20rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
 	position: relative;
-	flex: 1;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1;
 }
 .index-blog-right-top {}
 .index-blog-right-top text {
@@ -446,9 +477,16 @@
 .index-VillageParty-title,
 .index-ServieceToPeople-title,
 .index-polling-title {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
 }
 .index-VillageParty-title-image image,
 .index-polling-title-image image {
@@ -460,11 +498,21 @@
 	font-size: 34rpx;
 }
 .index-VillageParty-content-onePart {
+	display: -webkit-box;
+	display: -webkit-flex;
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
 	margin-bottom: 20rpx;
 }
 .index-VillageParty-content-onePart-left {

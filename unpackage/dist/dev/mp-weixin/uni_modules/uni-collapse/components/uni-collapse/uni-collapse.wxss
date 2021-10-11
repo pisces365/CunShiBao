@@ -26,8 +26,13 @@
 /* 文章场景相关 */
 .uni-collapse.data-v-275068f4 {
   width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   background-color: #ffffff;
 }
 
