@@ -207,6 +207,15 @@
             }
             
         }
+        ,{
+            "path" : "pagesLive/live/live",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"subPackages": [{
 			//村务监督分包
