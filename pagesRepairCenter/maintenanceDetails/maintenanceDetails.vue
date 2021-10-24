@@ -9,8 +9,8 @@
 		<view v-if="getTitle0()">
 			<view class="number-bar">
 				<view class="number-bar-text">
-					<view class="number-bar-1">设备损坏-摄像头</view>
-					<view class="number-bar-2">编号2019201929109</view>
+					<view class="number-bar-1">水电-水龙头</view>
+					<view class="number-bar-2">编号20190606</view>
 					<view class="number-bar-3">
 						保存单号
 					</view>
@@ -29,14 +29,14 @@
 			<view class="items">
 				<view class="items-border">
 					<text class="text-left">维修地址</text>
-					<text class="text-right">屏峰校区</text>
+					<text class="text-right">屏峰校区家和西苑13号701</text>
 				</view>
 			</view>
 			<view class="items" style="margin-bottom: 30rpx;">
 				<view class="items-border">
 					<text class="text-left">具体问题</text>
 					<view>
-						<view class="text-right">问题问题问题</view>
+						<view class="text-right">水龙头连接处水管破损</view>
 						<view class="items-image-box">
 							<view v-for="(item , index) in imgArr" :key="index" style="position: relative;" class="items-image">
 								<image :src="item.url" mode="aspectFill" class="repair-image" style="padding: 0;" ></image>
@@ -60,7 +60,7 @@
 			<view class="items">
 				<view class="items-border">
 					<text class="text-left">维修人员信息</text>
-					<text class="text-right">李师傅</text>
+					<text class="text-right">张师傅</text>
 				</view>
 			</view>
 		</view>
@@ -91,13 +91,13 @@
 								</view>
 							</view>
 							<view class="process-item i-people">
-								xxx-维修组
+								S01-维修组
 							</view>
 							<view class="process-item i-group">
-								一个公寓维修组
+								水电维修组
 							</view>
 							<view class="process-item i-goods">
-								摄像头/个*1
+								水管/个*1
 							</view>
 							<view class="process-item i-price">
 								工时费：2.30元<br>
@@ -121,10 +121,10 @@
 								</view>
 							</view>
 							<view class="process-item i-people">
-								xxx-公寓维修组
+								S01-公寓维修组
 							</view>
 							<view class="process-item i-group">
-								乡村电工维修组
+								水电维修组
 							</view>
 							<view class="process-border-point">
 							
@@ -146,7 +146,7 @@
 								系统自动受理-受理部门
 							</view>
 							<view class="process-item i-group">
-								乡村电工维修组
+								水电维修组
 							</view>
 							<view class="process-border-point">
 							
@@ -168,14 +168,13 @@
 							我我我
 						</view>
 						<view class="process-item i-type">
-							设备损坏-摄像头
+							水电-水龙头
 						</view>
 						<view class="process-item i-address">
-							屏峰校区
+							屏峰校区家和西苑13号701
 						</view>
 						<view class="process-item i-problem">
-							问题问题都是问题，问题问题都是问题，问题问题都是问题
-							问题问题都是问题，问题问题都是问题，问题问题都是问题
+							水龙头连接处水管破裂
 						</view>
 						<view class="process-item i-photo">
 							<view class="items-image-box">
