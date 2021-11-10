@@ -420,6 +420,7 @@ page {
 }
 page {
 	 background: rgb(243,243,243);
+	background: -webkit-linear-gradient(bottom, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%);
 	background: linear-gradient(0deg, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%);
 }
 .back-image {
@@ -472,7 +473,9 @@ page {
 	background-color: rgba(255,255,255,0.9);
 }
 .nav navigator {
-	flex:1;
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	        flex:1;
 }
 .nav navigator .sh-image {
 	width: 60rpx;

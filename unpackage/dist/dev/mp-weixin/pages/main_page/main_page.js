@@ -128,15 +128,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var indexCommon = function indexCommon() {__webpack_require__.e(/*! require.ensure | component/index/index */ "component/index/index").then((function () {return resolve(__webpack_require__(/*! @/component/index/index.vue */ 630));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexOld = function indexOld() {__webpack_require__.e(/*! require.ensure | component/index_old/index_old */ "component/index_old/index_old").then((function () {return resolve(__webpack_require__(/*! @/component/index_old/index_old.vue */ 637));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
-=======
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var indexCommon = function indexCommon() {__webpack_require__.e(/*! require.ensure | component/index/index */ "component/index/index").then((function () {return resolve(__webpack_require__(/*! @/component/index/index.vue */ 588));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexOld = function indexOld() {__webpack_require__.e(/*! require.ensure | component/index_old/index_old */ "component/index_old/index_old").then((function () {return resolve(__webpack_require__(/*! @/component/index_old/index_old.vue */ 595));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
->>>>>>> Stashed changes
-=======
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var indexCommon = function indexCommon() {__webpack_require__.e(/*! require.ensure | component/index/index */ "component/index/index").then((function () {return resolve(__webpack_require__(/*! @/component/index/index.vue */ 636));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexOld = function indexOld() {__webpack_require__.e(/*! require.ensure | component/index_old/index_old */ "component/index_old/index_old").then((function () {return resolve(__webpack_require__(/*! @/component/index_old/index_old.vue */ 643));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
->>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var indexCommon = function indexCommon() {__webpack_require__.e(/*! require.ensure | component/index/index */ "component/index/index").then((function () {return resolve(__webpack_require__(/*! @/component/index/index.vue */ 635));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var indexOld = function indexOld() {__webpack_require__.e(/*! require.ensure | component/index_old/index_old */ "component/index_old/index_old").then((function () {return resolve(__webpack_require__(/*! @/component/index_old/index_old.vue */ 642));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

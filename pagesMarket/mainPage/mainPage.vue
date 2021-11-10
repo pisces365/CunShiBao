@@ -3,7 +3,7 @@
 		<view>
 			<view class="top" style="background-color: white;">
 				<view>
-					<image class="topImage" src="http://p1362.bvimg.com/10465/654f6a22fc75c3ba.png" mode="widthFix"></image>
+					<image class="topImage" src="http://p1362.bvimg.com/10465/a055fb17b410fd8c.png" mode="widthFix"></image>
 				</view>
 				<navigation :titles="titles" @setItem="ItemSetFunc"></navigation>
 				<view style="padding: 10rpx 0;"></view>
@@ -51,7 +51,7 @@
 					<navigator url="../managePage/managePage" class="icon">
 						<image class="sh-image" src="http://p1362.bvimg.com/10465/bdd1706b7e82c4b4.png"  mode=""></image>
 						<view class="title">
-							二手管理
+							商品管理
 						</view>
 						<view class="discribe">
 							我的宝贝
@@ -66,10 +66,10 @@
 							<!-- <image src="http://p1362.bvimg.com/10465/5f6f4059cd36c002.png" lazy-load="true" mode=""></image> -->
 						</view>
 						<view class="index-VillageParty-title-text tk">
-							<text class="new-sh" style="background-color: rgb(255,174,174);">最</text>
-							<text class="new-sh" style="background-color: rgb(176,225,255);">新</text>
-							<text class="new-sh" style="background-color: rgb(255,225,176);">二</text>
-							<text class="new-sh" style="background-color: rgb(255,174,174);">手</text>
+							<text class="new-sh" style="background-color: rgb(255,174,174);">乡</text>
+							<text class="new-sh" style="background-color: rgb(176,225,255);">村</text>
+							<text class="new-sh" style="background-color: rgb(255,225,176);">电</text>
+							<text class="new-sh" style="background-color: rgb(255,174,174);">商</text>
 						</view>
 					</view>
 					
@@ -78,15 +78,15 @@
 					<view class="secondHandItem" >
 							<navigator url="../../pagesMarket/buy/buy?id=0" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg"  style="width: 100%;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/a7d5ea952a98180e.png"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
-									<text class="goods-name">HLA海澜之家毛衣</text>
+									<text class="goods-name">世界金奖茶</text>
 								</view>
 								<view class="">
-									<text class="brand-and-condition">长袖 标准型</text>
+									<text class="brand-and-condition">狗牯脑</text>
 									<text class="brand-and-condition">|</text>
-									<text class="brand-and-condition">海澜之家</text>
+									<text class="brand-and-condition">一级红茶100g</text>
 								</view>
 								<view class="" style="margin-bottom: 10rpx;">
 									<text class="price-now">￥139</text>
@@ -96,37 +96,35 @@
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy?id=1">
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/16896eec50403428.jpg"  style="width: 100%;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/19501074f893abf8.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
-									<text class="goods-name">足力健老人鞋</text>
+									<text class="goods-name">迁西栗蘑菇干舞茸新鲜栗蘑灰树</text>
 								</view>
 								<view class="">
-									<text class="brand-and-condition">运动风 运动鞋</text>
-									<text class="brand-and-condition">|</text>
-									<text class="brand-and-condition">足力健老人鞋</text>
+									<text class="brand-and-condition">干货 | 优质农特产</text>
 								</view>
 								<view class="" style="margin-bottom: 10rpx;">
-									<text class="price-now">￥329</text>
-									<text class="price-before">￥400</text>
+									<text class="price-now">￥129</text>
+									<text class="price-before">￥200</text>
 									<text class="discount">已减￥71</text>
 								</view>
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy?id=2">
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6edd3f88e3493b9c.jpg"  style="width: 100%;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/6d92b7a5dcd30b55.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
-									<text class="goods-name">价值为纲-华为内训精选图书</text>
+									<text class="goods-name">九龙乡露天生长椴木黑木耳</text>
 								</view>
 								<view class="">
-									<text class="brand-and-condition">正版</text>
+									<text class="brand-and-condition">农家自产</text>
 									<text class="brand-and-condition">|</text>
-									<text class="brand-and-condition">华为</text>
+									<text class="brand-and-condition">纯天然</text>
 								</view>
 								<view class="" style="margin-bottom: 10rpx;">
-									<text class="price-now">￥102</text>
-									<text class="price-before">￥118</text>
+									<text class="price-now">￥58</text>
+									<text class="price-before">￥74</text>
 									<text class="discount">已减￥16</text>
 								</view>
 							</navigator>
@@ -137,63 +135,63 @@
 							</viewx>
 							<navigator url="../../pagesMarket/buy/buy?id=3" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bb8fd74d8aef0caf.png"  style="width: 100%;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/bf61e2929e325d5a.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
-									<text class="goods-name">索爱 SA-L28 电脑麦克风</text>
+									<text class="goods-name">头一锅单县羊肉汤</text>
 								</view>
 								<view class="">
-									<text class="brand-and-condition">无线 内置电池</text>
+									<text class="brand-and-condition">自家羊肉熬制</text>
 									<text class="brand-and-condition">|</text>
-									<text class="brand-and-condition">意创生活</text>
+									<text class="brand-and-condition">火热生活</text>
 								</view>
 								<view class="" style="margin-bottom: 10rpx;">
-									<text class="price-now">￥239</text>
-									<text class="price-before">￥260</text>
+									<text class="price-now">￥139</text>
+									<text class="price-before">￥160</text>
 									<text class="discount">已减￥21</text>
 								</view>
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy?id=4" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/1f1f04d7af08b655.png"  style="width: 100%;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/a47c31ec00f915e9.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
-									<text class="goods-name">华为 Mate40 5G 手机</text>
+									<text class="goods-name">五峰源高山红茶</text>
 								</view>
 								<view class="">
-									<text class="brand-and-condition">8GB运存 256GB</text>
+									<text class="brand-and-condition">现货</text>
 									<text class="brand-and-condition">|</text>
-									<text class="brand-and-condition">华为</text>
+									<text class="brand-and-condition">新鲜采摘</text>
 								</view>
 								<view class="" style="margin-bottom: 10rpx;">
-									<text class="price-now">￥4999</text>
-									<text class="price-before">￥6569</text>
-									<text class="discount">已减￥1570</text>
+									<text class="price-now">￥99</text>
+									<text class="price-before">￥129</text>
+									<text class="discount">已减￥30</text>
 								</view>
 							</navigator>
 							<navigator url="../../pagesMarket/buy/buy?id=5" >
 								<viewx>
-									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/252a23a1d7b10b5b.jpg"  style="width: 100%;" mode="aspectFill"></image>
+									<image class="secondHandImage" src="http://p1362.bvimg.com/10465/2fdd18d415f5b95c.jpg"  style="width: 100%;" mode="aspectFill"></image>
 								</viewx>
 								<view>
-									<text class="goods-name">珞玲珑电视柜茶几组合</text>
+									<text class="goods-name">纯手工香油辣椒酱</text>
 								</view>
 								<view class="">
-									<text class="brand-and-condition">钢化玻璃 人造板</text>
+									<text class="brand-and-condition">现货</text>
 									<text class="brand-and-condition">|</text>
-									<text class="brand-and-condition">珞玲珑</text>
+									<text class="brand-and-condition">自家47天酿制</text>
 								</view>
 								<view class="" style="margin-bottom: 10rpx;">
-									<text class="price-now">￥899</text>
-									<text class="price-before">￥999</text>
-									<text class="discount">已减￥100</text>
+									<text class="price-now">￥49</text>
+									<text class="price-before">￥69</text>
+									<text class="discount">已减￥20</text>
 								</view>
 							</navigator>
 						</view>
 					
 				</view>
 				<view style="font-size: 28rpx; color: #A6A6A6; margin:20rpx 0">
-					再多也木有咯……
+					敬请期待更多农家好货……
 				</view>
 			</view>
 		</view>
@@ -244,16 +242,6 @@
 				},
 
 		methods: {
-			toDetails() {
-				uni.navigateTo({
-					url: ("../../pagesA/News?newsID=0")
-				})
-			},
-			goToVillageHead_Mail() {
-				uni.navigateTo({
-					url: '../../pagesA/VillageHead_Email/IWannaWrite/IWannaWrite'
-				})
-			}
 		}
 	}
 </script>

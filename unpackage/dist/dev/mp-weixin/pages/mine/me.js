@@ -224,12 +224,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-<<<<<<< HEAD
 var _api = __webpack_require__(/*! ../../common/api.js */ 20); //
-//
-=======
-var _api = __webpack_require__(/*! ../../common/api.js */ 21); //
->>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 //
 //
 //

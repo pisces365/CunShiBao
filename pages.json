@@ -745,7 +745,7 @@
 				{
 					"path": "mainPage/mainPage",
 					"style": {
-						"navigationBarTitleText": "二手市场",
+						"navigationBarTitleText": "乡村电商",
 						"enablePullDownRefresh": false
 					}
 				},

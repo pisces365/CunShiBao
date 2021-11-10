@@ -96,9 +96,9 @@
 					</navigator>
 					<navigator url="../../pagesMarket/mainPage/mainPage" class="function-item">
 						<view class="function-image">
-							<image src="http://p1362.bvimg.com/10465/c825717434e04d88.png" lazy-load="true" mode=""></image>
+							<image src="http://p1362.bvimg.com/10465/a055fb17b410fd8c.png" lazy-load="true" mode=""></image>
 						</view>
-						二手市场
+						乡村电商
 					</navigator>
 					<navigator url="../../pagesSupervision/superviseIndex/superviseIndex" class="function-item">
 						<view class="function-image">

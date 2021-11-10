@@ -48,7 +48,6 @@
 							{{item}}
 						</view>
 					</view>
-
 				</view>
 				
 				<view class="rent-readMe">
@@ -57,10 +56,12 @@
 					</view>
 					<view class="introduce-to-goods">
 						<view class="text">
-							-足力健老人鞋男鞋节气休闲鞋爸爸健步鞋中老年耐磨休闲运动鞋
+							{{goodsInfo.name}}
 						</view>
 						<view class="text">
-							-黑色（男款） 42
+							<text class="brand-and-condition" style="margin-left: 0 !important;">{{goodsInfo.condition}}</text>
+							<text class="brand-and-condition">|</text>
+							<text class="brand-and-condition">{{goodsInfo.brand}}</text>
 						</view>
 					</view>
 				</view>
@@ -97,15 +98,15 @@
 				goodsInfo:
 					{
 						img:"http://p1362.bvimg.com/10465/007027ee5b250fa6.jpg",
-						name:"HLA海澜之家毛衣",
-						condition:"长袖 标准型",
-						brand:"海澜之家",
+						name:"世界金奖茶",
+						condition:"狗牯脑 一级红茶100g",
+						brand:"九龙乡农特产",
 						price_now:"139",
 						price_before:"150",
 						discount:"11",
 					},
 				share:{
-				    title:'二手商品详情',
+				    title:'乡村电商农产品详情',
 				    path:'/pagesMarket/secondHandDetails/secondHandDetails',
 				    imageUrl:'',
 				    desc:'',
@@ -113,23 +114,14 @@
 				},
 				swiperCurrent: 0,
 				houseInfo: {
-						index: 0,
 						images: [
-							'http://p1362.bvimg.com/10465/dadb7710bab66b03.jpg',
-							'http://p1362.bvimg.com/10465/9311eaf0f8f5998c.jpg',
-							'http://p1362.bvimg.com/10465/b08a00e34fc03eb4.jpg',
-							'http://p1362.bvimg.com/10465/0926d8cf12e38c14.jpg',
-							'http://p1362.bvimg.com/10465/0926d8cf12e38c14.jpg'
+							'https://tse2-mm.cn.bing.net/th/id/OIP-C.Lr_Q8heAbrwUggSQPYomvQHaGE?w=247&h=202&c=7&r=0&o=5&dpr=1.25&pid=1.7',
+							'https://tse4-mm.cn.bing.net/th/id/OIP-C.q2fXW75D8CWgx13oRlBe6QHaGi?w=229&h=202&c=7&r=0&o=5&dpr=1.25&pid=1.7',
+							'https://tse4-mm.cn.bing.net/th/id/OIP-C.D5-5YJMo_QI9R3EMrR_ymQHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.25&pid=1.7',
+							'https://tse1-mm.cn.bing.net/th/id/OIP-C.AJukwlZPETS2whgYOM-_uAHaHH?w=209&h=202&c=7&r=0&o=5&dpr=1.25&pid=1.7',
+							'https://tse3-mm.cn.bing.net/th/id/OIP-C.L4jd66XDLDzcNqmrWJPm-QHaHb?w=201&h=202&c=7&r=0&o=5&dpr=1.25&pid=1.7'
 						],
-						type: '整租',
-						description: '暗黑工业风Loft投影双床房 / 步行至解放碑洪崖洞 / 下楼即达地铁站 / 免费寄存行李',
-						locationStreet: '解放碑洪崖洞',
-						locationDetail: '怡景花城',
-						label: ['轻薄', '软弹', '透气', '防滑'],
-						price: 4500,
-						RoomInfo: '3',
-						hourseAream: '58.70',
-						distance:'2.4'
+						label: ['新茶', '土特产', '匠心巨作', '好物']
 					},
 			}
 		},
