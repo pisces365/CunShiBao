@@ -107,6 +107,12 @@
           "pathName": "mine/my_collection/my_collection",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pagesLive/live/live",
+          "pathName": "pagesLive/live/live",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -264,11 +264,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 115);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 622));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 =======
 var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 114);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 580));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 >>>>>>> Stashed changes
+=======
+var _accurateSupportApi = __webpack_require__(/*! @/common/accurate-support-api.js */ 115);function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var RegionPicker = function RegionPicker() {Promise.all(/*! require.ensure | components/regionPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/regionPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/regionPicker.vue */ 628));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 
 
 

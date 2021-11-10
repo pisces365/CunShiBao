@@ -18,7 +18,8 @@
     "pagesHelp/surveyRecord/surveyRecord",
     "pagesHelp/staffLogin/staffLogin",
     "pages/main_page/main_page",
-    "pagesHelp/myHelpDetails/myHelpDetails"
+    "pagesHelp/myHelpDetails/myHelpDetails",
+    "pagesLive/live/live"
   ],
   "subPackages": [
     {

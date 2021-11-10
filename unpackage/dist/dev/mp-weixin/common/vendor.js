@@ -9050,6 +9050,7 @@ internalMixin(Vue);
 
 /***/ }),
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /***/ 206:
 /*!**************************************************************!*\
@@ -9178,6 +9179,8 @@ options) {
 
 /***/ }),
 
+=======
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /***/ 21:
 /*!*************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/api.js ***!
@@ -9352,10 +9355,17 @@ function addRenterInfo(data) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 205:
 /*!**************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/util.js ***!
   \**************************************************************************************/
+=======
+/***/ 212:
+/*!**************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/util.js ***!
+  \**************************************************************/
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9479,10 +9489,17 @@ options) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 21:
 /*!****************************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/common/config.js ***!
   \****************************************************************************************/
+=======
+/***/ 22:
+/*!****************************************************************!*\
+  !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/config.js ***!
+  \****************************************************************/
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9491,7 +9508,38 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.baseUrl = 
 
 /***/ }),
 
-/***/ 295:
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 301:
 /*!****************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/common/Market.js ***!
   \****************************************************************/
@@ -9556,37 +9604,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.goodsInfoI
 
 /***/ }),
 
-/***/ 3:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
 /***/ 4:
 /*!**********************************************************************************!*\
   !*** C:/Users/12447/OneDrive/桌面/source/code/uni-app/village-treasure/pages.json ***!
@@ -9598,8 +9615,12 @@ module.exports = g;
 
 /***/ }),
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /***/ 422:
+=======
+/***/ 428:
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /*!*********************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/pagesA/rent/host_qualification/citys/citys.js ***!
   \*********************************************************************************************/
@@ -10651,7 +10672,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 541:
+/***/ 547:
 /*!***********************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/amap-uni.js ***!
   \***********************************************************/
@@ -11100,8 +11121,12 @@ AMapWX.prototype.getWxLocation = function (a, b) {
 
 /***/ }),
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /***/ 627:
+=======
+/***/ 633:
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /*!**********************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/region.json ***!
   \**********************************************************************/
@@ -11118,8 +11143,12 @@ module.exports = JSON.parse("[{\"id\":110000,\"name\":\"北京市\",\"pid\":1000
 
 /***/ }),
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /***/ 698:
+=======
+/***/ 704:
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /*!************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/components/city-select/citySelect.js ***!
   \************************************************************************************/
@@ -11172,8 +11201,12 @@ citySelect;exports.default = _default;
 
 /***/ }),
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 /***/ 734:
+=======
+/***/ 740:
+>>>>>>> e39baeecf338310df87e126ca67d8830cf1acd45
 /*!***************************************************************************************************!*\
   !*** D:/uni-appWorkSpace/CunShiBao/CunShiBao/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************/
