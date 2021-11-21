@@ -330,13 +330,8 @@
 }
 /* 头条小程序组件内不能引入字体 */
 page {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   box-sizing: border-box;
   background-color: #efeff4;
   min-height: 100%;
@@ -356,19 +351,11 @@ view {
 }
 .example-body {
 
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
   font-size: 14px;
   background-color: #ffffff;
@@ -392,10 +379,7 @@ view {
   color: #3b4144;
 }
 .example-body {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding: 15px;
   background-color: #ffffff;
 }
@@ -405,20 +389,11 @@ view {
 }
 .word-btn {
 
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   border-radius: 6px;
   height: 48px;
   margin: 15px;
@@ -458,7 +433,6 @@ page {
   z-index: 10;
   height: 95%;
   top: -3%;
-  -webkit-transition: all .1s ease-in 0s;
   transition: all .1s ease-in 0s;
   -webkit-transform: translateY(0);
           transform: translateY(0);
@@ -499,12 +473,8 @@ page {
 .rent-center .rent-hostWords .rent-desc-label-top,
 .rent-center .rent-hostWords .rent-desc-label-bottom {
   margin-top: 14rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
 }
 .rent-center .rent-description .rent-desc-label-top .rent-desc-text,
 .rent-center .rent-description .rent-desc-label-bottom .rent-desc-text,
@@ -514,15 +484,9 @@ page {
 .rent-center .rent-preview .rent-desc-label-bottom .rent-desc-text,
 .rent-center .rent-hostWords .rent-desc-label-top .rent-desc-text,
 .rent-center .rent-hostWords .rent-desc-label-bottom .rent-desc-text {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   margin: 4rpx 12rpx;
   padding: 0rpx 6rpx;
   margin-left: 4rpx;
@@ -564,8 +528,6 @@ page {
 }
 .rent-ad-content {
   margin: 40rpx 10rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   font-size: 30rpx;
 }
@@ -574,15 +536,9 @@ page {
 }
 .rent-ad-content .rent-ad-right {
   width: 90rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .rent-ad-content .rent-ad-right-image {
   width: 100%;
@@ -599,27 +555,14 @@ page {
 }
 .rent-preview .rent-preview-center {
   margin: 20rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .rent-preview .rent-preview-center .previewItem {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #404140;
   font-size: 26rpx;
 }
@@ -652,22 +595,14 @@ page {
 }
 .rent-hostOwner .rent-hostOwner-top {
   margin: 20rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .rent-hostOwner .rent-hostOwner-top .rent-hostOwner-top-image {
   width: 100rpx;
   overflow: hidden;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .rent-hostOwner .rent-hostOwner-top .rent-hostOwner-top-image .rent-hostOwner-image {
   width: 100rpx;
@@ -676,17 +611,11 @@ page {
 }
 .rent-hostOwner .rent-hostOwner-top .rent-hostOwner-top-right {
   margin: 30rpx 20rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
   position: relative;
 }
 .rent-hostOwner .rent-hostOwner-top .rent-hostOwner-top-right .rent-hostOwner-top-right-left .rent-hostOwner-top-right-top {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .rent-hostOwner .rent-hostOwner-top .rent-hostOwner-top-right .rent-hostOwner-top-right-left .rent-hostOwner-top-right-top .rent-hostOwner-top-right-nicekname {
@@ -703,15 +632,9 @@ page {
   border: 2rpx solid #93A663;
   border-radius: 10rpx;
   padding: 4rpx 10rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .rent-hostOwner .rent-hostOwner-top .rent-hostOwner-top-right .rent-hostOwner-top-right-right .contact-left {
   width: 50rpx;
@@ -731,18 +654,12 @@ page {
   margin: 0 20rpx;
   color: #707170;
   font-size: 30rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .rent-hostOwner .rent-hostOwner-center .rent-hostOwner-center-text {
   width: 600rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  align-items: center;
 }
 .rent-hostOwner .rent-hostOwner-center .rent-hostOwner-center-right {
   width: 80rpx;
@@ -770,37 +687,20 @@ page {
 }
 .rent-infrastructure .rent-infrastructure-part {
   margin: 20rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-left {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-left .left-icon {
   width: 60rpx;
   height: 60rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-left .left-icon .icon-yugang {
   left: 0;
@@ -812,28 +712,20 @@ page {
   color: #000000;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-right {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
   margin-top: 10rpx;
   margin-left: 50rpx;
   width: 490rpx;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-right .top {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-right .top .top-right {
   margin-top: 20rpx;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-right .bottom {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .rent-infrastructure .rent-infrastructure-part .rent-infrastructure-part-right .bottom .bottom-right {
   margin-top: 20rpx;
@@ -846,19 +738,11 @@ page {
   background: white;
   width: 100vw;
   padding: 10rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .rent-bottom .rent-bottom-price .rent-bottom-price-bottom {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
 }
 .rent-bottom .rent-bottom-price .rent-bottom-price-bottom .rent-bottom-price-bottom-jianmian {
@@ -895,15 +779,9 @@ page {
   color: white;
   background: #35cc27;
   border-radius: 6rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 74rpx;
   width: 180rpx;
 }
@@ -934,39 +812,22 @@ page {
   font-weight: bold;
 }
 .rent-readMe-part {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   margin: 20rpx;
 }
 .rent-readMe-part-left {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   font-size: 28rpx;
   width: 120rpx;
 }
 .rent-readMe-part-right {
   margin: 10rpx 20rpx 10rpx 40rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-          flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
 }
 .rent-readMe-part-right-text {
   margin-top: 10rpx;

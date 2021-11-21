@@ -39,13 +39,8 @@
   bottom: 0;
   width: 100vw;
   background: #fff;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 .comment-component .comment-write .comment-input.data-v-3e202046 {
   width: calc(100% - 60rpx);
@@ -64,19 +59,10 @@
 .comment-component .comment-write .comment-send.data-v-3e202046 {
   margin-top: 20rpx;
   padding: 0 30rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 .comment-component .comment-write .comment-send .content-num.data-v-3e202046 {
   font-size: 24rpx;

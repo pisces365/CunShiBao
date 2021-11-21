@@ -7,15 +7,9 @@
 	background: #FF7425;
 	color: white;
 	font-size: 50rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	align-items: center;
+	justify-content: center;
 	font-weight: bold;
 }
 .IAmHost {
@@ -25,15 +19,9 @@
 	background: #23C890;
 	color: white;
 	font-size: 50rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	        align-items: center;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	        justify-content: center;
+	align-items: center;
+	justify-content: center;
 	font-weight: bold;
 }
 

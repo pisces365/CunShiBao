@@ -44,9 +44,7 @@ page {
 /* } 
  */
 .like {
-	-webkit-box-flex: 0.6;
-	-webkit-flex: 0.6;
-	        flex: 0.6;
+	flex: 0.6;
 }
 
 

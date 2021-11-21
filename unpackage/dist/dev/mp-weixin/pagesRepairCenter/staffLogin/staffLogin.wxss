@@ -304,7 +304,6 @@
 }
 page {
 	 background: rgb(243,243,243);
-	background: -webkit-linear-gradient(bottom, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%);
 	background: linear-gradient(0deg, rgba(243,243,243,1) 50%, rgba(252,183,108,1) 100%);
 }
 
@@ -324,17 +323,13 @@ page {
 	border-radius: 40rpx;
 }
 .item {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 	margin-bottom: 100rpx;
 	height: 60rpx;
 	border-bottom: 1px solid #d8d7d7;
 }
 .icon {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	        flex: 1;
+	flex: 1;
 	height: 40rpx;
 	/* background-image: url(http://p1362.bvimg.com/10465/bb05365f0f6427ec.png); */
 	background-size: 40rpx;
@@ -342,9 +337,7 @@ page {
 	background-position: left center;
 }
 .input {
-	-webkit-box-flex: 10;
-	-webkit-flex: 10;
-	        flex: 10;
+	flex: 10;
 }
 .login-input {
 }

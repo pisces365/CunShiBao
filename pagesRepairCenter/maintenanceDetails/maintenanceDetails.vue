@@ -64,7 +64,7 @@
 				</view>
 			</view>
 		</view>
-		
+		   <!-- 123 -->
 		<view v-if="getTitle1()">
 			<view class="handle-details">
 				<workOrderInDetails class=""></workOrderInDetails>

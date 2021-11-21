@@ -306,8 +306,6 @@
 	background-color: white;
 }
 .navw {
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 	padding: 34rpx 0;
 	margin: 0 30rpx;
@@ -315,17 +313,13 @@
 }
 .main {
 	position: relative;
-	-webkit-box-flex:1;
-	-webkit-flex:1;
-	        flex:1;
+	flex:1;
 }
 .intro-main {
 	position: relative;
 }
 .intro-details {
 	margin-top: 30rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
 	display: flex;
 }
 .intro-title {
@@ -345,9 +339,7 @@
 	background-color: #fcbd03 !important;
 }
 .intro-pic-border {
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	        flex: 1;
+	flex: 1;
 }
 .intro-picture {
 	
@@ -355,9 +347,7 @@
 	box-shadow: 5rpx 5rpx 20rpx #dbdcdb;
 }
 .intro-context-border {
-	-webkit-box-flex: 4;
-	-webkit-flex: 4;
-	        flex: 4;
+	flex: 4;
 }
 .intro-info {
 	font-size: 12px;
